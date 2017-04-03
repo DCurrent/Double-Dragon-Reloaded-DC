@@ -63,20 +63,109 @@ Below is the progress made prior to GitHUB:
 ### Stage 3A (Rooftops)
 
 - Fix bridge grating, it is now a real see through grate.
-- Separate background layers into path, forrest, city, mountains, clouds, and sky.
+- Separate background layers.
+  - Path
+  - Forrest
+  - City
+  - Mountains
+  - Clouds
+  - Sky.
 - Upgrade to .png assests.
 
 ### Stage 3 (Forrest)
 
-- Separate background layers into path, trees, field, mountains, four layers of clouds, and sky.
+- Separate background layers.
+  - Path
+  - Trees
+  - Field
+  - Mountains
+  - Clouds (multilayer autoscroll)
+    - A
+    - B
+    - C
+    - D
+  - Sky
 - Upgrade to .png assests.
 
 ### Stage 4 (Invade Enemy Base)
 
-- Separate background layers into path, two layers of trees, and sky.
+- Separate background layers.
+  - Path
+  - Trees A
+  - Trees B
+  - Sky.
 - Upgrade to .png assests.
 
 ## Technical
+
+- Refine billkey.c with macros and bitwise operators.
+- Jump animations simplified. Previously jump animations included multiple identical frames to control the timing for cancels. These have been replaced by velocity evaluation in keyscripts. The extra frames are removed.
+
+### Resource cleanup 
+
+- Eliminate unused and superfluous assets. Many of Billy’s weapon sprites were identical to the unarmed version. References in the weapon texts switched to unarmed version and the extra sprites removed. Note some small weapon sprites (knifes, dynamite, etc.) were unique, but also unnecessary. Billy carries these items in his far hand while walking. This means they would be hidden by his body when turning to walk upward, but sprites were created showing the weapons remaining visible by inexplicably warping to his near hand. These have been eliminated to serve the double purpose of visual consistency and avoiding wasted resources. 
+
+- Bomb
+  - aaaa5
+  - aaaa55
+  - aaaa6
+  - bk0
+  - bk4
+  - bkick1
+  - climb2
+  - J00
+  - J0
+  - Jk2
+  - kna4
+  - kna5
+  - wu1
+  - wu2
+  - wu3
+  - wu4
+- Chain
+  - bk0
+  - bkick1
+  - climb2
+  - climb3
+  - climb4
+  - climb5
+  - jk2
+  - pain1
+  - wu1
+  - wu1
+  - wu3
+  - wu4
+- Dynamite
+  - bk0
+  - bk4
+  - bkick1
+  - kna4
+  - kna5
+  - pain1
+  - Knife
+  - bkick1
+  - bk4
+  - kna4
+  - kna5
+  - wu1
+  - wu2
+  - wu3
+  - wu4
+- knife
+  - wu1
+  - wu2
+  - wu3
+  - wu4
+- Whip
+  - bkick1
+  - wu1
+  - wu2
+  - wu3
+  - wu4
+- All throwing sprites for heavy objects.
+
+
+
 
 
 

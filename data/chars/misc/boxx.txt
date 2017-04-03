@@ -1,0 +1,149 @@
+name	 boxx
+health   0
+type     item
+subtype  weapon
+grabdistance 50
+counter  999
+typeshot	0
+shootnum  1
+bounce 1
+weapnum  9
+nolife   1
+antigravity 30
+candamage	enemy player
+
+palette   data/chars/misc/boxx1.gif
+
+script  data/scripts/bounce2.c
+animationscript data/scripts/itemsp.c
+
+anim idle
+	loop   1
+      delay   8
+	offset 75 100
+	bbox   30 55 90 57
+	frame  data/chars/misc/boxx1.gif
+
+anim spawn
+      loop   0
+      delay   8
+	offset 75 100
+	bbox   30 55 90 57
+	frame  data/chars/misc/boxx1.gif
+
+anim respawn
+	loop   0
+      delay   12
+      offset 75 100
+      hitflash  eflash
+      hitfx  data/sounds/beatt3.wav
+      jumpframe 0 3 1.2
+	landframe 7
+      @cmd	move 5 0 110
+      @cmd	antiwall4 0 -5
+      frame  data/chars/misc/boxx2.gif
+      frame  data/chars/misc/boxx2.gif
+      attack 50 70 50 42 12 1 1
+      dropv 3.5 1.5
+      forcedirection -1
+	frame  data/chars/misc/boxx2.gif
+      frame  data/chars/misc/boxx2.gif
+      frame  data/chars/misc/boxx2.gif
+      delay   100
+      frame  data/chars/misc/boxx2.gif
+      delay   12
+      frame  data/chars/misc/boxx2.gif
+      sound  data/sounds/boxx4.wav
+      delay   2
+      frame  data/chars/misc/boxx2.gif
+      @cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_FOLLOW1")
+      frame  data/chars/misc/boxx2.gif
+
+
+anim  follow1
+	loop   0
+      delay   12
+      offset 75 100
+      hitflash  eflash
+      hitfx  data/sounds/beatt3.wav
+      attack 50 70 50 42 12 1 1
+      dropv 3 1.5
+      forcedirection -1
+      jumpframe 0 2.5 1
+	 landframe 5
+      frame  data/chars/misc/boxx3.gif
+      frame  data/chars/misc/boxx3.gif
+      frame  data/chars/misc/boxx3.gif
+      frame  data/chars/misc/boxx3.gif
+      delay   100
+      frame  data/chars/misc/boxx3.gif
+      sound  data/sounds/boxx2.wav
+      delay   2
+      attack 0 0 0 0 0 0
+      frame  data/chars/misc/boxx3.gif
+      @cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_FOLLOW2")
+      frame  data/chars/misc/boxx3.gif
+
+anim  follow2
+	loop   0
+      delay   12
+      offset 75 100
+      jumpframe 0 1 0.7
+	landframe 5
+      frame  data/chars/misc/boxx4.gif
+      frame  data/chars/misc/boxx4.gif
+      frame  data/chars/misc/boxx4.gif
+      frame  data/chars/misc/boxx4.gif
+      delay   100
+      frame  data/chars/misc/boxx4.gif
+      delay   3
+      move 1
+      frame  data/chars/misc/boxx4.gif
+      frame  data/chars/misc/boxx1.gif
+      frame  data/chars/misc/boxx1.gif
+      frame  data/chars/misc/boxx1.gif
+      frame  data/chars/misc/boxx1.gif
+      frame  data/chars/misc/boxx1.gif
+      frame  data/chars/misc/boxx1.gif
+      frame  data/chars/misc/boxx1.gif
+      frame  data/chars/misc/boxx1.gif
+      frame  data/chars/misc/boxx1.gif
+      frame  data/chars/misc/boxx1.gif
+      frame  data/chars/misc/boxx1.gif
+      frame  data/chars/misc/boxx1.gif
+      frame  data/chars/misc/boxx1.gif
+      frame  data/chars/misc/boxx1.gif
+      frame  data/chars/misc/boxx1.gif
+      move 0
+      @cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_IDLE")
+      frame  data/chars/misc/boxx1.gif
+
+anim  follow50 # spikeh2 effect
+      loop   0
+      delay   8
+	offset 75 100
+	jumpframe 0 0.1 1
+	frame  data/chars/misc/boxx1.gif
+
+anim follow10 # killer effect
+      loop   0
+      delay   12
+      offset 75 100
+      landframe 4
+      frame  data/chars/misc/boxx2.gif
+      frame  data/chars/misc/boxx2.gif
+	frame  data/chars/misc/boxx2.gif
+      delay   100
+      @cmd killentity getlocalvar("self")
+      frame  data/chars/misc/empty.gif
+      delay   8
+      frame  data/chars/misc/empty.gif
+
+
+
+
+
+
+
+
+

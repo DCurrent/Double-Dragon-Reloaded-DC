@@ -1,0 +1,141 @@
+name	rbox
+health	100
+speed	18
+type	none
+subtype       chase
+shadow	1
+nolife        1
+grabdistance 40
+jumpheight 6.5
+jumpspeed 20
+antigravity -100
+falldie 2
+nodieblink      1
+noquake 1 1
+bounce 1
+risetime 0 -50
+aggression      20
+projectilehit   player
+hostile player platform
+candamage player 
+diesound data/sounds/die1.wav
+modelflag 1
+
+load	box3
+load	Empty2
+
+animationscript 	data/scripts/ani0020.h
+
+palette   data/chars/roper/w4.gif
+alternatepal data/chars/roper/map1.gif
+alternatepal data/chars/roper/map2.gif
+alternatepal data/chars/roper/map3.gif
+alternatepal data/chars/roper/map4.gif
+alternatepal data/chars/roper/map5.gif
+alternatepal data/chars/roper/map6.gif
+alternatepal data/chars/roper/map7.gif
+alternatepal data/chars/roper/map8.gif
+
+anim spawn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	25
+	offset	77 178
+	frame	data/chars/roper/box/get1.gif
+      delay	12
+      frame	data/chars/roper/box/get2.gif
+      frame	data/chars/roper/box/get3.gif
+
+anim respawn
+	loop	0
+	delay	25
+	offset	77 178
+	frame	data/chars/roper/box/get1.gif
+      delay	12
+      frame	data/chars/roper/box/get2.gif
+      frame	data/chars/roper/box/get3.gif
+
+anim get
+      loop	0
+	delay	25
+	offset	77 178
+	frame	data/chars/roper/box/get1.gif
+      delay	12
+      frame	data/chars/roper/box/get2.gif
+      frame	data/chars/roper/box/get3.gif
+
+anim idle
+	loop	0
+	delay	5
+	offset	77 178
+	bbox	60 65 40 100
+	frame	data/chars/roper/box/w4.gif
+
+anim walk
+	loop	1
+	delay	14
+	offset	77 178
+	bbox	60 65 40 100
+	frame	data/chars/roper/box/w1.gif
+	frame	data/chars/roper/box/w2.gif
+	frame	data/chars/roper/box/w3.gif
+	frame	data/chars/roper/box/w4.gif
+
+anim up
+	loop	1
+	delay	14
+	offset	77 176
+	bbox	60 63 40 100
+	frame	data/chars/roper/box/wu1.gif
+	frame	data/chars/roper/box/wu2.gif
+	frame	data/chars/roper/box/wu3.gif
+	frame	data/chars/roper/box/wu4.gif
+
+anim walkoff
+      loop	0
+	offset	77 178
+	delay   8
+      @cmd  hurt7 0
+      frame	data/chars/roper/box/w4.gif
+
+anim attack1
+      range   0 300
+      rangea   0 100
+	loop	0
+	delay	2
+	offset	77 178
+      throwframe 0 0
+      custknife Empty2
+      @cmd    antiwall3 35 -31 0
+	frame	data/chars/roper/box/w4.gif
+      delay   20
+      @cmd	shooter2 "box3" 30 120 1 1.5 1 0
+	frame	data/chars/roper/box/wua.gif
+      delay   2
+      offset	77 170
+      frame	data/chars/roper/w4.gif
+
+
+
+
+
+
+
+
+
+

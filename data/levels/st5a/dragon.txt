@@ -1,0 +1,137 @@
+name dragon
+type none
+shadow 0
+nolife 1
+facing 1
+subject_to_hole 0
+subject_to_wall 0
+subject_to_gravity 0
+subject_to_minz 1
+setlayer 1
+
+load	flame
+
+animationscript data/scripts/door1.c
+
+anim spawn
+     loop 0
+     delay 276
+     offset 75 84
+     frame data/levels/st5a/dragon.gif
+
+anim idle
+     loop 1
+     delay 105
+     offset 75 84
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+	sound  data/sounds/flame.wav
+     @cmd	spawn01 "flame" -60 -37 -65
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+	sound  data/sounds/flame.wav
+     @cmd	spawn01 "flame" -20 -55 -40
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+	sound  data/sounds/flame.wav
+     @cmd	spawn01 "flame" 24 -41 15
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+
+
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+	sound  data/sounds/flame.wav
+     @cmd	spawn01 "flame" -60 -37 -65
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+	sound  data/sounds/flame.wav
+     @cmd	spawn01 "flame" -60 -37 -65
+     @cmd	spawn01 "flame" -20 -55 -40
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+	sound  data/sounds/flame.wav
+     @cmd	spawn01 "flame" -60 -37 -65
+     @cmd	spawn01 "flame" 24 -41 15
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+	sound  data/sounds/flame.wav
+     @cmd	spawn01 "flame" 24 -41 15
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+	sound  data/sounds/flame.wav
+     @cmd	spawn01 "flame" -60 -37 -65
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+	sound  data/sounds/flame.wav
+     @cmd	spawn01 "flame" -20 -55 -40
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+	sound  data/sounds/flame.wav
+     @cmd	spawn01 "flame" -60 -37 -65
+     @cmd	spawn01 "flame" -20 -55 -40
+     @cmd	spawn01 "flame" 24 -41 15
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+
+
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+	sound  data/sounds/flame.wav
+     @cmd	spawn01 "flame" -60 -37 -65
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+	sound  data/sounds/flame.wav
+     @cmd	spawn01 "flame" -20 -55 -40
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+	sound  data/sounds/flame.wav
+     @cmd	spawn01 "flame" 24 -41 15
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+	sound  data/sounds/flame.wav
+     @cmd	spawn01 "flame" -60 -37 -65
+     @cmd	spawn01 "flame" 24 -41 15
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     frame data/levels/st5a/dragon.gif
+     
+

@@ -1,0 +1,25 @@
+name    	eflame
+type    	none
+shadow  	0
+lifespan  	4
+nomove  	1
+nolife          1
+antigravity     100
+alpha 1
+
+
+anim idle
+	delay	5
+	offset	60 150
+	frame	data/chars/misc/flame1.gif
+	frame	data/chars/misc/flame2.gif
+	frame	data/chars/misc/flame3.gif
+	frame	data/chars/misc/flame4.gif
+	frame	data/chars/misc/flame1.gif
+	frame	data/chars/misc/flame2.gif
+	frame	data/chars/misc/flame3.gif
+	frame	data/chars/misc/flame4.gif
+	frame	data/chars/misc/empty.gif
+
+
+

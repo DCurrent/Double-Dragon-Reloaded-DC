@@ -1,0 +1,9 @@
+1. Add running 30 6.5 1.3 1 0
+2. Add run animation.
+3. Freesecial35 (Sommersault) becomes RUNJUMP
+4. Add jumpland.
+5. Decrease jumpdelay to 12
+6. Attack both becomes RUNATTACK, with jumpframe 0 0 1 0
+7. Freespecial36 #Somersault Kick becomes follow61 #Somersault Kick
+8. ANI_freespecial17 #jumping spin kick becomes ANI_FOLLOW62 #jumping spin kick.
+9. Update constants in keyscript.

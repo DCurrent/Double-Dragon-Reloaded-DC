@@ -1,0 +1,1065 @@
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 5959680 Bytes
+
+debug:nativeWidth, nativeHeight, bpp, Hz  1920, 1200, 24, 60
+
+0 joystick(s) found!
+OpenBoR v3.0 Build , Compile Date: Nov 30 2016
+
+Game Selected: ./Paks/Double Dragon Reloaded.pak
+
+FileCaching System Init......	Disabled
+Initializing video............
+Reading video settings from 'data/video.txt'.
+Initialized video.............	640x480 (Mode: 2, Depth: 16 Bit)
+
+Loading menu.txt.............	Done!
+Loading fonts................	1 2 3 4 Done!
+Timer init...................	Done!
+Initialize Sound..............	
+Loading sprites..............	Done!
+Loading level order..........	Done!
+Loading model constants......	Done!
+Loading script settings......	Done!
+Loading scripts..............	Done!
+Loading models...............
+
+Cacheing 'Flash' from data/chars/misc/flash.txt
+Cacheing 'eflash' from data/chars/misc/eflash.txt
+Cacheing 'blood' from data/chars/misc/blood.txt
+Cacheing 'blood2' from data/chars/misc/blood2.txt
+Cacheing 'bom' from data/chars/misc/bom.txt
+Cacheing 'water1' from data/chars/misc/water1.txt
+Cacheing 'eflame' from data/chars/misc/eflame.txt
+Cacheing 'eeflame' from data/chars/misc/eeflame.txt
+Cacheing 'heart' from data/chars/misc/heart.txt
+Cacheing 'ballclear' from data/chars/misc/ballclear.txt
+Cacheing 'barelclear' from data/chars/misc/barelclear.txt
+Cacheing 'batclear' from data/chars/misc/batclear.txt
+Cacheing 'bombclear' from data/chars/misc/bombclear.txt
+Cacheing 'boxclear' from data/chars/misc/boxclear.txt
+Cacheing 'boxxclear' from data/chars/misc/boxxclear.txt
+Cacheing 'chainclear' from data/chars/misc/chainclear.txt
+Cacheing 'dynamclear' from data/chars/misc/dynamclear.txt
+Cacheing 'knifeclear' from data/chars/misc/knifeclear.txt
+Cacheing 'rockclear' from data/chars/misc/rockclear.txt
+Cacheing 'shovelclear' from data/chars/misc/shovelclear.txt
+Cacheing 'stickclear' from data/chars/misc/stickclear.txt
+Cacheing 'whipclear' from data/chars/misc/whipclear.txt
+Cacheing 'woodclear' from data/chars/misc/woodclear.txt
+Cacheing 'billy' from data/chars/billy/billy.txt
+Cacheing 'bbat' from data/chars/billy/bbat.txt
+Cacheing 'bwhip' from data/chars/billy/bwhip.txt
+Cacheing 'bknife' from data/chars/billy/bknife.txt
+Cacheing 'bbarel' from data/chars/billy/bbarel.txt
+Cacheing 'bbox' from data/chars/billy/bbox.txt
+Cacheing 'brock' from data/chars/billy/brock.txt
+Cacheing 'bdynam' from data/chars/billy/bdynam.txt
+Cacheing 'bwood' from data/chars/billy/bwood.txt
+Cacheing 'bboxx' from data/chars/billy/bboxx.txt
+Cacheing 'bball' from data/chars/billy/bball.txt
+Cacheing 'bchain' from data/chars/billy/bchain.txt
+Cacheing 'bshovel' from data/chars/billy/bshovel.txt
+Cacheing 'bbomb' from data/chars/billy/bbomb.txt
+Cacheing 'bstick' from data/chars/billy/bstick.txt
+Cacheing 'bilend' from data/chars/bilend/bilend.txt
+Cacheing 'bilend2' from data/chars/bilend/bilend2.txt
+Cacheing 'bilend3' from data/chars/bilend/bilend3.txt
+Cacheing 'bilend4' from data/chars/bilend/bilend4.txt
+Cacheing 'ClimbSpot' from data/chars/misc/ClimSp.txt
+Cacheing 'ClimbSpot2' from data/chars/misc/ClimSp2.txt
+Cacheing 'ClimbSpot3' from data/chars/misc/ClimSp3.txt
+Cacheing 'water' from data/chars/misc/water.txt
+Cacheing 'spikeh' from data/chars/misc/spikeh.txt
+Cacheing 'spikeh1' from data/chars/misc/spikeh1.txt
+Cacheing 'spikeh2' from data/chars/misc/spikeh2.txt
+Cacheing 'doorst1' from data/chars/misc/doorst1.txt
+Cacheing 'doorst2' from data/chars/misc/doorst2.txt
+Cacheing 'doorst2b' from data/chars/misc/doorst2b.txt
+Cacheing 'doorst2ba' from data/chars/misc/doorst2ba.txt
+Cacheing 'doorst2bb' from data/chars/misc/doorst2bb.txt
+Cacheing 'doorst3' from data/chars/misc/doorst3.txt
+Cacheing 'doorst3a' from data/chars/misc/doorst3a.txt
+Cacheing 'doorst3a0' from data/chars/misc/doorst3a0.txt
+Cacheing 'doorst3ab' from data/chars/misc/doorst3ab.txt
+Cacheing 'doorst3ac' from data/chars/misc/doorst3ac.txt
+Cacheing 'doorst4a' from data/chars/misc/doorst4a.txt
+Cacheing 'doorst4b' from data/chars/misc/doorst4b.txt
+Cacheing 'doorst5' from data/chars/misc/doorst5.txt
+Cacheing 'wall1' from data/chars/misc/wall1.txt
+Cacheing 'wall2' from data/chars/misc/wall2.txt
+Cacheing 'wall2b' from data/chars/misc/wall2b.txt
+Cacheing 'wall3' from data/chars/misc/wall3.txt
+Cacheing 'wall4' from data/chars/misc/wall4.txt
+Cacheing 'Empty2' from data/chars/misc/empty2.txt
+Cacheing 'belt' from data/levels/st2/belt.txt
+Cacheing 'gbelter' from data/levels/st2/gbelter.txt
+Cacheing 'belt2' from data/levels/st2b/belt2.txt
+Cacheing 'belt3' from data/levels/st2b/belt3.txt
+Cacheing 'gbelter2' from data/levels/st2b/gbelter2.txt
+Cacheing 'gbelter3' from data/levels/st2b/gbelter3.txt
+Cacheing 'gbelter4' from data/levels/st2b/gbelter4.txt
+Cacheing 'layer' from data/levels/st2/layer.txt
+Cacheing 'elevjeff1' from data/levels/st2/elevjeff1.txt
+Cacheing 'elevjeff2' from data/levels/st2/elevjeff2.txt
+Cacheing 'elevjeff4' from data/levels/st2/elevjeff4.txt
+Cacheing 'elevjeff3' from data/levels/st2b/elevjeff3.txt
+Cacheing 'brid1' from data/levels/st3/brid1.txt
+Cacheing 'brid2' from data/levels/st3/brid2.txt
+Cacheing 'dooback' from data/levels/st3/dooback.txt
+Cacheing 'pro' from data/levels/st3a/pro.txt
+Cacheing 'prop' from data/levels/st4/prop.txt
+Cacheing 'dragon' from data/levels/st5a/dragon.txt
+Cacheing 'dragon2' from data/levels/st5a/dragon2.txt
+Cacheing 'entrance' from data/levels/st5a/entrance.txt
+Cacheing 'ob2' from data/chars/misc/ob2.txt
+Cacheing 'plat1' from data/chars/misc/plat1.txt
+Cacheing 'plat2' from data/chars/misc/plat2.txt
+Cacheing 'plat3' from data/chars/misc/plat3.txt
+Cacheing 'plat4' from data/chars/misc/plat4.txt
+Cacheing 'plat5' from data/chars/misc/plat5.txt
+Cacheing 'bat' from data/chars/misc/bat.txt
+Cacheing 'shovel' from data/chars/misc/shovel.txt
+Cacheing 'knife' from data/chars/misc/knife.txt
+Cacheing 'knife1' from data/chars/misc/knife1.txt
+Cacheing 'knife2' from data/chars/misc/knife2.txt
+Cacheing 'whip' from data/chars/misc/whip.txt
+Cacheing 'chain' from data/chars/misc/chain.txt
+Cacheing 'barel' from data/chars/misc/barel.txt
+Cacheing 'barel1' from data/chars/misc/barel1.txt
+Cacheing 'barel2' from data/chars/misc/barel2.txt
+Cacheing 'barel3' from data/chars/misc/barel3.txt
+Cacheing 'wood' from data/chars/misc/wood.txt
+Cacheing 'wood1' from data/chars/misc/wood1.txt
+Cacheing 'wood2' from data/chars/misc/wood2.txt
+Cacheing 'wood3' from data/chars/misc/wood3.txt
+Cacheing 'box' from data/chars/misc/box.txt
+Cacheing 'box1' from data/chars/misc/box1.txt
+Cacheing 'box2' from data/chars/misc/box2.txt
+Cacheing 'box3' from data/chars/misc/box3.txt
+Cacheing 'boxx' from data/chars/misc/boxx.txt
+Cacheing 'boxx1' from data/chars/misc/boxx1.txt
+Cacheing 'boxx2' from data/chars/misc/boxx2.txt
+Cacheing 'boxx3' from data/chars/misc/boxx3.txt
+Cacheing 'rock' from data/chars/misc/rock.txt
+Cacheing 'rock1' from data/chars/misc/rock1.txt
+Cacheing 'rock2' from data/chars/misc/rock2.txt
+Cacheing 'rock3' from data/chars/misc/rock3.txt
+Cacheing 'ball' from data/chars/misc/ball.txt
+Cacheing 'ball1' from data/chars/misc/ball1.txt
+Cacheing 'ball2' from data/chars/misc/ball2.txt
+Cacheing 'ball3' from data/chars/misc/ball3.txt
+Cacheing 'dynam' from data/chars/misc/dynam.txt
+Cacheing 'dynam2' from data/chars/misc/dynam2.txt
+Cacheing 'bomb' from data/chars/misc/bomb.txt
+Cacheing 'bomb2' from data/chars/misc/bomb2.txt
+Cacheing 'stick' from data/chars/misc/stick.txt
+Cacheing 'bulet' from data/chars/misc/bulet.txt
+Cacheing 'fire' from data/chars/misc/fire.txt
+Cacheing 'wtrap' from data/chars/misc/wtrap.txt
+Cacheing 'wspike' from data/chars/misc/wspike.txt
+Cacheing 'wspike2' from data/chars/misc/wspike2.txt
+Cacheing 'movezblo' from data/chars/misc/movezblo.txt
+Cacheing 'movezblo2' from data/chars/misc/movezblo2.txt
+Cacheing 'moveyblo' from data/chars/misc/moveyblo.txt
+Cacheing 'blkiller' from data/chars/misc/blkiller.txt
+Cacheing 'lakiller' from data/chars/misc/lakiller.txt
+Cacheing 'killer' from data/chars/misc/killer.txt
+Cacheing 'kikiller' from data/chars/misc/kikiller.txt
+Cacheing 'flame' from data/chars/misc/flame/flame.txt
+Cacheing 'roper' from data/chars/roper/roper.txt
+Cacheing 'broper' from data/chars/roper/broper.txt
+Cacheing 'kroper' from data/chars/roper/kroper.txt
+Cacheing 'droper' from data/chars/roper/droper.txt
+Cacheing 'sroper' from data/chars/roper/sroper.txt
+Cacheing 'rbarel' from data/chars/roper/rbarel.txt
+Cacheing 'rbox' from data/chars/roper/rbox.txt
+Cacheing 'rrock' from data/chars/roper/rrock.txt
+Cacheing 'boroper' from data/chars/roper/boroper.txt
+Cacheing 'rboxx' from data/chars/roper/rboxx.txt
+Cacheing 'rball' from data/chars/roper/rball.txt
+Cacheing 'rwood' from data/chars/roper/rwood.txt
+Cacheing 'roperb' from data/chars/roper2/roperb.txt
+Cacheing 'broperb' from data/chars/roper2/broperb.txt
+Cacheing 'kroperb' from data/chars/roper2/kroperb.txt
+Cacheing 'droperb' from data/chars/roper2/droperb.txt
+Cacheing 'sroperb' from data/chars/roper2/sroperb.txt
+Cacheing 'rbarelb' from data/chars/roper2/rbarelb.txt
+Cacheing 'rboxb' from data/chars/roper2/rboxb.txt
+Cacheing 'rrockb' from data/chars/roper2/rrockb.txt
+Cacheing 'boroperb' from data/chars/roper2/boroperb.txt
+Cacheing 'rboxxb' from data/chars/roper2/rboxxb.txt
+Cacheing 'rballb' from data/chars/roper2/rballb.txt
+Cacheing 'rwoodb' from data/chars/roper2/rwoodb.txt
+Cacheing 'williams' from data/chars/williams/williams.txt
+Cacheing 'williams2' from data/chars/williams/williams2.txt
+Cacheing 'batliams' from data/chars/williams/batliams.txt
+Cacheing 'svliams' from data/chars/williams/svliams.txt
+Cacheing 'kniliams' from data/chars/williams/kniliams.txt
+Cacheing 'dynliams' from data/chars/williams/dynliams.txt
+Cacheing 'boliams' from data/chars/williams/boliams.txt
+Cacheing 'williamsb' from data/chars/williams2/williamsb.txt
+Cacheing 'batliamsb' from data/chars/williams2/batliamsb.txt
+Cacheing 'svliamsb' from data/chars/williams2/svliamsb.txt
+Cacheing 'kniliamsb' from data/chars/williams2/kniliamsb.txt
+Cacheing 'dynliamsb' from data/chars/williams2/dynliamsb.txt
+Cacheing 'boliamsb' from data/chars/williams2/boliamsb.txt
+Cacheing 'linda' from data/chars/linda/linda.txt
+Cacheing 'lindaw' from data/chars/linda/lindaw.txt
+Cacheing 'lindac' from data/chars/linda/lindac.txt
+Cacheing 'lindab' from data/chars/linda2/lindab.txt
+Cacheing 'lindawb' from data/chars/linda2/lindawb.txt
+Cacheing 'lindacb' from data/chars/linda2/lindacb.txt
+Cacheing 'lindabk' from data/chars/linda2/lindabk.txt
+Cacheing 'lindabb' from data/chars/linda2/lindabb.txt
+Cacheing 'jeff' from data/chars/jeff/jeff.txt
+Cacheing 'jeff2' from data/chars/jeff/jeff2.txt
+Cacheing 'jeff3' from data/chars/jeff/jeff3.txt
+Cacheing 'jeff4' from data/chars/jeff/jeff4.txt
+Cacheing 'jeff5' from data/chars/jeff/jeff5.txt
+Cacheing 'bolo' from data/chars/bolo/bolo.txt
+Cacheing 'bolo2' from data/chars/bolo/bolo2.txt
+Cacheing 'bolobar' from data/chars/bolo/bolobar.txt
+Cacheing 'bolobox' from data/chars/bolo/bolobox.txt
+Cacheing 'boloroc' from data/chars/bolo/boloroc.txt
+Cacheing 'bolowood' from data/chars/bolo/bolowood.txt
+Cacheing 'boloboxx' from data/chars/bolo/boloboxx.txt
+Cacheing 'boloball' from data/chars/bolo/boloball.txt
+Cacheing 'abobo' from data/chars/abobo/abobo.txt
+Cacheing 'abobo2' from data/chars/abobo/abobo2.txt
+Cacheing 'abobo3' from data/chars/abobo/abobo3.txt
+Cacheing 'mibobo' from data/chars/mibobo/mibobo.txt
+Cacheing 'mibobo2' from data/chars/mibobo/mibobo2.txt
+Cacheing 'mibarel' from data/chars/mibobo/mibarel.txt
+Cacheing 'mibox' from data/chars/mibobo/mibox.txt
+Cacheing 'mirock' from data/chars/mibobo/mirock.txt
+Cacheing 'miwood' from data/chars/mibobo/miwood.txt
+Cacheing 'miboxx' from data/chars/mibobo/miboxx.txt
+Cacheing 'miball' from data/chars/mibobo/miball.txt
+Cacheing 'oharra' from data/chars/oharra/oharra.txt
+Cacheing 'oharra2' from data/chars/oharra/oharra2.txt
+Cacheing 'ohbarel' from data/chars/oharra/ohbarel.txt
+Cacheing 'ohbox' from data/chars/oharra/ohbox.txt
+Cacheing 'ohrock' from data/chars/oharra/ohrock.txt
+Cacheing 'ohwood' from data/chars/oharra/ohwood.txt
+Cacheing 'ohboxx' from data/chars/oharra/ohboxx.txt
+Cacheing 'ohball' from data/chars/oharra/ohball.txt
+Cacheing 'burnov' from data/chars/burnov/burnov.txt
+Cacheing 'burnov2' from data/chars/burnov/burnov2.txt
+Cacheing 'burnov3' from data/chars/burnov/burnov3.txt
+Cacheing 'burnov4' from data/chars/burnov/burnov4.txt
+Cacheing 'burnov5' from data/chars/burnov/burnov5.txt
+Cacheing 'burnov6' from data/chars/burnov/burnov6.txt
+Cacheing 'burnov7' from data/chars/burnov/burnov7.txt
+Cacheing 'abore' from data/chars/abore/abore.txt
+Cacheing 'abore2' from data/chars/abore/abore2.txt
+Cacheing 'chin' from data/chars/chin/chin.txt
+Cacheing 'chin2' from data/chars/chin/chin2.txt
+Cacheing 'chin3' from data/chars/chin/chin3.txt
+Cacheing 'chin4' from data/chars/chin/chin4.txt
+Cacheing 'chin5' from data/chars/chin/chin5.txt
+Cacheing 'willy' from data/chars/willy/willy.txt
+Cacheing 'wilend' from data/chars/willy/wilend.txt
+Cacheing 'delay' from data/chars/misc/delay.txt
+Cacheing 'door5a' from data/chars/misc/door5a.txt
+Cacheing 'marian' from data/chars/marian/marian.txt
+Cacheing 'guys' from data/chars/marian/guys.txt
+Cacheing 'will' from data/chars/marian/will.txt
+Cacheing 'burno' from data/chars/marian/burno.txt
+Cacheing 'chi' from data/chars/marian/chi.txt
+Cacheing 'gar' from data/levels/st1/gar.txt
+Cacheing 'scrmover' from data/chars/misc/scrmover.txt
+Cacheing 'mission1' from data/chars/misc/mission1.txt
+Cacheing 'jumper' from data/chars/misc/jumper.txt
+Cacheing 'jumper2' from data/chars/misc/jumper2.txt
+Cacheing 'scrmover2' from data/chars/misc/scrmover2.txt
+Cacheing 'mission3' from data/chars/misc/mission3.txt
+Cacheing 'scrmover4' from data/chars/misc/scrmover4.txt
+Cacheing 'scrmover5' from data/chars/misc/scrmover5.txt
+Cacheing 'invade' from data/chars/misc/invade.txt
+Cacheing 'scrmover7' from data/chars/misc/scrmover7.txt
+Cacheing 'scrmover8' from data/chars/misc/scrmover8.txt
+Cacheing 'parrow' from data/chars/misc/parrow.txt
+Cacheing 'parrow2' from data/chars/misc/parrow2.txt
+Cacheing 'delay2' from data/chars/misc/delay2.txt
+Cacheing 'delay3' from data/chars/misc/delay3.txt
+Cacheing 'delay4' from data/chars/misc/delay4.txt
+Cacheing 'delay5' from data/chars/misc/delay5.txt
+Cacheing 'delay6' from data/chars/misc/delay6.txt
+Cacheing 'delay7' from data/chars/misc/delay7.txt
+Cacheing 'delay8' from data/chars/misc/delay8.txt
+Cacheing 'delay9' from data/chars/misc/delay9.txt
+Cacheing 'delay10' from data/chars/misc/delay10.txt
+Cacheing 'delay11' from data/chars/misc/delay11.txt
+Cacheing 'delay12' from data/chars/misc/delay12.txt
+Cacheing 'timer' from data/chars/misc/timer.txt
+Cacheing 'brrow' from data/chars/misc/brrow.txt
+Cacheing 'brrow1' from data/chars/misc/brrow1.txt
+Cacheing 'brrow2' from data/chars/misc/brrow2.txt
+Cacheing 'brrow3' from data/chars/misc/brrow3.txt
+Cacheing 'itemkill1' from data/chars/misc/itemkill1.txt
+Cacheing 'itemkill2' from data/chars/misc/itemkill2.txt
+Cacheing 'itemkill3' from data/chars/misc/itemkill3.txt
+Cacheing 'itemkill4' from data/chars/misc/itemkill4.txt
+Cacheing 'dragonkill' from data/chars/misc/dragonkill.txt
+Cacheing 'gbelkill' from data/chars/misc/gbelkill.txt
+Cacheing 'marend' from data/chars/bilend/marend.txt
+Cacheing 'marend0' from data/chars/bilend/marend0.txt
+Cacheing 'marend2' from data/chars/bilend/marend2.txt
+Cacheing 'trapend' from data/chars/bilend/trapend.txt
+Cacheing 'clear8' from data/chars/misc/clear8.txt
+Cacheing 'end' from data/chars/misc/end.txt
+Cacheing 'clear' from data/chars/misc/clear.txt
+Cacheing 'clear1' from data/chars/misc/clear1.txt
+Cacheing 'clearexclst1' from data/chars/misc/clearexclst1.txt
+Cacheing 'clear2' from data/chars/misc/clear2.txt
+Cacheing 'clear3' from data/chars/misc/clear3.txt
+Cacheing 'clear4' from data/chars/misc/clear4.txt
+Cacheing 'clear5' from data/chars/misc/clear5.txt
+Cacheing 'clear6' from data/chars/misc/clear6.txt
+Cacheing 'clear7' from data/chars/misc/clear7.txt
+Cacheing 'cclear1' from data/chars/misc/cclear1.txt
+Cacheing 'cclear2' from data/chars/misc/cclear2.txt
+Cacheing 'cclear3' from data/chars/misc/cclear3.txt
+Cacheing 'cclear4' from data/chars/misc/cclear4.txt
+Cacheing 'cclear5' from data/chars/misc/cclear5.txt
+Cacheing 'cclear6' from data/chars/misc/cclear6.txt
+Cacheing 'cclear7' from data/chars/misc/cclear7.txt
+Cacheing 'doorchange' from data/chars/misc/doorchange.txt
+Cacheing 'doorchange2' from data/chars/misc/doorchange2.txt
+Cacheing 'fadee' from data/chars/misc/fadee.txt
+Cacheing 'cred' from data/chars/misc/cred.txt
+Cacheing 'time' from data/chars/misc/time.txt
+
+Loading 'Flash' from data/chars/misc/flash.txt
+Loading 'EFlash' from data/chars/misc/eflash.txt
+Loading 'blood' from data/chars/misc/blood.txt
+Loading 'blood2' from data/chars/misc/blood2.txt
+Loading 'bom' from data/chars/misc/bom.txt
+Loading 'water1' from data/chars/misc/water1.txt
+Loading 'eflame' from data/chars/misc/eflame.txt
+Loading 'eeflame' from data/chars/misc/eeflame.txt
+Loading 'heart' from data/chars/misc/heart.txt
+Loading 'ballclear' from data/chars/misc/ballclear.txt
+Loading 'barelclear' from data/chars/misc/barelclear.txt
+Loading 'batclear' from data/chars/misc/batclear.txt
+Loading 'bombclear' from data/chars/misc/bombclear.txt
+Loading 'boxclear' from data/chars/misc/boxclear.txt
+Loading 'boxxclear' from data/chars/misc/boxxclear.txt
+Loading 'chainclear' from data/chars/misc/chainclear.txt
+Loading 'dynamclear' from data/chars/misc/dynamclear.txt
+Loading 'knifeclear' from data/chars/misc/knifeclear.txt
+Loading 'rockclear' from data/chars/misc/rockclear.txt
+Loading 'shovelclear' from data/chars/misc/shovelclear.txt
+Loading 'stickclear' from data/chars/misc/stickclear.txt
+Loading 'whipclear' from data/chars/misc/whipclear.txt
+Loading 'woodclear' from data/chars/misc/woodclear.txt
+Loading 'billy' from data/chars/billy/billy.txt
+Loading 'bbat' from data/chars/billy/bbat.txt
+Loading 'bwhip' from data/chars/billy/bwhip.txt
+Loading 'knife' from data/chars/misc/knife.txt
+Loading 'knife1' from data/chars/misc/knife1.txt
+Loading 'Empty2' from data/chars/misc/empty2.txt
+Loading 'bknife' from data/chars/billy/bknife.txt
+Loading 'barel' from data/chars/misc/barel.txt
+Loading 'barel1' from data/chars/misc/barel1.txt
+Loading 'bbarel' from data/chars/billy/bbarel.txt
+Loading 'box' from data/chars/misc/box.txt
+Loading 'box1' from data/chars/misc/box1.txt
+Loading 'bbox' from data/chars/billy/bbox.txt
+Loading 'rock' from data/chars/misc/rock.txt
+Loading 'rock1' from data/chars/misc/rock1.txt
+Loading 'brock' from data/chars/billy/brock.txt
+Loading 'dynam2' from data/chars/misc/dynam2.txt
+Loading 'dynam' from data/chars/misc/dynam.txt
+Loading 'bdynam' from data/chars/billy/bdynam.txt
+Loading 'wood' from data/chars/misc/wood.txt
+Loading 'wood1' from data/chars/misc/wood1.txt
+Loading 'bwood' from data/chars/billy/bwood.txt
+Loading 'boxx' from data/chars/misc/boxx.txt
+Loading 'boxx1' from data/chars/misc/boxx1.txt
+Loading 'bboxx' from data/chars/billy/bboxx.txt
+Loading 'ball' from data/chars/misc/ball.txt
+Loading 'ball1' from data/chars/misc/ball1.txt
+Loading 'bball' from data/chars/billy/bball.txt
+Loading 'bchain' from data/chars/billy/bchain.txt
+Loading 'bshovel' from data/chars/billy/bshovel.txt
+Loading 'bomb2' from data/chars/misc/bomb2.txt
+Loading 'bomb' from data/chars/misc/bomb.txt
+Loading 'bbomb' from data/chars/billy/bbomb.txt
+Loading 'bstick' from data/chars/billy/bstick.txt
+Loading 'end' from data/chars/misc/end.txt
+Loading 'bilend' from data/chars/bilend/bilend.txt
+Loading 'bilend2' from data/chars/bilend/bilend2.txt
+Loading 'bilend3' from data/chars/bilend/bilend3.txt
+Loading 'bilend4' from data/chars/bilend/bilend4.txt
+Loading 'barel2' from data/chars/misc/barel2.txt
+Loading 'wood2' from data/chars/misc/wood2.txt
+Loading 'box2' from data/chars/misc/box2.txt
+Loading 'boxx2' from data/chars/misc/boxx2.txt
+Loading 'rock2' from data/chars/misc/rock2.txt
+Loading 'ball2' from data/chars/misc/ball2.txt
+Loading 'broper' from data/chars/roper/broper.txt
+Loading 'knife2' from data/chars/misc/knife2.txt
+Loading 'kroper' from data/chars/roper/kroper.txt
+Loading 'droper' from data/chars/roper/droper.txt
+Loading 'sroper' from data/chars/roper/sroper.txt
+Loading 'barel3' from data/chars/misc/barel3.txt
+Loading 'rbarel' from data/chars/roper/rbarel.txt
+Loading 'box3' from data/chars/misc/box3.txt
+Loading 'rbox' from data/chars/roper/rbox.txt
+Loading 'rock3' from data/chars/misc/rock3.txt
+Loading 'rrock' from data/chars/roper/rrock.txt
+Loading 'boroper' from data/chars/roper/boroper.txt
+Loading 'boxx3' from data/chars/misc/boxx3.txt
+Loading 'rboxx' from data/chars/roper/rboxx.txt
+Loading 'ball3' from data/chars/misc/ball3.txt
+Loading 'rball' from data/chars/roper/rball.txt
+Loading 'wood3' from data/chars/misc/wood3.txt
+Loading 'rwood' from data/chars/roper/rwood.txt
+Loading 'broperb' from data/chars/roper2/broperb.txt
+Loading 'kroperb' from data/chars/roper2/kroperb.txt
+Loading 'droperb' from data/chars/roper2/droperb.txt
+Loading 'sroperb' from data/chars/roper2/sroperb.txt
+Loading 'rbarelb' from data/chars/roper2/rbarelb.txt
+Loading 'rboxb' from data/chars/roper2/rboxb.txt
+Loading 'rrockb' from data/chars/roper2/rrockb.txt
+Loading 'boroperb' from data/chars/roper2/boroperb.txt
+Loading 'rboxxb' from data/chars/roper2/rboxxb.txt
+Loading 'rballb' from data/chars/roper2/rballb.txt
+Loading 'rwoodb' from data/chars/roper2/rwoodb.txt
+Loading 'batliams' from data/chars/williams/batliams.txt
+Loading 'svliams' from data/chars/williams/svliams.txt
+Loading 'kniliams' from data/chars/williams/kniliams.txt
+Loading 'dynliams' from data/chars/williams/dynliams.txt
+Loading 'boliams' from data/chars/williams/boliams.txt
+Loading 'batliamsb' from data/chars/williams2/batliamsb.txt
+Loading 'svliamsb' from data/chars/williams2/svliamsb.txt
+Loading 'kniliamsb' from data/chars/williams2/kniliamsb.txt
+Loading 'dynliamsb' from data/chars/williams2/dynliamsb.txt
+Loading 'boliamsb' from data/chars/williams2/boliamsb.txt
+Loading 'lindaw' from data/chars/linda/lindaw.txt
+Loading 'lindac' from data/chars/linda/lindac.txt
+Loading 'lindawb' from data/chars/linda2/lindawb.txt
+Loading 'lindacb' from data/chars/linda2/lindacb.txt
+Loading 'lindabk' from data/chars/linda2/lindabk.txt
+Loading 'lindabb' from data/chars/linda2/lindabb.txt
+Loading 'bolobar' from data/chars/bolo/bolobar.txt
+Loading 'bolobox' from data/chars/bolo/bolobox.txt
+Loading 'boloroc' from data/chars/bolo/boloroc.txt
+Loading 'bolowood' from data/chars/bolo/bolowood.txt
+Loading 'boloboxx' from data/chars/bolo/boloboxx.txt
+Loading 'boloball' from data/chars/bolo/boloball.txt
+Loading 'mibarel' from data/chars/mibobo/mibarel.txt
+Loading 'mibox' from data/chars/mibobo/mibox.txt
+Loading 'mirock' from data/chars/mibobo/mirock.txt
+Loading 'miwood' from data/chars/mibobo/miwood.txt
+Loading 'miboxx' from data/chars/mibobo/miboxx.txt
+Loading 'miball' from data/chars/mibobo/miball.txt
+Loading 'ohbarel' from data/chars/oharra/ohbarel.txt
+Loading 'ohbox' from data/chars/oharra/ohbox.txt
+Loading 'ohrock' from data/chars/oharra/ohrock.txt
+Loading 'ohwood' from data/chars/oharra/ohwood.txt
+Loading 'ohboxx' from data/chars/oharra/ohboxx.txt
+Loading 'ohball' from data/chars/oharra/ohball.txt
+Loading 'parrow' from data/chars/misc/parrow.txt
+Loading 'parrow2' from data/chars/misc/parrow2.txt
+
+Loading models...............	Done!
+Object engine init...........	Done!
+Input init...................	No Joystick(s) Found!
+Done!
+Create blending tables.......	Done!
+Save settings so far........	Done!
+
+
+Level Loading:   'data/levels/st3/st3.txt'
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 141344768 Bytes
+
+Loading 'movezblo2' from data/chars/misc/movezblo2.txt
+Loading 'dooback' from data/levels/st3/dooback.txt
+Loading 'doorst3' from data/chars/misc/doorst3.txt
+Loading 'brid1' from data/levels/st3/brid1.txt
+Loading 'brid2' from data/levels/st3/brid2.txt
+Loading 'water' from data/chars/misc/water.txt
+Loading 'spikeh1' from data/chars/misc/spikeh1.txt
+Loading 'doorst1' from data/chars/misc/doorst1.txt
+Loading 'scrmover5' from data/chars/misc/scrmover5.txt
+Loading 'williams' from data/chars/williams/williams.txt
+Loading 'bat' from data/chars/misc/bat.txt
+Loading 'roper' from data/chars/roper/roper.txt
+Loading 'brrow' from data/chars/misc/brrow.txt
+Loading 'timer' from data/chars/misc/timer.txt
+Loading 'linda' from data/chars/linda/linda.txt
+Loading 'whip' from data/chars/misc/whip.txt
+Loading 'bolo' from data/chars/bolo/bolo.txt
+Loading 'blkiller' from data/chars/misc/blkiller.txt
+Loading 'time' from data/chars/misc/time.txt
+Loading 'clear' from data/chars/misc/clear.txt
+Loading 'clearexclst1' from data/chars/misc/clearexclst1.txt
+Loading 'cclear5' from data/chars/misc/cclear5.txt
+Loading 'clear5' from data/chars/misc/clear5.txt
+
+Level Loaded:    'data/levels/st3/st3.txt'
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 153849856 Bytes
+Total sprites mapped: 2167
+
+Level Unloading: 'data/levels/st3/st3.txt'
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 154025984 Bytes
+
+RAM Status:
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 151236608 Bytes
+
+Level Loading:   'data/levels/st1/st1.txt'
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 151240704 Bytes
+
+Loading 'mission1' from data/chars/misc/mission1.txt
+Loading 'gar' from data/levels/st1/gar.txt
+Loading 'ClimbSpot3' from data/chars/misc/ClimSp3.txt
+Loading 'ClimbSpot' from data/chars/misc/ClimSp.txt
+Loading 'marian' from data/chars/marian/marian.txt
+Loading 'will' from data/chars/marian/will.txt
+Loading 'guys' from data/chars/marian/guys.txt
+Loading 'chi' from data/chars/marian/chi.txt
+Loading 'burno' from data/chars/marian/burno.txt
+Loading 'scrmover' from data/chars/misc/scrmover.txt
+Loading 'wall1' from data/chars/misc/wall1.txt
+Loading 'bolo2' from data/chars/bolo/bolo2.txt
+Loading 'abobo' from data/chars/abobo/abobo.txt
+Loading 'delay2' from data/chars/misc/delay2.txt
+Loading 'cclear1' from data/chars/misc/cclear1.txt
+Loading 'clear1' from data/chars/misc/clear1.txt
+
+Level Loaded:    'data/levels/st1/st1.txt'
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 158666752 Bytes
+Total sprites mapped: 2276
+
+Level Unloading: 'data/levels/st1/st1.txt'
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 158576640 Bytes
+
+RAM Status:
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 157040640 Bytes
+
+Level Loading:   'data/levels/st2/st2.txt'
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 157040640 Bytes
+
+Loading 'plat1' from data/chars/misc/plat1.txt
+Loading 'belt' from data/levels/st2/belt.txt
+Loading 'gbelter' from data/levels/st2/gbelter.txt
+Loading 'spikeh2' from data/chars/misc/spikeh2.txt
+Loading 'plat2' from data/chars/misc/plat2.txt
+Loading 'layer' from data/levels/st2/layer.txt
+Loading 'doorst2' from data/chars/misc/doorst2.txt
+Loading 'scrmover2' from data/chars/misc/scrmover2.txt
+Loading 'plat4' from data/chars/misc/plat4.txt
+Loading 'itemkill4' from data/chars/misc/itemkill4.txt
+Loading 'jeff' from data/chars/jeff/jeff.txt
+Loading 'elevjeff1' from data/levels/st2/elevjeff1.txt
+Loading 'elevjeff2' from data/levels/st2/elevjeff2.txt
+Loading 'gbelkill' from data/chars/misc/gbelkill.txt
+Loading 'elevjeff4' from data/levels/st2/elevjeff4.txt
+Loading 'cclear2' from data/chars/misc/cclear2.txt
+Loading 'clear2' from data/chars/misc/clear2.txt
+
+Level Loaded:    'data/levels/st2/st2.txt'
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 162127872 Bytes
+Total sprites mapped: 2354
+
+Level Unloading: 'data/levels/st2/st2.txt'
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 162177024 Bytes
+
+RAM Status:
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 160145408 Bytes
+
+Level Loading:   'data/levels/st2b/st2b.txt'
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 160145408 Bytes
+
+Loading 'belt2' from data/levels/st2b/belt2.txt
+Loading 'belt3' from data/levels/st2b/belt3.txt
+Loading 'gbelter2' from data/levels/st2b/gbelter2.txt
+Loading 'gbelter3' from data/levels/st2b/gbelter3.txt
+Loading 'gbelter4' from data/levels/st2b/gbelter4.txt
+Loading 'movezblo' from data/chars/misc/movezblo.txt
+Loading 'doorst2ba' from data/chars/misc/doorst2ba.txt
+Loading 'doorst2bb' from data/chars/misc/doorst2bb.txt
+Loading 'doorst2b' from data/chars/misc/doorst2b.txt
+Loading 'mission3' from data/chars/misc/mission3.txt
+Loading 'elevjeff3' from data/levels/st2b/elevjeff3.txt
+Loading 'delay' from data/chars/misc/delay.txt
+Loading 'wall2b' from data/chars/misc/wall2b.txt
+Loading 'wall2' from data/chars/misc/wall2.txt
+Loading 'mibobo2' from data/chars/mibobo/mibobo2.txt
+Loading 'lindab' from data/chars/linda2/lindab.txt
+Loading 'williamsb' from data/chars/williams2/williamsb.txt
+Loading 'roperb' from data/chars/roper2/roperb.txt
+Loading 'brrow1' from data/chars/misc/brrow1.txt
+Loading 'moveyblo' from data/chars/misc/moveyblo.txt
+Loading 'brrow2' from data/chars/misc/brrow2.txt
+Loading 'delay5' from data/chars/misc/delay5.txt
+Loading 'delay11' from data/chars/misc/delay11.txt
+Loading 'itemkill2' from data/chars/misc/itemkill2.txt
+Loading 'itemkill3' from data/chars/misc/itemkill3.txt
+Loading 'mibobo' from data/chars/mibobo/mibobo.txt
+Loading 'delay3' from data/chars/misc/delay3.txt
+Loading 'delay7' from data/chars/misc/delay7.txt
+Loading 'killer' from data/chars/misc/killer.txt
+Loading 'lakiller' from data/chars/misc/lakiller.txt
+Loading 'jumper2' from data/chars/misc/jumper2.txt
+Loading 'shovel' from data/chars/misc/shovel.txt
+Loading 'brrow3' from data/chars/misc/brrow3.txt
+Loading 'kikiller' from data/chars/misc/kikiller.txt
+Loading 'delay10' from data/chars/misc/delay10.txt
+Loading 'doorchange2' from data/chars/misc/doorchange2.txt
+Loading 'abore' from data/chars/abore/abore.txt
+Loading 'chain' from data/chars/misc/chain.txt
+Loading 'doorchange' from data/chars/misc/doorchange.txt
+Loading 'cclear3' from data/chars/misc/cclear3.txt
+Loading 'clear3' from data/chars/misc/clear3.txt
+
+Level Loaded:    'data/levels/st2b/st2b.txt'
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 175280128 Bytes
+Total sprites mapped: 2549
+
+Level Unloading: 'data/levels/st2b/st2b.txt'
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 175284224 Bytes
+
+RAM Status:
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 171859968 Bytes
+
+Level Loading:   'data/levels/st3a/st3a.txt'
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 171859968 Bytes
+
+Loading 'pro' from data/levels/st3a/pro.txt
+Loading 'scrmover4' from data/chars/misc/scrmover4.txt
+Loading 'doorst3ab' from data/chars/misc/doorst3ab.txt
+Loading 'doorst3a0' from data/chars/misc/doorst3a0.txt
+Loading 'doorst3a' from data/chars/misc/doorst3a.txt
+Loading 'doorst3ac' from data/chars/misc/doorst3ac.txt
+Loading 'oharra' from data/chars/oharra/oharra.txt
+Loading 'delay6' from data/chars/misc/delay6.txt
+Loading 'delay4' from data/chars/misc/delay4.txt
+Loading 'wall3' from data/chars/misc/wall3.txt
+Loading 'oharra2' from data/chars/oharra/oharra2.txt
+Loading 'jumper' from data/chars/misc/jumper.txt
+Loading 'burnov' from data/chars/burnov/burnov.txt
+Loading 'cclear4' from data/chars/misc/cclear4.txt
+Loading 'clear4' from data/chars/misc/clear4.txt
+
+Level Loaded:    'data/levels/st3a/st3a.txt'
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 184107008 Bytes
+Total sprites mapped: 2669
+
+
+ grabcheck_back
+ grabcheck_back: Pointer
+ grabcheck_back: entity_type
+ grabcheck_back: target_pos_y <= target_pos_b
+ grabcheck_back
+ grabcheck_back: Pointer
+ grabcheck_back: entity_type
+ grabcheck_back: target_pos_y <= target_pos_b
+ grabcheck_back
+ grabcheck_back: Pointer
+ grabcheck_back: entity_type
+ grabcheck_back: target_pos_y <= target_pos_b
+ grabcheck_back
+ grabcheck_back: Pointer
+ grabcheck_back: entity_type
+ grabcheck_back: target_pos_y <= target_pos_bLevel Unloading: 'data/levels/st3a/st3a.txt'
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 184180736 Bytes
+
+RAM Status:
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 178659328 Bytes
+
+Level Loading:   'data/levels/st4/st4e.txt'
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 178659328 Bytes
+
+Loading 'invade' from data/chars/misc/invade.txt
+Loading 'prop' from data/levels/st4/prop.txt
+Loading 'plat3' from data/chars/misc/plat3.txt
+Loading 'plat5' from data/chars/misc/plat5.txt
+Loading 'spikeh' from data/chars/misc/spikeh.txt
+Loading 'doorst4a' from data/chars/misc/doorst4a.txt
+Loading 'doorst4b' from data/chars/misc/doorst4b.txt
+Loading 'jeff2' from data/chars/jeff/jeff2.txt
+Loading 'jeff5' from data/chars/jeff/jeff5.txt
+Loading 'delay8' from data/chars/misc/delay8.txt
+Loading 'burnov3' from data/chars/burnov/burnov3.txt
+Loading 'burnov2' from data/chars/burnov/burnov2.txt
+Loading 'delay9' from data/chars/misc/delay9.txt
+Loading 'chin' from data/chars/chin/chin.txt
+Loading 'cclear6' from data/chars/misc/cclear6.txt
+Loading 'clear6' from data/chars/misc/clear6.txt
+
+Level Loaded:    'data/levels/st4/st4e.txt'
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 207368192 Bytes
+Total sprites mapped: 2714
+
+
+ grabcheck_back
+ grabcheck_back: Pointer
+ grabcheck_back: entity_type
+ grabcheck_back: target_pos_y <= target_pos_b
+ grabcheck_back
+ grabcheck_back: Pointer
+ grabcheck_back: entity_type
+ grabcheck_back: target_pos_y <= target_pos_b
+ grabcheck_back
+ grabcheck_back: Pointer
+ grabcheck_back: entity_type
+ grabcheck_back: target_pos_y <= target_pos_b
+ grabcheck_back
+ grabcheck_back: Pointer
+ grabcheck_back: entity_type
+ grabcheck_back: target_pos_y <= target_pos_b
+************ Shutting Down ************
+
+OpenBOR v3.0 Build , Compile Date: Nov 30 2016
+Presented by the OpenBOR Team.
+www.chronocrash.com
+OpenBOR is the open source continuation of Beats of Rage by Senile Team.
+
+Special thanks to SEGA and SNK.
+
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 207224832 Bytes
+
+Level Unloading: 'data/levels/st4/st4e.txt'
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 207220736 Bytes
+
+RAM Status:
+Total Ram: 2147483647 Bytes
+ Free Ram: 2147483647 Bytes
+ Used Ram: 200679424 Bytes
+
+Release level data...........
+Done!
+
+Release graphics data........	Done!
+Release game data............
+
+Unload 'Flash' ............Done.
+Unload 'EFlash' ............Done.
+Unload 'blood' ............Done.
+Unload 'blood2' ............Done.
+Unload 'bom' ............Done.
+Unload 'water1' ............Done.
+Unload 'eflame' ............Done.
+Unload 'eeflame' ............Done.
+Unload 'heart' ............Done.
+Unload 'ballclear' ............Done.
+Unload 'barelclear' ............Done.
+Unload 'batclear' ............Done.
+Unload 'bombclear' ............Done.
+Unload 'boxclear' ............Done.
+Unload 'boxxclear' ............Done.
+Unload 'chainclear' ............Done.
+Unload 'dynamclear' ............Done.
+Unload 'knifeclear' ............Done.
+Unload 'rockclear' ............Done.
+Unload 'shovelclear' ............Done.
+Unload 'stickclear' ............Done.
+Unload 'whipclear' ............Done.
+Unload 'woodclear' ............Done.
+Unload 'billy' ............Done.
+Unload 'bbat' ............Done.
+Unload 'bwhip' ............Done.
+Unload 'bknife' ............Done.
+Unload 'knife1' ............Done.
+Unload 'knife' ............Done.
+Unload 'Empty2' ............Done.
+Unload 'bbarel' ............Done.
+Unload 'barel1' ............Done.
+Unload 'barel' ............Done.
+Unload 'bbox' ............Done.
+Unload 'box1' ............Done.
+Unload 'box' ............Done.
+Unload 'brock' ............Done.
+Unload 'rock1' ............Done.
+Unload 'rock' ............Done.
+Unload 'bdynam' ............Done.
+Unload 'dynam' ............Done.
+Unload 'dynam2' ............Done.
+Unload 'bwood' ............Done.
+Unload 'wood1' ............Done.
+Unload 'wood' ............Done.
+Unload 'bboxx' ............Done.
+Unload 'boxx1' ............Done.
+Unload 'boxx' ............Done.
+Unload 'bball' ............Done.
+Unload 'ball1' ............Done.
+Unload 'ball' ............Done.
+Unload 'bchain' ............Done.
+Unload 'bshovel' ............Done.
+Unload 'bbomb' ............Done.
+Unload 'bomb' ............Done.
+Unload 'bomb2' ............Done.
+Unload 'bstick' ............Done.
+Unload 'bilend' ............Done.
+Unload 'end' ............Done.
+Unload 'bilend2' ............Done.
+Unload 'bilend3' ............Done.
+Unload 'bilend4' ............Done.
+Unload 'barel2' ............Done.
+Unload 'wood2' ............Done.
+Unload 'box2' ............Done.
+Unload 'boxx2' ............Done.
+Unload 'rock2' ............Done.
+Unload 'ball2' ............Done.
+Unload 'broper' ............Done.
+Unload 'kroper' ............Done.
+Unload 'knife2' ............Done.
+Unload 'droper' ............Done.
+Unload 'sroper' ............Done.
+Unload 'rbarel' ............Done.
+Unload 'barel3' ............Done.
+Unload 'rbox' ............Done.
+Unload 'box3' ............Done.
+Unload 'rrock' ............Done.
+Unload 'rock3' ............Done.
+Unload 'boroper' ............Done.
+Unload 'rboxx' ............Done.
+Unload 'boxx3' ............Done.
+Unload 'rball' ............Done.
+Unload 'ball3' ............Done.
+Unload 'rwood' ............Done.
+Unload 'wood3' ............Done.
+Unload 'broperb' ............Done.
+Unload 'kroperb' ............Done.
+Unload 'droperb' ............Done.
+Unload 'sroperb' ............Done.
+Unload 'rbarelb' ............Done.
+Unload 'rboxb' ............Done.
+Unload 'rrockb' ............Done.
+Unload 'boroperb' ............Done.
+Unload 'rboxxb' ............Done.
+Unload 'rballb' ............Done.
+Unload 'rwoodb' ............Done.
+Unload 'batliams' ............Done.
+Unload 'svliams' ............Done.
+Unload 'kniliams' ............Done.
+Unload 'dynliams' ............Done.
+Unload 'boliams' ............Done.
+Unload 'batliamsb' ............Done.
+Unload 'svliamsb' ............Done.
+Unload 'kniliamsb' ............Done.
+Unload 'dynliamsb' ............Done.
+Unload 'boliamsb' ............Done.
+Unload 'lindaw' ............Done.
+Unload 'lindac' ............Done.
+Unload 'lindawb' ............Done.
+Unload 'lindacb' ............Done.
+Unload 'lindabk' ............Done.
+Unload 'lindabb' ............Done.
+Unload 'bolobar' ............Done.
+Unload 'bolobox' ............Done.
+Unload 'boloroc' ............Done.
+Unload 'bolowood' ............Done.
+Unload 'boloboxx' ............Done.
+Unload 'boloball' ............Done.
+Unload 'mibarel' ............Done.
+Unload 'mibox' ............Done.
+Unload 'mirock' ............Done.
+Unload 'miwood' ............Done.
+Unload 'miboxx' ............Done.
+Unload 'miball' ............Done.
+Unload 'ohbarel' ............Done.
+Unload 'ohbox' ............Done.
+Unload 'ohrock' ............Done.
+Unload 'ohwood' ............Done.
+Unload 'ohboxx' ............Done.
+Unload 'ohball' ............Done.
+Unload 'parrow' ............Done.
+Unload 'parrow2' ............Done.
+Unload 'movezblo2' ............Done.
+Unload 'dooback' ............Done.
+Unload 'doorst3' ............Done.
+Unload 'brid1' ............Done.
+Unload 'brid2' ............Done.
+Unload 'water' ............Done.
+Unload 'spikeh1' ............Done.
+Unload 'doorst1' ............Done.
+Unload 'scrmover5' ............Done.
+Unload 'williams' ............Done.
+Unload 'bat' ............Done.
+Unload 'roper' ............Done.
+Unload 'brrow' ............Done.
+Unload 'timer' ............Done.
+Unload 'linda' ............Done.
+Unload 'whip' ............Done.
+Unload 'bolo' ............Done.
+Unload 'blkiller' ............Done.
+Unload 'time' ............Done.
+Unload 'clear' ............Done.
+Unload 'clearexclst1' ............Done.
+Unload 'clear5' ............Done.
+Unload 'cclear5' ............Done.
+Unload 'gar' ............Done.
+Unload 'mission1' ............Done.
+Unload 'ClimbSpot3' ............Done.
+Unload 'ClimbSpot' ............Done.
+Unload 'marian' ............Done.
+Unload 'will' ............Done.
+Unload 'guys' ............Done.
+Unload 'chi' ............Done.
+Unload 'burno' ............Done.
+Unload 'scrmover' ............Done.
+Unload 'wall1' ............Done.
+Unload 'bolo2' ............Done.
+Unload 'abobo' ............Done.
+Unload 'delay2' ............Done.
+Unload 'clear1' ............Done.
+Unload 'cclear1' ............Done.
+Unload 'plat1' ............Done.
+Unload 'belt' ............Done.
+Unload 'gbelter' ............Done.
+Unload 'spikeh2' ............Done.
+Unload 'plat2' ............Done.
+Unload 'layer' ............Done.
+Unload 'doorst2' ............Done.
+Unload 'scrmover2' ............Done.
+Unload 'plat4' ............Done.
+Unload 'itemkill4' ............Done.
+Unload 'jeff' ............Done.
+Unload 'elevjeff1' ............Done.
+Unload 'elevjeff2' ............Done.
+Unload 'gbelkill' ............Done.
+Unload 'elevjeff4' ............Done.
+Unload 'clear2' ............Done.
+Unload 'cclear2' ............Done.
+Unload 'belt2' ............Done.
+Unload 'belt3' ............Done.
+Unload 'gbelter2' ............Done.
+Unload 'gbelter3' ............Done.
+Unload 'gbelter4' ............Done.
+Unload 'movezblo' ............Done.
+Unload 'doorst2ba' ............Done.
+Unload 'doorst2bb' ............Done.
+Unload 'doorst2b' ............Done.
+Unload 'elevjeff3' ............Done.
+Unload 'mission3' ............Done.
+Unload 'delay' ............Done.
+Unload 'wall2b' ............Done.
+Unload 'wall2' ............Done.
+Unload 'mibobo2' ............Done.
+Unload 'lindab' ............Done.
+Unload 'williamsb' ............Done.
+Unload 'roperb' ............Done.
+Unload 'brrow1' ............Done.
+Unload 'moveyblo' ............Done.
+Unload 'brrow2' ............Done.
+Unload 'delay5' ............Done.
+Unload 'delay11' ............Done.
+Unload 'itemkill2' ............Done.
+Unload 'itemkill3' ............Done.
+Unload 'mibobo' ............Done.
+Unload 'delay3' ............Done.
+Unload 'delay7' ............Done.
+Unload 'killer' ............Done.
+Unload 'lakiller' ............Done.
+Unload 'jumper2' ............Done.
+Unload 'shovel' ............Done.
+Unload 'brrow3' ............Done.
+Unload 'kikiller' ............Done.
+Unload 'delay10' ............Done.
+Unload 'doorchange2' ............Done.
+Unload 'abore' ............Done.
+Unload 'chain' ............Done.
+Unload 'doorchange' ............Done.
+Unload 'clear3' ............Done.
+Unload 'cclear3' ............Done.
+Unload 'pro' ............Done.
+Unload 'scrmover4' ............Done.
+Unload 'doorst3a0' ............Done.
+Unload 'doorst3ab' ............Done.
+Unload 'doorst3a' ............Done.
+Unload 'doorst3ac' ............Done.
+Unload 'oharra' ............Done.
+Unload 'delay6' ............Done.
+Unload 'delay4' ............Done.
+Unload 'wall3' ............Done.
+Unload 'oharra2' ............Done.
+Unload 'jumper' ............Done.
+Unload 'burnov' ............Done.
+Unload 'clear4' ............Done.
+Unload 'cclear4' ............Done.
+Unload 'invade' ............Done.
+Unload 'prop' ............Done.
+Unload 'plat3' ............Done.
+Unload 'plat5' ............Done.
+Unload 'spikeh' ............Done.
+Unload 'doorst4a' ............Done.
+Unload 'doorst4b' ............Done.
+Unload 'jeff2' ............Done.
+Unload 'jeff5' ............Done.
+Unload 'delay8' ............Done.
+Unload 'burnov2' ............Done.
+Unload 'burnov3' ............Done.
+Unload 'delay9' ............Done.
+Unload 'chin' ............Done.
+Unload 'clear6' ............Done.
+Unload 'cclear6' ............Done.
+
+Release game data............	Done!
+Release timer................	Done!
+Release input hardware.......	Done!
+Release sound system.........	Done!
+Release FileCaching System...	Done!
+
+**************** Done *****************
+
+OpenBOR v3.0 Build , Compile Date: Nov 30 2016
+Presented by the OpenBOR Team.
+www.chronocrash.com
+OpenBOR is the open source continuation of Beats of Rage by Senile Team.
+
+Special thanks to SEGA and SNK.
+

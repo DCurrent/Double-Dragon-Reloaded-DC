@@ -1,0 +1,729 @@
+music		Data/music/nextstage.ogg
+background	data/levels/st5/back.gif
+panel		data/levels/st5a/n04.gif
+order           a
+direction both
+
+wall  46 602 -1000 -1000 331 0 331 5000
+wall  840 541 -4000 -4000 0 0 160 100
+wall  690 713 -331 0 1000 1000 331 100
+wall  755 655 -331 0 1000 1000 331 5000
+wall  1470 884 -331 0 4000 4000 331 100
+wall  1534 827 -331 0 953 622 331 5000
+wall  2250 621 0 0 4000 4000 331 5000
+wall  3370 886 -331 0 2000 2000 331 5000
+hole  -1000 782 0 0 1458 1640 182 0
+hole  0 832 0 0 1237 1298 60 0
+hole  0 902 0 0 5000 5000 78 0
+
+cameraoffset 0 -100
+
+spawn1 310 100 100
+spawn2 330 100 100
+
+scrollz 40 307
+at  0
+
+#-------------------------------------
+
+
+#-------------------------------------
+spawn	scrmover7
+@script
+void main()
+{
+    int P1 = getplayerproperty(0, "entity");
+    int P2 = getplayerproperty(1, "entity");
+
+    if(P1){
+      changeentityproperty(P1, "subject_to_wall", 0);
+      changeentityproperty(P1, "Subject_to_Gravity", 0);
+      changeentityproperty(P1, "position", 25, 511, 100);
+      changeentityproperty(P1, "animation", openborconstant("ANI_FREESPECIAL33"));
+      changeentityproperty(P1, "colourmap", 0);
+    }
+    if(P2){
+      changeentityproperty(P2, "subject_to_wall", 0);
+      changeentityproperty(P2, "Subject_to_Gravity", 0);
+      changeentityproperty(P2, "position", 0, 531, 100);
+      changeentityproperty(P2, "animation", openborconstant("ANI_FREESPECIAL33"));
+      changeentityproperty(P2, "colourmap", 1);
+    }
+}
+@end_script
+flip	1
+coords	1 568 1
+at	0
+#-------------------------------------
+spawn	entrance
+coords	1 541 100
+at	0
+#-------------------------------------
+
+spawn	ClimbSpot3
+health 100
+flip	1
+coords	265 541
+at	0
+
+spawn	ClimbSpot
+health 100
+flip	1
+coords	270 541
+at	0
+
+spawn	ClimbSpot3
+health 100
+flip	1
+coords	275 541
+at	0
+
+#-------------------------------------
+#-------------------------------------
+
+spawn	ClimbSpot3
+health 100
+flip	1
+coords	1042 713
+at	0
+
+spawn	ClimbSpot
+health 100
+flip	1
+coords	1047 713
+at	0
+
+spawn	ClimbSpot3
+health 100
+flip	1
+coords	1052 713
+at	0
+
+#-------------------------------------
+#-------------------------------------
+spawn fire
+coords  279 482 265
+at  0
+
+spawn fire
+coords  399 482 265
+at  0
+
+spawn dragon
+coords  671 562 316
+at  0
+
+spawn fire
+coords  862 653 264
+at  0
+
+spawn fire
+coords  971 653 264
+at  0
+
+spawn fire
+coords  1080 653 264
+at  0
+
+spawn fire
+coords  1192 653 264
+at  0
+
+spawn fire
+coords  1641 825 264
+at  0
+
+spawn fire
+coords  1750 825 264
+at  0
+
+spawn fire
+coords  1859 825 264
+at  0
+
+spawn fire
+coords  1971 825 264
+at  0
+
+spawn fire
+coords  2469 619 264
+at  0
+
+spawn fire
+coords  2938 619 264
+at  0
+
+#-------------------------------------
+spawn	door5a
+coords  2732 611 100
+at      0
+#-------------------------------------
+scrollx 0 165
+at  0
+
+Group	1 3
+at	0
+
+spawn chin2
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW56"));
+} @end_script
+health 60
+map 4
+coords  550 511 100
+at  0
+
+spawn chin3
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW56"));
+} @end_script
+health 60
+coords  350 560
+at  0
+
+spawn chin2
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW56"));
+} @end_script
+health 60
+map 4
+coords  675 590 100
+at  0
+
+Group	4 4
+at	165
+
+spawn chin3
+health 60
+flip 1
+map 3
+coords  -25 511 100
+at  165
+
+spawn chin2
+health 50
+flip 1
+map 3
+coords  -50 560
+at  165
+
+spawn chin2
+health 80
+coords  675 680 100
+at  165
+
+spawn williams
+health 60
+map 6
+coords  780 740
+at  165
+
+Group	2 3
+at	165
+
+spawn williams
+health 60
+flip 1
+map 5
+coords  -25 511 100
+at  165
+
+spawn chin
+health 60
+coords  780 680 100
+at  165
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 0 4000
+at   0
+
+scrollz 40 387
+at  0
+
+spawn	brrow
+flip 1
+coords  540 680 270
+at   0
+
+wait
+at 165
+
+Group	1 1
+at	165
+
+scrollx 165 890
+at   165
+
+spawn timer
+flip 1
+coords  675 680 100
+at      165
+
+#-------------------------------------
+#2-------------------------------------
+
+scrollx 300 890
+at   300
+
+scrollz 215 387
+at  440
+
+scrollx 440 890
+at   440
+
+scrollx 600 890
+at   600
+
+Group	4 4
+at	600
+
+spawn burnov
+health 140
+map 0
+coords  700 682 100
+at  600
+
+spawn jeff2
+health 60
+map 9
+coords  690 670 100
+at  600
+
+spawn jeff2
+health 60
+map 9
+coords  700 740
+at  600
+
+scrollx 710 890
+at   710
+
+spawn dragonkill
+spawnscript data/scripts/noscpos.c
+flip 1
+coords  671 562 316
+at  710
+
+spawn dragon
+spawnscript data/scripts/noscpos.c
+coords  1450 734 316
+at  710
+
+spawn lindab
+health 60
+weapon chain
+flip 1
+map 0
+coords  -50 665 100
+at  710
+
+Group	3 4
+at	710
+
+spawn burnov4
+health 80
+flip 1
+map 1
+coords  -50 665 100
+at  709
+
+spawn roper
+health 60
+weapon ball
+flip 1
+map 1
+coords  -50 665 100
+at  709
+
+spawn lindab
+spawnscript data/scripts/noscpos.c
+weapon bomb
+health 60
+map 0
+coords  1640 860 100
+at  709
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 710 1526
+at   0
+
+spawn	brrow
+flip 1
+coords  540 850 270
+at   0
+
+wait
+at 890
+
+Group	1 1
+at	890
+
+scrollx 890 1526
+at   890
+
+spawn timer
+flip 1
+coords  675 680 100
+at      890
+
+#-------------------------------------
+#3-------------------------------------
+
+scrollx 1020 1526
+at   1020
+
+scrollx 1120 1526
+at   1120
+
+scrollx 1220 1526
+at   1220
+
+scrollz 387 387
+at  1220
+
+Group	1 3
+at	0
+
+spawn dragonkill
+coords  -80 734 316
+at  1526
+
+spawn itemkill4
+coords  -1525 740
+at  1526
+
+scrollx 1526 1526
+at   1526
+
+Group	1 3
+at	1526
+
+spawn chin2
+health 60
+flip 1
+map 2
+coords  -50 840 100
+at  1526
+
+spawn chin3
+health 60
+map 2
+coords  690 850 100
+at  1526
+
+spawn roper
+health 60
+weapon dynam
+flip 1
+map 2
+coords  -50 870 100
+at  1526
+
+Group	1 4
+at	1526
+
+spawn jeff2
+health 60
+flip 1
+map 10
+coords  -50 850 100
+at  1526
+
+spawn williamsb
+health 60
+weapon dynam
+flip 1
+map 8
+coords  -50 870 100
+at  1526
+
+spawn jeff2
+health 60
+map 10
+coords  790 850 100
+at  1526
+
+spawn roperb
+health 60
+weapon dynam
+flip 1
+map 7
+coords   690 870 100
+at  1526
+
+Group	2 2
+at	1526
+
+spawn delay2
+health 5
+flip 1
+coords  -50 850 100
+at  1526
+
+spawn delay2
+health 5
+coords  690 850 100
+at  1526
+
+spawn abobo3
+health 60
+flip 1
+map 8
+coords  -50 850 100
+at  1526
+
+spawn abobo3
+health 120
+map 8
+coords  690 850 100
+at  1526
+
+Group	3 3
+at	1526
+
+spawn burnov4
+health 100
+flip 1
+map 2
+coords  -50 850 100
+at  1526
+
+spawn burnov5
+health 70
+coords  690 850 100
+at  1526
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 1526 4000
+at   0
+
+spawn	brrow
+flip 1
+coords  540 850 270
+at   0
+
+wait
+at 1526
+
+Group	1 1
+at	1526
+
+spawn timer
+flip 1
+coords  675 860 100
+at      1526
+
+#-------------------------------------
+#4-------------------------------------
+
+spawn	ball
+coords  1486 630 100
+at      1610
+
+scrollx 1726 4000
+at  1726
+
+scrollz 40 387
+at  1860
+
+scrollx 1926 4000
+at  1926
+
+scrollx 2114 4000
+at  2114
+
+Group	3 3
+at	2114
+
+music	data/music/boss4.ogg 420146
+at      2195
+
+spawn	oharra
+spawnscript data/scripts/noscpos.c
+health 100
+flip 1
+map 1
+coords  2715 603 100
+at      2380
+
+spawn	oharra
+spawnscript data/scripts/noscpos.c
+health 100
+flip 1
+map 1
+coords  2749 603 100
+at      2380
+
+spawn	williamsb
+health 60
+weapon bat
+flip 1
+map 1
+coords  -100 850 100
+at      2380
+
+Group	3 4
+at	2114
+
+spawn	mibobo
+spawnscript data/scripts/noscpos.c
+health 160
+flip 1
+map 1
+coords  2715 603 100
+at      2114
+
+spawn	mibobo
+spawnscript data/scripts/noscpos.c
+health 160
+flip 1
+map 1
+coords  2749 603 100
+at      2114
+
+spawn	time
+spawnscript data/scripts/noscpos.c
+coords  2729 715 100
+at  2114
+
+spawn	time
+spawnscript data/scripts/noscpos.c
+coords  2730 715 100
+at  2114
+
+spawn	delay2
+health 80
+flip 1
+coords  -100 850 100
+at      2114
+
+spawn	delay2
+health 80
+flip 1
+coords  -101 850 100
+at      2114
+
+spawn	jeff2
+spawnscript data/scripts/noscpos.c
+health 60
+flip 1
+map 10
+coords  2715 603 100
+at      2114
+
+spawn	lindab
+spawnscript data/scripts/noscpos.c
+health 60
+flip 1
+map 0
+coords  2749 603 100
+at      2114
+
+spawn	delay2
+health 60
+flip 1
+coords  -100 850 100
+at      2114
+
+spawn	delay2
+health 60
+flip 1
+coords  -101 850 100
+at      2114
+
+spawn	abore2
+spawnscript data/scripts/noscpos.c
+health 160
+flip 1
+map 0
+coords  2719 603 100
+at      2114
+
+spawn	abore2
+spawnscript data/scripts/noscpos.c
+health 160
+flip 1
+map 0
+coords  2751 603 100
+at      2114
+
+spawn	time
+spawnscript data/scripts/noscpos.c
+coords  2731 715 100
+at  2114
+
+spawn	time
+spawnscript data/scripts/noscpos.c
+coords  2728 715 100
+at  2114
+
+spawn	delay2
+health 40
+flip 1
+coords  -100 850 100
+at      2114
+
+spawn	delay2
+health 40
+flip 1
+coords  -101 850 100
+at      2114
+
+spawn	chin2
+spawnscript data/scripts/noscpos.c
+health 160
+flip 1
+map 2
+coords  2715 603 100
+at      2114
+
+spawn	chin2
+spawnscript data/scripts/noscpos.c
+health 160
+flip 1
+map 2
+coords  2749 603 100
+at      2114
+
+Group	1 1
+at	2114
+
+spawn	time
+spawnscript data/scripts/noscpos.c
+coords  2732 715 100
+at  2114
+
+spawn	doorchange
+spawnscript data/scripts/noscpos.c
+coords  2732 671 100
+at  2114
+
+spawn	clear
+spawnscript data/scripts/noscpos.c
+health 50
+coords  2732 671 100
+at  2114
+
+scrollx 2114 2416
+at  2114
+
+scrollz 40 281
+at  2114
+
+spawn	clear7
+spawnscript data/scripts/noscpos.c
+coords  2732 671 100
+at   2114
+
+
+
+

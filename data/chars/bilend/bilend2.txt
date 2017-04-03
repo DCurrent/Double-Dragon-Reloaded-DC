@@ -1,0 +1,202 @@
+name	bilend2
+health	50
+speed	15
+type	npc
+shadow	1
+nolife        1
+grabdistance 40
+antigravity -100
+risetime 0 -50
+falldie    1
+noquake 1 1
+nodieblink 3
+hostile obstacle
+aimove chase
+
+load end
+
+palette data/chars/bilend/map1.gif
+
+animationscript data/scripts/ani0020.h
+
+anim spawn
+	loop	0
+	delay	5
+	offset	77 170
+	@cmd Join 1
+	frame	data/chars/bilend/w4.gif
+
+anim idle
+	loop	1
+	range -2000 2000
+	rangez -400 400
+	delay	28
+	offset	77 170
+	bbox 60 55 40 100
+	frame	data/chars/bilend/w4.gif
+
+anim walk
+@script
+    void self = getlocalvar("self");
+    int Offset1 = getentityproperty(self,"a");
+    int Offset2 = getentityproperty(self,"x");
+
+    if(frame==3){
+      changelevelproperty("scrollspeed", 1);
+      changelevelproperty("camerazoffset", -300 - Offset1);
+      changelevelproperty("cameraxoffset", 320 - Offset2);
+    }
+@end_script
+	loop	1
+	delay	13
+	offset	77 170
+	bbox 60 55 40 100
+	frame	data/chars/bilend/w1.gif
+	frame	data/chars/bilend/w2.gif
+	frame	data/chars/bilend/w3.gif
+	frame	data/chars/bilend/w4.gif
+
+anim up
+@script
+    void self = getlocalvar("self");
+    int Offset1 = getentityproperty(self,"a");
+    int Offset2 = getentityproperty(self,"x");
+
+    if(frame==3){
+      changelevelproperty("scrollspeed", 1);
+      changelevelproperty("camerazoffset", -300 - Offset1);
+      changelevelproperty("cameraxoffset", 320 - Offset2);
+    }
+@end_script
+	loop	1
+	delay	13
+	offset	77 170
+	bbox 60 55 40 100
+	frame data/chars/bilend/wu1.gif
+	frame data/chars/bilend/wu2.gif
+	frame data/chars/bilend/wu3.gif
+	frame data/chars/bilend/wu4.gif
+
+anim walkoff # only vertical fall
+	loop	0
+	delay	11
+	offset	77 170
+	bbox	60 55 40 100
+      landframe 4
+      @cmd  nomoveidle2 "ANI_FOLLOW25" 
+      @cmd  stopz
+      @cmd  stopz2
+      @cmd    degravity 0.27
+	frame	data/chars/bilend/j1.gif
+      delay	10
+      @cmd  leaper 1 0 0
+      frame	data/chars/bilend/j22.gif
+      @cmd    degravity -0.50
+      frame	data/chars/bilend/j22.gif
+      delay	100
+      frame	data/chars/bilend/j22.gif
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/bilend/rise2.gif
+
+anim follow25 # walkoff clone horizontal fall
+	loop	0
+	delay	11
+	offset	77 170
+	bbox	60 55 40 100
+      landframe 4 
+      @cmd  stopz
+      @cmd  stopz2
+      @cmd    degravity 0.27
+	frame	data/chars/bilend/j1.gif
+      delay	10
+      frame	data/chars/bilend/j22.gif
+      @cmd    degravity 0
+      frame	data/chars/bilend/j22.gif
+      delay	100
+      @cmd    degravity -0.50
+      frame	data/chars/bilend/j22.gif
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/bilend/rise2.gif
+
+anim follow1
+	loop	1
+	delay	28
+	offset	77 170
+	frame	data/chars/bilend/bilend0.gif
+
+anim pain2
+	loop	0
+	delay	50
+	offset	77 170
+	bbox 60 55 40 100
+	spawnframe 5 1 480 0 1
+	custentity end
+	frame	data/chars/bilend/bilend1.gif
+	delay	25
+	frame	data/chars/bilend/bilend2.gif
+	@cmd  spawn01  "heart" 16 108 -1
+	frame	data/chars/bilend/bilend2.gif
+	sound data/sounds/kiss.wav
+	delay	600
+	frame	data/chars/bilend/bilend3.gif
+	delay	40
+	frame	data/chars/bilend/bilend4.gif
+	frame	data/chars/bilend/bilend1.gif
+	frame	data/chars/bilend/bilend1.gif
+	delay	3000
+	frame	data/chars/bilend/bilend1.gif
+	frame	data/chars/bilend/bilend1.gif
+	frame	data/chars/bilend/bilend1.gif
+	frame	data/chars/bilend/bilend1.gif
+	frame	data/chars/bilend/bilend1.gif
+	frame	data/chars/bilend/bilend1.gif
+
+anim attack1
+@script
+    void self = getlocalvar("self");
+    int Offset1 = getentityproperty(self,"a");
+    int Offset2 = getentityproperty(self,"x");
+
+    if(frame==0){
+      changelevelproperty("scrollspeed", 1);
+      changelevelproperty("camerazoffset", -300 - Offset1);
+      changelevelproperty("cameraxoffset", 320 - Offset2);
+    }
+@end_script
+	range	30 50
+	rangez -20 20
+	loop	1
+	delay	28
+	offset	77 170
+	bbox 60 55 40 100
+	@cmd direc 0
+	frame	data/chars/bilend/bilend0.gif
+
+anim pain
+	loop	0
+	delay	28
+	offset	77 170
+	frame	data/chars/bilend/bilend0.gif
+
+anim fall
+	loop	0
+	delay	28
+	offset	77 170
+	frame	data/chars/bilend/bilend0.gif
+
+anim rise
+	loop	0
+	delay	28
+	offset	77 170
+	frame	data/chars/bilend/bilend0.gif
+
+anim death
+	loop	0
+	delay	28
+	offset	77 170
+	frame	data/chars/bilend/bilend1.gif
+

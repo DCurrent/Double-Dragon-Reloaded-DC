@@ -1,0 +1,64 @@
+name		doorst3a0
+type		none
+facing		1
+hostile enemy
+antigravity	100
+subject_to_gravity 0
+subject_to_wall 0
+subject_to_hole 0
+Subject_to_MinZ 0
+Subject_to_MaxZ 0
+offscreenkill	7000
+
+load doorst3ab
+
+animationscript data/scripts/doorall.c
+
+anim spawn
+	loop	0
+	delay	50
+	offset	58 205
+	frame  data/chars/misc/doorst3ab00.gif
+	delay	80
+	frame  data/chars/misc/doorst3ab0.gif
+	frame  data/chars/misc/doorst3ab1.gif
+	delay	16
+	sound data/sounds/door.wav
+	frame  data/chars/misc/doorst3ab1.gif
+	frame  data/chars/misc/doorst3ab2.gif
+	frame  data/chars/misc/doorst3ab3.gif
+	frame  data/chars/misc/doorst3ab4.gif
+	delay	42
+	frame  data/chars/misc/doorst3ab5.gif
+	delay	64.5
+	frame  data/chars/misc/doorst3ab5.gif
+	frame  data/chars/misc/doorst3ab5.gif
+	frame  data/chars/misc/doorst3ab5.gif
+	frame  data/chars/misc/doorst3ab5.gif
+	sound data/sounds/door.wav
+	delay	16
+	frame  data/chars/misc/doorst3ab4.gif
+	frame  data/chars/misc/doorst3ab3.gif
+	frame  data/chars/misc/doorst3ab2.gif
+	frame  data/chars/misc/doorst3ab1.gif
+	delay	100
+	frame  data/chars/misc/doorst3ab1.gif
+	delay	150
+	frame  data/chars/misc/doorst3ab0.gif
+	frame  data/chars/misc/doorst3ab00.gif
+
+anim idle
+	loop	1
+	delay	2
+	offset	58 205
+	@cmd  spawn01  "doorst3ab" 0 0 0 1
+	frame  data/chars/misc/doorst3ab00.gif
+	@cmd killentity getlocalvar("self")
+	frame  data/chars/misc/doorst3ab00.gif
+
+
+
+
+
+
+

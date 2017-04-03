@@ -1,0 +1,236 @@
+name	 bomb
+type     item
+subtype  weapon
+counter  999
+typeshot	0
+shootnum  1
+bounce 1
+weapnum  13
+nolife   1
+antigravity 30
+grabdistance 50
+candamage	enemy player
+
+load bomb2
+
+palette   data/chars/misc/bomb1.gif
+
+script  data/scripts/bounce4.c
+animationscript 	data/scripts/dynam.c
+
+anim idle
+	loop   0
+      delay   160
+	offset 66 89
+	bbox   48 75 41 15
+	spawnframe 11 0 0 0 0
+	custentity bomb2
+      otg 1
+	frame  data/chars/misc/bomb1.gif
+      delay   15
+      frame  data/chars/misc/bomb2.gif
+      frame  data/chars/misc/bomb1.gif
+      frame  data/chars/misc/bomb2.gif
+      frame  data/chars/misc/bomb1.gif
+      delay   9
+      frame  data/chars/misc/bomb2.gif
+      frame  data/chars/misc/bomb1.gif
+      frame  data/chars/misc/bomb2.gif
+      frame  data/chars/misc/bomb1.gif
+      frame  data/chars/misc/bomb2.gif
+	bbox   0 0 0 0
+      frame  data/chars/misc/bomb1.gif
+      frame  data/chars/misc/empty.gif
+
+anim spawn
+      loop   0
+      delay   15
+      offset 75 90
+	landframe 6
+	followanim 1
+	followcond 1
+      hitflash  bom
+      hitfx  data/sounds/dynam.wav
+      bouncefactor 5
+      @cmd    degravity -0.10
+      frame  data/chars/misc/bombb1.gif
+      attack  35 55 75 60 12 1 1
+      dropv 3.5 1.5
+      frame  data/chars/misc/bombb2.gif
+	frame  data/chars/misc/bombb3.gif
+      delay   12
+      frame  data/chars/misc/bombb4.gif
+      frame  data/chars/misc/bombb5.gif
+      delay   60
+      @cmd    degravity -0.20
+      frame  data/chars/misc/bombb6.gif
+      attack  0 0 0 0 0 0
+      delay   6
+      offset 66 89
+      frame  data/chars/misc/bomb11.gif
+      frame  data/chars/misc/bomb12.gif
+      delay   2
+      frame  data/chars/misc/bomb1.gif
+
+anim follow1
+@script
+    void self = getlocalvar("self");
+
+    if(frame==1){
+      killentity(self);
+    }
+@end_script
+        delay     6
+	offset 20 25
+	frame	 data/chars/misc/empty.gif
+	frame	 data/chars/misc/empty.gif
+
+anim follow2
+      loop   0
+      delay   10
+      offset 75 90
+      jumpframe 0 3 -1 0
+      landframe 9
+      @cmd    degravity -0.30
+      @cmd	antiwall4 0 -25
+      frame  data/chars/misc/bombb4.gif
+      @cmd	antiwall4 0 -25
+      frame  data/chars/misc/bombb3.gif
+      frame  data/chars/misc/bombb2.gif
+      frame  data/chars/misc/bombb1.gif
+      frame  data/chars/misc/bombb8.gif
+      frame  data/chars/misc/bombb7.gif
+      frame  data/chars/misc/bombb6.gif
+      offset 70 82
+      frame  data/chars/misc/bombb6.gif
+      move -3
+      frame  data/chars/misc/bombb5.gif
+      frame  data/chars/misc/bombb4.gif
+      move 0
+      offset 66 89
+      delay   2
+      frame  data/chars/misc/bomb1.gif
+      @cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_IDLE")
+      frame  data/chars/misc/bomb1.gif
+
+anim respawn
+      loop   0
+      delay   12
+      offset 75 105
+      jumpframe 0 3 0.5
+      landframe 13
+      bouncefactor 5
+      @cmd	move 25 0 40
+      @cmd	antiwall4 0 -25
+      @cmd    degravity 0.30
+      frame  data/chars/misc/bombb1.gif
+      @cmd	antiwall6 10 "ANI_FOLLOW2"
+      @cmd	antiwall6 0 "ANI_FOLLOW2"
+      frame  data/chars/misc/bombb2.gif
+      @cmd	antiwall6 10 "ANI_FOLLOW2"
+      @cmd	antiwall6 0 "ANI_FOLLOW2"
+	frame  data/chars/misc/bombb3.gif
+      delay   10
+      @cmd	antiwall6 10 "ANI_FOLLOW2"
+      @cmd	antiwall6 0 "ANI_FOLLOW2"
+      frame  data/chars/misc/bombb4.gif
+      @cmd	antiwall6 10 "ANI_FOLLOW2"
+      @cmd	antiwall6 0 "ANI_FOLLOW2"
+      frame  data/chars/misc/bombb4.gif
+      @cmd	antiwall6 10 "ANI_FOLLOW2"
+      @cmd	antiwall6 0 "ANI_FOLLOW2"
+      frame  data/chars/misc/bombb4.gif
+      @cmd	antiwall6 10 "ANI_FOLLOW2"
+      @cmd	antiwall6 0 "ANI_FOLLOW2"
+      frame  data/chars/misc/bombb4.gif
+      @cmd	antiwall4 10 -10
+      @cmd	antiwall4 0 -10
+      frame  data/chars/misc/bombb4.gif
+      @cmd	antiwall4 10 -10
+      @cmd	antiwall4 0 -10
+      frame  data/chars/misc/bombb4.gif
+      @cmd	antiwall4 10 -10
+      @cmd	antiwall4 0 -10
+      frame  data/chars/misc/bombb4.gif
+      @cmd	antiwall4 10 -10
+      @cmd	antiwall4 0 -10
+      frame  data/chars/misc/bombb4.gif
+      @cmd	antiwall4 10 -10
+      @cmd	antiwall4 0 -10
+      frame  data/chars/misc/bombb4.gif
+      @cmd	antiwall4 10 -10
+      @cmd	antiwall4 0 -10
+      frame  data/chars/misc/bombb4.gif
+      delay   6
+      offset 66 89
+      @cmd	antiwall4 10 -10
+      @cmd	antiwall4 0 -10
+      frame  data/chars/misc/bomb11.gif
+      @cmd	antiwall4 10 -10
+      @cmd	antiwall4 0 -10
+      frame  data/chars/misc/bomb12.gif
+      delay   2
+      @cmd	antiwall4 10 -10
+      @cmd	antiwall4 0 -10
+      frame  data/chars/misc/bomb1.gif
+
+anim  follow49 # water effect
+	loop	0
+	offset	77 170
+	delay   4
+      spawnframe 0 0 55 0 0
+	custentity water1
+      landframe 6
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      delay   500
+      frame	data/chars/misc/empty.gif
+      delay   200
+	frame	data/chars/misc/empty.gif
+
+anim  follow50 # spikeh2 effect
+      loop   0
+      delay   8
+	offset 66 89
+	jumpframe 0 0.1 1
+	frame  data/chars/misc/bomb1.gif
+
+anim follow10 # killer effect
+      loop   0
+      delay   12
+      offset 70 82
+      landframe 4
+      frame  data/chars/misc/bombb6.gif
+      frame  data/chars/misc/bombb6.gif
+	frame  data/chars/misc/bombb6.gif
+      delay   100
+      @cmd killentity getlocalvar("self")
+      frame  data/chars/misc/empty.gif
+      delay   8
+      frame  data/chars/misc/empty.gif
+
+anim follow11
+      loop   0
+      delay   12
+      offset 70 82
+      landframe 10
+      frame  data/chars/misc/bombb8.gif
+      frame  data/chars/misc/bombb1.gif
+	frame  data/chars/misc/bombb2.gif
+      frame  data/chars/misc/bombb3.gif
+      frame  data/chars/misc/bombb4.gif
+      frame  data/chars/misc/bombb5.gif
+      frame  data/chars/misc/bombb6.gif
+      frame  data/chars/misc/bombb7.gif
+      frame  data/chars/misc/bombb8.gif
+      frame  data/chars/misc/bombb1.gif
+      delay   8
+      @cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_IDLE")
+      frame  data/chars/misc/empty.gif
+
+
+
+

@@ -1,0 +1,49 @@
+name		doorst5
+type		none
+facing		1
+subject_to_wall	0
+hostile enemy
+offscreenkill	5000
+
+animationscript data/scripts/doorlast.c
+
+anim spawn
+      loop	0
+	delay	2
+	offset	583 194
+	@cmd  dooropen2 -15 2 -20 0 0 20 "ANI_FOLLOW1" "ANI_FOLLOW43"
+	frame  data/chars/misc/doost51.gif
+
+anim idle
+	loop	1
+	delay	5
+	offset	583 194
+	@cmd  dooropen2 -15 2 -20 0 0 20 "ANI_FOLLOW1" "ANI_FOLLOW43"
+	frame  data/chars/misc/doost51.gif
+	@cmd  dooropen2 -15 2 -20 0 0 20 "ANI_FOLLOW1" "ANI_FOLLOW43"
+	frame  data/chars/misc/doost51.gif
+
+anim follow1
+	loop	0
+	delay	16
+	offset	583 194
+	@cmd  dooropen -15 2 -20 0 0 20 "ANI_FOLLOW43"
+	frame  data/chars/misc/doost51.gif
+	@cmd  dooropen -15 2 -20 0 0 20 "ANI_FOLLOW43"
+	frame  data/chars/misc/doost52.gif
+	delay	42
+	frame  data/chars/misc/doost53.gif
+	delay	64.5
+	frame  data/chars/misc/doost53.gif
+	frame  data/chars/misc/doost53.gif
+	frame  data/chars/misc/doost53.gif
+	frame  data/chars/misc/doost53.gif
+	delay	16
+	frame  data/chars/misc/doost52.gif
+      @cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_IDLE")
+	frame  data/chars/misc/doost51.gif
+
+
+
+
+

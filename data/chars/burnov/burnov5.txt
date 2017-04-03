@@ -1,0 +1,934 @@
+name	burnov5
+health	100
+speed	15
+type	enemy
+shadow	1
+nolife        1
+grabdistance 40
+jumpheight 6.5
+jumpspeed 20
+antigravity -100
+falldie 2
+nodieblink      2
+noquake 1 1
+riseattacktype 3
+bounce 1
+risetime 0 -50
+aggression      20
+projectilehit   player
+hostile player platform
+candamage player 
+
+load burnov6
+
+script data/scripts/Custom_chase.c
+animationscript 	data/scripts/ani0020.h
+
+palette   data/chars/burnov/map2.gif
+
+
+anim spawn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	5
+	offset	77 170
+	frame	data/chars/burnov/w4.gif
+	frame	data/chars/burnov/w4.gif
+
+anim follow43
+	@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==3){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	117
+	offset	77 170
+      jumpframe	1 0 0 1
+      frame	data/chars/burnov/w4.gif
+      delay	13
+      frame	data/chars/burnov/w1.gif
+      frame	data/chars/burnov/w2.gif
+      frame	data/chars/burnov/w3.gif
+
+anim follow44
+	@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==3){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	117
+	offset	77 170
+      jumpframe	1 0 0 1
+      frame	data/chars/burnov/w4.gif
+      delay	13
+      frame	data/chars/burnov/w1.gif
+      frame	data/chars/burnov/w2.gif
+      frame	data/chars/burnov/w3.gif
+
+anim follow46
+      loop	1
+	delay	17
+	offset	77 170
+	@cmd  attack3 -200 200 -20 20 700 "ANI_SPAWN"
+	frame	data/chars/burnov/w4.gif
+
+anim respawn
+	loop	0
+	delay	17
+	offset	77 170
+	frame	data/chars/burnov/rise2.gif
+
+anim idle
+	loop	1
+	delay	10
+	offset	77 170
+	bbox	60 55 45 100
+      @cmd    clearL
+	frame	data/chars/burnov/w4.gif
+      frame	data/chars/burnov/w4.gif
+      frame	data/chars/burnov/w4.gif
+      frame	data/chars/burnov/w4.gif
+
+anim walk
+	loop	1
+	delay	15
+	offset	77 170
+	bbox	60 55 45 100
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+	frame	data/chars/burnov/w1.gif
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+	frame	data/chars/burnov/w2.gif
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+	frame	data/chars/burnov/w3.gif
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+	frame	data/chars/burnov/w4.gif
+
+anim follow6
+	loop	0
+	delay	14
+      offset	77 170
+	bbox	60 55 45 100
+      landframe 6
+	jumpframe 1 6.5 2 0
+      @cmd    degravity -1
+      frame	data/chars/burnov/j0.gif
+	delay	9
+      frame	data/chars/burnov/j1.gif
+      delay	17.5
+      bbox	60 83 55 70
+      frame	data/chars/burnov/j1.gif
+      frame	data/chars/burnov/j2.gif
+      delay	35
+      frame	data/chars/burnov/j2.gif
+      frame	data/chars/burnov/j2.gif
+      delay	15
+      bbox 0 0 0 0
+      frame	data/chars/burnov/rise2.gif
+
+anim walkoff
+	loop	0
+	delay	11
+	offset	77 170
+	bbox	60 55 45 100
+      landframe 4 
+      @cmd  stopz
+      @cmd  stopz2
+      @cmd    degravity 0.27
+	frame	data/chars/burnov/j1.gif
+      delay	10
+      @cmd  dash 1 0
+      frame	data/chars/burnov/j2.gif
+      @cmd    degravity -0.50
+      frame	data/chars/burnov/j2.gif
+      delay	100
+      frame	data/chars/burnov/j2.gif
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/burnov/rise2.gif
+
+anim JUMPDELAY
+      loop	0
+	delay	9
+      offset	77 170
+	bbox	60 55 45 100
+      frame	data/chars/burnov/j0.gif
+
+anim JUMPLAND
+      loop	0
+	delay	2
+      offset	77 170
+	bbox	60 55 45 100
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/burnov/w4.gif
+
+anim jump
+	loop	0
+      range 0 180
+      rangea -1000 1000
+	offset	77 170
+      bbox	60 83 55 70
+	delay   4
+      @cmd    degravity -1
+	frame	data/chars/burnov/j2.gif
+      frame	data/chars/burnov/j2.gif
+      frame	data/chars/burnov/j2.gif
+      frame	data/chars/burnov/j2.gif
+      frame	data/chars/burnov/j2.gif
+	frame	data/chars/burnov/j2.gif
+	frame	data/chars/burnov/j2.gif
+      frame	data/chars/burnov/j2.gif
+      frame	data/chars/burnov/j2.gif
+	frame	data/chars/burnov/j2.gif
+      frame	data/chars/burnov/j2.gif
+	frame	data/chars/burnov/j2.gif
+      frame	data/chars/burnov/j2.gif
+      frame	data/chars/burnov/j2.gif
+	frame	data/chars/burnov/j2.gif
+      frame	data/chars/burnov/j2.gif
+	frame	data/chars/burnov/j2.gif
+      frame	data/chars/burnov/j2.gif
+      frame	data/chars/burnov/j2.gif
+	frame	data/chars/burnov/j2.gif
+      frame	data/chars/burnov/j2.gif
+	frame	data/chars/burnov/j2.gif
+      frame	data/chars/burnov/j2.gif
+      frame	data/chars/burnov/j2.gif
+	frame	data/chars/burnov/j2.gif
+
+anim attack1
+	range   25 95
+      rangea   0 60
+	loop	0
+	delay	9
+	offset	77 170
+      bbox	60 55 45 100
+      followcond 2
+      followanim 14
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW18"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW16"
+	frame	data/chars/burnov/aa1.gif
+	frame	data/chars/burnov/aa2.gif
+      attack2  90 83 75 34 6 0
+      dropv 3.5 1.5
+	frame	data/chars/burnov/aa3.gif
+      attack2  0 0 0 0 0
+	frame	data/chars/burnov/aa3.gif
+
+anim follow16
+	loop	0
+	delay	9
+	offset	77 170
+      bbox	60 55 45 100
+      followcond 2
+      followanim 17
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW18"
+	frame	data/chars/burnov/aa1.gif
+	frame	data/chars/burnov/aa2.gif
+      attack14  90 83 75 34 6 0
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/burnov/aa3.gif
+      attack14  0 0 0 0 0
+	frame	data/chars/burnov/aa3.gif
+
+anim follow17
+	loop	0
+	delay	9
+	offset	77 170
+      bbox	60 55 45 100
+      followcond 2
+      followanim 15
+      hitfx   data/sounds/goo.wav 
+      attackone 1
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW18"
+	frame	data/chars/burnov/aa3.gif
+	frame	data/chars/burnov/aa3.gif
+	frame	data/chars/burnov/w4.gif
+	frame	data/chars/burnov/aa1.gif
+      attack  90 68 95 34 0 0
+      forcedirection 99
+      noreflect 1
+      nokill 
+	frame	data/chars/burnov/aa2.gif
+      attack  0 0 0 0 0
+	frame	data/chars/burnov/a3.gif
+	frame	data/chars/burnov/a3.gif
+	delay	8
+	frame	data/chars/burnov/a2.gif
+
+anim follow14
+	loop	0
+	delay	9
+	offset	77 170
+      bbox	60 55 45 100
+      followcond 2
+      followanim 15
+      hitfx   data/sounds/goo.wav 
+      attackone 1
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW18"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW18"
+	frame	data/chars/burnov/aa3.gif
+	frame	data/chars/burnov/aa3.gif
+	frame	data/chars/burnov/w4.gif
+	frame	data/chars/burnov/aa1.gif
+      attack  90 68 95 34 0 0
+      forcedirection 99
+      noreflect 1
+      nokill 
+	frame	data/chars/burnov/aa2.gif
+      attack  0 0 0 0 0
+	frame	data/chars/burnov/a3.gif
+	frame	data/chars/burnov/a3.gif
+	delay	8
+	frame	data/chars/burnov/a2.gif
+
+anim follow15
+	loop	0
+	delay	2.5
+	offset	77 170
+      @cmd    slamstart2
+      @cmd    position 13 73 17 0 0
+	frame	data/chars/burnov/grab.gif
+      @cmd    antiwall3 75 -15 0
+      @cmd    position 13 73 17 0 0
+	frame	data/chars/burnov/grab.gif
+      @cmd    antiwall3 75 -15 0
+      @cmd    position 13 73 17 0 0
+	frame	data/chars/burnov/grab.gif
+      @cmd    antiwall3 75 -15 0
+      @cmd    position 13 73 17 0 0
+	frame	data/chars/burnov/grab.gif
+      @cmd    antiwall3 75 -15 0
+      @cmd    position 13 73 17 0 0
+	frame	data/chars/burnov/grab.gif
+      @cmd    antiwall3 75 -15 0
+      @cmd    position 13 73 17 0 0
+	frame	data/chars/burnov/grab.gif
+	sound data/sounds/burnov1.wav
+	delay	100
+      @cmd    position 14 73 17 0 0
+	frame	data/chars/burnov/ga1.gif
+	delay	13
+      sound	data/sounds/beat1.wav
+      @cmd    hurt 4
+      @cmd    position 15 73 17 0 0
+	frame	data/chars/burnov/ga2.gif
+      @cmd    position 14 73 17 0 0
+	frame	data/chars/burnov/ga1.gif
+      sound	data/sounds/beat1.wav
+      @cmd    hurt 4
+      @cmd    position 15 73 17 0 0
+	frame	data/chars/burnov/ga2.gif
+      @cmd    position 14 73 17 0 0
+	frame	data/chars/burnov/ga1.gif
+      sound	data/sounds/beat1.wav
+      @cmd    hurt 4
+      @cmd    position 15 73 17 0 0
+	frame	data/chars/burnov/ga2.gif
+      @cmd    position 14 73 17 0 0
+	frame	data/chars/burnov/ga1.gif
+	delay	18
+      @cmd    position 16 73 17 0 0
+	frame	data/chars/burnov/ga3.gif
+	delay	13
+      sound	data/sounds/beatt2.wav
+      @cmd    hurt 6
+      @cmd    position 17 73 17 0 0
+	frame	data/chars/burnov/ga4.gif
+      @cmd    depost 0
+      @cmd    throw 0 3 -2 3 0 0
+	frame	data/chars/burnov/ga5.gif
+	frame	data/chars/burnov/ga5.gif
+
+anim attack2
+	range   96 115
+      rangea   0 75
+	loop	0
+	delay	9
+	offset	77 170
+      bbox	60 55 45 100
+      hitfx  data/sounds/beatt2.wav
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW18"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW18"
+	frame	data/chars/burnov/a1.gif
+	frame	data/chars/burnov/a2.gif
+      attack  90 68 95 34 12 1
+      dropv 3.5 1.5
+	frame	data/chars/burnov/a3.gif
+      attack  0 0 0 0 0
+	frame	data/chars/burnov/a3.gif
+	delay	8
+	frame	data/chars/burnov/a2.gif
+
+anim follow18
+	loop	0
+	delay	9
+	offset	77 170
+      bbox	60 55 45 100
+      hitfx  data/sounds/beatt2.wav
+	frame	data/chars/burnov/a1.gif
+	frame	data/chars/burnov/a2.gif
+      attack14  90 68 95 34 12 1
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/burnov/a3.gif
+      attack14  0 0 0 0 0
+	frame	data/chars/burnov/a3.gif
+	delay	8
+	frame	data/chars/burnov/a2.gif
+
+anim attack3
+	range   100 160
+      rangea   0 90
+	loop	0
+	delay	15
+	offset	77 170
+      hitfx  data/sounds/beatt2.wav
+      @cmd    riseattack3 170 45 "ANI_FOLLOW19"
+	frame	data/chars/burnov/a1.gif
+      bbox	60 55 45 100
+	delay	3
+	frame	data/chars/burnov/aaa2.gif
+	@cmd	dasher 4.5 0 0
+	frame	data/chars/burnov/aaa2.gif
+	delay	3.5
+      attack  90 60 57 45 12 1
+      dropv 3.5 2
+	@cmd	dasher 4.5 0 0
+	frame	data/chars/burnov/aaa3.gif
+	@cmd	dasher 4.5 0 0
+	frame	data/chars/burnov/aaa3.gif
+	@cmd	dasher 4.5 0 0
+	frame	data/chars/burnov/aaa3.gif
+	@cmd	dasher 4 0 0
+	frame	data/chars/burnov/aaa3.gif
+	@cmd	dasher 3 0 0
+	frame	data/chars/burnov/aaa3.gif
+	@cmd	dasher 3 0 0
+	frame	data/chars/burnov/aaa3.gif
+	@cmd	dasher 2 0 0
+	frame	data/chars/burnov/aaa3.gif
+      attack  0 0 0 0 0
+	@cmd	dasher 2 0 0
+	frame	data/chars/burnov/aaa3.gif
+	@cmd	dasher 1 0 0
+	frame	data/chars/burnov/aaa3.gif
+	@cmd	dasher 0 0 0
+	frame	data/chars/burnov/aaa3.gif
+	delay	8
+	frame	data/chars/burnov/aaa2.gif
+	frame	data/chars/burnov/w4.gif
+
+anim follow19
+	range   116 160
+      rangea   0 90
+	loop	0
+	delay	15
+	offset	77 170
+      hitfx  data/sounds/beatt2.wav
+	frame	data/chars/burnov/a1.gif
+      bbox	60 55 45 100
+	delay	3
+	frame	data/chars/burnov/aaa2.gif
+	@cmd	dasher 4.5 0 0
+	frame	data/chars/burnov/aaa2.gif
+	delay	3.5
+      attack14  90 60 57 45 12 1
+      dropv 3.5 2
+      forcedirection 99
+	@cmd	dasher 4.5 0 0
+	frame	data/chars/burnov/aaa3.gif
+	@cmd	dasher 4.5 0 0
+	frame	data/chars/burnov/aaa3.gif
+	@cmd	dasher 4.5 0 0
+	frame	data/chars/burnov/aaa3.gif
+	@cmd	dasher 4 0 0
+	frame	data/chars/burnov/aaa3.gif
+	@cmd	dasher 3 0 0
+	frame	data/chars/burnov/aaa3.gif
+	@cmd	dasher 3 0 0
+	frame	data/chars/burnov/aaa3.gif
+	@cmd	dasher 2 0 0
+	frame	data/chars/burnov/aaa3.gif
+      attack14  0 0 0 0 0
+	@cmd	dasher 2 0 0
+	frame	data/chars/burnov/aaa3.gif
+	@cmd	dasher 1 0 0
+	frame	data/chars/burnov/aaa3.gif
+	@cmd	dasher 0 0 0
+	frame	data/chars/burnov/aaa3.gif
+	delay	8
+	frame	data/chars/burnov/aaa2.gif
+	frame	data/chars/burnov/w4.gif
+
+anim follow20
+	loop	0
+	delay	9
+	offset	77 170
+      followcond 2
+      followanim 14
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW18"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW16"
+	frame	data/chars/burnov/aa1.gif
+	frame	data/chars/burnov/aa2.gif
+      attack2  90 83 75 34 6 0
+      dropv 3.5 1.5
+	frame	data/chars/burnov/aa3.gif
+      attack2  0 0 0 0 0
+      bbox	60 55 40 100
+	frame	data/chars/burnov/aa3.gif
+
+anim pain
+	loop	0
+	delay 40
+	offset	77 170
+	bbox	60 55 45 100
+	frame	data/chars/burnov/pain1.gif
+
+anim pain2
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 45 100
+	frame	data/chars/burnov/pain2.gif
+      delay   65
+	frame	data/chars/burnov/pain3.gif
+
+anim pain29
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 45 100
+	frame	data/chars/burnov/pain2.gif
+      delay   65
+	frame	data/chars/burnov/pain3.gif
+
+anim pain14 # Backpain 1
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 45 100
+	frame	data/chars/burnov/pain3.gif
+      delay   65
+	frame	data/chars/burnov/pain3.gif
+
+anim pain15 # Backpain 2
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 45 100
+	frame	data/chars/burnov/pain3.gif
+      delay   65
+	frame	data/chars/burnov/pain3.gif
+
+anim pain30 # Backpain 2
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 45 100
+	frame	data/chars/burnov/pain3.gif
+      delay   65
+	frame	data/chars/burnov/pain3.gif
+
+anim pain17 # grabbed attack pain
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 45 100
+	frame	data/chars/burnov/pain3.gif
+      delay   65
+	frame	data/chars/burnov/pain3.gif
+
+anim fall
+	loop	0
+	offset	77 170
+	delay   8
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd bind 0 0 0 0 0
+      @cmd    depost 0
+	frame	data/chars/burnov/fall01.gif
+      frame	data/chars/burnov/fall01.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/burnov/fall01.gif
+      frame	data/chars/burnov/fall01.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/burnov/fall01.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/burnov/fall02.gif
+      delay   500
+      frame	data/chars/burnov/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/burnov/fall02.gif
+	offset	79 170
+	frame	data/chars/burnov/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/burnov/rise0.gif
+
+anim follow1
+      loop	0
+      delay   80
+	offset	79 170
+      bbox	80 140 25 37
+      frame	data/chars/burnov/rise0.gif
+
+anim follow3
+      loop	1
+      delay   10
+	offset	79 169
+      frame	data/chars/burnov/rise0.gif
+
+anim follow4
+      loop	1
+      delay   10
+	offset	79 169
+      frame	data/chars/burnov/pain7.gif
+
+anim follow5
+      loop	1
+      delay   10
+	offset	79 169
+      frame	data/chars/burnov/pain8.gif
+
+anim fall4
+	loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/burnov/fall011.gif
+      frame	data/chars/burnov/fall011.gif
+      delay   10
+      frame	data/chars/burnov/fall011.gif
+      frame	data/chars/burnov/fall011.gif
+      frame	data/chars/burnov/fall02.gif
+      delay   20
+      frame	data/chars/burnov/fall02.gif
+      delay   500
+      frame	data/chars/burnov/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/burnov/fall02.gif
+      offset	79 170
+	frame	data/chars/burnov/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/burnov/rise0.gif
+
+anim fall14 # Backfall 1
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/burnov/fall011.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/burnov/fall011.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/burnov/fall011.gif
+      frame	data/chars/burnov/fall011.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/burnov/fall011.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/burnov/fall02.gif
+      delay   500
+      frame	data/chars/burnov/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/burnov/fall02.gif
+	offset	79 170
+	frame	data/chars/burnov/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/burnov/rise0.gif
+
+anim fall15 # Backfall 2
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/burnov/fall011.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/burnov/fall011.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/burnov/fall011.gif
+      frame	data/chars/burnov/fall011.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/burnov/fall011.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/burnov/fall02.gif
+      delay   500
+      frame	data/chars/burnov/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/burnov/fall02.gif
+	offset	79 170
+	frame	data/chars/burnov/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/burnov/rise0.gif
+
+anim fall30 # Backfall 2
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/burnov/fall011.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/burnov/fall011.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/burnov/fall011.gif
+      frame	data/chars/burnov/fall011.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/burnov/fall011.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/burnov/fall02.gif
+      delay   500
+      frame	data/chars/burnov/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/burnov/fall02.gif
+	offset	79 170
+	frame	data/chars/burnov/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/burnov/rise0.gif
+
+anim fall16 # Backfall 3
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -2
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/burnov/fall011.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/burnov/fall011.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/burnov/fall011.gif
+      frame	data/chars/burnov/fall011.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/burnov/fall011.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/burnov/fall02.gif
+      delay   500
+      frame	data/chars/burnov/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/burnov/fall02.gif
+	offset	79 170
+	frame	data/chars/burnov/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/burnov/rise0.gif
+
+anim follow37
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 2 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd    hurt4 5
+	frame	data/chars/burnov/fall011.gif
+      frame	data/chars/burnov/fall011.gif
+      delay   10
+      frame	data/chars/burnov/fall011.gif
+      frame	data/chars/burnov/fall011.gif
+      frame	data/chars/burnov/fall011.gif
+      delay   20
+      frame	data/chars/burnov/fall02.gif
+      delay   500
+      frame	data/chars/burnov/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/burnov/fall02.gif
+	offset	79 170
+	frame	data/chars/burnov/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/burnov/rise0.gif
+
+anim follow38
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 2 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd    hurt4 5
+	frame	data/chars/burnov/fall01.gif
+      frame	data/chars/burnov/fall01.gif
+      delay   10
+      frame	data/chars/burnov/fall01.gif
+      frame	data/chars/burnov/fall01.gif
+      frame	data/chars/burnov/fall01.gif
+      delay   20
+      frame	data/chars/burnov/fall02.gif
+      delay   500
+      frame	data/chars/burnov/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/burnov/fall02.gif
+	offset	79 170
+	frame	data/chars/burnov/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/burnov/rise0.gif
+
+anim fall8
+      loop	0
+      delay   1000
+	offset	69 169
+      @cmd    conditionalflip3
+      @cmd    degravity -0.15
+      frame	data/chars/burnov/pain3.gif
+	offset	79 169
+      frame	data/chars/burnov/pain7.gif
+      frame	data/chars/burnov/pain7.gif
+      frame	data/chars/burnov/pain7.gif
+      frame	data/chars/burnov/pain7.gif
+      frame	data/chars/burnov/pain7.gif
+      frame	data/chars/burnov/D_VERTICAL_DOWN.png
+	offset	79 189
+      frame	data/chars/burnov/fall02.gif
+	offset	79 169
+      frame	data/chars/burnov/rise0.gif
+      frame	data/chars/burnov/pain7.gif
+      frame	data/chars/burnov/pain8.gif
+
+anim rise
+	loop	0
+	offset	79 170
+	delay	10
+      @cmd    degravity -1
+	frame	data/chars/burnov/rise0.gif
+	delay   15
+	frame	data/chars/burnov/rise1.gif
+	delay   10
+	@cmd    riseattack 95 40 "ANI_FOLLOW20"
+	frame	data/chars/burnov/rise1.gif
+
+anim death
+	loop	0
+	offset	79 170
+	delay	150
+	spawnframe 20 0 0 0 0
+	custentity burnov6
+	frame	data/chars/burnov/rise0.gif
+	delay   16
+	frame	data/chars/burnov/rise1.gif
+	offset	100 171
+	delay	14
+	frame	data/chars/burnov/death0.gif
+	sound data/sounds/burnov2.wav
+	delay	24
+	frame	data/chars/burnov/death1.gif
+	delay	13
+	frame	data/chars/burnov/death2.gif
+	frame	data/chars/burnov/death3.gif
+	frame	data/chars/burnov/death2.gif
+	frame	data/chars/burnov/death3.gif
+	frame	data/chars/burnov/death2.gif
+	frame	data/chars/burnov/death3.gif
+	frame	data/chars/burnov/death4.gif
+	frame	data/chars/burnov/death5.gif
+	frame	data/chars/burnov/death6.gif
+	frame	data/chars/burnov/death7.gif
+	delay	11
+	frame	data/chars/burnov/death7.gif
+	frame	data/chars/burnov/death8.gif
+	frame	data/chars/burnov/death9.gif
+	frame	data/chars/burnov/death10.gif
+	frame	data/chars/burnov/death11.gif
+	delay	40
+	frame	data/chars/burnov/death12.gif
+	frame	data/chars/burnov/death12.gif
+
+anim  follow49 # water effect
+	loop	0
+	offset	77 170
+	delay   4
+      spawnframe 0 0 55 0 0
+	custentity water1
+      landframe 6
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      delay   500
+      frame	data/chars/misc/empty.gif
+      delay   200
+	frame	data/chars/misc/empty.gif
+
+
+
+
+

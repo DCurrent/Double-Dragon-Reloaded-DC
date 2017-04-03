@@ -1,0 +1,38 @@
+name wspike2
+type none
+shadow 0
+nolife 1
+nomove 1 1
+antigravity 100
+subject_to_wall 0
+setlayer 1
+hostile enemy player
+
+animationscript data/scripts/wtrap.c
+
+anim idle
+     loop 1
+     delay 10
+     offset 311 284
+     @cmd  attack1 -98 180 50 "ANI_FOLLOW1"
+     frame data/chars/misc/wspike3.gif
+     frame data/chars/misc/wspike3.gif
+
+anim follow1
+     loop 0
+     delay 30
+     offset 311 284
+     hitfx  data/sounds/goo.wav
+     @cmd  wtrap4 -180 -60 34 0 60
+     frame data/chars/misc/wspike1.gif
+     delay 18
+     @cmd  wtrap4 1 1 0 1000 1000
+     frame data/chars/misc/wspike2.gif
+     frame data/chars/misc/wspike3.gif
+     delay 80
+     frame data/chars/misc/wspike3.gif
+     @cmd setidle getlocalvar("self") openborconstant("ANI_IDLE") 1 1
+     frame data/chars/misc/wspike3.gif
+
+
+

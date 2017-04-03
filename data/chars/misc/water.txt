@@ -1,0 +1,39 @@
+name	water
+type    none
+health		100
+shadow  0
+offscreenkill 6000
+subject_to_hole 0
+subject_to_wall 0
+
+animationscript 	data/scripts/water.c
+
+anim idle
+	loop	1
+	delay	5
+	offset	1 1
+      @cmd  water -500 500 200 "ANI_FOLLOW49"
+      frame  data/chars/misc/empty.gif
+      @cmd  water -500 500 200 "ANI_FOLLOW49"
+      frame  data/chars/misc/empty.gif
+      @cmd  water -500 500 200 "ANI_FOLLOW49"
+      frame  data/chars/misc/empty.gif
+      @cmd  water -500 500 200 "ANI_FOLLOW49"
+      frame  data/chars/misc/empty.gif
+      @cmd  water -500 500 200 "ANI_FOLLOW49"
+      frame  data/chars/misc/empty.gif
+      @cmd  water -500 500 200 "ANI_FOLLOW49"
+      frame  data/chars/misc/empty.gif
+      @cmd  water -500 500 200 "ANI_FOLLOW49"
+      frame  data/chars/misc/empty.gif
+      @cmd  water -500 500 200 "ANI_FOLLOW49"
+      frame  data/chars/misc/empty.gif
+      @cmd  water -500 500 200 "ANI_FOLLOW49"
+      frame  data/chars/misc/empty.gif
+      @cmd  water -500 500 200 "ANI_FOLLOW49"
+      frame  data/chars/misc/empty.gif
+
+
+
+
+

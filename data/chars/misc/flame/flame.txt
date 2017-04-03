@@ -1,0 +1,301 @@
+name flame
+type none
+shadow 0
+nolife 1
+facing 1
+subject_to_hole 0
+subject_to_wall 0
+subject_to_gravity 0
+subject_to_minz 1
+candamage player enemy
+
+animationscript data/scripts/wtrap.c
+
+palette data/chars/misc/flame/flame271.gif
+
+anim idle
+     loop 0
+     delay 2.5
+     offset 310 38
+     hitflash  eflash
+     hitfx  data/sounds/goo.wav
+     frame data/chars/misc/flame/flame180.gif
+     frame data/chars/misc/flame/flame181.gif
+     frame data/chars/misc/flame/flame182.gif
+     frame data/chars/misc/flame/flame183.gif
+     frame data/chars/misc/flame/flame184.gif
+     frame data/chars/misc/flame/flame185.gif
+     frame data/chars/misc/flame/flame186.gif
+     frame data/chars/misc/flame/flame187.gif
+     frame data/chars/misc/flame/flame188.gif
+     frame data/chars/misc/flame/flame189.gif
+     frame data/chars/misc/flame/flame190.gif
+     frame data/chars/misc/flame/flame191.gif
+     frame data/chars/misc/flame/flame192.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame193.gif
+     frame data/chars/misc/flame/flame194.gif
+     frame data/chars/misc/flame/flame195.gif
+     frame data/chars/misc/flame/flame196.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame197.gif
+     frame data/chars/misc/flame/flame198.gif
+     frame data/chars/misc/flame/flame199.gif
+     frame data/chars/misc/flame/flame200.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame201.gif
+     frame data/chars/misc/flame/flame202.gif
+     frame data/chars/misc/flame/flame203.gif
+     frame data/chars/misc/flame/flame204.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame205.gif
+     frame data/chars/misc/flame/flame206.gif
+     frame data/chars/misc/flame/flame207.gif
+     frame data/chars/misc/flame/flame208.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame209.gif
+     frame data/chars/misc/flame/flame210.gif
+     frame data/chars/misc/flame/flame211.gif
+     frame data/chars/misc/flame/flame212.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame213.gif
+     frame data/chars/misc/flame/flame214.gif
+     frame data/chars/misc/flame/flame215.gif
+     frame data/chars/misc/flame/flame216.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame217.gif
+     frame data/chars/misc/flame/flame218.gif
+     frame data/chars/misc/flame/flame219.gif
+     frame data/chars/misc/flame/flame220.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame221.gif
+     frame data/chars/misc/flame/flame222.gif
+     frame data/chars/misc/flame/flame223.gif
+     frame data/chars/misc/flame/flame224.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame225.gif
+     frame data/chars/misc/flame/flame226.gif
+     frame data/chars/misc/flame/flame227.gif
+     frame data/chars/misc/flame/flame228.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame229.gif
+     frame data/chars/misc/flame/flame230.gif
+     frame data/chars/misc/flame/flame231.gif
+     frame data/chars/misc/flame/flame232.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame233.gif
+     frame data/chars/misc/flame/flame234.gif
+     frame data/chars/misc/flame/flame235.gif
+     frame data/chars/misc/flame/flame236.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame237.gif
+     frame data/chars/misc/flame/flame238.gif
+     frame data/chars/misc/flame/flame239.gif
+     frame data/chars/misc/flame/flame240.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame241.gif
+     frame data/chars/misc/flame/flame242.gif
+     frame data/chars/misc/flame/flame243.gif
+     frame data/chars/misc/flame/flame244.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame245.gif
+     frame data/chars/misc/flame/flame246.gif
+     frame data/chars/misc/flame/flame247.gif
+     frame data/chars/misc/flame/flame248.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame249.gif
+     frame data/chars/misc/flame/flame250.gif
+     frame data/chars/misc/flame/flame251.gif
+     frame data/chars/misc/flame/flame252.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame253.gif
+     frame data/chars/misc/flame/flame254.gif
+     frame data/chars/misc/flame/flame255.gif
+     frame data/chars/misc/flame/flame256.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame257.gif
+     frame data/chars/misc/flame/flame258.gif
+     frame data/chars/misc/flame/flame259.gif
+     frame data/chars/misc/flame/flame260.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame261.gif
+     frame data/chars/misc/flame/flame262.gif
+     frame data/chars/misc/flame/flame263.gif
+     frame data/chars/misc/flame/flame264.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame265.gif
+     frame data/chars/misc/flame/flame266.gif
+     frame data/chars/misc/flame/flame267.gif
+     frame data/chars/misc/flame/flame268.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame269.gif
+     frame data/chars/misc/flame/flame270.gif
+     frame data/chars/misc/flame/flame271.gif
+     frame data/chars/misc/flame/flame272.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame273.gif
+     frame data/chars/misc/flame/flame274.gif
+     frame data/chars/misc/flame/flame275.gif
+     frame data/chars/misc/flame/flame276.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame277.gif
+     frame data/chars/misc/flame/flame278.gif
+     frame data/chars/misc/flame/flame279.gif
+     frame data/chars/misc/flame/flame280.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame281.gif
+     frame data/chars/misc/flame/flame282.gif
+     frame data/chars/misc/flame/flame283.gif
+     frame data/chars/misc/flame/flame284.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame285.gif
+     frame data/chars/misc/flame/flame286.gif
+     frame data/chars/misc/flame/flame287.gif
+     frame data/chars/misc/flame/flame288.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame289.gif
+     frame data/chars/misc/flame/flame290.gif
+     frame data/chars/misc/flame/flame291.gif
+     frame data/chars/misc/flame/flame292.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame293.gif
+     frame data/chars/misc/flame/flame294.gif
+     frame data/chars/misc/flame/flame295.gif
+     frame data/chars/misc/flame/flame296.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame297.gif
+     frame data/chars/misc/flame/flame298.gif
+     frame data/chars/misc/flame/flame299.gif
+     frame data/chars/misc/flame/flame300.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame301.gif
+     frame data/chars/misc/flame/flame302.gif
+     frame data/chars/misc/flame/flame303.gif
+     frame data/chars/misc/flame/flame304.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame305.gif
+     frame data/chars/misc/flame/flame306.gif
+     frame data/chars/misc/flame/flame307.gif
+     frame data/chars/misc/flame/flame308.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame309.gif
+     frame data/chars/misc/flame/flame310.gif
+     frame data/chars/misc/flame/flame311.gif
+     frame data/chars/misc/flame/flame312.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame313.gif
+     frame data/chars/misc/flame/flame314.gif
+     frame data/chars/misc/flame/flame315.gif
+     frame data/chars/misc/flame/flame316.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame317.gif
+     frame data/chars/misc/flame/flame318.gif
+     frame data/chars/misc/flame/flame319.gif
+     frame data/chars/misc/flame/flame320.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame321.gif
+     frame data/chars/misc/flame/flame322.gif
+     frame data/chars/misc/flame/flame323.gif
+     frame data/chars/misc/flame/flame324.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame325.gif
+     frame data/chars/misc/flame/flame326.gif
+     frame data/chars/misc/flame/flame327.gif
+     frame data/chars/misc/flame/flame328.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame329.gif
+     frame data/chars/misc/flame/flame330.gif
+     frame data/chars/misc/flame/flame331.gif
+     frame data/chars/misc/flame/flame332.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame333.gif
+     frame data/chars/misc/flame/flame334.gif
+     frame data/chars/misc/flame/flame335.gif
+     frame data/chars/misc/flame/flame336.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame337.gif
+     frame data/chars/misc/flame/flame338.gif
+     frame data/chars/misc/flame/flame339.gif
+     frame data/chars/misc/flame/flame340.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame341.gif
+     frame data/chars/misc/flame/flame342.gif
+     frame data/chars/misc/flame/flame343.gif
+     frame data/chars/misc/flame/flame344.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame345.gif
+     frame data/chars/misc/flame/flame346.gif
+     frame data/chars/misc/flame/flame347.gif
+     frame data/chars/misc/flame/flame348.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame349.gif
+     frame data/chars/misc/flame/flame350.gif
+     frame data/chars/misc/flame/flame351.gif
+     frame data/chars/misc/flame/flame352.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame353.gif
+     frame data/chars/misc/flame/flame354.gif
+     frame data/chars/misc/flame/flame355.gif
+     frame data/chars/misc/flame/flame356.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame357.gif
+     frame data/chars/misc/flame/flame358.gif
+     frame data/chars/misc/flame/flame359.gif
+     frame data/chars/misc/flame/flame360.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame361.gif
+     frame data/chars/misc/flame/flame362.gif
+     frame data/chars/misc/flame/flame363.gif
+     frame data/chars/misc/flame/flame364.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame365.gif
+     frame data/chars/misc/flame/flame366.gif
+     frame data/chars/misc/flame/flame367.gif
+     frame data/chars/misc/flame/flame368.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame369.gif
+     frame data/chars/misc/flame/flame370.gif
+     frame data/chars/misc/flame/flame371.gif
+     frame data/chars/misc/flame/flame372.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame373.gif
+     frame data/chars/misc/flame/flame374.gif
+     frame data/chars/misc/flame/flame375.gif
+     frame data/chars/misc/flame/flame376.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame377.gif
+     frame data/chars/misc/flame/flame378.gif
+     frame data/chars/misc/flame/flame379.gif
+     frame data/chars/misc/flame/flame380.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame381.gif
+     frame data/chars/misc/flame/flame382.gif
+     frame data/chars/misc/flame/flame383.gif
+     frame data/chars/misc/flame/flame384.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame385.gif
+     frame data/chars/misc/flame/flame386.gif
+     frame data/chars/misc/flame/flame387.gif
+     frame data/chars/misc/flame/flame388.gif
+     @cmd  wtrap2 -180 -20 17 -179 -52
+     frame data/chars/misc/flame/flame389.gif
+     frame data/chars/misc/flame/flame390.gif
+     @cmd  wtrap2 -180 -20 15 2000 2001
+     frame data/chars/misc/flame/flame391.gif
+     frame data/chars/misc/flame/flame392.gif
+     frame data/chars/misc/flame/flame393.gif
+     frame data/chars/misc/flame/flame394.gif
+     frame data/chars/misc/flame/flame395.gif
+     frame data/chars/misc/flame/flame396.gif
+     frame data/chars/misc/flame/flame397.gif
+     frame data/chars/misc/flame/flame398.gif
+     frame data/chars/misc/flame/flame399.gif
+     frame data/chars/misc/flame/flame400.gif
+     frame data/chars/misc/flame/flame401.gif
+     frame data/chars/misc/flame/flame402.gif
+     frame data/chars/misc/flame/flame403.gif
+     frame data/chars/misc/empty.gif
+     @cmd killentity getlocalvar("self")
+     frame data/chars/misc/empty.gif
+
+

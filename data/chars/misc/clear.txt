@@ -1,0 +1,23 @@
+name       clear
+health       10
+type       obstacle
+shadow	1
+nomove     1 1
+nolife        1
+grabdistance 20
+subject_to_wall 0
+subject_to_hole 0
+offscreenkill	7000
+
+animationscript data/scripts/clear.c
+
+anim idle
+   loop   1
+   delay   10
+   offset   9 19
+   @cmd  candam 2000 800
+   @cmd  clear -2000 2000 800 0 400
+   frame   data/chars/misc/tra.gif
+   @cmd  candam 2000 800
+   @cmd  clear -2000 2000 800 0 400
+   frame   data/chars/misc/tra.gif

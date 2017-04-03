@@ -1,0 +1,70 @@
+name	elevjeff3
+type    none
+shadow  0
+setlayer 1
+offscreenkill 2000
+subject_to_gravity 0
+nolife  1
+
+load mission3
+
+anim spawn
+	loop	0
+	delay	13
+	offset	59 187
+	sound data/sounds/elevjeff3.wav
+	spawnframe 0 1 465 0 1
+	custentity mission3
+	@cmd changeentityproperty getlocalvar("self") "velocity" 0 0 -1
+	platform   -30 0 200 200 100 1
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	frame  data/levels/st2b/elevjeff2.gif
+	delay	2
+	platform   0 0 0 0 0 0 0 0
+	frame  data/levels/st2b/elevjeff2.gif
+
+anim idle
+	loop	0
+	delay	13
+	offset	59 187
+	platform   0 0 0 0 0 0 0 0
+	@cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+	frame  data/levels/st2/elevjeff2.gif
+	frame  data/levels/st2/elevjeff2.gif
+
+
+
+

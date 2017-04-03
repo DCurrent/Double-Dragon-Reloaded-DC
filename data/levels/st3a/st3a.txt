@@ -1,0 +1,1006 @@
+music		Data/music/nextstage.ogg
+background	data/levels/st3a/sky.png
+bgspeed 	1 0 
+panel		data/levels/st3a/path.png
+order           a
+direction both
+
+# Using BG speed, but we don't want the "background" of stars to move, just
+# clouds. So the background is blank, then we use a bglayer for what
+# would normally be the background. That allows us to force it to be stationary.
+
+bglayer 	data/levels/st3a/sky.png 	 0.5  0.5  0	 0    0   0 -1 1 1
+bglayer 	data/levels/st3a/clouds.png 	 0.5  0.5  0	 195  0   0 -1 1 1 0 0 0 0 0 0.5 
+bglayer 	data/levels/st3a/mountains.png 	 0.2  0.2  1836  270  0   0  8 1 1
+bglayer 	data/levels/st3a/city.png     	 0.2  0.2  1000  255  15  0  2 1 1
+bglayer 	data/levels/st3a/forrest.png     0.1  0.1  0     0    0   0 -1 1 1
+
+
+wall  1161 1276 -4000 -4000 483 0 494 261
+wall  1210 987 -4000 -4000 196 0  196 524
+wall  681 1115 -4000 -4000 196 0 196 524
+wall  483 919 -4000 -4000 196 0 196 787
+wall  1400 957 -483 0 887 1370 494 261
+wall  1612 1100 -483 0 1158 1158 494 7
+wall  2770 1100 -12 -12 0 0 150 270
+wall  1998 957 -483 0 289 772 494 524
+wall  1930 838 -483 0 6000 6000 494 5100
+wall  2700 900 -483 0 205 230 494 524
+wall  3040 900 -403 0 1000 1000 494 524
+wall  3610 1112 -483 0 6000 6000 494 524
+wall  3610 1112 -212 0 -166 46 212 1000
+wall  3792 919 -483 0 6000 6000 494 787
+hole  -2 1309 0 0 7000 7000 500 0
+
+cameraoffset 0 -100
+
+spawn1 80 180
+spawn2 100 180
+
+scrollz 100 120
+at  0
+
+#-------------------------------------
+
+spawn	killer
+@script
+void main()
+{
+    int P1 = getplayerproperty(0, "entity");
+    int P2 = getplayerproperty(1, "entity");
+
+    if(P1){
+      changeentityproperty(P1, "subject_to_wall", 0);
+      changeentityproperty(P1, "Subject_to_Gravity", 0);
+      changeentityproperty(P1, "position", 217, 905, 524);
+      changeentityproperty(P1, "animation", openborconstant("ANI_FREESPECIAL28"));
+      changeentityproperty(P1, "colourmap", 0);
+    }
+    if(P2){
+      changeentityproperty(P2, "subject_to_wall", 0);
+      changeentityproperty(P2, "Subject_to_Gravity", 0);
+      changeentityproperty(P2, "position", 257, 905, 524);
+      changeentityproperty(P2, "animation", openborconstant("ANI_FREESPECIAL28"));
+      changeentityproperty(P2, "colourmap", 1);
+    }
+}
+@end_script
+flip 1
+coords	0 1100 480
+at	0
+
+spawn	pro
+coords	3622 1112 524
+at	0
+
+spawn	ClimbSpot3
+health 263
+flip	1
+coords	997 987 261
+at	0
+
+spawn	ClimbSpot3
+health 263
+flip	1
+coords	1007 987 261
+at	0
+
+
+#-------------------------------------
+
+spawn	ClimbSpot3
+health 254
+flip	1
+coords	1660 957 7
+at	0
+
+spawn	ClimbSpot3
+health 254
+flip	1
+coords	1670 957 7
+at	0
+
+
+#-------------------------------------
+spawn	ClimbSpot3
+health 517
+flip	1
+coords	2345 957 7
+at	0
+
+spawn	ClimbSpot
+health 517
+flip	1
+coords	2350 957 7
+at	0
+
+spawn	ClimbSpot3
+health 517
+flip	1
+coords	2355 957 7
+at	0
+
+#-------------------------------------
+#-------------------------------------
+
+spawn	scrmover4
+flip 1
+coords  1 588
+at      0
+
+spawn	doorst3a0
+coords  240 915 524
+at      0
+
+spawn	doorst3a
+coords  411 1111 261
+at      0
+
+spawn	doorst3a
+coords  2135 953 7
+at      0
+
+spawn	doorst3ac
+coords  4041 915 524
+at      0
+
+spawn	ball
+coords  2431 1080 7
+at      0
+
+#-------------------------------------
+#1-------------------------------------
+
+music	data/music/st3a.ogg 663638
+at      1
+
+Group	3 3
+at	1
+
+scrollx 1 1
+at   1
+
+spawn	roperb
+health 50
+coords  -80 1020 524
+at      1
+
+
+spawn delay2
+health 30
+coords  0 1020 524
+at      1
+
+spawn delay2
+health 30
+coords  0 1020 524
+at      1
+
+spawn	roperb
+health 70
+map 2
+coords  700 940 524
+at      1
+
+spawn delay2
+health 70
+coords  0 1020 524
+at      1
+
+spawn	williamsb
+spawnscript data/scripts/noscpos.c
+health 60
+flip 1
+map 0
+weapon knife
+coords  240 908 524
+at      1
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 1 4295
+at   0
+
+spawn	brrow1
+flip 1
+coords  540 620 80
+at   0
+
+wait
+at 1
+
+Group	1 1
+at	1
+
+spawn timer
+coords  100 800 354
+at      1
+
+
+#-------------------------------------
+#2-------------------------------------
+
+Group	5 5
+at	191
+
+scrollx 191 572
+at   191
+
+spawn	williamsb
+health 70
+map 10
+coords  750 900 524
+at      191
+
+spawn	roper
+health 70
+map 3
+coords  800 940 524
+at      191
+
+scrollz 0 65
+at  191
+
+spawn	movezblo
+flip	1
+coords	-300 1068 525
+at	191
+
+Group	3 3
+at	350
+
+scrollx 495 572
+at   350
+
+spawn	lindab
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW47"));
+} @end_script
+map 8
+coords  700 870 524
+at      350
+
+spawn	oharra
+health 80
+map 0
+weapon boxx
+coords  -100 940 524
+at      350
+
+spawn	williamsb
+spawnscript data/scripts/noscpos.c
+health 80
+map 0
+weapon knife
+coords  200 820 787
+at      350
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 495 608
+at   0
+
+scrollz 269 575
+at   0
+
+spawn	brrow3
+flip 1
+coords  540 589 80
+at   0
+
+spawn	kikiller
+coords  0 1100
+at   0
+
+spawn	blkiller
+flip	1
+coords	0 1086
+at	0
+
+spawn	ClimbSpot
+spawnscript data/scripts/noscpos.c
+health 263
+flip	1
+coords	1002 987 261
+at   0
+
+wait
+at 572
+
+Group	1 1
+at	572
+
+spawn timer
+coords  100 800 354
+at      572
+
+#-------------------------------------
+#3-------------------------------------
+
+spawn	killer
+flip 1
+coords	589 1100 220
+at	573
+
+scrollx 573 608
+at   573
+
+Group	2 2
+at	608
+
+spawn	delay6
+flip	1
+coords  78 1170 261
+at      608
+
+spawn	delay6
+flip	1
+coords  78 1170 261
+at      608
+
+scrollz 463 575
+at   608
+
+spawn	moveyblo
+flip	1
+coords	-640 988 520
+at   608
+
+spawn	itemkill3
+spawnscript data/scripts/noscpos.c
+flip	1
+coords	838 990 524
+at	495
+
+Group	3 3
+at	608
+
+spawn	williamsb
+flip	1
+map 8
+coords  -90 1220 261
+at      608
+
+spawn	roperb
+health 60
+map 0
+coords  -90 1260 261
+at      608
+
+spawn	lindab
+weapon chain
+map 0
+coords  -70 1170 261
+at      495
+
+spawn	linda
+map 5
+coords  -70 1170 261
+at      495
+
+#-------------------------------------
+
+Group	1 1
+at	0
+
+scrollx 199 608
+at   0
+
+scrollz 505 575
+at   0
+
+spawn	time
+coords  100 1170 261
+at      0
+
+spawn	brrow1
+coords  540 1095 80
+at   0
+
+#-------------------------------------
+#4-------------------------------------
+
+Group	3 3
+at	445
+
+spawn	delay7
+flip	1
+coords  -640 1170 261
+at      199
+
+spawn	delay7
+flip	1
+coords  -640 1170 261
+at      199
+
+spawn	delay7
+flip	1
+coords  -640 1170 261
+at      199
+
+scrollx 199 199
+at   199
+
+spawn	roperb
+spawnscript data/scripts/noscpos.c
+health 80
+flip	1
+coords  411 1103 261
+at      199
+
+spawn	delay2
+health 20
+coords  0 1170 261
+at      199
+
+spawn	delay2
+health 20
+coords  1 1170 261
+at      199
+
+spawn	roperb
+health 100
+map 2
+coords  700 1170 261
+at      199
+
+spawn	delay2
+health 120
+coords  0 1170 261
+at      199
+
+spawn	roper
+spawnscript data/scripts/noscpos.c
+health 80
+weapon bat
+flip	1
+map 5
+coords  411 1103 261
+at      199
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 199 4295
+at   0
+
+spawn	brrow1
+flip 1
+coords  540 1095 80
+at   0
+
+wait
+at 199
+
+Group	1 1
+at	199
+
+spawn timer
+coords  100 800 354
+at      199
+
+#-------------------------------------
+#5-------------------------------------
+
+Group	2 2
+at	300
+
+scrollx 470 4295
+at   470
+
+spawn	williamsb
+flip	1
+map 0
+coords  -90 1220 261
+at      470
+
+scrollx 608 719
+at   608
+
+spawn	roperb
+flip	1
+map 0
+coords  -90 1220 261
+at      608
+
+spawn	lindab
+flip	1
+weapon chain
+map 0
+coords  -70 1230 261
+at      608
+
+spawn	roperb
+flip	1
+map 2
+coords  -90 1220 261
+at      608
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 719 4295
+at   0
+
+spawn	brrow1
+flip 1
+coords  540 1095 80
+at   0
+
+scrollz 269 575
+at   0
+
+spawn	blkiller
+flip	1
+coords	-640 988 520
+at   0
+
+wait
+at 719
+
+Group	1 1
+at	719
+
+spawn timer
+coords  100 800 354
+at      719
+
+#-------------------------------------
+#6-------------------------------------
+
+Group	6 6
+at	940
+
+blockade 940
+at	940
+
+scrollx 940 1284
+at   940
+
+spawn	williamsb
+health 50
+weapon knife
+map 2
+coords  700 870 261
+at      940
+
+spawn	roperb
+health 50
+weapon knife #barel
+map 7
+coords  710 870 261
+at      940
+
+scrollx 1284 1284
+at   1284
+
+blockade 1284
+at	1284
+
+scrollz 269 269
+at   1284
+
+spawn	movezblo
+flip	1
+coords	0 1010 262
+at	1284
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 1284 4295
+at   0
+
+scrollz 269 665
+at   0
+
+spawn	brrow3
+flip 1
+coords  540 789 80
+at   0
+
+spawn	blkiller
+flip	1
+coords	0 1011
+at	0
+
+spawn	kikiller
+coords  0 1100
+at   0
+
+spawn	ClimbSpot
+spawnscript data/scripts/noscpos.c
+health 254
+flip	1
+coords	1665 957 7
+at	0
+
+wait
+at 1284
+
+Group	1 1
+at	1284
+
+spawn timer
+coords  100 800 354
+at      1284
+
+#-------------------------------------
+#7-------------------------------------
+
+Group	3 3
+at	1416
+
+scrollx 1416 2012
+at   1416
+
+spawn	delay4
+flip	1
+coords  50 1100 7
+at      1416
+
+spawn	delay4
+flip	1
+coords  50 1100 7
+at      1416
+
+spawn	delay4
+flip	1
+coords  150 1100 7
+at      1416
+
+spawn	williamsb
+health 100
+map 1
+coords  800 1020 7
+at      1416
+
+spawn	roper
+health 50
+weapon knife
+map 2
+coords  700 1020 7
+at      1416
+
+scrollx 1926 2012
+at   1926
+
+scrollz 665 665
+at   1926
+
+spawn	itemkill3
+spawnscript data/scripts/noscpos.c
+flip	1
+coords	1826 960 261
+at	1926
+
+spawn	moveyblo
+flip	1
+coords	200 958 291
+at	1926
+
+spawn	delay2
+health 40
+coords  50 1020 7
+at      1926
+
+spawn	lindab
+spawnscript data/scripts/noscpos.c
+weapon chain
+flip	1
+map 8
+coords  2135 945 7
+at      1926
+
+spawn	delay2
+health 30
+coords  50 1020 7
+at      1926
+
+spawn	wall3
+spawnscript data/scripts/noscpos.c
+coords  2491 946
+at      1926
+
+spawn	oharra2
+spawnscript data/scripts/noscpos.c
+coords  2501 956 7
+at      1926
+
+spawn	roperb
+health 60
+flip	1
+map 0
+coords  -80 1020 7
+at      1926
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 1926 4295
+at   0
+
+spawn	brrow2
+flip 1
+coords  540 1185 80
+at   0
+
+wait
+at 1926
+
+Group	1 1
+at	1926
+
+spawn timer
+coords  100 800 354
+at      1926
+
+#-------------------------------------
+#8-------------------------------------
+
+wait
+at 2013
+
+Group	7 7
+at	2013
+
+scrollz 0 665
+at   2013
+
+spawn	blkiller
+flip	1
+coords	-100 958
+at	2013
+
+scrollx 2013 2013
+at   2013
+
+spawn	roperb
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW57"));
+} @end_script
+health 80
+flip	1
+map 0
+coords  41 840 580
+at      2013
+
+spawn	williamsb
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW56"));
+} @end_script
+health 80
+weapon shovel
+flip	1
+map 9
+coords  138 840 551
+at      2013
+
+spawn	roperb
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW57"));
+} @end_script
+health 80
+flip	1
+map 0
+coords  241 840 580
+at      2013
+
+spawn	williams
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW58"));
+} @end_script
+health 80
+weapon knife
+map 4
+coords  500 840 639
+at      2013
+
+spawn	delay7
+flip	1
+coords  148 860 524
+at      2013
+
+spawn	delay7
+flip	1
+coords  149 860 524
+at      2013
+
+spawn	delay7
+flip	1
+coords  150 860 524
+at      2013
+
+spawn	lakiller
+flip	1
+coords	10 958 17
+at	2013
+
+spawn	itemkill3
+spawnscript data/scripts/noscpos.c
+flip	1
+coords	2350 958 17
+at	2013
+
+spawn	killer
+flip 0
+coords	-300 1020 420
+at	2013
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 2013 4295
+at   0
+
+scrollz 0 161
+at   0
+
+spawn	lakiller
+flip	1
+coords	0 955
+at	0
+
+spawn	brrow1
+flip 1
+coords  540 540 80
+at   0
+
+spawn	jumper
+spawnscript data/scripts/noscpos.c
+flip	0
+coords	2930 910 524
+at	0
+
+spawn	jumper
+spawnscript data/scripts/noscpos.c
+flip	0
+coords	2920 910 524
+at	0
+
+spawn	jumper
+spawnscript data/scripts/noscpos.c
+flip	1
+coords	3013 910 524
+at	0
+
+#-------------------------------------
+Group	10 10
+at	2600
+
+scrollx 2600 4295
+at   2600
+
+spawn	williamsb
+health 50
+map 2
+coords  850 845 524
+at      2600
+
+spawn	roperb
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW55"));
+} @end_script
+health 60
+map 0
+coords  928 840 699
+at      2700
+
+scrollx 3150 4295
+at   3150
+
+scrollx 3300 4295
+at   3300
+
+spawn	williamsb
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW46"));
+} @end_script
+map 1
+health 60
+coords  705 943 524
+at      3300
+
+spawn	linda
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW46"));
+} @end_script
+weapon chain
+health 60
+coords  732 975 524
+at      3300
+
+spawn	williamsb
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW57"));
+} @end_script
+health 60
+map 1
+coords  803 1050 524
+at      3300
+
+spawn	burnov
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW55"));
+} @end_script
+health 280
+map 1
+coords  834 1013 524
+at      3300
+
+scrollx 3441 4295
+at   3441
+
+Group	3 4
+at	3441
+
+spawn	time
+spawnscript data/scripts/noscpos.c
+coords  4040 995 524
+at  3441
+
+spawn	linda
+spawnscript data/scripts/noscpos.c
+health 60
+flip 1
+coords  4026 907 524
+at      3441
+
+spawn	williamsb
+spawnscript data/scripts/noscpos.c
+health 60
+flip 1
+map 1
+coords  4056 907 524
+at      3441
+
+spawn	williamsb
+spawnscript data/scripts/noscpos.c
+health 60
+flip 1
+map 1
+coords  4026 907 524
+at      3441
+
+spawn	williamsb
+spawnscript data/scripts/noscpos.c
+health 60
+flip 1
+map 1
+coords  4056 907 524
+at      3441
+
+Group	1 1
+at	3441
+
+spawn	time
+spawnscript data/scripts/noscpos.c
+coords  4041 995 524
+at  3441
+
+spawn	doorchange
+spawnscript data/scripts/noscpos.c
+coords  4041 975 524
+at  3441
+
+spawn	clear
+spawnscript data/scripts/noscpos.c
+health 50
+coords  4041 975 524
+at  3441
+
+spawn	clear4
+spawnscript data/scripts/noscpos.c
+coords  4041 975 524
+at   3441
+
+

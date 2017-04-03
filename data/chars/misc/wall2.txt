@@ -1,0 +1,19 @@
+name		wall2
+type		none
+facing		1
+setlayer 1
+nomove 1 1
+subject_to_wall	0
+offscreenkill	3000
+
+anim idle
+	loop	0
+	delay	2
+	offset	105 294
+	frame  data/chars/misc/wallb9.gif
+	frame  data/chars/misc/wallb10.gif
+
+
+
+
+

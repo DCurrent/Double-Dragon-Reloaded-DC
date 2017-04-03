@@ -1,0 +1,19 @@
+name		plat5
+type		none
+antigravity	100
+subject_to_gravity 0
+subject_to_wall 0
+subject_to_hole 0
+offscreenkill 7000
+
+animationscript data/scripts/spikeh.c
+
+anim idle
+      loop	1
+	delay	5
+	offset	50 95 
+      @cmd  spikeh4er 0 385 40 -110 20
+      frame   data/chars/misc/ob.gif
+      @cmd  spikeh4er 0 385 40 -110 20
+      frame   data/chars/misc/ob.gif
+

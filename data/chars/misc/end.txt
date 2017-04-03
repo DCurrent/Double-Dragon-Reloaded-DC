@@ -1,0 +1,58 @@
+name   end
+type   none
+facing 1
+subject_to_gravity 0
+subject_to_wall 0
+subject_to_hole 0
+subject_to_platform 0
+subject_to_minz 0
+subject_to_maxz 0
+setlayer 800
+
+palette data/chars/misc/end25.gif
+
+anim spawn
+   loop   0
+   delay   5
+   offset   1 480
+   frame   data/chars/misc/end0.gif
+   frame   data/chars/misc/end0.gif
+
+anim idle
+   loop   0
+   delay   13
+   offset   1 480
+   frame   data/chars/misc/end1.gif
+   frame   data/chars/misc/end2.gif
+   frame   data/chars/misc/end3.gif
+   frame   data/chars/misc/end3.gif
+   frame   data/chars/misc/end4.gif
+   frame   data/chars/misc/end5.gif
+   frame   data/chars/misc/end6.gif
+   frame   data/chars/misc/end6.gif
+   frame   data/chars/misc/end7.gif
+   frame   data/chars/misc/end8.gif
+   frame   data/chars/misc/end9.gif
+   frame   data/chars/misc/end10.gif
+   frame   data/chars/misc/end10.gif
+   frame   data/chars/misc/end11.gif
+   frame   data/chars/misc/end12.gif
+   frame   data/chars/misc/end13.gif
+   frame   data/chars/misc/end14.gif
+   frame   data/chars/misc/end15.gif
+   frame   data/chars/misc/end16.gif
+   frame   data/chars/misc/end17.gif
+   frame   data/chars/misc/end17.gif
+   frame   data/chars/misc/end18.gif
+   frame   data/chars/misc/end19.gif
+   frame   data/chars/misc/end20.gif
+   frame   data/chars/misc/end21.gif
+   frame   data/chars/misc/end22.gif
+   frame   data/chars/misc/end23.gif
+   frame   data/chars/misc/end24.gif
+   frame   data/chars/misc/end25.gif
+
+
+
+
+

@@ -1,0 +1,17 @@
+name	camoff
+type	none
+offscreenkill  3000
+
+
+anim idle
+@script
+    void self = getlocalvar("self");
+    int Offset = getentityproperty(self,"a");
+
+    changelevelproperty("camerazoffset", -100 - Offset);
+
+@end_script
+	loop	1
+	delay	5
+	offset	1 1
+	frame	data/chars/misc/empty.gif

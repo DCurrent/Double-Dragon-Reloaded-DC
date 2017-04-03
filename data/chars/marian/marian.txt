@@ -1,0 +1,15 @@
+name	marian
+health	1
+type	none
+shadow	1
+nolife        1
+facing 1
+
+anim spawn
+	loop	0
+	delay	100
+	offset	100 169
+	frame	data/chars/marian/marian.gif
+	@cmd killentity getlocalvar("self")
+	frame	data/chars/marian/empty.gif
+

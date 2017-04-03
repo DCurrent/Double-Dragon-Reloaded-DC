@@ -1,0 +1,3 @@
+music           data/music/credits.ogg
+animation	data/scenes/discl.gif 0 0 0 1
+

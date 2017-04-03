@@ -1,0 +1,16 @@
+name	bom
+type	none
+shadow	0
+
+anim idle
+	loop	0
+	delay	9
+	offset	70 95
+      frame  data/chars/misc/bomb2.gif
+      frame  data/chars/misc/bomb3.gif
+      frame  data/chars/misc/bomb4.gif
+      frame  data/chars/misc/bomb5.gif
+      frame  data/chars/misc/bomb6.gif
+      frame  data/chars/misc/bomb7.gif
+	
+

@@ -1,0 +1,46 @@
+name	 bulet
+type	 none
+shadow	0
+health   1
+nolife   1
+nomove 1 1
+falldie 2
+nodieblink 1
+candamage	player
+subject_to_gravity 0
+no_adjust_base	0
+subject_to_wall 0
+
+script  data/scripts/bounce5.c
+
+anim idle
+	loop      1
+      delay	5
+	offset 20 25
+      hitflash  blood
+      hitfx  data/sounds/knife2.wav
+	followanim 1
+	followcond 1
+      attack 0 10 20 20 36 1 1
+      dropv 3.5 1.5
+	frame  data/chars/misc/bulet.gif
+	frame  data/chars/misc/bulet.gif
+
+anim follow1
+	loop 0
+	delay	2
+	offset 20 25
+	frame	 data/chars/misc/empty.gif
+	@cmd killentity getlocalvar("self")
+	frame	 data/chars/misc/empty.gif
+
+anim follow2
+	loop 0
+	delay	7
+	offset 20 22
+	frame	 data/chars/misc/bulfla1.gif
+	frame	 data/chars/misc/bulfla2.gif
+	@cmd killentity getlocalvar("self")
+	frame	 data/chars/misc/empty.gif
+
+

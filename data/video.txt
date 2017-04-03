@@ -1,0 +1,4 @@
+video 2
+ColourDepth 16bit
+#video 768x480
+

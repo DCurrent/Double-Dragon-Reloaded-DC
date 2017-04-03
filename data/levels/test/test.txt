@@ -1,0 +1,282 @@
+music		Data/music/st5a.ogg 1775088
+background	data/levels/st5/back.gif
+panel		data/levels/test/test3.gif
+order           a
+direction both
+
+wall  -32 801 -1000 -1000 300 0 300 5000
+wall  321 580 -1000 -1000 66 0 66 96
+wall  222 521 0 0 4000 4000 200 5000
+wall  1276 801 -300 0 2000 2000 300 5000
+hole  -1000 806 0 0 3000 3000 20 0
+
+cameraoffset 0 -100
+
+spawn1 310 100
+spawn2 330 100
+
+scrollz 181 600
+at  0
+
+#-------------------------------------
+spawn	ClimbSpot3
+@script
+void main()
+{
+    int P1 = getplayerproperty(0, "entity");
+    int P2 = getplayerproperty(1, "entity");
+
+    if(P1){
+      changeentityproperty(P1, "subject_to_wall", 0);
+      changeentityproperty(P1, "position", 469, 648);
+      changeentityproperty(P1, "animation", openborconstant("ANI_FREESPECIAL34"));
+      changeentityproperty(P1, "colourmap", 0);
+    }
+    if(P2){
+      changeentityproperty(P2, "subject_to_wall", 0);
+      changeentityproperty(P2, "position", 479, 618);
+      changeentityproperty(P2, "animation", openborconstant("ANI_FREESPECIAL34"));
+      changeentityproperty(P2, "colourmap", 1);
+    }
+}
+@end_script
+health 96
+flip	1
+coords	237 580
+at	0
+
+spawn	ClimbSpot
+health 96
+flip	1
+coords	242 580
+at	0
+
+spawn	ClimbSpot3
+health 96
+flip	1
+coords	247 580
+at	0
+
+#-------------------------------------
+spawn	door5a
+coords  618 511
+at      0
+#-------------------------------------
+#-------------------------------------
+
+spawn	knife
+flip	1
+coords	280 543 96
+at	0
+
+spawn	stick
+flip	1
+coords	520 687
+at	0
+
+spawn	shovel
+coords	725 700
+at	0
+
+spawn	ball
+flip	1
+coords	438 755
+at	0
+
+spawn	wood
+flip	1
+coords	808 755
+at	0
+
+spawn	whip
+flip	1
+coords	818 755
+at	0
+
+spawn	chain
+flip	1
+coords	828 755
+at	0
+
+#-------------------------------------
+#-------------------------------------
+spawn fire
+coords  355 619 264
+at  0
+
+spawn fire
+coords  824 619 264
+at  0
+#-------------------------------------
+
+Group	1 2
+at	0
+
+spawn delay
+health 100
+coords  100 700
+at  0
+
+spawn delay
+health 100
+coords  120 700
+at  0
+
+#------------------
+
+spawn oharra
+spawnscript data/scripts/noscpos.c
+health 200
+map 8
+coords  605 503
+at  0
+
+spawn mibobo
+spawnscript data/scripts/noscpos.c
+health 200
+map 6
+coords  630 503
+at  0
+
+spawn time
+spawnscript data/scripts/noscpos.c
+coords  615 645
+at  0
+
+spawn abore
+spawnscript data/scripts/noscpos.c
+health 200
+map 1
+coords  605 503
+at  0
+
+spawn time
+spawnscript data/scripts/noscpos.c
+coords  615 645
+at  0
+#-------------
+
+spawn roper
+spawnscript data/scripts/noscpos.c
+health 200
+map 8
+coords  605 503
+at  0
+
+spawn williams
+spawnscript data/scripts/noscpos.c
+health 200
+map 6
+coords  630 503
+at  0
+
+spawn time
+spawnscript data/scripts/noscpos.c
+coords  615 645
+at  0
+
+spawn williamsb
+spawnscript data/scripts/noscpos.c
+health 200
+map 1
+weapon knife
+coords  605 503
+at  0
+
+spawn roperb
+spawnscript data/scripts/noscpos.c
+health 200
+map 2
+weapon dynam
+coords  635 503
+at  0
+
+spawn time
+spawnscript data/scripts/noscpos.c
+coords  615 645
+at  0
+
+spawn mibobo
+spawnscript data/scripts/noscpos.c
+health 200
+coords  605 503
+at  0
+
+spawn lindab
+spawnscript data/scripts/noscpos.c
+health 200
+weapon bomb
+coords  635 503
+at  0
+
+spawn time
+spawnscript data/scripts/noscpos.c
+coords  615 645
+at  0
+
+spawn jeff2
+spawnscript data/scripts/noscpos.c
+health 200
+map 10
+coords  605 503
+at  0
+
+spawn jeff2
+spawnscript data/scripts/noscpos.c
+health 200
+map 10
+coords  630 503
+at  0
+
+spawn time
+spawnscript data/scripts/noscpos.c
+coords  615 645
+at  0
+
+spawn bolo
+spawnscript data/scripts/noscpos.c
+health 200
+coords  605 503
+at  0
+
+spawn oharra
+spawnscript data/scripts/noscpos.c
+health 200
+coords  635 503
+at  0
+
+spawn time
+spawnscript data/scripts/noscpos.c
+coords  615 645
+at  0
+
+spawn chin2
+spawnscript data/scripts/noscpos.c
+health 200
+map 2
+coords  605 503
+at  0
+
+spawn chin2
+spawnscript data/scripts/noscpos.c
+health 200
+map 2
+coords  635 503
+at  0
+
+spawn time
+spawnscript data/scripts/noscpos.c
+coords  615 645
+at  0
+
+spawn delay
+health 30
+coords  100 700
+at  0
+
+spawn delay
+health 30
+coords  120 700
+at  0
+
+

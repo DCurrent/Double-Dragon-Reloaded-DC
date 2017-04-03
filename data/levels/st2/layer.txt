@@ -1,0 +1,19 @@
+name	layer
+type    none
+shadow  0
+facing 1
+antigravity 100
+subject_to_hole 0
+subject_to_wall 0
+offscreenkill  3000
+
+
+anim idle
+	loop	0
+	delay	5
+	offset	81 282
+	frame	data/levels/st2/layer3.gif
+	
+
+
+

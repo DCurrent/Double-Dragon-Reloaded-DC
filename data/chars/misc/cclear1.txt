@@ -1,0 +1,44 @@
+name       cclear1
+type   Panel
+speed     10
+facing 1
+subject_to_gravity 0
+subject_to_wall 0
+subject_to_hole 0
+subject_to_platform 0
+subject_to_minz 0
+subject_to_maxz 0
+setlayer 800
+lifespan 3
+
+palette data/chars/misc/clear1.gif
+
+anim spawn
+   loop   0
+   delay   5
+   offset   1 480
+   frame   data/chars/misc/end0.gif
+   frame   data/chars/misc/end0.gif
+
+anim idle
+@script
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+    int P1Score = getplayerproperty(0,"score");
+    int P2Score = getplayerproperty(1,"score");
+
+    if(P1){
+      changeplayerproperty(0, "score", P1Score+3000);
+    }
+
+    if(P2){
+      changeplayerproperty(1, "score", P2Score+3000);
+    }
+@end_script
+   loop   0
+   delay   360
+   offset   1 480
+   frame   data/chars/misc/clear1.gif
+
+
+

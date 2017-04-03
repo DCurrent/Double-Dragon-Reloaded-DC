@@ -1,0 +1,19 @@
+name	pro
+type    none
+shadow  0
+antigravity 100
+facing 1
+subject_to_gravity 0
+subject_to_wall 0
+subject_to_hole 0
+offscreenkill  7000
+
+
+anim idle
+	loop	1
+	delay	20
+	offset	218 306
+	frame	data/levels/st3a/pro.gif
+
+
+

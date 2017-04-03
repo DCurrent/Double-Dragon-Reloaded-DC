@@ -1,0 +1,120 @@
+name	 ballclear
+health   0
+type     item
+subtype  weapon
+grabdistance 50
+counter  999
+typeshot	0
+shootnum  1
+bounce 1
+weapnum  10
+nolife   1
+antigravity 30
+
+palette   data/chars/misc/ball1.gif
+
+script  data/scripts/bounce2.c
+animationscript data/scripts/itemsp.c
+
+anim idle
+	loop   1
+      delay   8
+	offset 75 100
+	bbox   30 55 90 57
+	frame  data/chars/misc/ball1.gif
+
+anim spawn
+	loop   0
+      delay   1
+      offset 75 100
+      jumpframe 1 3 1.2
+	landframe 8
+      @cmd	antiwall4 0 -5
+      frame  data/chars/misc/ball1.gif
+      delay   12
+      frame  data/chars/misc/ball1.gif
+      frame  data/chars/misc/ball1.gif
+	frame  data/chars/misc/ball1.gif
+      frame  data/chars/misc/ball1.gif
+      frame  data/chars/misc/ball1.gif
+      delay   100
+      frame  data/chars/misc/ball1.gif
+      delay   12
+      frame  data/chars/misc/ball1.gif
+      sound  data/sounds/ball2.wav
+      delay   2
+      frame  data/chars/misc/ball1.gif
+      @cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_FOLLOW1")
+      frame  data/chars/misc/ball2.gif
+
+
+anim  follow1
+	loop   0
+      delay   12
+      offset 75 100
+      jumpframe 0 2.5 1
+	 landframe 5
+      frame  data/chars/misc/ball2.gif
+      frame  data/chars/misc/ball2.gif
+      frame  data/chars/misc/ball3.gif
+      frame  data/chars/misc/ball3.gif
+      delay   100
+      frame  data/chars/misc/ball1.gif
+      sound  data/sounds/ball3.wav
+      delay   2
+      frame  data/chars/misc/ball1.gif
+      @cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_FOLLOW2")
+      frame  data/chars/misc/ball1.gif
+
+anim  follow2
+	loop   0
+      delay   12
+      offset 75 100
+      jumpframe 0 1 0.7
+	landframe 5
+      frame  data/chars/misc/ball2.gif
+      frame  data/chars/misc/ball3.gif
+      frame  data/chars/misc/ball1.gif
+      frame  data/chars/misc/ball2.gif
+      delay   100
+      frame  data/chars/misc/ball3.gif
+      delay   3
+      move 1
+      frame  data/chars/misc/ball1.gif
+      frame  data/chars/misc/ball1.gif
+      frame  data/chars/misc/ball1.gif
+      frame  data/chars/misc/ball1.gif
+      frame  data/chars/misc/ball1.gif
+      frame  data/chars/misc/ball2.gif
+      frame  data/chars/misc/ball2.gif
+      frame  data/chars/misc/ball2.gif
+      frame  data/chars/misc/ball2.gif
+      frame  data/chars/misc/ball2.gif
+      frame  data/chars/misc/ball3.gif
+      frame  data/chars/misc/ball3.gif
+      frame  data/chars/misc/ball3.gif
+      frame  data/chars/misc/ball3.gif
+      frame  data/chars/misc/ball3.gif
+      frame  data/chars/misc/ball1.gif
+      move 0
+      @cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_IDLE")
+      frame  data/chars/misc/ball1.gif
+
+
+
+anim follow10 # killer effect
+      loop   0
+      delay   12
+      offset 75 100
+      landframe 4
+      frame  data/chars/misc/ball1.gif
+      frame  data/chars/misc/ball1.gif
+	frame  data/chars/misc/ball1.gif
+      delay   100
+      @cmd killentity getlocalvar("self")
+      frame  data/chars/misc/empty.gif
+      delay   8
+      frame  data/chars/misc/empty.gif
+
+
+

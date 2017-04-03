@@ -1,0 +1,18 @@
+name	moveyblo
+type    none
+shadow  0
+setlayer 1
+offscreenkill 2000
+subject_to_gravity 0
+nolife  1
+
+
+anim idle
+	loop	1
+	delay	5
+	offset	1 1
+      platform 0 0 2000 2000 5 10
+      frame  data/chars/misc/empty.gif
+
+
+

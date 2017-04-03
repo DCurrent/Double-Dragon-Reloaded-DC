@@ -1,0 +1,354 @@
+music		Data/music/menu.ogg 45490
+bossmusic	Data/music/boss1.ogg
+background	data/levels/st1/sky.png
+bgspeed		0.5 0
+panel		data/levels/st1/street.png
+order           a
+direction both
+nojoin 1
+
+bglayer 	data/levels/st1/skyscrapers.png     0.2  0.2  0  0  0 0 -1 1 1
+bglayer 	data/levels/st1/bush.png     	    0.1  0.1  0  155  0 0 -1 1 1
+
+
+wall  1200 389 -2000 -2000 32 0 35 5000
+wall  2078 389 -1000 -1000 32 0 35 232
+wall  2138 373 -200 -200 16 0 19 232
+wall	2386 358 -3000 -3000 63 0 63 5000
+wall	3160 358 -63 0 1000 1000 63 5000
+
+cameraoffset 0 -100
+
+spawn1 200 120
+spawn2 250 120
+
+scrollz 12 12
+at  0
+
+#-------------------------------------
+spawn	gar
+@script
+void main()
+{
+    int P1 = getplayerproperty(0, "entity");
+    int P2 = getplayerproperty(1, "entity");
+
+    if(P1){
+      changeentityproperty(P1, "subject_to_wall", 0);
+      changeentityproperty(P1, "position", 74, 374);
+      changeentityproperty(P1, "animation", openborconstant("ANI_FREESPECIAL26"));
+      changeentityproperty(P1, "colourmap", 0);
+    }
+    if(P2){
+      changeentityproperty(P2, "subject_to_wall", 0);
+      changeentityproperty(P2, "position", 194, 374);
+      changeentityproperty(P2, "animation", openborconstant("ANI_FREESPECIAL26"));
+      changeentityproperty(P2, "colourmap", 1);
+    }
+}
+@end_script
+coords  139 383
+at      0
+
+#-------------------------------------
+spawn	ClimbSpot3
+health 232
+flip	1
+coords	1280 389
+at	0
+
+spawn	ClimbSpot
+health 232
+flip	1
+coords	1285 389
+at	0
+
+spawn	ClimbSpot3
+health 232
+flip	1
+coords	1290 389
+at	0
+#-------------------------------------
+
+spawn	ClimbSpot3
+health 232
+flip	1
+coords	1920 389
+at	0
+
+spawn	ClimbSpot
+health 232
+flip	1
+coords	1925 389
+at	0
+
+spawn	ClimbSpot3
+health 232
+flip	1
+coords	1930 389
+at	0
+#-------------------------------------
+
+spawn	barel
+coords  3027 435
+at      0
+
+spawn	barel
+coords  2690 345
+at      0
+
+spawn	marian
+coords  298 442
+at      0
+
+spawn	will
+coords  389 442
+at      0
+
+spawn	guys
+coords  445 442
+at      0
+
+spawn	chi
+map 0
+coords  605 445
+at      0
+
+spawn	burno
+map 1
+coords  565 481
+at      0
+
+#-------------------------------------
+
+spawn	scrmover
+flip 1
+coords  100 440
+at      0
+
+spawn	doorst1
+coords  1396 384
+at      0
+
+#1-------------------------------------
+
+music	data/music/st1.ogg 35000
+at      1
+
+spawn	williams
+health 70
+coords  820 440
+at      1
+
+blockade 135
+at	135
+
+spawn	roper
+health 70
+coords  820 440
+at      135
+
+Group	6 6
+at	330
+
+blockade 330
+at	330
+
+spawn	roper
+health 80
+map 1
+coords  -180 440
+at      330
+
+spawn	williams
+health 80
+coords  820 440
+at      330
+
+scrollx 480 480
+at   480
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 480 3160
+at   0
+
+spawn	brrow
+flip 1
+coords  540 490 270
+at   0
+
+wait
+at 480
+
+Group	1 1
+at	480
+
+spawn timer
+coords  100 430
+at      480
+
+#-------------------------------------
+#2-------------------------------------
+
+Group	5 5
+at	530
+
+spawn	williams
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW41"));
+} @end_script
+health 80
+coords  700 390 193
+at      530
+
+blockade 928
+at	928
+
+scrollz 0 12
+at  928
+
+spawn	linda
+health 70
+weapon whip
+coords  467 376
+at      928
+
+blockade 1155
+at	1155
+
+scrollx 1155 1475
+at   1475
+
+Group	4 4
+at	1475
+
+spawn	wall1
+coords  365 384
+at      1475
+
+spawn	bolo2
+map 1
+coords  365 376
+at      1475
+
+spawn	williams
+health 100
+weapon bat
+coords  820 440
+at      1475
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 1475 3160
+at   0
+
+spawn	brrow
+flip 1
+coords  540 490 270
+at   0
+
+wait
+at 1475
+
+Group	1 1
+at	1475
+
+spawn timer
+coords  100 430
+at      1475
+
+#-------------------------------------
+#3-------------------------------------
+
+Group	6 6
+at	1910
+
+blockade 1910
+at	1910
+
+spawn	roper
+health 90
+weapon knife
+coords  820 440
+at      1910
+
+scrollx 2210 3160
+at   2185
+
+spawn	abobo
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW48"));
+} @end_script
+health 220
+coords  820 440
+at      2185
+
+spawn	williams
+health 100
+coords  910 320
+at      2185
+
+spawn	delay2
+health 150
+coords  200 480
+at      2185
+
+spawn	delay2
+health 150
+coords  200 480
+at      2185
+
+spawn	delay2
+health 150
+coords  200 480
+at      2185
+
+spawn	roper
+health 100
+coords  1020 480
+at      2185
+
+scrollx 2250 3160
+at   2250
+
+Group	3 3
+at	1910
+
+spawn	linda
+health 60
+flip 1
+map 6
+coords  -50 400
+at      1910
+
+Group	1 1
+at	1910
+
+spawn	time
+spawnscript data/scripts/noscpos.c
+coords  2950 425
+at  1910
+
+spawn	clear
+spawnscript data/scripts/noscpos.c
+health 50
+coords  3090 425
+at  1910
+
+spawn	clearexclst1
+spawnscript data/scripts/noscpos.c
+health 50
+coords  3090 425
+at  1910
+
+spawn	clear1
+spawnscript data/scripts/noscpos.c
+coords  2980 450
+at      1910
+
+

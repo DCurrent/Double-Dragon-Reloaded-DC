@@ -1,0 +1,33 @@
+name	clearexclst1
+type    none
+shadow  0
+setlayer 1
+offscreenkill 2000
+subject_to_gravity 0
+subject_to_hole 0
+subject_to_wall 0
+nolife  1
+hostile npc
+
+script data/scripts/clearexclst1.c
+animationscript data/scripts/elevjeff4.c
+
+anim idle
+	loop	1
+	delay	5
+	offset	9 19
+	@cmd elev -80 80 80 "ANI_FOLLOW14"
+	frame   data/chars/misc/tra.gif
+	@cmd elev -80 80 80 "ANI_FOLLOW14"
+	frame   data/chars/misc/tra.gif
+
+
+anim follow1
+	loop	1
+	delay	5
+	offset	9 19
+	@cmd elev3 -300 300 300 "ANI_FOLLOW5"
+	frame   data/chars/misc/tra.gif
+	@cmd elev3 -300 300 300 "ANI_FOLLOW5"
+	frame   data/chars/misc/tra.gif
+

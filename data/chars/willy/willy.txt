@@ -1,0 +1,846 @@
+name	willy
+health	340
+speed	18
+type	enemy
+shadow	1
+nolife        1
+grabdistance 40
+jumpheight 6.5
+jumpspeed 20
+antigravity -100
+falldie 2
+nodieblink      1
+noquake 1 1
+riseattacktype 3
+bounce 1
+risetime 0 -50
+aggression      20
+projectilehit   player
+hostile player platform
+candamage player 
+diesound data/sounds/willy.wav
+
+load	bulet
+
+script data/scripts/Custom_chase.c
+animationscript 	data/scripts/ani0020.h
+
+palette   data/chars/willy/w4.gif
+
+anim spawn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==32){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	13
+	offset	77 170
+	frame	data/chars/willy/w3.gif
+	@cmd direc 0
+	@cmd changeentityproperty getlocalvar("self") "velocity" -1 0 0
+	frame	data/chars/willy/w1.gif
+	frame	data/chars/willy/w2.gif
+	frame	data/chars/willy/w3.gif
+	frame	data/chars/willy/w4.gif
+	frame	data/chars/willy/w1.gif
+	frame	data/chars/willy/w2.gif
+	frame	data/chars/willy/w3.gif
+	frame	data/chars/willy/w4.gif
+	frame	data/chars/willy/w1.gif
+	frame	data/chars/willy/w2.gif
+	frame	data/chars/willy/w3.gif
+	frame	data/chars/willy/w4.gif
+	frame	data/chars/willy/w1.gif
+	frame	data/chars/willy/w2.gif
+	frame	data/chars/willy/w3.gif
+	frame	data/chars/willy/w4.gif
+	frame	data/chars/willy/w1.gif
+	frame	data/chars/willy/w2.gif
+	frame	data/chars/willy/w3.gif
+	frame	data/chars/willy/w4.gif
+	frame	data/chars/willy/w1.gif
+	frame	data/chars/willy/w2.gif
+	frame	data/chars/willy/w3.gif
+	frame	data/chars/willy/w4.gif
+	frame	data/chars/willy/w1.gif
+	frame	data/chars/willy/w2.gif
+	frame	data/chars/willy/w3.gif
+	frame	data/chars/willy/w4.gif
+	frame	data/chars/willy/w1.gif
+	frame	data/chars/willy/w2.gif
+	frame	data/chars/willy/w3.gif
+	frame	data/chars/willy/w4.gif
+
+anim follow43
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==3){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	117
+	offset	77 170
+      jumpframe	1 0 0 1
+      frame	data/chars/willy/w3.gif
+      delay	13
+      frame	data/chars/willy/w1.gif
+      frame	data/chars/willy/w2.gif
+      frame	data/chars/willy/w3.gif
+
+anim follow44
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==3){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	117
+	offset	77 170
+      jumpframe	1 0 0 1
+      frame	data/chars/willy/w3.gif
+      delay	13
+      frame	data/chars/willy/w1.gif
+      frame	data/chars/willy/w2.gif
+      frame	data/chars/willy/w3.gif
+
+anim respawn
+	loop	0
+	delay	17
+	offset	77 170
+	frame	data/chars/willy/rise2.gif
+
+anim idle
+	loop	1
+	delay	10
+	offset	77 170
+	bbox	60 55 40 100
+      @cmd    clearL
+	frame	data/chars/willy/w4.gif
+      frame	data/chars/willy/w4.gif
+      frame	data/chars/willy/w4.gif
+      frame	data/chars/willy/w4.gif
+
+anim walk
+	loop	1
+	delay	13
+	offset	77 170
+	bbox	60 55 40 100
+     	frame	data/chars/willy/w1.gif
+	frame	data/chars/willy/w2.gif
+	frame	data/chars/willy/w3.gif
+	frame	data/chars/willy/w4.gif
+
+anim up
+	loop	1
+	delay	13
+	offset	77 170
+	bbox	60 55 40 100
+     	frame	data/chars/willy/wu1.gif
+	frame	data/chars/willy/wu2.gif
+	frame	data/chars/willy/wu3.gif
+	frame	data/chars/willy/wu4.gif
+
+anim attack1
+@script
+    void self = getlocalvar("self");
+
+    if( frame == 0){
+      int r = rand()%10;
+
+      if( r > 0){
+        changeentityproperty(self, "animation", openborconstant("ANI_FOLLOW17"));
+      }
+    }
+@end_script
+	range   96 115
+      rangea   0 85
+	loop	0
+	delay	12
+	offset	87 170
+	bbox	70 55 40 100
+      hitfx  data/sounds/beatt2.wav
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW14"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW14"
+	frame	data/chars/willy/aa1.gif
+      attack14  90 93 95 34 12 1
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/willy/aa2.gif
+      attack14  0 0 0 0 0
+	frame	data/chars/willy/aa2.gif
+	delay	9
+	frame	data/chars/willy/aa1.gif
+
+anim follow14
+	loop	0
+	delay	12
+	offset	87 170
+	bbox	70 55 40 100
+      hitfx  data/sounds/beatt2.wav
+	frame	data/chars/willy/aa1.gif
+      attack14  90 93 95 34 12 1
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/willy/aa2.gif
+      attack14  0 0 0 0 0
+	frame	data/chars/willy/aa2.gif
+	delay	9
+	frame	data/chars/willy/aa1.gif
+
+anim attack2
+@script
+    void self = getlocalvar("self");
+
+    if( frame == 0){
+      int r = rand()%20;
+
+      if( r > 0){
+        changeentityproperty(self, "animation", openborconstant("ANI_FOLLOW17"));
+      }
+    }
+@end_script
+	range   1 95
+      rangea   0 85
+	loop	0
+	delay	11
+	offset	77 170
+	bbox	60 55 40 100
+      hitfx  data/sounds/beatt2.wav
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW16"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW16"
+	frame	data/chars/willy/a1.gif
+	delay	10
+      attack  90 68 95 34 12 1
+      dropv 3.5 1.5
+	frame	data/chars/willy/a2.gif
+      attack  0 0 0 0 0
+	frame	data/chars/willy/a3.gif
+	frame	data/chars/willy/a4.gif
+
+anim follow16
+	loop	0
+	delay	11
+	offset	77 170
+	bbox	60 55 40 100
+      hitfx  data/sounds/beatt2.wav
+	frame	data/chars/willy/a1.gif
+	delay	10
+      attack14  90 68 95 34 12 1
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/willy/a2.gif
+      attack14  0 0 0 0 0
+	frame	data/chars/willy/a3.gif
+	frame	data/chars/willy/a4.gif
+
+anim follow17
+	loop	0
+	delay	9
+	offset	77 170
+	bbox	60 55 40 100
+      hitfx  data/sounds/beatt2.wav
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW18"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW18"
+	frame	data/chars/willy/a4.gif
+	frame	data/chars/willy/a3.gif
+      attack  90 68 95 34 12 1
+      dropv 3.5 1.5
+	frame	data/chars/willy/a2.gif
+      attack  0 0 0 0 0
+	delay	10
+	frame	data/chars/willy/a1.gif
+
+anim follow18
+	loop	0
+	delay	9
+	offset	77 170
+	bbox	60 55 40 100
+      hitfx  data/sounds/beatt2.wav
+	frame	data/chars/willy/a4.gif
+	frame	data/chars/willy/a3.gif
+      attack14  90 68 95 34 12 1
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/willy/a2.gif
+      attack14  0 0 0 0 0
+	delay	10
+	frame	data/chars/willy/a1.gif
+
+anim attack3
+	range   116 600
+	rangea   0 85
+	loop	0
+	delay	4
+	offset	77 170
+	bbox	60 55 40 100
+	sound data/sounds/gun.wav
+     @cmd riseattack2 115 400 "ANI_FOLLOW19"
+     @cmd shooter2 "bulet" 80 69 0 3.5 0 0
+	frame	data/chars/willy/aaa1.gif
+	frame	data/chars/willy/aaa2.gif
+	frame	data/chars/willy/aaa3.gif
+	frame	data/chars/willy/aaa4.gif
+     @cmd riseattack2 115 400 "ANI_FOLLOW19"
+     @cmd shooter2 "bulet" 80 69 0 3.5 0 0
+	frame	data/chars/willy/aaa1.gif
+	frame	data/chars/willy/aaa2.gif
+	frame	data/chars/willy/aaa3.gif
+	frame	data/chars/willy/aaa4.gif
+     @cmd riseattack2 115 400 "ANI_FOLLOW19"
+     @cmd shooter2 "bulet" 80 69 0 3.5 0 0
+	frame	data/chars/willy/aaa1.gif
+	frame	data/chars/willy/aaa2.gif
+	frame	data/chars/willy/aaa3.gif
+	frame	data/chars/willy/aaa4.gif
+     @cmd riseattack2 115 400 "ANI_FOLLOW19"
+     @cmd shooter2 "bulet" 80 69 0 3.5 0 0
+	frame	data/chars/willy/aaa1.gif
+	frame	data/chars/willy/aaa2.gif
+	frame	data/chars/willy/aaa3.gif
+	frame	data/chars/willy/aaa4.gif
+     @cmd riseattack2 115 400 "ANI_FOLLOW19"
+     @cmd shooter2 "bulet" 80 69 0 3.5 0 0
+	frame	data/chars/willy/aaa1.gif
+	frame	data/chars/willy/aaa2.gif
+	frame	data/chars/willy/aaa3.gif
+	frame	data/chars/willy/aaa4.gif
+     @cmd riseattack2 115 400 "ANI_FOLLOW19"
+     @cmd shooter2 "bulet" 80 69 0 3.5 0 0
+	frame	data/chars/willy/aaa1.gif
+	frame	data/chars/willy/aaa2.gif
+	frame	data/chars/willy/aaa3.gif
+	frame	data/chars/willy/aaa4.gif
+     @cmd riseattack2 115 400 "ANI_FOLLOW19"
+     @cmd shooter2 "bulet" 80 69 0 3.5 0 0
+	frame	data/chars/willy/aaa1.gif
+	frame	data/chars/willy/aaa2.gif
+	frame	data/chars/willy/aaa3.gif
+	frame	data/chars/willy/aaa4.gif
+
+anim follow19
+	loop	0
+	delay	9
+	offset	77 170
+	bbox	60 55 40 100
+      @cmd    hurt4 0
+	frame	data/chars/willy/w4.gif
+
+anim pain
+	loop	0
+	delay 40
+	offset	77 170
+	bbox	60 55 40 100
+	frame	data/chars/willy/pain1.gif
+
+anim pain2
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 40 100
+	frame	data/chars/willy/pain2.gif
+      delay   65
+	frame	data/chars/willy/pain3.gif
+
+anim pain29
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 40 100
+	frame	data/chars/willy/pain2.gif
+      delay   65
+	frame	data/chars/willy/pain3.gif
+
+anim pain3
+	loop	0
+	delay	5
+	offset	77 170
+	bbox	44 140 61 37
+	frame	data/chars/willy/fall06.gif
+      delay   65
+	frame	data/chars/willy/pain3.gif
+
+anim pain14 # Backpain 1
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 40 100
+	frame	data/chars/willy/pain3.gif
+      delay   65
+	frame	data/chars/willy/pain3.gif
+
+anim pain15 # Backpain 2
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 40 100
+	frame	data/chars/willy/pain3.gif
+      delay   65
+	frame	data/chars/willy/pain3.gif
+
+anim pain30 # Backpain 2
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 40 100
+	frame	data/chars/willy/pain3.gif
+      delay   65
+	frame	data/chars/willy/pain3.gif
+
+anim pain17 # grabbed attack pain
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 40 100
+	frame	data/chars/willy/pain3.gif
+      delay   65
+	frame	data/chars/willy/pain3.gif
+
+anim fall
+	loop	0
+	offset	77 170
+	delay   8
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd bind 0 0 0 0 0
+      @cmd    depost 0
+	frame	data/chars/willy/fall01.gif
+      frame	data/chars/willy/fall01.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/willy/fall01.gif
+      frame	data/chars/willy/fall01.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/willy/fall01.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/willy/fall02.gif
+      delay   500
+      frame	data/chars/willy/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/willy/fall02.gif
+	offset	134 170
+	frame	data/chars/willy/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/willy/rise0.gif
+
+anim follow1
+      loop	0
+      delay   80
+	offset	134 170
+      bbox	137 140 25 37
+      frame	data/chars/willy/rise0.gif
+
+anim follow2
+@script
+    void self = getlocalvar("self");
+
+    if( frame == 0){
+      int r = rand()%5;
+
+      if( r > 0){
+        changeentityproperty(self, "animation", openborconstant("ANI_FOLLOW13"));
+      }
+    }
+@end_script
+      loop	1
+      delay   400
+      offset	77 170
+      frame	data/chars/willy/pain4.gif
+      frame	data/chars/willy/pain4.gif
+      frame	data/chars/willy/pain4.gif
+      frame	data/chars/willy/pain4.gif
+
+anim follow3
+      loop	1
+      delay   10
+	offset	134 169
+      frame	data/chars/willy/rise0.gif
+
+anim follow4
+      loop	1
+      delay   10
+	offset	134 169
+      frame	data/chars/willy/pain7.gif
+
+anim follow5
+      loop	1
+      delay   10
+	offset	134 169
+      frame	data/chars/willy/pain8.gif
+
+anim fall4
+	loop	0
+	offset	122 170
+	delay   8
+      flipframe 8
+      jumpframe 0 3.5 1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/willy/fall033.gif
+      frame	data/chars/willy/fall033.gif
+      delay   10
+      frame	data/chars/willy/fall033.gif
+      frame	data/chars/willy/fall033.gif
+      frame	data/chars/willy/fall033.gif
+      delay   20
+      frame	data/chars/willy/fall033.gif
+      delay   500
+      frame	data/chars/willy/fall066.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/willy/fall066.gif
+	offset	134 170
+	frame	data/chars/willy/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/willy/rise0.gif
+
+anim fall14 # Backfall 1
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/willy/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/willy/fall03.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/willy/fall03.gif
+      frame	data/chars/willy/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/willy/fall03.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/willy/fall03.gif
+      delay   500
+      frame	data/chars/willy/fall06.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/willy/fall06.gif
+	offset	134 170
+	frame	data/chars/willy/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/willy/rise0.gif
+
+anim fall15 # Backfall 2
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/willy/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/willy/fall03.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/willy/fall03.gif
+      frame	data/chars/willy/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/willy/fall03.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/willy/fall03.gif
+      delay   500
+      frame	data/chars/willy/fall06.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/willy/fall06.gif
+	offset	134 170
+	frame	data/chars/willy/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/willy/rise0.gif
+
+anim fall30 # Backfall 2
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/willy/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/willy/fall03.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/willy/fall03.gif
+      frame	data/chars/willy/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/willy/fall03.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/willy/fall03.gif
+      delay   500
+      frame	data/chars/willy/fall06.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/willy/fall06.gif
+	offset	134 170
+	frame	data/chars/willy/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/willy/rise0.gif
+
+anim fall16 # Backfall 3
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -2
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/willy/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/willy/fall03.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/willy/fall03.gif
+      frame	data/chars/willy/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/willy/fall03.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/willy/fall03.gif
+      delay   500
+      frame	data/chars/willy/fall06.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/willy/fall06.gif
+	offset	134 170
+	frame	data/chars/willy/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/willy/rise0.gif
+
+anim follow37
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 2.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd    hurt4 5
+	frame	data/chars/willy/fall03.gif
+      frame	data/chars/willy/fall03.gif
+      delay   10
+      frame	data/chars/willy/fall03.gif
+      frame	data/chars/willy/fall03.gif
+      frame	data/chars/willy/fall03.gif
+      delay   20
+      frame	data/chars/willy/fall03.gif
+      delay   500
+      frame	data/chars/willy/fall06.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/willy/fall06.gif
+	offset	134 170
+	frame	data/chars/willy/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/willy/rise0.gif
+
+anim follow38
+      loop	0
+	offset	77 170
+	delay   8
+      jumpframe 0 1.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd    hurt4 5
+	frame	data/chars/willy/fall03.gif
+      frame	data/chars/willy/fall03.gif
+      delay   10
+      frame	data/chars/willy/fall03.gif
+      frame	data/chars/willy/fall03.gif
+      frame	data/chars/willy/fall03.gif
+      delay   20
+      frame	data/chars/willy/fall03.gif
+      delay   500
+      frame	data/chars/willy/fall06.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/willy/fall06.gif
+	offset	134 170
+	frame	data/chars/willy/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/willy/rise0.gif
+
+anim fall5
+	loop	0
+	offset	77 170
+	delay   8
+	landframe 6
+      @cmd    degravity -0.15
+      frame	data/chars/willy/fall05.gif
+      frame	data/chars/willy/fall05.gif
+      delay   10
+      @cmd    antiwall4 20 "ANI_FOLLOW38"
+      frame	data/chars/willy/fall05.gif
+      frame	data/chars/willy/fall05.gif
+      delay   20
+      @cmd    antiwall4 20 "ANI_FOLLOW38"
+	frame	data/chars/willy/fall05.gif
+      delay   500
+      @cmd    degravity -1
+      @cmd    antiwall4 20 "ANI_FOLLOW38"
+      frame	data/chars/willy/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+      frame	data/chars/willy/fall02.gif
+	offset	134 170
+      frame	data/chars/willy/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/willy/rise0.gif
+
+anim fall7
+      loop	0
+      delay   1000
+      offset	77 170
+      @cmd    conditionalflip3
+      @cmd    degravity -0.15
+      frame	data/chars/willy/pain3.gif
+      frame	data/chars/willy/pain4.gif
+      frame	data/chars/willy/pain5.gif
+      frame	data/chars/willy/pain6.gif
+      frame	data/chars/willy/fall07.gif
+      frame	data/chars/willy/fall08.gif
+      frame	data/chars/willy/fall05.gif
+      frame	data/chars/willy/fall06.gif
+	offset	134 170
+      frame	data/chars/willy/rise0.gif
+      frame	data/chars/willy/pain7.gif
+      frame	data/chars/willy/pain8.gif
+
+anim follow13
+      loop	0
+      delay   13
+      offset	77 170
+      @script
+    void self = getlocalvar("self");
+
+    changeentityproperty(self, "velocity", 0, 0, 0);
+@end_script
+      @cmd    hurt5 1
+      frame	data/chars/willy/escape1.gif
+      frame	data/chars/willy/escape2.gif
+      delay   2
+      @cmd setidle getlocalvar("self") openborconstant("ANI_IDLE") 1 1
+      frame	data/chars/willy/w4.gif
+
+anim fall8
+      loop	0
+      delay   1000
+      offset	77 170
+      @cmd    conditionalflip3
+      @cmd    degravity -0.15
+      frame	data/chars/willy/pain3.gif
+      frame	data/chars/willy/pain4.gif
+      frame	data/chars/willy/pain5.gif
+      frame	data/chars/willy/pain6.gif
+      frame	data/chars/willy/fall07.gif
+      frame	data/chars/willy/fall08.gif
+      frame	data/chars/willy/fall05.gif
+      frame	data/chars/willy/fall06.gif
+	offset	134 169
+      frame	data/chars/willy/rise0.gif
+      frame	data/chars/willy/pain7.gif
+      frame	data/chars/willy/pain8.gif
+
+anim rise
+	loop	0
+	offset	134 170
+	delay	10
+      @cmd    degravity -1
+	frame	data/chars/willy/rise0.gif
+	offset	77 170
+	delay   15
+	frame	data/chars/willy/rise1.gif
+	delay   10
+	@cmd    riseattack 95 40 "ANI_ATTACK2"
+	frame	data/chars/willy/rise1.gif
+
+anim rise7
+	loop	0
+	delay	10
+	offset	77 170
+      @cmd    clearL
+      @cmd    degravity -1
+	frame	data/chars/willy/w4.gif
+
+anim fall12
+      loop	0
+	delay	5
+	offset	77 170
+      bbox	60 55 40 100
+      @script
+    void self = getlocalvar("self");
+
+    changeentityproperty(self, "velocity", 0, 0, 0);
+@end_script
+      bouncefactor 0
+      @cmd bind 0 0 0 0 0
+      @cmd    degravity -1
+      frame	data/chars/willy/w4.gif
+
+anim rise12
+	loop	0
+	delay	10
+	offset	77 170
+      @cmd    clearL
+      @cmd    degravity -1
+	frame	data/chars/willy/w4.gif
+
+anim death
+	loop	0
+	offset	134 170
+	delay	20
+	frame	data/chars/willy/rise0.gif
+
+
+

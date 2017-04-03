@@ -1,0 +1,44 @@
+name		wall2b
+type		enemy
+facing		1
+nomove 1 1
+subject_to_wall	0
+offscreenkill	3000
+
+
+anim spawn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==9){
+      changeentityproperty(self, "setlayer", 1);
+    }
+@end_script
+      loop	0
+	delay	559
+	offset	105 294
+	frame  data/chars/misc/wallb0.gif
+	delay	13
+      sound  data/sounds/rock2.wav
+      frame  data/chars/misc/wallb1.gif
+	frame  data/chars/misc/wallb2.gif
+	frame  data/chars/misc/wallb3.gif
+	frame  data/chars/misc/wallb4.gif
+      frame  data/chars/misc/wallb5.gif
+	frame  data/chars/misc/wallb6.gif
+	frame  data/chars/misc/wallb7.gif
+      frame  data/chars/misc/wallb8.gif
+	frame  data/chars/misc/wallb9.gif
+
+anim idle
+	loop	0
+	delay	2
+	offset	105 294
+	frame  data/chars/misc/wallb9.gif
+	@cmd killentity getlocalvar("self")
+	frame  data/chars/misc/wallb9.gif
+
+
+
+
+

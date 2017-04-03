@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="billy" />
+		<Option pch_mode="2" />
+		<Option compiler="null" />
+		<Build>
+			<Target title="Release">
+				<Option output="bin/Release/billy" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="null" />
+			</Target>
+		</Build>
+		<Unit filename="../../data/chars/billy/animation.h" />
+		<Unit filename="../../data/chars/billy/animation_script.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../data/chars/billy/bball.txt" />
+		<Unit filename="../../data/chars/billy/bbarel.txt" />
+		<Unit filename="../../data/chars/billy/bbat.txt" />
+		<Unit filename="../../data/chars/billy/bbomb.txt" />
+		<Unit filename="../../data/chars/billy/bbox.txt" />
+		<Unit filename="../../data/chars/billy/bboxx.txt" />
+		<Unit filename="../../data/chars/billy/bchain.txt" />
+		<Unit filename="../../data/chars/billy/bdynam.txt" />
+		<Unit filename="../../data/chars/billy/billkey.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../data/chars/billy/billy.txt" />
+		<Unit filename="../../data/chars/billy/bknife.txt" />
+		<Unit filename="../../data/chars/billy/brock.txt" />
+		<Unit filename="../../data/chars/billy/bshovel.txt" />
+		<Unit filename="../../data/chars/billy/bstick.txt" />
+		<Unit filename="../../data/chars/billy/bwhip.txt" />
+		<Unit filename="../../data/chars/billy/bwood.txt" />
+		<Unit filename="../../data/chars/billy/didhit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

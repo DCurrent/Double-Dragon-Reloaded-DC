@@ -1,0 +1,63 @@
+name       delay11
+health       10
+type       enemy
+nomove     1 1
+antigravity	100
+subject_to_gravity 0
+subject_to_wall 0
+subject_to_hole 0
+offscreenkill	7000
+
+anim spawn
+	loop	0
+	delay	5
+	offset 1 1
+	frame  data/chars/misc/empty.gif
+
+anim idle
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+    int Play = openborvariant("count_players");
+    int x = getentityproperty(self,"x");
+    int y = getentityproperty(self,"a");
+
+    if(Play==1 && (P1 || P2)){
+      int Px;
+      int Py;
+
+      if(P1){
+        Px = getentityproperty(P1,"x");
+        Py = getentityproperty(P1,"a");
+      } else if(P2){
+        Px = getentityproperty(P2,"x");
+        Py = getentityproperty(P2,"a");
+      }
+
+      if(Py <= y+400){
+        if(Px >= x-500){
+          killentity(self);
+        }
+      }
+    } else if(Play==2 && P1 && P2){
+      int P1x = getentityproperty(P1,"x");
+      int P1y = getentityproperty(P1,"a");
+      int P2x = getentityproperty(P2,"x");
+      int P2y = getentityproperty(P2,"a");
+
+      if(P1y <= y+400 && P2y <= y+400){
+        if(P1x >= x-500 && P2x >= x-500){
+          killentity(self);
+        }
+      }
+    }
+@end_script
+	loop	1
+	delay	7
+	offset 1 1
+	frame  data/chars/misc/empty.gif
+	frame  data/chars/misc/empty.gif
+
+
+

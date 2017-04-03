@@ -1,0 +1,70 @@
+name	 stick
+health   0
+type     item
+counter  999
+shootnum  1
+subtype  weapon
+weapnum  14
+nolife   1
+antigravity 30
+
+palette   data/chars/misc/stick1.gif
+
+script  data/scripts/bounce.c
+animationscript data/scripts/itemsp.c
+
+anim idle
+	loop   1
+      delay   8
+	offset 41 83
+	bbox   5 70 73 24
+	frame  data/chars/misc/stick1.gif
+
+anim spawn
+	loop   0
+      delay   2
+	offset 41 83
+	bbox   5 70 73 24
+	frame  data/chars/misc/stick1.gif
+
+anim respawn
+      loop   0
+      delay   12
+      offset 41 83
+      jumpframe 0 3 0.5
+      landframe 4
+      @cmd	move 25 0 50
+      @cmd	antiwall4 0 -25
+      frame  data/chars/misc/stick1.gif
+      frame  data/chars/misc/stick1.gif
+	frame  data/chars/misc/stick1.gif
+      delay   100
+      frame  data/chars/misc/stick1.gif
+      delay   8
+      bbox   5 70 73 24
+      frame  data/chars/misc/stick1.gif
+
+anim  follow49 # water effect
+	loop	0
+	offset	77 170
+	delay   4
+      spawnframe 0 0 55 0 0
+	custentity water1
+      landframe 6
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      delay   500
+      frame	data/chars/misc/empty.gif
+      delay   200
+	frame	data/chars/misc/empty.gif
+
+anim  follow50 # spikeh2 effect
+      loop   0
+      delay   8
+	offset 41 83
+	jumpframe 0 0.1 1
+	frame  data/chars/misc/stick1.gif
+

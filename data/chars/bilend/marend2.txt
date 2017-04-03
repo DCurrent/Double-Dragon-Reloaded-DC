@@ -1,0 +1,103 @@
+name	marend2
+health	50
+speed	15
+type	enemy
+subtype chase
+shadow	1
+nolife        1
+grabdistance 40
+antigravity -100
+noquake 1 1
+bounce 0
+risetime 0 -50
+falldie    1
+noquake 1 1
+nodieblink 3
+hostile npc
+candamage npc
+aimove chase
+
+load fadee
+
+anim spawn
+@script
+    if(frame==0){
+      playmusic("DATA/music/ending.ogg", 0);
+    }
+@end_script
+	loop	0
+	delay	30
+	offset	78 186
+	frame	data/chars/bilend/marend3.gif
+
+anim idle
+	loop	1
+	delay	28
+	offset	78 186
+	frame	data/chars/bilend/marend4.gif
+
+anim walk
+	loop	1
+	delay	16
+	offset	78 186
+	bbox 60 55 40 100
+	frame	data/chars/bilend/marend4.gif
+	frame	data/chars/bilend/marend5.gif
+	frame	data/chars/bilend/marend6.gif
+	frame	data/chars/bilend/marend3.gif
+
+anim attack1
+	range	55 59
+	rangez -5	5
+	loop	0
+	delay	10
+	offset	78 186
+	followcond 2
+	followanim 3
+	attackone 1
+	hitflash  eflash
+	hitfx  data/sounds/goo.wav
+	frame	data/chars/bilend/marend4.gif
+	attack2  133 90 15 50 2 0
+	forcedirection -1
+	nokill 1
+	frame	data/chars/bilend/marend4.gif
+	frame	data/chars/bilend/empty.gif
+
+anim follow3
+	loop	0
+	delay	1800
+	offset	78 186
+     spawnframe 1 1 480 0 1
+     custentity fadee
+	frame	data/chars/bilend/empty.gif
+	delay	4400
+	frame	data/chars/bilend/empty.gif
+	@cmd killentity getlocalvar("self")
+	frame	data/chars/bilend/empty.gif
+
+anim pain
+	loop	0
+	delay	28
+	offset	78 186
+	frame	data/chars/bilend/empty.gif
+
+anim fall
+	loop	0
+	delay	28
+	offset	78 186
+	frame	data/chars/bilend/empty.gif
+
+anim rise
+	loop	0
+	delay	28
+	offset	78 186
+	frame	data/chars/bilend/empty.gif
+
+anim death
+	loop	0
+	delay	28
+	offset	78 186
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+	frame	data/chars/bilend/empty.gif
+

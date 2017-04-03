@@ -1,0 +1,22 @@
+name	doorchange
+type    none
+health		100
+shadow  0
+offscreenkill 7000
+subject_to_gravity 0
+subject_to_hole 0
+subject_to_wall 0
+hostile obstacle
+
+animationscript data/scripts/doorchange.c
+
+anim idle
+	loop	1
+	delay	5
+	offset	1 1
+      @cmd  doorch 6000 600 "ANI_FOLLOW10"
+      frame  data/chars/misc/empty.gif
+      @cmd killentity getlocalvar("self")
+      frame  data/chars/misc/empty.gif
+
+

@@ -1,0 +1,85 @@
+name   heart
+type   none
+facing 1
+subject_to_gravity 0
+
+anim idle
+   loop   0
+   delay   16
+   offset   25 32
+   @cmd changeentityproperty getlocalvar("self") "velocity" 0.1 0 0.5
+   frame   data/chars/misc/heart1.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" 0.4 0 0.5
+   frame   data/chars/misc/heart2.gif
+   frame   data/chars/misc/heart1.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0.5
+   frame   data/chars/misc/heart2.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" -0.5 0 0.5
+   frame   data/chars/misc/heart1.gif
+   frame   data/chars/misc/heart2.gif
+   frame   data/chars/misc/heart1.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0.5
+   frame   data/chars/misc/heart2.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" 0.5 0 0.5
+   frame   data/chars/misc/heart1.gif
+   frame   data/chars/misc/heart2.gif
+   frame   data/chars/misc/heart1.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0.5
+   frame   data/chars/misc/heart2.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" -0.5 0 0.5
+   frame   data/chars/misc/heart1.gif
+   frame   data/chars/misc/heart2.gif
+   frame   data/chars/misc/heart1.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0.5
+   frame   data/chars/misc/heart2.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" 0.5 0 0.5
+   frame   data/chars/misc/heart1.gif
+   frame   data/chars/misc/heart2.gif
+   frame   data/chars/misc/heart1.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0.5
+   frame   data/chars/misc/heart2.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" -0.5 0 0.5
+   frame   data/chars/misc/heart1.gif
+   frame   data/chars/misc/heart2.gif
+   frame   data/chars/misc/heart1.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0.5
+   frame   data/chars/misc/heart2.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" 0.5 0 0.5
+   frame   data/chars/misc/heart1.gif
+   frame   data/chars/misc/heart2.gif
+   frame   data/chars/misc/heart1.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0.5
+   frame   data/chars/misc/heart2.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" -0.5 0 0.5
+   frame   data/chars/misc/heart1.gif
+   frame   data/chars/misc/heart2.gif
+   frame   data/chars/misc/heart1.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0.5
+   frame   data/chars/misc/heart2.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" 0.5 0 0.5
+   frame   data/chars/misc/heart1.gif
+   frame   data/chars/misc/heart2.gif
+   frame   data/chars/misc/heart1.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0.5
+   frame   data/chars/misc/heart2.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" -0.5 0 0.5
+   frame   data/chars/misc/heart1.gif
+   frame   data/chars/misc/heart2.gif
+   frame   data/chars/misc/heart1.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0.5
+   frame   data/chars/misc/heart2.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" 0.5 0 0.5
+   frame   data/chars/misc/heart1.gif
+   frame   data/chars/misc/heart2.gif
+   frame   data/chars/misc/heart1.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0.5
+   frame   data/chars/misc/heart2.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" -0.5 0 0.5
+   frame   data/chars/misc/heart1.gif
+   frame   data/chars/misc/heart2.gif
+   frame   data/chars/misc/heart1.gif
+   @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0.5
+   frame   data/chars/misc/heart2.gif
+
+
+

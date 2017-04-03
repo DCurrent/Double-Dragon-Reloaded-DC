@@ -1,0 +1,26 @@
+name     brrow
+speed     10
+type     Panel
+shadow     0
+setlayer  300
+antigravity      100
+subject_to_wall  0
+subject_to_obstacle 0
+subject_to_platform 0
+
+anim idle
+   loop   0
+   delay   50
+   offset   35 130
+   sound  data/sounds/brrow.wav
+   frame   data/chars/misc/brrow.gif
+   frame   data/chars/misc/empty.gif
+   sound  data/sounds/brrow.wav
+   frame   data/chars/misc/brrow.gif
+   frame   data/chars/misc/empty.gif
+   sound  data/sounds/brrow.wav
+   frame   data/chars/misc/brrow.gif
+   frame   data/chars/misc/empty.gif
+   @cmd killentity getlocalvar("self")
+   frame   data/chars/misc/empty.gif
+

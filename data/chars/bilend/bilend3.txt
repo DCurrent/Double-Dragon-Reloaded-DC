@@ -1,0 +1,515 @@
+name	bilend3
+health	50
+speed	15
+type	npc
+shadow	1
+nolife        1
+grabdistance 40
+antigravity -100
+risetime 0 -50
+falldie    1
+noquake 1 1
+nodieblink 3
+hostile obstacle
+aimove chase
+
+palette data/chars/bilend/w4.gif
+
+animationscript data/scripts/ani0020.h
+
+anim spawn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changelevelproperty("scrollspeed", 0);
+    }
+@end_script
+	loop	0
+	delay	30
+	offset	77 170
+	@cmd Join 1
+	frame	data/chars/bilend/w4.gif
+
+anim idle
+	loop	1
+	range -2000 2000
+	rangez -400 400
+	delay	28
+	offset	77 170
+	frame	data/chars/bilend/w4.gif
+
+anim walk
+@script
+    void self = getlocalvar("self");
+    int Offset1 = getentityproperty(self,"a");
+    int Offset2 = getentityproperty(self,"x");
+
+    if(frame==3){
+      changelevelproperty("scrollspeed", 1);
+      changelevelproperty("camerazoffset", -100 - Offset1);
+      changelevelproperty("cameraxoffset", -320 + Offset2);
+    }
+@end_script
+	loop	1
+	delay	13
+	offset	77 170
+	frame	data/chars/bilend/w1.gif
+	frame	data/chars/bilend/w2.gif
+	frame	data/chars/bilend/w3.gif
+	frame	data/chars/bilend/w4.gif
+
+anim up
+@script
+    void self = getlocalvar("self");
+    int Offset1 = getentityproperty(self,"a");
+    int Offset2 = getentityproperty(self,"x");
+
+    if(frame==3){
+      changelevelproperty("scrollspeed", 1);
+      changelevelproperty("camerazoffset", -100 - Offset1);
+      changelevelproperty("cameraxoffset", -320 + Offset2);
+    }
+@end_script
+	loop	1
+	delay	13
+	offset	77 170
+	bbox 60 55 40 100
+	frame data/chars/bilend/wu1.gif
+	frame data/chars/bilend/wu2.gif
+	frame data/chars/bilend/wu3.gif
+	frame data/chars/bilend/wu4.gif
+
+anim walkoff # only vertical fall
+	loop	0
+	delay	11
+	offset	77 170
+      landframe 4
+      @cmd  nomoveidle2 "ANI_FOLLOW25" 
+      @cmd  stopz
+      @cmd  stopz2
+      @cmd    degravity 0.27
+	frame	data/chars/bilend/j1.gif
+      delay	10
+      @cmd  leaper 1 0 0
+      frame	data/chars/bilend/j22.gif
+      @cmd    degravity -0.50
+      frame	data/chars/bilend/j22.gif
+      delay	100
+      frame	data/chars/bilend/j22.gif
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/bilend/rise2.gif
+
+anim follow25 # walkoff clone horizontal fall
+	loop	0
+	delay	11
+	offset	77 170
+      landframe 4 
+      @cmd  stopz
+      @cmd  stopz2
+      @cmd    degravity 0.27
+	frame	data/chars/bilend/j1.gif
+      delay	10
+      frame	data/chars/bilend/j22.gif
+      @cmd    degravity 0
+      frame	data/chars/bilend/j22.gif
+      delay	100
+      @cmd    degravity -0.50
+      frame	data/chars/bilend/j22.gif
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/bilend/rise2.gif
+
+anim attack1
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+
+    if(P1){
+      changeentityproperty(P1, "colourmap", 2);
+    }
+@end_script
+	range	0 10
+	rangez -5 5
+	loop	0
+	delay	2000
+	offset	77 170
+	bbox 60 55 40 100
+	@cmd direc 1
+	frame	data/chars/bilend/w4.gif
+	frame	data/chars/bilend/w4.gif
+	frame	data/chars/bilend/w4.gif
+
+anim follow1 # for st2 end/st1 end
+@script
+    void self = getlocalvar("self");
+    int Offset1 = getentityproperty(self,"a");
+
+    if(frame==0){
+      changelevelproperty("scrollspeed", 1);
+      changelevelproperty("camerazoffset", -100 - Offset1);
+    }
+@end_script
+	loop	1
+	delay	28
+	offset	77 170
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+	frame	data/chars/bilend/w3.gif
+
+anim follow2 # for st2 end
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+@end_script
+	loop	0
+	delay	13
+	offset	77 170
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 1 0
+	frame	data/chars/bilend/w1.gif
+	frame	data/chars/bilend/w2.gif
+	frame	data/chars/bilend/w3.gif
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+     @cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_FOLLOW1")
+	frame	data/chars/bilend/w3.gif
+
+anim follow3 # for st2 end
+	loop	0
+	delay	13
+	offset	77 170
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 -1
+	frame	data/chars/bilend/w3.gif
+	frame	data/chars/bilend/w3.gif
+	frame	data/chars/bilend/w3.gif
+	frame	data/chars/bilend/w3.gif
+	frame	data/chars/bilend/w3.gif
+	frame	data/chars/bilend/w3.gif
+	frame	data/chars/bilend/w3.gif
+	frame	data/chars/bilend/w3.gif
+	frame	data/chars/bilend/w3.gif
+	frame	data/chars/bilend/w3.gif
+	frame	data/chars/bilend/w3.gif
+	frame	data/chars/bilend/w3.gif
+	frame	data/chars/bilend/w3.gif
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+	delay	150
+	frame	data/chars/bilend/w3.gif
+     @cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_FOLLOW4")
+	frame	data/chars/bilend/w3.gif
+
+anim follow4 # for st2 end
+@script
+    void self = getlocalvar("self");
+    int Offset1 = getentityproperty(self,"a");
+
+    if(frame==0){
+      changelevelproperty("scrollspeed", 1);
+      changelevelproperty("camerazoffset", -100 - Offset1);
+    }
+@end_script
+	loop	1
+	delay	28
+	offset	77 170
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+	frame	data/chars/bilend/w3.gif
+
+anim follow5 # for st1 end
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+@end_script
+	loop	0
+	delay	13
+	offset	77 170
+     @cmd changeentityproperty getlocalvar("self") "velocity" 1 0 0
+	frame	data/chars/bilend/w1.gif
+	frame	data/chars/bilend/w2.gif
+	frame	data/chars/bilend/w3.gif
+	frame	data/chars/bilend/w4.gif
+	frame	data/chars/bilend/w1.gif
+	frame	data/chars/bilend/w2.gif
+	frame	data/chars/bilend/w3.gif
+	frame	data/chars/bilend/w4.gif
+	frame	data/chars/bilend/w1.gif
+	frame	data/chars/bilend/w2.gif
+	frame	data/chars/bilend/w3.gif
+	frame	data/chars/bilend/w4.gif
+	frame	data/chars/bilend/w1.gif
+	frame	data/chars/bilend/w2.gif
+	frame	data/chars/bilend/w3.gif
+	frame	data/chars/bilend/w4.gif
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+	delay	150
+	frame	data/chars/bilend/w3.gif
+     @cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_FOLLOW1")
+	frame	data/chars/bilend/w3.gif
+
+anim follow6 # for st6 end
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+@end_script
+	loop	0
+	delay	13
+	offset	77 170
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 -1 0
+	frame	data/chars/bilend/wu1.gif
+	frame	data/chars/bilend/wu2.gif
+	frame	data/chars/bilend/wu3.gif
+	frame	data/chars/bilend/wu4.gif
+	frame	data/chars/bilend/wu1.gif
+	frame	data/chars/bilend/wu2.gif
+	frame	data/chars/bilend/wu3.gif
+	frame	data/chars/bilend/wu4.gif
+	frame	data/chars/bilend/wu1.gif
+	frame	data/chars/bilend/wu2.gif
+	frame	data/chars/bilend/wu3.gif
+	frame	data/chars/bilend/wu4.gif
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+	delay	150
+	frame	data/chars/bilend/empty.gif
+     @cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_FOLLOW7")
+	frame	data/chars/bilend/empty.gif
+
+anim follow7 # for st6 end/st7 end
+@script
+    void self = getlocalvar("self");
+    int Offset1 = getentityproperty(self,"a");
+
+    if(frame==0){
+      changelevelproperty("scrollspeed", 1);
+      changelevelproperty("camerazoffset", -100 - Offset1);
+    }
+@end_script
+	loop	1
+	delay	28
+	offset	77 170
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+	frame	data/chars/bilend/empty.gif
+
+anim follow8 # for st6 end/st7 end
+@script
+    void self = getlocalvar("self");
+    int Offset1 = getentityproperty(self,"a");
+
+    if(frame==0){
+      changelevelproperty("scrollspeed", 1);
+      changelevelproperty("camerazoffset", -100 - Offset1);
+    }
+@end_script
+	loop	1
+	delay	28
+	offset	77 170
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+	frame	data/chars/bilend/wu1.gif
+
+anim follow9 # for st7 end
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+@end_script
+	loop	0
+	delay	13
+	offset	77 170
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 -1 0
+	frame	data/chars/bilend/wu1.gif
+	frame	data/chars/bilend/wu2.gif
+	frame	data/chars/bilend/wu3.gif
+	frame	data/chars/bilend/wu4.gif
+	frame	data/chars/bilend/wu1.gif
+	frame	data/chars/bilend/empty.gif
+	frame	data/chars/bilend/empty.gif
+	frame	data/chars/bilend/empty.gif
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+	delay	150
+	frame	data/chars/bilend/empty.gif
+     @cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_FOLLOW7")
+	frame	data/chars/bilend/empty.gif
+
+anim follow10 # for st3 end/st4 end
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+@end_script
+	loop	0
+	delay	13
+	offset	77 170
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 -1 0
+	frame	data/chars/bilend/wu1.gif
+	frame	data/chars/bilend/wu2.gif
+	frame	data/chars/bilend/wu3.gif
+	frame	data/chars/bilend/wu4.gif
+	frame	data/chars/bilend/wu1.gif
+	frame	data/chars/bilend/wu2.gif
+	delay	150
+	@cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+	frame	data/chars/bilend/w3.gif
+	delay	150
+	frame	data/chars/bilend/w3.gif
+     @cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_FOLLOW4")
+	frame	data/chars/bilend/empty.gif
+
+anim pain
+	loop	0
+	delay	28
+	offset	77 170
+	frame	data/chars/bilend/bilend0.gif
+
+anim fall
+	loop	0
+	delay	28
+	offset	77 170
+	frame	data/chars/bilend/bilend0.gif
+
+anim rise
+	loop	0
+	delay	28
+	offset	77 170
+	frame	data/chars/bilend/bilend0.gif
+
+anim death
+	loop	0
+	delay	28
+	offset	77 170
+	frame	data/chars/bilend/bilend1.gif
+
+anim follow12 # for st2 end
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+    int Play = openborvariant("count_players");
+
+    if(Play==1 && (P1 || P2)){
+      int Pm;
+
+      if(P1){
+        Pm = getentityproperty(P1,"map");
+      } else if(P2){
+        Pm = getentityproperty(P2,"map");
+      }
+
+      if(Pm == 2){
+        changeentityproperty(self, "animation", openborconstant("ANI_FOLLOW2"));
+      }
+    } else if(Play==2 && P1 && P2){
+      int P1m = getentityproperty(P1,"map");
+      int P2m = getentityproperty(P2,"map");
+
+      if(P1m == 2 && P2m == 2){
+        changeentityproperty(self, "animation", openborconstant("ANI_FOLLOW2"));
+      }
+    }
+@end_script
+	loop	1
+	delay	28
+	offset	77 170
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+	frame	data/chars/bilend/w3.gif
+
+anim follow14 # for st2 end
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+    int Play = openborvariant("count_players");
+
+    if(Play==1 && (P1 || P2)){
+      int Pm;
+
+      if(P1){
+        Pm = getentityproperty(P1,"map");
+      } else if(P2){
+        Pm = getentityproperty(P2,"map");
+      }
+
+      if(Pm == 2){
+        changeentityproperty(self, "animation", openborconstant("ANI_FOLLOW4"));
+      }
+    } else if(Play==2 && P1 && P2){
+      int P1m = getentityproperty(P1,"map");
+      int P2m = getentityproperty(P2,"map");
+
+      if(P1m == 2 && P2m == 2){
+        changeentityproperty(self, "animation", openborconstant("ANI_FOLLOW4"));
+      }
+    }
+@end_script
+	loop	1
+	delay	28
+	offset	77 170
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+	frame	data/chars/bilend/w3.gif
+
+anim follow18 # for st6 end/st7 end
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+    int Play = openborvariant("count_players");
+
+    if(Play==1 && (P1 || P2)){
+      int Pm;
+
+      if(P1){
+        Pm = getentityproperty(P1,"map");
+      } else if(P2){
+        Pm = getentityproperty(P2,"map");
+      }
+
+      if(Pm == 2){
+        changeentityproperty(self, "animation", openborconstant("ANI_FOLLOW8"));
+      }
+    } else if(Play==2 && P1 && P2){
+      int P1m = getentityproperty(P1,"map");
+      int P2m = getentityproperty(P2,"map");
+
+      if(P1m == 2 && P2m == 2){
+        changeentityproperty(self, "animation", openborconstant("ANI_FOLLOW8"));
+      }
+    }
+@end_script
+	loop	1
+	delay	28
+	offset	77 170
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+	frame	data/chars/bilend/wu1.gif
+
+
+
+
+
+

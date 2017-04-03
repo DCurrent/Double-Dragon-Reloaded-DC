@@ -1,0 +1,72 @@
+name wtrap
+type none
+shadow 0
+nolife 1
+nomove 1 1
+facing 1
+antigravity 100
+subject_to_wall 0
+hostile enemy player
+
+animationscript data/scripts/wtrap.c
+
+palette data/chars/misc/wtrap1.gif
+
+anim idle
+     loop 1
+     delay 10
+     offset 18 42
+     @cmd  wtrap3 -10 140 82 -114 10 "ANI_FOLLOW1"
+     frame data/chars/misc/empty.gif
+     @cmd  wtrap3 -10 140 82 -114 10 "ANI_FOLLOW1"
+     frame data/chars/misc/empty.gif
+
+anim follow1
+     loop 0
+     delay 13
+     offset 18 42
+     sound  data/sounds/wtrap.wav
+     @cmd  wtrap 0 80 0 18 -114 10
+     frame data/chars/misc/wtrap1.gif
+     @cmd  wtrap 0 80 0 18 -114 10
+     @cmd  wtrap 20 100 18 34 -114 10
+     frame data/chars/misc/wtrap2.gif
+     @cmd  wtrap 0 80 0 18 -114 10
+     @cmd  wtrap 20 100 18 34 -114 10
+     @cmd  wtrap 40 120 34 50 -114 10
+     frame data/chars/misc/wtrap3.gif
+     @cmd  wtrap 0 80 0 18 -114 10
+     @cmd  wtrap 20 100 18 34 -114 10
+     @cmd  wtrap 40 120 34 50 -114 10
+     @cmd  wtrap 60 140 50 66 -114 10
+     frame data/chars/misc/wtrap4.gif
+     @cmd  wtrap 0 80 0 18 -114 10
+     @cmd  wtrap 20 100 18 34 -114 10
+     @cmd  wtrap 40 120 34 50 -114 10
+     @cmd  wtrap 60 140 50 66 -114 10
+     @cmd  wtrap 80 160 66 82 -114 10
+     frame data/chars/misc/wtrap5.gif
+     @cmd  wtrap 0 80 0 18 -114 10
+     @cmd  wtrap 20 100 18 34 -114 10
+     @cmd  wtrap 40 120 34 50 -114 10
+     @cmd  wtrap 60 140 50 66 -114 10
+     @cmd  wtrap 80 160 66 82 -114 10
+     frame data/chars/misc/wtrap5.gif
+     sound  data/sounds/wtrap.wav
+     @cmd  wtrap 0 80 0 18 -114 10
+     @cmd  wtrap 20 100 18 34 -114 10
+     @cmd  wtrap 40 120 34 50 -114 10
+     @cmd  wtrap 60 140 50 66 -114 10
+     frame data/chars/misc/wtrap4.gif
+     @cmd  wtrap 80 160 -8 0 2000 2001
+     frame data/chars/misc/wtrap3.gif
+     frame data/chars/misc/wtrap2.gif
+     frame data/chars/misc/wtrap1.gif
+     frame data/chars/misc/empty.gif
+     delay 400
+     frame data/chars/misc/empty.gif
+     @cmd setidle getlocalvar("self") openborconstant("ANI_IDLE") 1 1
+     frame data/chars/misc/empty.gif
+
+
+

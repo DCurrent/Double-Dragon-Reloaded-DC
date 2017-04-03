@@ -1,0 +1,924 @@
+name	abore2
+health	100
+speed	15
+type	enemy
+shadow	1
+nolife        1
+grabdistance 40
+jumpheight 6.5
+jumpspeed 20
+antigravity -100
+falldie 2
+nodieblink      1
+noquake 1 1
+riseattacktype 3
+bounce 1
+risetime 0 -50
+aggression      20
+projectilehit   player
+hostile player platform
+candamage player
+diesound data/sounds/abore2.wav
+
+script data/scripts/Custom_chase.c
+animationscript 	data/scripts/ani0020.h
+
+palette   data/chars/abore/w4.gif
+alternatepal data/chars/abore/map1.gif
+
+anim spawn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	5
+	offset	77 190
+	frame	data/chars/abore/w4.gif
+	frame	data/chars/abore/w4.gif
+
+anim follow43
+	@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==3){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	117
+	offset	77 190
+      jumpframe	1 0 0 1
+      frame	data/chars/abore/w4.gif
+      delay	13
+      frame	data/chars/abore/w1.gif
+      frame	data/chars/abore/w2.gif
+      frame	data/chars/abore/w3.gif
+
+anim follow44
+	@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==3){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	117
+	offset	77 190
+      jumpframe	1 0 0 1
+      frame	data/chars/abore/w4.gif
+      delay	13
+      frame	data/chars/abore/w1.gif
+      frame	data/chars/abore/w2.gif
+      frame	data/chars/abore/w3.gif
+
+anim follow45
+	@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==1){
+      playmusic("DATA/music/boss3.ogg", 1, 887574);
+    }
+    if(frame==3){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	525
+	offset	77 190
+      jumpframe	1 0 0 1
+      frame	data/chars/abore/w4.gif
+      delay	13
+      frame	data/chars/abore/w1.gif
+      frame	data/chars/abore/w2.gif
+      frame	data/chars/abore/w3.gif
+
+anim follow46
+      loop	1
+	delay	17
+	offset	77 190
+	@cmd  attack3 -200 200 -20 20 700 "ANI_SPAWN"
+	frame	data/chars/abore/w4.gif
+
+anim respawn
+	loop	0
+	delay	17
+	offset	77 190
+	frame	data/chars/abore/rise2.gif
+
+anim idle
+	loop	1
+	delay	10
+	offset	77 190
+	bbox	50 55 57 120
+      @cmd    clearL
+	frame	data/chars/abore/w4.gif
+      frame	data/chars/abore/w4.gif
+      frame	data/chars/abore/w4.gif
+      frame	data/chars/abore/w4.gif
+
+anim walk
+	loop	1
+	delay	15
+	offset	77 190
+	bbox	50 55 57 120
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+	frame	data/chars/abore/w1.gif
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+	frame	data/chars/abore/w2.gif
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+	frame	data/chars/abore/w3.gif
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+	frame	data/chars/abore/w4.gif
+
+anim follow6
+	loop	0
+	delay	14
+      offset	77 190
+	bbox	50 55 57 120
+      landframe 5
+	jumpframe 1 6.5 2 0
+      @cmd    degravity -1
+      frame	data/chars/abore/j1.gif
+	delay	9
+      frame	data/chars/abore/j2.gif
+      delay	35
+      bbox	60 83 55 70
+      frame	data/chars/abore/j2.gif
+      frame	data/chars/abore/j2.gif
+      frame	data/chars/abore/j2.gif
+      delay	15
+      bbox 0 0 0 0
+      frame	data/chars/abore/rise2.gif
+
+anim walkoff
+	loop	0
+	delay	11
+	offset	77 190
+	bbox	50 55 57 120
+      landframe 4
+      @cmd  stopz
+      @cmd  stopz2
+      @cmd    degravity 0.27
+	frame	data/chars/abore/j1.gif
+      delay	10
+      @cmd  dash 1 0
+      frame	data/chars/abore/j2.gif
+      @cmd    degravity -0.50
+      frame	data/chars/abore/j2.gif
+      delay	100
+      frame	data/chars/abore/j2.gif
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/abore/rise2.gif
+
+anim JUMPDELAY
+      loop	0
+	delay	9
+      offset	77 190
+	bbox	50 55 57 120
+      frame	data/chars/abore/j1.gif
+
+anim JUMPLAND
+      loop	0
+	delay	2
+      offset	77 190
+	bbox	50 55 57 120
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/abore/w4.gif
+
+anim jump
+	loop	0
+      range 0 180
+      rangea -1000 1000
+	offset	77 190
+	bbox	50 55 57 120
+	delay   4
+      @cmd    degravity -1
+	frame	data/chars/abore/j2.gif
+      frame	data/chars/abore/j2.gif
+      frame	data/chars/abore/j2.gif
+      frame	data/chars/abore/j2.gif
+      frame	data/chars/abore/j2.gif
+	frame	data/chars/abore/j2.gif
+	frame	data/chars/abore/j2.gif
+      frame	data/chars/abore/j2.gif
+      frame	data/chars/abore/j2.gif
+	frame	data/chars/abore/j2.gif
+      frame	data/chars/abore/j2.gif
+	frame	data/chars/abore/j2.gif
+      frame	data/chars/abore/j2.gif
+      frame	data/chars/abore/j2.gif
+	frame	data/chars/abore/j2.gif
+      frame	data/chars/abore/j2.gif
+	frame	data/chars/abore/j2.gif
+      frame	data/chars/abore/j2.gif
+      frame	data/chars/abore/j2.gif
+	frame	data/chars/abore/j2.gif
+      frame	data/chars/abore/j2.gif
+	frame	data/chars/abore/j2.gif
+      frame	data/chars/abore/j2.gif
+      frame	data/chars/abore/j2.gif
+	frame	data/chars/abore/j2.gif
+
+anim attack1
+@script
+    void self = getlocalvar("self");
+
+    if( frame == 0){
+      int r = rand()%40;
+
+      if( r > 0){
+        changeentityproperty(self, "animation", openborconstant("ANI_FOLLOW20"));
+      }
+    }
+@end_script
+	range   25 95
+      rangea   0 60
+	loop	0
+	delay	12
+	offset	77 190
+	bbox	50 55 57 120
+      followcond 2
+      followanim 14
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW19"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW15"
+	frame	data/chars/abore/a1.gif
+      attack2  90 83 75 34 6 0
+      dropv 3.5 1.5
+	frame	data/chars/abore/a2.gif
+      attack2  0 0 0 0 0
+	frame	data/chars/abore/a2.gif
+	delay	9
+	frame	data/chars/abore/a1.gif
+
+anim follow14
+	loop	0
+	delay	12
+	offset	77 190
+	bbox	50 55 57 120
+      hitfx   data/sounds/beatt2.wav
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW19"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW16"
+	frame	data/chars/abore/a2.gif
+	delay	9
+	frame	data/chars/abore/a1.gif
+	delay	12
+	frame	data/chars/abore/w4.gif
+	sound data/sounds/abore1.wav
+	frame	data/chars/abore/aaa1.gif
+      attack  90 83 75 34 6 1
+      dropv 3.5 1.5
+	frame	data/chars/abore/aaa2.gif
+      attack  0 0 0 0 0
+	frame	data/chars/abore/aaa2.gif
+	delay	9
+	frame	data/chars/abore/aaaa3.gif
+
+anim follow15
+	loop	0
+	delay	12
+	offset	77 190
+	bbox	50 55 57 120
+      followcond 2
+      followanim 16
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW19"
+	frame	data/chars/abore/a1.gif
+      attack14  90 83 75 34 6 0
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/abore/a2.gif
+      attack14  0 0 0 0 0
+	frame	data/chars/abore/a2.gif
+	delay	9
+	frame	data/chars/abore/a1.gif
+
+anim follow16
+	loop	0
+	delay	10
+	offset	77 190
+	bbox	50 55 57 120
+      hitfx   data/sounds/beatt2.wav
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW19"
+     	frame	data/chars/abore/a2.gif
+	delay	9
+	frame	data/chars/abore/a1.gif
+	delay	12
+	frame	data/chars/abore/w4.gif
+	sound data/sounds/abore1.wav
+	frame	data/chars/abore/aaa1.gif
+      attack14  90 83 75 34 6 1
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/abore/aaa2.gif
+      attack14  0 0 0 0 0
+	frame	data/chars/abore/aaa2.gif
+	delay	9
+	frame	data/chars/abore/aaaa3.gif
+
+anim attack2
+@script
+    void self = getlocalvar("self");
+
+    if( frame == 0){
+      int r = rand()%40;
+
+      if( r > 0){
+        changeentityproperty(self, "animation", openborconstant("ANI_FOLLOW18"));
+      }
+    }
+@end_script
+	range   96 115
+      rangea   0 75
+	loop	0
+	delay	9
+	offset	77 190
+      counterattack 1
+      hitfx  data/sounds/beatt2.wav
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW19"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW17"
+	frame	data/chars/abore/aa1.gif
+	delay	7
+	frame	data/chars/abore/aa2.gif
+	delay	9
+	bbox	50 55 57 120
+      attack  90 68 95 34 12 1
+      dropv 3.5 1.5
+	frame	data/chars/abore/aa3.gif
+      attack  0 0 0 0 0
+	frame	data/chars/abore/aa3.gif
+
+anim follow17
+	loop	0
+	delay	9
+	offset	77 190
+      counterattack 1
+      hitfx  data/sounds/beatt2.wav
+	frame	data/chars/abore/aa1.gif
+	delay	7
+	frame	data/chars/abore/aa2.gif
+	delay	9
+	bbox	50 55 57 120
+      attack14  90 68 95 34 12 1
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/abore/aa3.gif
+      attack14  0 0 0 0 0
+	frame	data/chars/abore/aa3.gif
+
+anim follow18
+	loop	0
+	delay	10
+	offset	77 190
+      counterattack 1
+      hitfx  data/sounds/beatt2.wav
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW19"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW19"
+	frame	data/chars/abore/aaaa1.gif
+	bbox	50 55 57 120
+      attack  90 68 95 34 12 1
+      dropv 3.5 1.5
+	frame	data/chars/abore/aaaa2.gif
+      attack  0 0 0 0 0
+	frame	data/chars/abore/aaaa3.gif
+
+anim follow19
+	loop	0
+	delay	10
+	offset	77 190
+      counterattack 1
+      hitfx  data/sounds/beatt2.wav
+	frame	data/chars/abore/aaaa1.gif
+	bbox	50 55 57 120
+      attack14  90 68 95 34 12 1
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/abore/aaaa2.gif
+      attack14  0 0 0 0 0
+	frame	data/chars/abore/aaaa3.gif
+
+anim follow20
+	loop	0
+	delay	12
+	offset	77 190
+      counterattack 1
+      hitfx   data/sounds/beatt2.wav
+	sound data/sounds/abore1.wav
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW19"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW21"
+	frame	data/chars/abore/aaa1.gif
+	bbox	50 55 57 120
+      attack  90 83 75 34 12 1
+      dropv 3.5 1.5
+	frame	data/chars/abore/aaa2.gif
+      attack  0 0 0 0 0
+	frame	data/chars/abore/aaa2.gif
+	delay	9
+	frame	data/chars/abore/aaaa3.gif
+
+anim follow21
+	loop	0
+	delay	12
+	offset	77 190
+      counterattack 1
+      hitfx   data/sounds/beatt2.wav
+	sound data/sounds/abore1.wav
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW19"
+	frame	data/chars/abore/aaa1.gif
+	bbox	50 55 57 120
+      attack14  90 83 75 34 12 1
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/abore/aaa2.gif
+      attack14  0 0 0 0 0
+	frame	data/chars/abore/aaa2.gif
+	delay	9
+	frame	data/chars/abore/aaaa3.gif
+
+anim attack3
+	range   116 140
+      rangea   0 90
+	loop	0
+	delay	12
+	offset	77 190
+      counterattack 1
+      hitfx   data/sounds/beatt2.wav
+	sound data/sounds/abore1.wav
+      @cmd    riseattack3 150 45 "ANI_FOLLOW22"
+	frame	data/chars/abore/aaa1.gif
+	delay	3.5
+      attack  90 68 70 45 12 1
+      dropv 3.5 2
+	frame	data/chars/abore/aaa2.gif
+	@cmd	dasher 3 0 0
+	frame	data/chars/abore/aaa2.gif
+	bbox	50 55 57 120
+	@cmd	dasher 3 0 0
+	frame	data/chars/abore/aaa2.gif
+	@cmd	dasher 3 0 0
+	frame	data/chars/abore/aaa2.gif
+	@cmd	dasher 3 0 0
+	frame	data/chars/abore/aaa2.gif
+	@cmd	dasher 3 0 0
+	frame	data/chars/abore/aaa2.gif
+	@cmd	dasher 2 0 0
+	frame	data/chars/abore/aaa2.gif
+      attack  0 0 0 0 0
+	@cmd	dasher 1 0 0
+	frame	data/chars/abore/aaa2.gif
+	@cmd	dasher 0 0 0
+	frame	data/chars/abore/aaa2.gif
+	frame	data/chars/abore/aaaa3.gif
+	delay	9
+	frame	data/chars/abore/w4.gif
+
+anim follow22
+	range   100 140
+      rangea   0 90
+	loop	0
+	delay	12
+	offset	77 190
+      counterattack 1
+      hitfx   data/sounds/beatt2.wav
+	sound data/sounds/abore1.wav
+	frame	data/chars/abore/aaa1.gif
+	delay	3.5
+      attack14  90 68 70 45 12 1
+      dropv 3.5 2
+      forcedirection 99
+	frame	data/chars/abore/aaa2.gif
+	@cmd	dasher 3 0 0
+	frame	data/chars/abore/aaa2.gif
+	bbox	50 55 57 120
+	@cmd	dasher 3 0 0
+	frame	data/chars/abore/aaa2.gif
+	@cmd	dasher 3 0 0
+	frame	data/chars/abore/aaa2.gif
+	@cmd	dasher 3 0 0
+	frame	data/chars/abore/aaa2.gif
+	@cmd	dasher 3 0 0
+	frame	data/chars/abore/aaa2.gif
+	@cmd	dasher 2 0 0
+	frame	data/chars/abore/aaa2.gif
+      attack14  0 0 0 0 0
+	@cmd	dasher 1 0 0
+	frame	data/chars/abore/aaa2.gif
+	@cmd	dasher 0 0 0
+	frame	data/chars/abore/aaa2.gif
+	frame	data/chars/abore/aaaa3.gif
+	delay	9
+	frame	data/chars/abore/w4.gif
+
+anim pain
+	loop	0
+	delay 40
+	offset	77 190
+	bbox	50 55 57 120
+	frame	data/chars/abore/pain1.gif
+
+anim pain2
+	loop	0
+	delay	35
+	offset	77 190
+	bbox	50 55 57 120
+	frame	data/chars/abore/pain1.gif
+      delay   65
+	frame	data/chars/abore/pain1.gif
+
+anim pain29
+	loop	0
+	delay	35
+	offset	77 190
+	bbox	50 55 57 120
+	frame	data/chars/abore/pain1.gif
+      delay   65
+	frame	data/chars/abore/pain1.gif
+
+anim pain14 # Backpain 1
+	loop	0
+	delay	35
+	offset	77 190
+	bbox	50 55 57 120
+	frame	data/chars/abore/pain1.gif
+      delay   65
+	frame	data/chars/abore/pain1.gif
+
+anim pain15 # Backpain 2
+	loop	0
+	delay	35
+	offset	77 190
+	bbox	50 55 57 120
+	frame	data/chars/abore/pain1.gif
+      delay   65
+	frame	data/chars/abore/pain1.gif
+
+anim pain30 # Backpain 2
+	loop	0
+	delay	35
+	offset	77 190
+	bbox	50 55 57 120
+	frame	data/chars/abore/pain1.gif
+      delay   65
+	frame	data/chars/abore/pain1.gif
+
+anim pain17 # grabbed attack pain
+	loop	0
+	delay	35
+	offset	77 190
+	bbox	50 55 57 120
+	frame	data/chars/abore/pain1.gif
+      delay   65
+	frame	data/chars/abore/pain1.gif
+
+anim fall
+	loop	0
+	offset	77 170
+	delay   8
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd bind 0 0 0 0 0
+      @cmd    depost 0
+	frame	data/chars/abore/fall01.gif
+      frame	data/chars/abore/fall01.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abore/fall01.gif
+      frame	data/chars/abore/fall01.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abore/fall01.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abore/fall02.gif
+      delay   500
+      frame	data/chars/abore/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/abore/fall02.gif
+	offset	103 166
+	frame	data/chars/abore/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/abore/rise0.gif
+
+anim follow1
+      loop	0
+      delay   80
+	offset	103 166
+      bbox	80 140 45 37
+      frame	data/chars/abore/rise0.gif
+
+anim follow3
+      loop	1
+      delay   10
+	offset	103 165
+      frame	data/chars/abore/rise0.gif
+
+anim follow4
+      loop	1
+      delay   10
+	offset	103 165
+      frame	data/chars/abore/pain7.gif
+
+anim follow5
+      loop	1
+      delay   10
+	offset	103 165
+      frame	data/chars/abore/pain8.gif
+
+anim fall4
+	loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/abore/fall011.gif
+      frame	data/chars/abore/fall011.gif
+      delay   10
+      frame	data/chars/abore/fall011.gif
+      frame	data/chars/abore/fall011.gif
+      frame	data/chars/abore/fall02.gif
+      delay   20
+      frame	data/chars/abore/fall02.gif
+      delay   500
+      frame	data/chars/abore/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/abore/fall02.gif
+	offset	103 166
+	frame	data/chars/abore/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/abore/rise0.gif
+
+anim fall14 # Backfall 1
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/abore/fall011.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/abore/fall011.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/abore/fall011.gif
+      frame	data/chars/abore/fall011.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/abore/fall011.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/abore/fall02.gif
+      delay   500
+      frame	data/chars/abore/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/abore/fall02.gif
+	offset	103 166
+	frame	data/chars/abore/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/abore/rise0.gif
+
+anim fall15 # Backfall 2
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/abore/fall011.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/abore/fall011.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/abore/fall011.gif
+      frame	data/chars/abore/fall011.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/abore/fall011.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/abore/fall02.gif
+      delay   500
+      frame	data/chars/abore/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/abore/fall02.gif
+	offset	103 166
+	frame	data/chars/abore/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/abore/rise0.gif
+
+anim fall30 # Backfall 2
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/abore/fall011.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/abore/fall011.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/abore/fall011.gif
+      frame	data/chars/abore/fall011.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/abore/fall011.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/abore/fall02.gif
+      delay   500
+      frame	data/chars/abore/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/abore/fall02.gif
+	offset	103 166
+	frame	data/chars/abore/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/abore/rise0.gif
+
+anim fall16 # Backfall 3
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -2
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/abore/fall011.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/abore/fall011.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/abore/fall011.gif
+      frame	data/chars/abore/fall011.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/abore/fall011.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/abore/fall02.gif
+      delay   500
+      frame	data/chars/abore/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/abore/fall02.gif
+	offset	103 166
+	frame	data/chars/abore/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/abore/rise0.gif
+
+anim follow37
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 2 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd    hurt4 5
+	frame	data/chars/abore/fall011.gif
+      frame	data/chars/abore/fall011.gif
+      delay   10
+      frame	data/chars/abore/fall011.gif
+      frame	data/chars/abore/fall011.gif
+      frame	data/chars/abore/fall011.gif
+      delay   20
+      frame	data/chars/abore/fall02.gif
+      delay   500
+      frame	data/chars/abore/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/abore/fall02.gif
+	offset	103 166
+	frame	data/chars/abore/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/abore/rise0.gif
+
+anim follow38
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 2 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd    hurt4 5
+	frame	data/chars/abore/fall01.gif
+      frame	data/chars/abore/fall01.gif
+      delay   10
+      frame	data/chars/abore/fall01.gif
+      frame	data/chars/abore/fall01.gif
+      frame	data/chars/abore/fall01.gif
+      delay   20
+      frame	data/chars/abore/fall02.gif
+      delay   500
+      frame	data/chars/abore/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/abore/fall02.gif
+	offset	103 166
+	frame	data/chars/abore/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/abore/rise0.gif
+
+anim fall8
+      loop	0
+      delay   1000
+
+      @cmd    conditionalflip3
+      @cmd    degravity -0.15
+	offset	63 185
+      frame	data/chars/abore/pain1.gif
+	offset	103 165
+      frame	data/chars/abore/pain7.gif
+      frame	data/chars/abore/pain7.gif
+      frame	data/chars/abore/pain7.gif
+      frame	data/chars/abore/pain7.gif
+      frame	data/chars/abore/pain7.gif
+      	offset	103 175
+      frame	data/chars/abore/D_VERTICAL_DOWN.png
+	offset	103 165
+      frame	data/chars/abore/fall02.gif
+      frame	data/chars/abore/rise0.gif
+      frame	data/chars/abore/pain7.gif
+      frame	data/chars/abore/pain8.gif
+
+anim rise
+	loop	0
+	offset	103 166
+	delay	10
+      @cmd    degravity -1
+	frame	data/chars/abore/rise0.gif
+	offset	77 166
+	delay   15
+	frame	data/chars/abore/rise1.gif
+	delay   10
+	@cmd    attack3 96 115 -1 75 40 "ANI_ATTACK2"
+	@cmd    attack3 0 95 -1 60 40 "ANI_ATTACK1"
+	frame	data/chars/abore/rise1.gif
+
+anim death
+	loop	0
+	offset	103 166
+	delay	20
+	frame	data/chars/abore/rise0.gif
+
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+name	 shovel
+health   0
+type     item
+counter  999
+shootnum  1
+subtype  weapon
+weapnum  12
+nolife   1
+antigravity 30
+offscreenkill  3000
+
+palette   data/chars/misc/shovel1.gif
+
+script  data/scripts/bounce.c
+animationscript data/scripts/itemsp.c
+
+anim idle
+	loop   0
+      delay   8
+	offset 50 100
+	bbox   10 88 80 12
+	frame  data/chars/misc/shovel1.gif
+
+anim spawn
+	loop   0
+      delay   8
+	offset 50 100
+	bbox   10 88 80 12
+	frame  data/chars/misc/shovel1.gif
+
+anim respawn
+      loop   0
+      delay   12
+      offset 50 100
+      jumpframe 0 3 0.5
+      landframe 4
+      @cmd	move 25 0 20
+      @cmd	antiwall4 0 -25
+      frame  data/chars/misc/shovel5.gif
+      frame  data/chars/misc/shovel5.gif
+	frame  data/chars/misc/shovel3.gif
+      delay   100
+      frame  data/chars/misc/shovel2.gif
+      delay   8
+      bbox   10 88 80 12
+      frame  data/chars/misc/shovel1.gif
+
+anim  follow49 # water effect
+	loop	0
+	offset	77 170
+	delay   4
+      spawnframe 0 0 55 0 0
+	custentity water1
+      landframe 6
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      delay   500
+      frame	data/chars/misc/empty.gif
+      delay   200
+	frame	data/chars/misc/empty.gif
+
+anim  follow50 # spikeh2 effect
+      loop   0
+      delay   8
+	offset 50 100
+	jumpframe 0 0.1 1
+	frame  data/chars/misc/shovel1.gif
+
+anim follow10 # killer effect
+      loop   0
+      delay   12
+      offset 50 100
+      landframe 4
+      frame  data/chars/misc/shovel2.gif
+      frame  data/chars/misc/shovel2.gif
+	frame  data/chars/misc/shovel2.gif
+      delay   100
+      @cmd killentity getlocalvar("self")
+      frame  data/chars/misc/empty.gif
+      delay   8
+      frame  data/chars/misc/empty.gif
+

@@ -1,0 +1,108 @@
+name		doorst4b
+type		none
+facing		1
+subject_to_gravity 0
+subject_to_wall 0
+subject_to_hole 0
+Subject_to_MinZ 0
+Subject_to_MaxZ 0
+offscreenkill	7000
+hostile npc
+
+script data/scripts/cleardoor.c
+animationscript data/scripts/doorall.c
+
+anim spawn
+      loop	0
+	delay	2
+	offset	99 186
+	@cmd  dooropen2 -40 40 -10 0 0 20 "ANI_FOLLOW1" "ANI_FOLLOW47"
+	frame  data/chars/misc/doorst4b1.gif
+
+anim idle
+	loop	1
+	delay	5
+	offset	99 186
+	@cmd  dooropen2 -40 40 -10 0 0 20 "ANI_FOLLOW1" "ANI_FOLLOW47"
+	frame  data/chars/misc/doorst4b1.gif
+	@cmd  dooropen2 -40 40 -10 0 0 20 "ANI_FOLLOW1" "ANI_FOLLOW47"
+	frame  data/chars/misc/doorst4b1.gif
+
+anim follow1
+	loop	0
+	delay	16
+	offset	99 186
+	@cmd  dooropen -40 40 -10 0 0 20 "ANI_FOLLOW47"
+	frame  data/chars/misc/doorst4b1.gif
+	@cmd  dooropen -40 40 -10 0 0 20 "ANI_FOLLOW47"
+	frame  data/chars/misc/doorst4b2.gif
+	frame  data/chars/misc/doorst4b3.gif
+	delay	42
+	frame  data/chars/misc/doorst4b4.gif
+	delay	64.5
+	frame  data/chars/misc/doorst4b4.gif
+	frame  data/chars/misc/doorst4b4.gif
+	frame  data/chars/misc/doorst4b4.gif
+	frame  data/chars/misc/doorst4b4.gif
+	delay	16
+	frame  data/chars/misc/doorst4b3.gif
+	frame  data/chars/misc/doorst4b2.gif
+      @cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_IDLE")
+	frame  data/chars/misc/doorst4b1.gif
+
+anim follow10
+	loop	0
+	delay	16
+	offset	99 186
+	frame  data/chars/misc/doorst4b2.gif
+	frame  data/chars/misc/doorst4b3.gif
+	@cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_FOLLOW11")
+	frame  data/chars/misc/doorst4b4.gif
+
+anim follow11
+	loop	1
+	delay	5
+	offset	99 186
+	@cmd elev -100 100 100 "ANI_FOLLOW18"
+	frame  data/chars/misc/doorst4b4.gif
+	@cmd elev -100 100 100 "ANI_FOLLOW18"
+	frame  data/chars/misc/doorst4b4.gif
+
+anim follow12
+	loop	0
+	delay	5
+	offset	99 186
+	@cmd elev3 -300 300 300 "ANI_FOLLOW6"
+	frame  data/chars/misc/doorst4b4.gif
+	@cmd elev -300 300 300 "ANI_FOLLOW8"
+	frame  data/chars/misc/doorst4b4.gif
+	@cmd elev3 -300 300 300 "ANI_FOLLOW6"
+	frame  data/chars/misc/doorst4b4.gif
+	@cmd elev3 -300 300 300 "ANI_FOLLOW6"
+	frame  data/chars/misc/doorst4b4.gif
+	@cmd elev -300 300 300 "ANI_FOLLOW8"
+	frame  data/chars/misc/doorst4b4.gif
+	@cmd elev3 -300 300 300 "ANI_FOLLOW6"
+	frame  data/chars/misc/doorst4b4.gif
+	@cmd elev -300 300 300 "ANI_FOLLOW8"
+	frame  data/chars/misc/doorst4b4.gif
+	@cmd elev3 -300 300 300 "ANI_FOLLOW6"
+	frame  data/chars/misc/doorst4b4.gif
+	@cmd elev3 -300 300 300 "ANI_FOLLOW6"
+	frame  data/chars/misc/doorst4b4.gif
+	@cmd elev -300 300 300 "ANI_FOLLOW8"
+	frame  data/chars/misc/doorst4b4.gif
+	@cmd elev3 -300 300 300 "ANI_FOLLOW6"
+	frame  data/chars/misc/doorst4b4.gif
+	delay	16
+	frame  data/chars/misc/doorst4b4.gif
+	frame  data/chars/misc/doorst4b4.gif
+	frame  data/chars/misc/doorst4b4.gif
+	frame  data/chars/misc/doorst4b3.gif
+	frame  data/chars/misc/doorst4b2.gif
+	@cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_IDLE")
+	frame  data/chars/misc/doorst4b1.gif
+
+
+
+

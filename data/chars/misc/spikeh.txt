@@ -1,0 +1,17 @@
+name	spikeh
+type    none
+health		100
+antigravity	100
+offscreenkill 6000
+subject_to_hole 0
+subject_to_wall 0
+
+
+
+anim idle
+	loop	1
+	delay	10
+	offset	1 1
+      frame  data/chars/misc/empty.gif
+      
+

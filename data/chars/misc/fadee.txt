@@ -1,0 +1,130 @@
+name   fadee
+type   none
+facing 1
+noquake 1 1
+bounce 0
+subject_to_gravity 0
+subject_to_wall 0
+subject_to_hole 0
+subject_to_platform 0
+subject_to_minz 0
+subject_to_maxz 0
+setlayer 1001001000
+
+load cred
+
+palette data/chars/misc/fadee4.gif
+
+anim spawn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==1){
+      changedrawmethod(self,"enabled",1);
+      changedrawmethod(self, "alpha", 6);
+      changedrawmethod(self, "channelg", 20);
+      changedrawmethod(self, "channelr", 20);
+      changedrawmethod(self, "channelb", 20);
+    }
+    if(frame==2){
+      changedrawmethod(self, "alpha", 6);
+      changedrawmethod(self, "channelg", 40);
+      changedrawmethod(self, "channelr", 40);
+      changedrawmethod(self, "channelb", 40);
+    }
+    if(frame==3){
+      changedrawmethod(self, "alpha", 6);
+      changedrawmethod(self, "channelg", 60);
+      changedrawmethod(self, "channelr", 60);
+      changedrawmethod(self, "channelb", 60);
+    }
+    if(frame==4){
+      changedrawmethod(self, "alpha", 6);
+      changedrawmethod(self, "channelg", 80);
+      changedrawmethod(self, "channelr", 80);
+      changedrawmethod(self, "channelb", 80);
+    }
+    if(frame==5){
+      changedrawmethod(self, "alpha", 6);
+      changedrawmethod(self, "channelg", 100);
+      changedrawmethod(self, "channelr", 100);
+      changedrawmethod(self, "channelb", 100);
+    }
+    if(frame==6){
+      changedrawmethod(self, "alpha", 6);
+      changedrawmethod(self, "channelg", 120);
+      changedrawmethod(self, "channelr", 120);
+      changedrawmethod(self, "channelb", 120);
+    }
+    if(frame==7){
+      changedrawmethod(self, "alpha", 6);
+      changedrawmethod(self, "channelg", 140);
+      changedrawmethod(self, "channelr", 140);
+      changedrawmethod(self, "channelb", 140);
+    }
+    if(frame==8){
+      changedrawmethod(self, "alpha", 6);
+      changedrawmethod(self, "channelg", 160);
+      changedrawmethod(self, "channelr", 160);
+      changedrawmethod(self, "channelb", 160);
+    }
+    if(frame==9){
+      changedrawmethod(self, "alpha", 6);
+      changedrawmethod(self, "channelg", 180);
+      changedrawmethod(self, "channelr", 180);
+      changedrawmethod(self, "channelb", 180);
+    }
+    if(frame==10){
+      changedrawmethod(self, "alpha", 6);
+      changedrawmethod(self, "channelg", 200);
+      changedrawmethod(self, "channelr", 200);
+      changedrawmethod(self, "channelb", 200);
+    }
+    if(frame==11){
+      changedrawmethod(self, "alpha", 6);
+      changedrawmethod(self, "channelg", 220);
+      changedrawmethod(self, "channelr", 220);
+      changedrawmethod(self, "channelb", 220);
+    }
+    if(frame==12){
+      changedrawmethod(self, "alpha", 6);
+      changedrawmethod(self, "channelg", 240);
+      changedrawmethod(self, "channelr", 240);
+      changedrawmethod(self, "channelb", 240);
+    }
+    if(frame==13){
+      changedrawmethod(self, "alpha", 0);
+      changedrawmethod(self,"enabled",0);
+    }
+@end_script
+   loop   0
+   delay   5
+   offset   1 490
+   frame   data/chars/misc/empty.gif
+   frame   data/chars/misc/fadee4.gif
+   frame   data/chars/misc/fadee4.gif
+   frame   data/chars/misc/fadee4.gif
+   frame   data/chars/misc/fadee4.gif
+   frame   data/chars/misc/fadee4.gif
+   frame   data/chars/misc/fadee4.gif
+   frame   data/chars/misc/fadee4.gif
+   frame   data/chars/misc/fadee4.gif
+   frame   data/chars/misc/fadee4.gif
+   frame   data/chars/misc/fadee4.gif
+   frame   data/chars/misc/fadee4.gif
+   frame   data/chars/misc/fadee4.gif
+   frame   data/chars/misc/fadee4.gif
+
+anim idle
+   loop   0
+   delay   50
+   offset   1 490
+   spawnframe 1 1 484 0 1
+   custentity cred
+   frame   data/chars/misc/fadee4.gif
+   frame   data/chars/misc/fadee4.gif
+   frame   data/chars/misc/fadee4.gif
+
+
+
+

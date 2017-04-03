@@ -1,0 +1,27 @@
+name	plat2
+type    obstacle
+cantgrab 1
+shadow  0
+health  10000
+antigravity	100
+offscreenkill 3000
+diesound  data/sounds/goo.wav
+nolife  1
+noatflash 1
+
+
+anim idle
+	loop	1
+	delay	5
+	offset	77 305
+      platform   77 305 -77 0 500 577 77 1000
+	frame	data/chars/misc/plat2.gif
+	
+anim fall
+	loop	0
+	delay	5
+	offset	77 305
+	frame	data/chars/misc/plat2.gif
+      frame	data/chars/misc/plat2.gif
+
+

@@ -1,0 +1,63 @@
+name	marend
+type	enemy
+health	50
+speed	15
+shadow	1
+nolife        1
+grabdistance 40
+antigravity -100
+risetime 0 -50
+falldie    1
+noquake 1 1
+nodieblink 3
+hostile npc
+
+load marend2
+
+script data/scripts/marend2.c
+animationscript data/scripts/marend.c
+
+anim spawn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "subject_to_gravity", 0);
+    }
+@end_script
+      loop	1
+	delay	17
+	offset	78 186
+	frame	data/chars/bilend/marend0.gif
+
+anim follow2
+      @script
+    void self = getlocalvar("self");
+
+    if(frame==1){
+      changeentityproperty(self, "subject_to_gravity", 1);
+    }
+@end_script
+      loop	0
+	delay	10
+	offset	78 186
+	landframe 4
+     spawnframe 5 0 0 0 0
+     custentity marend2
+	@cmd degravity 0.50
+	frame	data/chars/bilend/marend1.gif
+	delay	16
+	frame	data/chars/bilend/marend1.gif
+	frame	data/chars/bilend/marend1.gif
+	delay	400
+	frame	data/chars/bilend/marend1.gif
+	delay	30
+	sound	data/sounds/step.wav
+	@cmd  degravity -1
+	frame	data/chars/bilend/marend2.gif
+	frame	data/chars/bilend/empty.gif
+	@cmd killentity getlocalvar("self")
+	frame	data/chars/bilend/empty.gif
+
+
+

@@ -1,0 +1,28 @@
+name    	eeflame
+type    	none
+shadow  	0
+lifespan  	4
+nomove  	1
+nolife          1
+antigravity     100
+alpha 1
+
+anim idle
+	delay	5
+	offset	60 150
+	frame	data/chars/misc/fflame1.gif
+	frame	data/chars/misc/fflame2.gif
+	frame	data/chars/misc/fflame3.gif
+	frame	data/chars/misc/fflame4.gif
+	frame	data/chars/misc/fflame1.gif
+	frame	data/chars/misc/fflame2.gif
+	frame	data/chars/misc/fflame3.gif
+	frame	data/chars/misc/fflame4.gif
+	frame	data/chars/misc/fflame5.gif
+	frame	data/chars/misc/fflame6.gif
+	frame	data/chars/misc/fflame7.gif
+	frame	data/chars/misc/fflame8.gif
+	frame	data/chars/misc/empty.gif
+
+
+

@@ -1,0 +1,20 @@
+name	marend0
+type	none
+health	50
+shadow  0
+nolife        1
+offscreenkill 7000
+subject_to_gravity 0
+subject_to_hole 0
+subject_to_wall 0
+
+anim spawn
+	loop	1
+	delay	5
+	offset	78 186
+	frame	data/chars/bilend/marend0.gif
+
+
+
+
+

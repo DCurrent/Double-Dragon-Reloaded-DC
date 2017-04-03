@@ -1,0 +1,9 @@
+void main() {
+	setglobalvar("P1respawn_x",2112.925049);
+	setglobalvar("P1respawn_z",825.500000);
+	setglobalvar("P1respawn_a",354.000000);
+	setglobalvar("P2respawn_x",2112.925049);
+	setglobalvar("P2respawn_z",825.500000);
+	setglobalvar("P2respawn_a",354.000000);
+	changemodelproperty("billy",4,1);
+}

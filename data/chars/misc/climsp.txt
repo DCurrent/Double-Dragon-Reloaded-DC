@@ -1,0 +1,16 @@
+name		ClimbSpot
+type		none
+health		100
+antigravity	100
+subject_to_wall 0
+offscreenkill	7000
+
+
+anim idle
+      loop	1
+	delay	10
+	offset	18 32
+	frame	data/chars/misc/empty.gif
+	frame	data/chars/misc/empty.gif
+
+

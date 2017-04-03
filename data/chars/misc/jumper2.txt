@@ -1,0 +1,20 @@
+name	jumper2
+type    none
+subject_to_gravity 0
+subject_to_hole 0
+subject_to_wall 0
+Subject_to_MinZ 0
+Subject_to_MaxZ 0
+offscreenkill 7000
+
+animationscript data/scripts/gbelkill.c
+
+anim idle
+	loop	1
+	delay	5
+	offset	1 1
+      @cmd  jum 0 30 14 0 1
+      frame  data/chars/misc/empty.gif
+      frame  data/chars/misc/empty.gif
+
+

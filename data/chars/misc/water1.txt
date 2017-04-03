@@ -1,0 +1,21 @@
+name	water1
+type	none
+shadow	0
+nolife  1
+subject_to_hole 0
+subject_to_wall 0
+subject_to_gravity 0
+
+anim idle
+	loop	0
+	delay	8
+	offset	107 145
+      sound  data/sounds/water.wav
+	frame	data/chars/misc/water1.gif
+      frame	data/chars/misc/water2.gif
+      frame	data/chars/misc/water3.gif
+      frame	data/chars/misc/water1.gif
+      @cmd killentity getlocalvar("self")
+	frame	data/chars/misc/empty.gif
+	
+

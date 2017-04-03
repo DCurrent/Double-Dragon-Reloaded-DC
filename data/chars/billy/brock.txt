@@ -1,0 +1,254 @@
+name	brock
+health	100
+speed	22
+type	none
+shadow	1
+grabdistance 40
+jumpheight 6.5
+height 120
+jumpspeed 20
+antigravity -100
+nodieblink 1
+falldie    2
+noquake 1 1
+bounce 1
+risetime 0 -50
+icon	data/chars/billy/icon2.png
+atchain       1
+projectilehit   none
+hostile enemy
+candamage enemy
+modelflag 1
+
+load	rock1
+load	Empty2
+
+animationscript 	data/chars/billy/animation_script.c
+
+palette data/chars/billy/idle.png
+alternatepal data/chars/billy/map1.png
+alternatepal data/chars/billy/map2.png
+
+anim spawn
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+
+    if(P1){
+      changeentityproperty(P1, "colourmap", 0);
+    }
+    if(P2){
+      changeentityproperty(P2, "colourmap", 1);
+    }
+@end_script
+	loop	0
+	delay	25
+	offset	77 178
+	frame	data/chars/billy/rock/get1.png
+      delay	12
+      frame	data/chars/billy/rock/get2.png
+      frame	data/chars/billy/rock/get3.png
+
+anim respawn
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+
+    if(P1){
+      changeentityproperty(P1, "colourmap", 0);
+    }
+    if(P2){
+      changeentityproperty(P2, "colourmap", 1);
+    }
+@end_script
+	loop	0
+	delay	25
+	offset	77 178
+	frame	data/chars/billy/rock/get1.png
+      delay	12
+      frame	data/chars/billy/rock/get2.png
+      frame	data/chars/billy/rock/get3.png
+
+anim idle
+	loop	0
+	delay	5
+	offset	77 178
+	bbox	60 65 40 100
+     @cmd  camera
+	frame	data/chars/billy/rock/w4.png
+
+anim walk
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+    }
+    if(frame==2){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+      changelevelproperty("scrollspeed", 1);
+    }
+    if(frame==3){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+    }
+@end_script
+	loop	1
+	delay	14
+	offset	77 178
+	bbox	60 65 40 100
+	frame	data/chars/billy/rock/w1.png
+	frame	data/chars/billy/rock/w2.png
+	frame	data/chars/billy/rock/w3.png
+	frame	data/chars/billy/rock/w4.png
+
+anim up
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Platform", 0);
+    }
+    if(frame==2){
+      changelevelproperty("scrollspeed", 1);
+    }
+@end_script
+	loop	1
+	delay	14
+	offset	77 176
+	bbox	60 63 40 100
+	frame	data/chars/billy/rock/wu1.png
+	frame	data/chars/billy/rock/wu2.png
+	frame	data/chars/billy/rock/wu3.png
+	frame	data/chars/billy/rock/wu4.png
+
+anim walkoff
+      loop	0
+	offset	77 178
+	delay   8
+      @cmd  nomoveidle2 "ANI_FOLLOW1"
+      @cmd  hurt7 0
+      frame	data/chars/billy/rock/w4.png
+
+anim follow1
+      loop	0
+	offset	77 178
+	delay   8
+      @cmd  hurt8 0
+      frame	data/chars/billy/rock/w4.png
+
+anim attack1
+	loop	0
+	delay	2
+	offset	77 178
+	bbox	60 65 40 100
+      throwframe 0 0
+      custknife Empty2
+      @cmd    antiwall3 35 -31 0
+	frame	data/chars/billy/rock/w4.png
+      delay   20
+      bbox	0 0 0 0
+      @cmd	shooter2 "rock1" 30 120 1 1.5 1 0
+	frame	data/chars/billy/somersault_throw_4.png
+      delay   2
+      offset	77 170
+      frame	data/chars/billy/idle.png
+
+anim pain
+	loop	0
+	delay 40
+	offset	77 170
+	bbox	60 55 40 100
+	frame	data/chars/billy/pain1.png
+
+anim follow52 # end st8
+     loop 0
+     delay 13
+     offset 77 170
+     spawnframe 1 0 0 0 0
+     custentity bilend
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+     @cmd stwall 1 0 0
+	@cmd  spawn01  "rockclear" 5 95 1
+     frame	data/chars/billy/w4.png
+     frame	data/chars/billy/empty.png
+     bbox 60 55 40 100
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+
+anim follow53 # end st8
+     loop 0
+     delay 13
+     offset 77 170
+     spawnframe 1 0 0 0 0
+     custentity bilend2
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+     @cmd stwall 1 0 0
+	@cmd  spawn01  "rockclear" 5 95 1
+     frame	data/chars/billy/w4.png
+     frame	data/chars/billy/empty.png
+     bbox 60 55 40 100
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+
+anim follow54
+     loop 0
+     delay 13
+     offset 77 170
+     spawnframe 1 0 0 0 0
+     custentity bilend3
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+     @cmd stwall 1 0 0
+	@cmd  spawn01  "rockclear" 5 95 1
+     frame	data/chars/billy/w4.png
+     frame	data/chars/billy/empty.png
+     bbox 60 55 40 100
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+
+anim follow55
+     loop 0
+     delay 13
+     offset 77 170
+     spawnframe 1 0 0 0 0
+     custentity bilend4
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+     @cmd stwall 1 0 0
+	@cmd  spawn01  "rockclear" 5 95 1
+     frame	data/chars/billy/w4.png
+     frame	data/chars/billy/empty.png
+     bbox 60 55 40 100
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+
+
+
+

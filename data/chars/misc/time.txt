@@ -1,0 +1,56 @@
+name	   time
+health	   0
+type	   item
+subtype touch
+shadow	0
+facing     1
+nolife   1
+subject_to_gravity 0
+subject_to_wall 0
+subject_to_hole 0
+offscreenkill	7000
+
+anim idle
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+    int Play = openborvariant("count_players");
+    int x = getentityproperty(self,"x");
+    int y = getentityproperty(self,"a");
+    int z = getentityproperty(self,"z");
+    float P1x = getentityproperty(P1,"x");
+    float P1y = getentityproperty(P1,"a");
+    float P1z = getentityproperty(P1,"z");
+    float P2x = getentityproperty(P2,"x");
+    float P2y = getentityproperty(P2,"a");
+    float P2z = getentityproperty(P2,"z");
+
+    if(Play==1 && (P1 || P2)){
+
+      if(P1){
+        changeentityproperty(self, "position", P1x, P1z, P1y);
+      } else if(P2){
+        changeentityproperty(self, "position", P2x, P2z, P2y);
+      }
+    } else if(Play==2 && P1 && P2){
+      changeentityproperty(self, "position", P1x, P1z, P1y);
+    }
+@end_script
+	loop	1
+	delay	13
+	offset	15 25
+	itembox	1 1 28 28
+	frame	data/chars/misc/time.gif
+	frame	data/chars/misc/time.gif
+	frame	data/chars/misc/time.gif
+	frame	data/chars/misc/time.gif
+	frame	data/chars/misc/time.gif
+	frame	data/chars/misc/time.gif
+	frame	data/chars/misc/time.gif
+	frame	data/chars/misc/time.gif
+	frame	data/chars/misc/time.gif
+	@cmd killentity getlocalvar("self")
+	frame	data/chars/misc/time.gif
+
+

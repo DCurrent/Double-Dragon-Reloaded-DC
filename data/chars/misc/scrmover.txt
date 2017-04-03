@@ -1,0 +1,55 @@
+name   scrmover
+type   none
+subject_to_gravity 0
+subject_to_wall 0
+subject_to_hole 0
+subject_to_platform 0
+subject_to_maxz 0
+setlayer 800
+
+anim spawn
+@script
+    if(frame==1){
+      changelevelproperty("scrollspeed", 0);
+    }
+@end_script
+   delay   5
+   offset   1 1
+   frame   data/chars/misc/empty.gif
+   frame   data/chars/misc/empty.gif
+
+anim idle
+@script
+    void self = getlocalvar("self");
+    int Dir = getentityproperty(self, "direction");
+    int XPos = openborvariant("xpos");
+    int Width = openborvariant("levelwidth");
+    int Screen = openborvariant("hResolution");
+
+    if(frame==1){
+      if(Dir==1){
+        if(XPos < Width-Screen && Dir==1){
+          changeopenborvariant("xpos", XPos+1);
+        } else {
+          changelevelproperty("scrollspeed", 1);
+          killentity(self);
+        }
+      } else if(Dir==0){
+        if(XPos > 0){
+          changeopenborvariant("xpos", XPos-1);
+        } else {
+          changelevelproperty("scrollspeed", 1);
+          killentity(self);
+        }
+      }
+    }
+@end_script
+   loop   0
+   delay   1104
+   offset   1 1
+   frame   data/chars/misc/empty.gif
+   delay   2
+   frame   data/chars/misc/empty.gif
+
+
+

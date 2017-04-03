@@ -1,0 +1,43 @@
+name	gar
+health	1
+type	none
+shadow	1
+nolife        1
+facing 1
+subject_to_wall 0
+
+load mission1
+
+anim spawn
+	loop	0
+	delay	740
+	offset	97 191
+	spawnframe 19 1 480 0 1
+	custentity mission1
+	frame	data/levels/st1/gar1.gif
+	delay	10
+	sound  data/sounds/gar1.wav
+	frame	data/levels/st1/gar2.gif
+	frame	data/levels/st1/gar3.gif
+	frame	data/levels/st1/gar4.gif
+	frame	data/levels/st1/gar5.gif
+	frame	data/levels/st1/gar6.gif
+	frame	data/levels/st1/gar7.gif
+	frame	data/levels/st1/gar8.gif
+	frame	data/levels/st1/gar9.gif
+	frame	data/levels/st1/gar10.gif
+	frame	data/levels/st1/gar11.gif
+	frame	data/levels/st1/gar12.gif
+	frame	data/levels/st1/gar13.gif
+	frame	data/levels/st1/gar14.gif
+	frame	data/levels/st1/gar15.gif
+	frame	data/levels/st1/gar16.gif
+	frame	data/levels/st1/gar17.gif
+	frame	data/levels/st1/gar18.gif
+	frame	data/levels/st1/gar19.gif
+	sound  data/sounds/gar2.wav
+	frame	data/levels/st1/gar20.gif
+	@cmd killentity getlocalvar("self")
+	frame	data/chars/marian/empty.gif
+
+

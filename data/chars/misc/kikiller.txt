@@ -1,0 +1,21 @@
+name	kikiller
+type    none
+health		100
+shadow  0
+offscreenkill 6000
+subject_to_gravity 0
+subject_to_hole 0
+subject_to_wall 0
+
+animationscript data/scripts/killer_kill.c
+
+anim idle
+	loop	1
+	delay	5
+	offset	1 1
+      @cmd  killerkill 2500 800
+      frame  data/chars/misc/empty.gif
+      @cmd killentity getlocalvar("self")
+      frame  data/chars/misc/empty.gif
+
+

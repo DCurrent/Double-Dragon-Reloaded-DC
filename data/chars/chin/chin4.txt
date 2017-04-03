@@ -1,0 +1,1048 @@
+name	chin4
+health	100
+speed	16
+type	enemy
+shadow	1
+nolife        1
+grabdistance 40
+jumpheight 6.5
+jumpspeed 20
+antigravity -100
+falldie 2
+nodieblink      1
+noquake 1 1
+riseattacktype 3
+bounce 1
+risetime 0 -50
+aggression      40
+projectilehit   player
+hostile player platform
+candamage player 
+diesound data/sounds/chin3.wav
+
+script data/scripts/Custom_chase.c
+animationscript 	data/scripts/ani0020.h
+
+palette   data/chars/chin/idle.gif
+alternatepal data/chars/chin/map1.gif
+alternatepal data/chars/chin/map2.gif
+alternatepal data/chars/chin/map3.gif
+alternatepal data/chars/chin/map4.gif
+
+anim spawn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+@end_script
+	loop	0
+	delay	13
+	offset	77 170
+	frame	data/chars/chin/w3.gif
+	@cmd direc 0
+	@cmd changeentityproperty getlocalvar("self") "velocity" -1.5 0 0
+	frame	data/chars/chin/w1.gif
+	frame	data/chars/chin/w2.gif
+	frame	data/chars/chin/w3.gif
+	frame	data/chars/chin/w4.gif
+	frame	data/chars/chin/w1.gif
+	frame	data/chars/chin/w2.gif
+	frame	data/chars/chin/w3.gif
+	@cmd changeentityproperty getlocalvar("self") "velocity" -0.9 0 0
+	frame	data/chars/chin/w4.gif
+	@cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+	@cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_FOLLOW43")
+	frame	data/chars/chin/w4.gif
+
+anim follow43
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+    if(frame==5){
+      changeentityproperty(self, "Subject_to_Wall", 1);
+    }
+@end_script
+	loop	0
+	delay	16
+      offset	77 170
+      landframe 6
+	jumpframe 0 5.5 2.5 0
+      @cmd    degravity -1
+      frame	data/chars/chin/j1.gif
+      frame	data/chars/chin/j1.gif
+      frame	data/chars/chin/j2.gif
+      frame	data/chars/chin/j6.gif
+      frame	data/chars/chin/j3.gif
+      delay	28
+      frame	data/chars/chin/j5.gif
+      delay	15
+      frame	data/chars/chin/rise2.gif
+
+
+anim respawn
+	loop	0
+	delay	17
+	offset	77 170
+      @cmd    degravity -1
+	frame	data/chars/chin/rise2.gif
+
+anim idle
+	loop	1
+	delay	10
+	offset	77 170
+	bbox	60 55 44 100
+      @cmd    clearL
+      @cmd    degravity -1
+	frame	data/chars/chin/idle.gif
+      frame	data/chars/chin/idle.gif
+      frame	data/chars/chin/idle.gif
+      frame	data/chars/chin/idle.gif
+
+anim walk
+	loop	1
+	delay	15
+	offset	77 170
+	bbox	60 55 44 100
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+	frame	data/chars/chin/w1.gif
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+	frame	data/chars/chin/w2.gif
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+	frame	data/chars/chin/w3.gif
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+	frame	data/chars/chin/w4.gif
+
+anim follow6
+	loop	0
+	delay	9
+      offset	77 170
+	bbox	60 55 44 100
+      landframe 5
+	jumpframe 1 6.5 2 0
+      @cmd    degravity -1
+      frame	data/chars/chin/j0.gif
+      delay	16
+      frame	data/chars/chin/j1.gif
+      bbox	60 83 55 42
+      frame	data/chars/chin/j2.gif
+      frame	data/chars/chin/j3.gif
+      delay	28
+      bbox	60 83 55 70
+      frame	data/chars/chin/j5.gif
+      delay	15
+      bbox 0 0 0 0
+      frame	data/chars/chin/rise2.gif
+
+anim walkoff
+	loop	0
+	delay	11
+	offset	77 170
+	bbox	60 55 44 100
+      landframe 4 
+      @cmd  stopz
+      @cmd  stopz2
+      @cmd    degravity 0.27
+	frame	data/chars/chin/j1.gif
+      delay	10
+      @cmd  dash 1 0
+      frame	data/chars/chin/j5.gif
+      @cmd    degravity -0.50
+      frame	data/chars/chin/j5.gif
+      delay	100
+      frame	data/chars/chin/j5.gif
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/chin/rise2.gif
+
+anim JUMPDELAY
+      loop	0
+	delay	9
+      offset	77 170
+	bbox	60 55 44 100
+      frame	data/chars/chin/j0.gif
+
+anim JUMPLAND
+      loop	0
+	delay	14
+      offset	77 170
+	bbox	60 55 44 100
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/chin/rise2.gif
+
+anim jump
+	loop	0
+      range 0 180
+      rangea -1000 1000
+	offset	77 170
+      bbox	60 83 55 70
+	delay   4
+      @cmd    degravity -1
+	frame	data/chars/chin/j1.gif
+      frame	data/chars/chin/j1.gif
+      frame	data/chars/chin/j1.gif
+      frame	data/chars/chin/j1.gif
+      bbox	60 83 55 42
+      frame	data/chars/chin/j2.gif
+	frame	data/chars/chin/j2.gif
+	frame	data/chars/chin/j2.gif
+      frame	data/chars/chin/j3.gif
+      frame	data/chars/chin/j3.gif
+	frame	data/chars/chin/j3.gif
+      bbox	60 83 55 70
+      frame	data/chars/chin/j5.gif
+	frame	data/chars/chin/j5.gif
+      frame	data/chars/chin/j5.gif
+      frame	data/chars/chin/j5.gif
+	frame	data/chars/chin/j5.gif
+      frame	data/chars/chin/j5.gif
+	frame	data/chars/chin/j5.gif
+      frame	data/chars/chin/j5.gif
+      frame	data/chars/chin/j5.gif
+	frame	data/chars/chin/j5.gif
+      frame	data/chars/chin/j5.gif
+	frame	data/chars/chin/j5.gif
+      frame	data/chars/chin/j5.gif
+      frame	data/chars/chin/j5.gif
+	frame	data/chars/chin/j5.gif
+
+anim attack1
+@script
+    void self = getlocalvar("self");
+
+    if( frame == 0){
+      int r = rand()%5;
+
+      if( r > 0){
+        changeentityproperty(self, "animation", openborconstant("ANI_FOLLOW20"));
+      }
+    }
+@end_script
+	range   1 95
+      rangea   0 85
+	loop	0
+	delay	9
+	offset	100 170
+      hitfx  data/sounds/beatt2.wav
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW21"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW14"
+      attack  8 140 82 34 12 1
+      dropv 3.5 1.5
+	frame	data/chars/chin/aa1.gif
+      attack  0 0 0 0 0
+	frame	data/chars/chin/aa2.gif
+      attack  110 140 80 34 12 1
+      dropv 3.5 1.5
+	frame	data/chars/chin/aa3.gif
+      attack  0 0 0 0 0
+	frame	data/chars/chin/aa4.gif
+      attack  8 140 82 34 12 1
+      dropv 3.5 1.5
+	frame	data/chars/chin/aa1.gif
+      attack  0 0 0 0 0
+	delay	2
+	offset	77 170
+	bbox	60 55 44 100
+	frame	data/chars/chin/idle.gif
+
+anim follow14
+	loop	0
+	delay	9
+	offset	100 170
+      hitfx  data/sounds/beatt2.wav
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW21"
+      attack14  8 140 82 34 12 1
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/chin/aa1.gif
+      attack14  0 0 0 0 0
+	frame	data/chars/chin/aa2.gif
+      attack14  110 140 80 34 12 1
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/chin/aa3.gif
+      attack14  0 0 0 0 0
+	frame	data/chars/chin/aa4.gif
+      attack14  8 140 82 34 12 1
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/chin/aa1.gif
+      attack14  0 0 0 0 0
+	delay	2
+	offset	77 170
+	bbox	60 55 44 100
+	frame	data/chars/chin/idle.gif
+
+anim attack2
+	range   96 115
+      rangea   0 85
+	loop	0
+	delay	14
+	offset	81 184
+	bbox	64 69 44 100
+	sound data/sounds/chin1.wav
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW21"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW17"
+	frame	data/chars/chin/a1.gif
+      attack  90 97 95 34 6 0
+      dropv 3.5 1.5
+	frame	data/chars/chin/a2.gif
+      attack  0 0 0 0 0
+	delay	7
+      @cmd    anichange "ANI_FOLLOW15"
+	frame	data/chars/chin/a3.gif
+
+anim follow17
+	loop	0
+	delay	14
+	offset	81 184
+	bbox	64 69 44 100
+	sound data/sounds/chin1.wav
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW21"
+	frame	data/chars/chin/a1.gif
+      attack14  90 97 95 34 6 0
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/chin/a2.gif
+      attack14  0 0 0 0 0
+	delay	7
+      @cmd    anichange "ANI_FOLLOW18"
+	frame	data/chars/chin/a3.gif
+
+anim follow15
+	loop	0
+	delay	7
+	offset	81 184
+	bbox	64 69 44 100
+      followcond 2
+      followanim 16
+      attack  0 0 0 0 0
+	sound data/sounds/chin1.wav
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW21"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW18"
+	frame	data/chars/chin/a3.gif
+      attack2  90 110 95 34 6 0
+      dropv 3.5 1.5
+	frame	data/chars/chin/a3.gif
+      attack2  0 0 0 0 0
+	frame	data/chars/chin/a1.gif
+      @cmd    anichange "ANI_FOLLOW22"
+	sound data/sounds/chin1.wav
+	frame	data/chars/chin/a1.gif
+	frame	data/chars/chin/a4.gif
+	frame	data/chars/chin/a4.gif
+
+anim follow22
+	loop	0
+	delay	7
+	offset	81 184
+	bbox	64 69 44 100
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW23"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW23"
+	sound data/sounds/chin1.wav
+	frame	data/chars/chin/a1.gif
+      attack  90 60 95 34 12 1
+      dropv 3.5 1.5
+	frame	data/chars/chin/a4.gif
+      attack  0 0 0 0 0
+	frame	data/chars/chin/a4.gif
+
+anim follow23
+	loop	0
+	delay	7
+	offset	81 184
+	bbox	64 69 44 100
+	sound data/sounds/chin1.wav
+	frame	data/chars/chin/a1.gif
+      attack14  90 60 95 34 12 1
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/chin/a4.gif
+      attack14  0 0 0 0 0
+	frame	data/chars/chin/a4.gif
+
+anim follow18
+	loop	0
+	delay	7
+	offset	81 184
+	bbox	64 69 44 100
+      followcond 2
+      followanim 19
+      attack  0 0 0 0 0
+	sound data/sounds/chin1.wav
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW21"
+	frame	data/chars/chin/a3.gif
+      attack14  90 110 95 34 6 0
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/chin/a3.gif
+      attack14  0 0 0 0 0
+	frame	data/chars/chin/a1.gif
+     @cmd    anichange "ANI_FOLLOW23"
+	sound data/sounds/chin1.wav
+	frame	data/chars/chin/a1.gif
+	frame	data/chars/chin/a4.gif
+	frame	data/chars/chin/a4.gif
+
+anim follow16
+	loop	0
+	delay	7
+	offset	81 184
+	bbox	64 69 44 100
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW19"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW19"
+	frame	data/chars/chin/a3.gif
+	delay	12
+	frame	data/chars/chin/a1.gif
+	sound data/sounds/chin1.wav
+	delay	24
+	frame	data/chars/chin/a5.gif
+	delay	18
+      hitfx  data/sounds/beatt2.wav
+      attack  90 72 95 34 12 1
+      dropv 3.5 1.5
+	frame	data/chars/chin/a8.gif
+      attack  0 0 0 0 0
+	delay	13
+	frame	data/chars/chin/a7.gif
+
+anim follow19
+	loop	0
+	delay	7
+	offset	81 184
+	bbox	64 69 44 100
+	frame	data/chars/chin/a3.gif
+	delay	12
+	frame	data/chars/chin/a1.gif
+	sound data/sounds/chin1.wav
+	delay	24
+	frame	data/chars/chin/a5.gif
+	delay	18
+      hitfx  data/sounds/beatt2.wav
+      attack14  90 72 95 34 12 1
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/chin/a8.gif
+      attack14  0 0 0 0 0
+	delay	13
+	frame	data/chars/chin/a7.gif
+
+anim follow20
+	loop	0
+	delay	12
+	offset	81 184
+	bbox	64 69 44 100
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW21"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW21"
+	frame	data/chars/chin/a1.gif
+	sound data/sounds/chin1.wav
+	delay	24
+	frame	data/chars/chin/a5.gif
+	delay	18
+      hitfx  data/sounds/beatt2.wav
+      attack  90 72 95 34 12 1
+      dropv 3.5 1.5
+	frame	data/chars/chin/a8.gif
+      attack  0 0 0 0 0
+	delay	13
+	frame	data/chars/chin/a7.gif
+
+anim follow21
+	loop	0
+	delay	12
+	offset	81 184
+	bbox	64 69 44 100
+	frame	data/chars/chin/a1.gif
+	sound data/sounds/chin1.wav
+	delay	24
+	frame	data/chars/chin/a5.gif
+	delay	18
+      hitfx  data/sounds/beatt2.wav
+      attack14  90 72 95 34 12 1
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/chin/a8.gif
+      attack14  0 0 0 0 0
+	delay	13
+	frame	data/chars/chin/a7.gif
+
+anim attack3
+	range   146 200
+      rangea  0 100
+      loop	0
+	delay	9
+      offset	77 170
+      hitfx  data/sounds/beatt2.wav
+      landframe 6
+	jumpframe 1 6 2.5 0
+      @cmd    kickreact 0 210 0 45 "ANI_FOLLOW24"
+      @cmd    riseattack3 210 40 "ANI_FOLLOW24"
+      @cmd    degravity -0.7
+      frame	data/chars/chin/j0.gif
+      delay	15
+      frame	data/chars/chin/j1.gif
+      bbox	60 83 55 42
+      frame	data/chars/chin/j2.gif
+	sound data/sounds/chin2.wav
+      frame	data/chars/chin/j3.gif
+      delay	16
+      attack  90 90 95 44 12 1
+      dropv 3.5 1.5
+      frame	data/chars/chin/j4.gif
+      bbox	60 83 55 70
+      attack  0 0 0 0 0
+      delay	28
+      frame	data/chars/chin/j5.gif
+      delay	15
+      bbox	0 0 0 0
+      @cmd    degravity -1
+      frame	data/chars/chin/rise2.gif
+
+anim follow24
+      loop	0
+	delay	9
+      offset	77 170
+      hitfx  data/sounds/beatt2.wav
+      landframe 6
+	jumpframe 1 6 2.5 0
+      @cmd    degravity -0.7
+      frame	data/chars/chin/j0.gif
+      delay	15
+      frame	data/chars/chin/j1.gif
+      bbox	60 83 55 42
+      frame	data/chars/chin/j2.gif
+	sound data/sounds/chin2.wav
+      frame	data/chars/chin/j3.gif
+      delay	16
+      attack14  90 90 95 44 12 1
+      dropv 3.5 1.5
+      forcedirection 99
+      frame	data/chars/chin/j4.gif
+      bbox	60 83 55 70
+      attack14  0 0 0 0 0
+      delay	28
+      frame	data/chars/chin/j5.gif
+      delay	15
+      bbox	0 0 0 0
+      @cmd    degravity -1
+      frame	data/chars/chin/rise2.gif
+
+anim follow25
+	loop	0
+	delay	9
+	offset	100 170
+      hitfx  data/sounds/beatt2.wav
+      @cmd    riseattack3 120 45 "ANI_FOLLOW14"
+      attack  8 140 82 34 12 1
+      dropv 3.5 1.5
+	frame	data/chars/chin/aa1.gif
+      attack  0 0 0 0 0
+	frame	data/chars/chin/aa2.gif
+      attack  110 140 80 34 12 1
+      dropv 3.5 1.5
+	frame	data/chars/chin/aa3.gif
+      attack  0 0 0 0 0
+	frame	data/chars/chin/aa4.gif
+      attack  8 140 82 34 12 1
+      dropv 3.5 1.5
+	frame	data/chars/chin/aa1.gif
+      attack  0 0 0 0 0
+	delay	2
+	offset	77 170
+	bbox	60 55 44 100
+	frame	data/chars/chin/idle.gif
+
+anim pain
+	loop	0
+	delay 40
+	offset	77 170
+	bbox	60 55 44 100
+	frame	data/chars/chin/pain1.gif
+
+anim pain2
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 44 100
+	frame	data/chars/chin/pain2.gif
+      delay   65
+	frame	data/chars/chin/pain3.gif
+
+anim pain29
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 44 100
+	frame	data/chars/chin/pain2.gif
+      delay   65
+	frame	data/chars/chin/pain3.gif
+
+anim pain14 # Backpain 1
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 44 100
+	frame	data/chars/chin/pain3.gif
+      delay   65
+	frame	data/chars/chin/pain3.gif
+
+anim pain15 # Backpain 2
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 44 100
+	frame	data/chars/chin/pain3.gif
+      delay   65
+	frame	data/chars/chin/pain3.gif
+
+anim pain30 # Backpain 2
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 44 100
+	frame	data/chars/chin/pain3.gif
+      delay   65
+	frame	data/chars/chin/pain3.gif
+
+anim pain17 # grabbed attack pain
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 44 100
+	frame	data/chars/chin/pain3.gif
+      delay   65
+	frame	data/chars/chin/pain3.gif
+
+anim fall
+	loop	0
+	offset	77 170
+	delay   8
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd bind 0 0 0 0 0
+      @cmd    depost 0
+	frame	data/chars/chin/fall01.gif
+      frame	data/chars/chin/fall01.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/chin/fall01.gif
+      frame	data/chars/chin/fall01.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/chin/fall01.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/chin/fall02.gif
+      delay   500
+      frame	data/chars/chin/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/chin/fall02.gif
+	frame	data/chars/chin/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/chin/rise0.gif
+
+anim follow1
+      loop	0
+      delay   80
+	offset	77 170
+      bbox	80 140 25 37
+      frame	data/chars/chin/rise0.gif
+
+anim follow3
+      loop	1
+      delay   10
+	offset	77 169
+      frame	data/chars/chin/rise0.gif
+
+anim follow4
+      loop	1
+      delay   10
+	offset	77 169
+      frame	data/chars/chin/pain7.gif
+
+anim follow5
+      loop	1
+      delay   10
+	offset	77 169
+      frame	data/chars/chin/pain8.gif
+
+anim fall4
+	loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/chin/fall03.gif
+      frame	data/chars/chin/fall03.gif
+      delay   10
+      frame	data/chars/chin/fall03.gif
+      frame	data/chars/chin/fall03.gif
+      frame	data/chars/chin/fall02.gif
+      delay   20
+      frame	data/chars/chin/fall02.gif
+      delay   500
+      frame	data/chars/chin/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/chin/fall02.gif
+	frame	data/chars/chin/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/chin/rise0.gif
+
+anim fall14 # Backfall 1
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/chin/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/chin/fall03.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/chin/fall03.gif
+      frame	data/chars/chin/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/chin/fall03.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/chin/fall02.gif
+      delay   500
+      frame	data/chars/chin/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/chin/fall02.gif
+	offset	79 170
+	frame	data/chars/chin/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/chin/rise0.gif
+
+anim fall15 # Backfall 2
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/chin/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/chin/fall03.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/chin/fall03.gif
+      frame	data/chars/chin/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/chin/fall03.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/chin/fall02.gif
+      delay   500
+      frame	data/chars/chin/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/chin/fall02.gif
+	frame	data/chars/chin/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/chin/rise0.gif
+
+anim fall30 # Backfall 2
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/chin/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/chin/fall03.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/chin/fall03.gif
+      frame	data/chars/chin/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/chin/fall03.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/chin/fall02.gif
+      delay   500
+      frame	data/chars/chin/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/chin/fall02.gif
+	frame	data/chars/chin/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/chin/rise0.gif
+
+anim fall16 # Backfall 3
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -2
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/chin/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/chin/fall03.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/chin/fall03.gif
+      frame	data/chars/chin/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/chin/fall03.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW38"
+      frame	data/chars/chin/fall02.gif
+      delay   500
+      frame	data/chars/chin/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/chin/fall02.gif
+	frame	data/chars/chin/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/chin/rise0.gif
+
+anim follow37
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 2 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd    hurt4 5
+	frame	data/chars/chin/fall03.gif
+      frame	data/chars/chin/fall03.gif
+      delay   10
+      frame	data/chars/chin/fall03.gif
+      frame	data/chars/chin/fall03.gif
+      frame	data/chars/chin/fall03.gif
+      delay   20
+      frame	data/chars/chin/fall02.gif
+      delay   500
+      frame	data/chars/chin/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/chin/fall02.gif
+	frame	data/chars/chin/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/chin/rise0.gif
+
+anim follow38
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 2 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd    hurt4 5
+	frame	data/chars/chin/fall01.gif
+      frame	data/chars/chin/fall01.gif
+      delay   10
+      frame	data/chars/chin/fall01.gif
+      frame	data/chars/chin/fall01.gif
+      frame	data/chars/chin/fall01.gif
+      delay   20
+      frame	data/chars/chin/fall02.gif
+      delay   500
+      frame	data/chars/chin/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/chin/fall02.gif
+	frame	data/chars/chin/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/chin/rise0.gif
+
+anim fall8
+      loop	0
+      delay   1000
+	offset	77 169
+      @cmd    conditionalflip3
+      @cmd    degravity -0.15
+      frame	data/chars/chin/pain3.gif
+      frame	data/chars/chin/pain7.gif
+      frame	data/chars/chin/pain7.gif
+      frame	data/chars/chin/pain7.gif
+      frame	data/chars/chin/pain7.gif
+      frame	data/chars/chin/pain7.gif
+      frame	data/chars/chin/D_VERTICAL_DOWN.png
+      frame	data/chars/chin/fall02.gif
+      frame	data/chars/chin/rise0.gif
+      frame	data/chars/chin/pain7.gif
+      frame	data/chars/chin/pain8.gif
+
+anim rise
+	loop	0
+	offset	77 170
+	delay	10
+      @cmd    degravity -1
+	frame	data/chars/chin/rise0.gif
+	delay   15
+	frame	data/chars/chin/rise1.gif
+	delay   10
+	@cmd    riseattack 95 40 "ANI_FOLLOW25"
+	frame	data/chars/chin/rise1.gif
+
+anim death
+	loop	0
+	offset	77 170
+	delay	20
+      @cmd    degravity -1
+	frame	data/chars/chin/rise0.gif
+
+anim  follow49 # water effect
+	loop	0
+	offset	77 170
+	delay   4
+      spawnframe 0 0 55 0 0
+	custentity water1
+      landframe 6
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      delay   500
+      frame	data/chars/misc/empty.gif
+      delay   200
+	frame	data/chars/misc/empty.gif
+
+anim burn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changedrawmethod(self,"enabled",1);
+      changedrawmethod(self, "tintmode", 4);
+      changedrawmethod(self, "tintcolor", rgbcolor(230,100,0));
+    }
+    if(frame==1){
+      changedrawmethod(self, "tintmode", 0);
+      changedrawmethod(self, "fillcolor", rgbcolor(255,104,0));
+    }
+    if(frame==2){
+      changedrawmethod(self, "fillcolor", 0);
+      changedrawmethod(self, "tintmode", 4);
+      changedrawmethod(self, "tintcolor", rgbcolor(230,100,0));
+    }
+    if(frame==3){
+      changedrawmethod(self, "tintmode", 0);
+      changedrawmethod(self, "fillcolor", rgbcolor(255,104,0));
+    }
+    if(frame==4){
+      changedrawmethod(self, "fillcolor", 0);
+      changedrawmethod(self, "tintmode", 4);
+      changedrawmethod(self, "tintcolor", rgbcolor(230,100,0));
+    }
+    if(frame==5){
+      changedrawmethod(self, "tintmode", 0);
+      changedrawmethod(self, "fillcolor", rgbcolor(255,104,0));
+    }
+    if(frame==6){
+      changedrawmethod(self, "fillcolor", 0);
+      changedrawmethod(self, "tintmode", 4);
+      changedrawmethod(self, "tintcolor", rgbcolor(230,100,0));
+    }
+    if(frame==7){
+      changedrawmethod(self, "tintmode", 0);
+      changedrawmethod(self, "fillcolor", rgbcolor(255,104,0));
+    }
+    if(frame==8){
+      changedrawmethod(self, "fillcolor", 0);
+      changedrawmethod(self, "tintmode", 4);
+      changedrawmethod(self, "tintcolor", rgbcolor(230,100,0));
+    }
+    if(frame==9){
+      changedrawmethod(self, "tintmode", 0);
+      changedrawmethod(self, "fillcolor", rgbcolor(255,104,0));
+    }
+    if(frame==10){
+      changedrawmethod(self, "fillcolor", 0);
+      changedrawmethod(self, "tintmode", 4);
+      changedrawmethod(self, "tintcolor", rgbcolor(230,100,0));
+    }
+    if(frame==11){
+      changedrawmethod(self, "tintmode", 0);
+      changedrawmethod(self, "fillcolor", rgbcolor(255,104,0));
+    }
+    if(frame==12){
+      changedrawmethod(self, "fillcolor", 0);
+      changedrawmethod(self, "tintmode", 4);
+      changedrawmethod(self, "tintcolor", rgbcolor(230,100,0));
+    }
+    if(frame==13){
+      changedrawmethod(self, "tintmode", 0);
+      changedrawmethod(self, "fillcolor", rgbcolor(255,104,0));
+    }
+    if(frame==14){
+      changedrawmethod(self, "fillcolor", 0);
+      changedrawmethod(self, "tintmode", 4);
+      changedrawmethod(self, "tintcolor", rgbcolor(230,100,0));
+    }
+    if(frame==15){
+      changedrawmethod(self, "tintmode", 0);
+      changedrawmethod(self, "tintcolor", 0);
+      changedrawmethod(self, "fillcolor", 0);
+      changedrawmethod(self,"enabled",0);
+    }
+@end_script
+	loop	0
+	offset	77 170
+	delay   8
+	landframe 13
+	@cmd    degravity -0.15
+	@cmd bind 0 0 0 0 0
+	@cmd    depost 0
+	frame	data/chars/chin/fall01.gif
+	@cmd    spawnbind "eflame" -16 47 1
+	frame	data/chars/chin/fall01.gif
+	frame	data/chars/chin/fall01.gif
+	frame	data/chars/chin/fall01.gif
+	frame	data/chars/chin/fall01.gif
+	frame	data/chars/chin/fall01.gif
+	@cmd    spawnbind "eeflame" -31 12 1
+	frame	data/chars/chin/fall02.gif
+	frame	data/chars/chin/fall02.gif
+	frame	data/chars/chin/fall02.gif
+	frame	data/chars/chin/fall02.gif
+	frame	data/chars/chin/fall02.gif
+	frame	data/chars/chin/fall02.gif
+	delay   -999
+	frame	data/chars/chin/fall02.gif
+	delay   8
+	sound	data/sounds/falll.wav
+	frame	data/chars/chin/fall02.gif
+	frame	data/chars/chin/rise0.gif
+	frame	data/chars/chin/rise0.gif
+	delay   2
+	@cmd    anichange "ANI_FOLLOW1"
+	frame	data/chars/chin/rise0.gif
+
+
+

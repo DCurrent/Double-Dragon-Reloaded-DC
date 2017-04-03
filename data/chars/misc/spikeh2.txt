@@ -1,0 +1,37 @@
+name	spikeh2
+type    none
+health		100
+shadow  0
+offscreenkill 6000
+subject_to_gravity 0
+subject_to_hole 0
+subject_to_wall 0
+
+animationscript 	data/scripts/spikeh2.c
+
+anim idle
+	loop	1
+	delay	5
+	offset	1 1
+      @cmd  spikeh -100 100 31 "ANI_FOLLOW50"
+      frame  data/chars/misc/empty.gif
+      @cmd  spikeh -100 100 31 "ANI_FOLLOW50"
+      frame  data/chars/misc/empty.gif
+      @cmd  spikeh -100 100 31 "ANI_FOLLOW50"
+      frame  data/chars/misc/empty.gif
+      @cmd  spikeh -100 100 31 "ANI_FOLLOW50"
+      frame  data/chars/misc/empty.gif
+      @cmd  spikeh -100 100 31 "ANI_FOLLOW50"
+      frame  data/chars/misc/empty.gif
+      @cmd  spikeh -100 100 31 "ANI_FOLLOW50"
+      frame  data/chars/misc/empty.gif
+      @cmd  spikeh -100 100 31 "ANI_FOLLOW50"
+      frame  data/chars/misc/empty.gif
+      @cmd  spikeh -100 100 31 "ANI_FOLLOW50"
+      frame  data/chars/misc/empty.gif
+      @cmd  spikeh -100 100 31 "ANI_FOLLOW50"
+      frame  data/chars/misc/empty.gif
+      @cmd  spikeh -100 100 31 "ANI_FOLLOW50"
+      frame  data/chars/misc/empty.gif
+
+

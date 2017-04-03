@@ -1,0 +1,114 @@
+maxplayers 2
+
+timeloc 175 7 21 20 1
+bgicon   data/chars/misc/hud2.gif -160 -3
+
+p1namej     -999 -999  -999 -999 235  463
+p2namej     -999 -999  -999 -999 235  463
+
+p1score -999 -999 -999 -999 88 17
+p2score 999 -999 -999 -999 488 17
+
+p1life     -999  448
+p2life     -999  448
+
+p1icon 100 461
+p2icon 500 461
+
+p1lifen     80  451
+p2lifen     480 451
+
+p1lifex     -999 -999
+p2lifex     -999 -999
+
+
+showcomplete 999 999 999 999 999 999
+clearbonus 999 999 999 999 999 999
+lifebonus 999 999 999 999 999 999
+totalscore 999 999 999 999 999 999
+scbonuses 0 0 0 0
+
+loadingbg  1  -1000 -1000 0 105 180 0
+loadingbg2  1 -1000 -1000 0 105 180 0
+
+set	STORY
+skipselect billy billy
+equalairpause 0
+noslowfx 1
+maxplayers 2
+nosame    0 1
+credits 30
+custfade 50
+z 297 495
+file	  data/levels/st1/st1.txt
+z 729 882
+file	  data/levels/st2/st2.txt
+z 996 1306
+file	  data/levels/st2b/st2b.txt
+z 798 1286
+file	  data/levels/st3a/st3a.txt
+z 260 600
+file	  data/levels/st3/st3.txt
+z 936 1333
+file	  data/levels/st4/st4e.txt
+z 484 900
+file	  data/levels/st5a/st5a.txt
+z 384 697
+file	  data/levels/st5/st5.txt
+
+set	TRAINING
+skipselect billy billy
+equalairpause 0
+noslowfx 1
+maxplayers 2
+nosame    0 1
+credits 10
+custfade 50
+z 484 900
+file	  data/levels/test/test.txt
+
+set	TEST_STAGE_2B
+skipselect billy billy
+equalairpause 0
+noslowfx 1
+maxplayers 2
+nosame    0 1
+credits 30
+custfade 50
+z 996 1306
+file	  data/levels/st2b/st2b.txt
+
+set	TEST_STAGE_3a
+skipselect billy billy
+equalairpause 0
+noslowfx 1
+maxplayers 2
+nosame    0 1
+credits 30
+custfade 50
+z 798 1286
+file	  data/levels/st3a/st3a.txt
+
+set	TEST_STAGE_3
+skipselect billy billy
+equalairpause 0
+noslowfx 1
+maxplayers 2
+nosame    0 1
+credits 30
+custfade 50
+z 260 600
+file	  data/levels/st3/st3.txt
+
+set	TEST_STAGE_4
+skipselect billy billy
+equalairpause 0
+noslowfx 1
+maxplayers 2
+nosame    0 1
+credits 30
+custfade 50
+z 936 1333
+file	  data/levels/st4/st4e.txt
+
+

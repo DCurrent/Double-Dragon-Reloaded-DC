@@ -1,0 +1,3656 @@
+name	            billy
+health	            100
+speed	            20
+type	            player
+shadow	            1
+grabdistance        40
+jumpheight          6.5
+antigravity         -100
+height              120
+jumpspeed           20
+nodieblink          1
+falldie             2
+noquake             1 1
+makeinv             2 2
+bounce              1
+risetime            0 -50
+icon	            data/chars/billy/icon2.png
+atchain             1 2 3
+com	A2	            freespecial
+com	A3	            freespecial2
+com	D A	            freespecial11
+projectilehit       none
+hostile             enemy
+candamage           enemy npc
+
+    run.jump.continue   0
+    run.jump.x          1.3
+    run.jump.y          6.5
+    run.speed.x         3
+    run.move.z          1
+
+holdblock           1
+blockpain           1
+
+weapons   bbat bwhip bknife bbarel bbox brock bdynam bwood bboxx bball bchain bshovel bbomb bstick billy
+
+script data/scripts/spawn.c
+animationscript data/chars/billy/animation_script.c
+keyscript data/chars/billy/billkey.c
+ondoattackscript data/scripts/ondoattack.c
+onfallscript data/scripts/release.c
+
+#palette data/chars/billy/idle.png
+palette data/chars/billy/pal_jimmy_0.png
+alternatepal data/chars/billy/map1.png
+alternatepal data/chars/billy/map2.png
+
+anim spawn
+@script
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+    int eTime = openborvariant("elapsed_time");
+
+    if(P1){
+      changeentityproperty(P1, "colourmap", 0);
+      changeentityproperty(P1, "invincible", 1);
+      changeentityproperty(P1, "invinctime", eTime + 340);
+    }
+    if(P2){
+      changeentityproperty(P2, "colourmap", 1);
+      changeentityproperty(P2, "invincible", 1);
+      changeentityproperty(P2, "invinctime", eTime + 340);
+    }
+@end_script
+     loop 0
+     delay 1
+     offset 77 170
+     frame data/chars/billy/idle.png
+     frame data/chars/billy/idle.png
+     @cmd    spawnbind2 "parrow" "parrow2" 0 1 0
+     frame data/chars/billy/idle.png
+     frame data/chars/billy/idle.png
+     frame data/chars/billy/idle.png
+     frame data/chars/billy/idle.png
+
+anim freespecial26
+@script
+    void self = getlocalvar("self");
+    int eTime = openborvariant("elapsed_time");
+
+    if(frame==5){
+      changeentityproperty(self, "invincible", 1);
+      changeentityproperty(self, "invinctime", eTime + 400);
+      changeentityproperty(self, "blink", 1);
+    }
+    if(frame==8){
+      changeentityproperty(self, "Subject_to_Wall", 1);
+    }
+@end_script
+     loop 0
+     delay 980
+     offset 77 170
+     @cmd Join 1
+     frame data/chars/billy/idle.png
+     delay 13
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 1.2 0
+     frame data/chars/billy/w1.png
+     frame data/chars/billy/w2.png
+     frame data/chars/billy/w3.png
+     frame data/chars/billy/w4.png
+     @cmd changeentityproperty getlocalvar("self") "velocity" 1.7 0 0
+     frame data/chars/billy/w1.png
+     @cmd    spawnbind2 "parrow" "parrow2" 0 1 0
+     @cmd changeentityproperty getlocalvar("self") "velocity" 1.7 0 0
+     frame data/chars/billy/w2.png
+     @cmd Join 0
+     frame data/chars/billy/w3.png
+     frame data/chars/billy/w4.png
+
+anim freespecial27
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+    int eTime = openborvariant("elapsed_time");
+
+    if(frame==5){
+      changeentityproperty(self, "invincible", 1);
+      changeentityproperty(self, "invinctime", eTime + 400);
+      changeentityproperty(self, "blink", 1);
+    }
+@end_script
+     loop 0
+     delay 468
+     offset 77 170
+     @cmd Join 1
+     frame data/chars/billy/idle.png
+     delay 13
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 1 0
+     frame data/chars/billy/w1.png
+     frame data/chars/billy/w2.png
+     frame data/chars/billy/w3.png
+     frame data/chars/billy/w4.png
+     frame data/chars/billy/w1.png
+     @cmd Join 0
+     @cmd    spawnbind2 "parrow" "parrow2" 0 1 0
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+     frame data/chars/billy/w2.png
+
+anim freespecial28
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+    int eTime = openborvariant("elapsed_time");
+
+    if(frame==5){
+      changeentityproperty(self, "invincible", 1);
+      changeentityproperty(self, "invinctime", eTime + 400);
+      changeentityproperty(self, "blink", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+    }
+@end_script
+     loop 0
+     delay 300
+     offset 77 170
+     @cmd Join 1
+     frame data/chars/billy/idle.png
+     delay 13
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 1 0
+     frame data/chars/billy/w1.png
+     frame data/chars/billy/w2.png
+     frame data/chars/billy/w3.png
+     frame data/chars/billy/w4.png
+     frame data/chars/billy/w1.png
+     @cmd Join 0
+     @cmd    spawnbind2 "parrow" "parrow2" 0 1 0
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+     frame data/chars/billy/w2.png
+
+anim freespecial29
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+    int eTime = openborvariant("elapsed_time");
+
+    if(frame==18){
+      changeentityproperty(self, "invincible", 1);
+      changeentityproperty(self, "invinctime", eTime + 400);
+      changeentityproperty(self, "blink", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+    }
+@end_script
+     loop 0
+     delay 300
+     offset 77 170
+     @cmd Join 1
+     frame data/chars/billy/idle.png
+     delay 13
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 1 0
+     frame data/chars/billy/w1.png
+     frame data/chars/billy/w2.png
+     frame data/chars/billy/w3.png
+     frame data/chars/billy/w4.png
+     frame data/chars/billy/w1.png
+     frame data/chars/billy/w2.png
+     frame data/chars/billy/w3.png
+     frame data/chars/billy/w4.png
+     frame data/chars/billy/w1.png
+     frame data/chars/billy/w2.png
+     frame data/chars/billy/w3.png
+     frame data/chars/billy/w4.png
+     frame data/chars/billy/w1.png
+     frame data/chars/billy/w2.png
+     @cmd changeentityproperty getlocalvar("self") "velocity" 1.7 0 0
+     frame data/chars/billy/w3.png
+     frame data/chars/billy/w4.png
+     frame data/chars/billy/w1.png
+     frame data/chars/billy/w2.png
+     @cmd Join 0
+     @cmd    spawnbind2 "parrow" "parrow2" 0 1 0
+     frame data/chars/billy/w3.png
+
+anim freespecial30
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+    int eTime = openborvariant("elapsed_time");
+
+    if(frame==7){
+      changeentityproperty(self, "invincible", 1);
+      changeentityproperty(self, "invinctime", eTime + 400);
+      changeentityproperty(self, "blink", 1);
+      changeentityproperty(self, "subject_to_Screen", 1);
+    }
+@end_script
+     loop 0
+     delay 100
+     offset 77 170
+     @cmd Join 1
+     frame data/chars/billy/w4.png
+     delay 13
+     @cmd changeentityproperty getlocalvar("self") "velocity" 1.2 0 0
+     frame data/chars/billy/w1.png
+     frame data/chars/billy/w2.png
+     frame data/chars/billy/w3.png
+     frame data/chars/billy/w4.png
+     frame data/chars/billy/w1.png
+     frame data/chars/billy/w2.png
+     frame data/chars/billy/w3.png
+     @cmd Join 0
+     @cmd    spawnbind2 "parrow" "parrow2" 0 1 0
+     frame data/chars/billy/w4.png
+
+anim freespecial31
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+    int eTime = openborvariant("elapsed_time");
+    int Offset = getentityproperty(self,"a");
+
+    if(frame==0){
+      changelevelproperty("camerazoffset", -100 - Offset);
+    }
+    if(frame==11){
+      changeentityproperty(self, "invincible", 1);
+      changeentityproperty(self, "invinctime", eTime + 400);
+      changeentityproperty(self, "blink", 1);
+      changeentityproperty(self, "subject_to_wall", 1);
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "subject_to_Screen", 1);
+    }
+@end_script
+     loop 0
+     delay 120
+     offset 77 170
+     @cmd Join 1
+     frame data/chars/billy/w4.png
+     delay 13
+     @cmd changeentityproperty getlocalvar("self") "velocity" 1.2 0 0
+     frame data/chars/billy/w1.png
+     frame data/chars/billy/w2.png
+     frame data/chars/billy/w3.png
+     frame data/chars/billy/w4.png
+     frame data/chars/billy/w1.png
+     frame data/chars/billy/w2.png
+     frame data/chars/billy/w3.png
+     frame data/chars/billy/w4.png
+     frame data/chars/billy/w1.png
+     frame data/chars/billy/w2.png
+     frame data/chars/billy/w3.png
+     @cmd Join 0
+     @cmd    spawnbind2 "parrow" "parrow2" 0 1 0
+     frame data/chars/billy/w4.png
+
+anim freespecial32
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+    int eTime = openborvariant("elapsed_time");
+
+    if(frame==13){
+      changeentityproperty(self, "invincible", 1);
+      changeentityproperty(self, "invinctime", eTime + 400);
+      changeentityproperty(self, "blink", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+    }
+@end_script
+     loop 0
+     delay 10
+     offset 77 170
+     @cmd Join 1
+     frame data/chars/billy/w1.png
+     delay 13
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 1 0
+     frame data/chars/billy/w2.png
+     frame data/chars/billy/w3.png
+     frame data/chars/billy/w4.png
+     frame data/chars/billy/w1.png
+     frame data/chars/billy/w2.png
+     frame data/chars/billy/w3.png
+     frame data/chars/billy/w4.png
+     frame data/chars/billy/w1.png
+     frame data/chars/billy/w2.png
+     @cmd changeentityproperty getlocalvar("self") "velocity" 1.7 0 0
+     frame data/chars/billy/w3.png
+     frame data/chars/billy/w4.png
+     frame data/chars/billy/w1.png
+     frame data/chars/billy/w2.png
+     @cmd Join 0
+     @cmd    spawnbind2 "parrow" "parrow2" 0 1 0
+     frame data/chars/billy/w3.png
+
+anim freespecial33
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+    int eTime = openborvariant("elapsed_time");
+    int Offset = getentityproperty(self,"a");
+
+    if(frame==0){
+      changelevelproperty("camerazoffset", -100 - Offset);
+      changelevelproperty("scrollspeed", 999);
+    }
+    if(frame==11){
+      changeentityproperty(self, "invincible", 1);
+      changeentityproperty(self, "invinctime", eTime + 400);
+      changeentityproperty(self, "blink", 1);
+      changeentityproperty(self, "subject_to_wall", 1);
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "subject_to_Screen", 1);
+      changelevelproperty("scrollspeed", 1);
+    }
+@end_script
+     loop 0
+     delay 120
+     offset 77 170
+     @cmd Join 1
+     frame data/chars/billy/w4.png
+     delay 13
+     @cmd changeentityproperty getlocalvar("self") "velocity" 1.2 0 0
+     frame data/chars/billy/w1.png
+     frame data/chars/billy/w2.png
+     frame data/chars/billy/w3.png
+     frame data/chars/billy/w4.png
+     frame data/chars/billy/w1.png
+     frame data/chars/billy/w2.png
+     frame data/chars/billy/w3.png
+     frame data/chars/billy/w4.png
+     frame data/chars/billy/w1.png
+     frame data/chars/billy/w2.png
+     frame data/chars/billy/w3.png
+     @cmd Join 0
+     @cmd    spawnbind2 "parrow" "parrow2" 0 1 0
+     frame data/chars/billy/w4.png
+
+anim freespecial34
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+    int eTime = openborvariant("elapsed_time");
+    int Offset = getentityproperty(self,"a");
+
+    if(frame==0){
+      changelevelproperty("camerazoffset", -100 - Offset);
+      changelevelproperty("scrollspeed", 999);
+      changeentityproperty(self, "invincible", 1);
+      changeentityproperty(self, "invinctime", eTime + 340);
+      changeentityproperty(self, "blink", 1);
+    }
+    if(frame==2){
+      changeentityproperty(self, "subject_to_wall", 1);
+      changelevelproperty("scrollspeed", 1);
+    }
+@end_script
+     loop 0
+     delay 1
+     offset 77 170
+     frame data/chars/billy/idle.png
+     frame data/chars/billy/idle.png
+     @cmd    spawnbind2 "parrow" "parrow2" 0 1 0
+     frame data/chars/billy/idle.png
+     frame data/chars/billy/idle.png
+     frame data/chars/billy/idle.png
+     frame data/chars/billy/idle.png
+
+anim respawn
+@script
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+
+    if(P1){
+      changeentityproperty(P1, "colourmap", 0);
+    }
+    if(P2){
+      changeentityproperty(P2, "colourmap", 1);
+    }
+@end_script
+     loop 0
+     delay 1
+     offset 77 170
+     @cmd    stwall 0 0 0
+     @cmd    antiwall5 0 -20 0
+     frame data/chars/billy/empty.png
+     @cmd    blink
+     frame data/chars/billy/empty.png
+     @cmd    stwall 1 1 1
+     @cmd    spawnbind2 "parrow" "parrow2" 0 1 0
+     frame data/chars/billy/idle.png
+
+anim idle
+
+     loop 0
+     delay 5
+     offset 77 170
+     bbox 60 55 40 100
+     @cmd  clearL
+     @cmd  degravity -1
+     @cmd  nograb 1
+     @cmd  camera
+     frame data/chars/billy/idle.png
+     @cmd keyclimb "U" "ANI_FOLLOW20"
+     @cmd keyclimb "D" "ANI_FOLLOW21"
+     @cmd  nograb 1
+     frame data/chars/billy/idle.png
+
+anim ATTACKBACKWARD
+
+    followanim   1
+     counterrange 1 2 1 0
+     delay 1
+     offset 77 170
+     bbox 60 55 40 100
+     frame data/chars/billy/block_0.png
+     delay 200
+     frame data/chars/billy/block_0.png
+     frame data/chars/billy/block_0.png
+     delay 1
+     frame data/chars/billy/block_0.png
+
+anim walk
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+    }
+    if(frame==2){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+      changelevelproperty("scrollspeed", 1);
+    }
+    if(frame==3){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+    }
+@end_script
+     loop 1
+     delay 13
+     offset 77 170
+     bbox 60 55 40 100
+     @cmd	climberD 20 20 "ANI_FOLLOW21"
+     frame	data/chars/billy/w1.png
+     @cmd	climberD 20 20 "ANI_FOLLOW21"
+     frame	data/chars/billy/w2.png
+     @cmd	climberD 20 20 "ANI_FOLLOW21"
+     frame	data/chars/billy/w3.png
+     @cmd	climberD 20 20 "ANI_FOLLOW21"
+     frame	data/chars/billy/w4.png
+
+anim up
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Platform", 0);
+    }
+    if(frame==2){
+      changelevelproperty("scrollspeed", 1);
+    }
+@end_script
+     loop 1
+     delay 13
+     offset 77 170
+     bbox 60 55 40 115
+     @cmd climber 20 10 "ANI_FOLLOW20"
+     frame data/chars/billy/wu1.png
+     @cmd climber 20 10 "ANI_FOLLOW20"
+     frame data/chars/billy/wu2.png
+     @cmd climber 20 10 "ANI_FOLLOW20"
+     frame	data/chars/billy/wu3.png
+     @cmd climber 20 10 "ANI_FOLLOW20"
+     frame data/chars/billy/wu4.png
+
+anim RUN
+
+    @script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+    }
+    if(frame==2){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+      changelevelproperty("scrollspeed", 1);
+    }
+    if(frame==3){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+    }
+@end_script
+     loop 1
+     delay 9
+     offset 77 170
+     bbox 60 55 40 100
+        frame	data/chars/billy/run_0.png
+     sound  data/sounds/step1.wav
+        frame	data/chars/billy/run_1.png
+        frame	data/chars/billy/run_2.png
+    sound  data/sounds/step1.wav
+        frame	data/chars/billy/run_3.png
+
+anim follow20 # Climb
+	loop	1
+	delay   2
+	offset	90 174
+	bbox	70 60 30 80
+	@cmd	dasher 0 0 0
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+	frame   data/chars/billy/climb1.png
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+	frame   data/chars/billy/climb1.png
+
+anim follow34 # Climb
+     loop 1
+     delay 2
+     offset 90 174
+     bbox 70 60 30 80
+     @cmd dasher 0 0 0
+     @cmd keyint2 "ANI_FOLLOW22" 0 "U" 0
+     @cmd keyint2 "ANI_FOLLOW23" 0 "D" 0
+     @cmd keyint2 "ANI_FOLLOW29" 0 "L" 0
+     @cmd keyint2 "ANI_FOLLOW30" 0 "R" 0
+     frame data/chars/billy/climb1.png
+     @cmd keyint2 "ANI_FOLLOW22" 0 "U" 0
+     @cmd keyint2 "ANI_FOLLOW23" 0 "D" 0
+     @cmd keyint2 "ANI_FOLLOW29" 0 "L" 0
+     @cmd keyint2 "ANI_FOLLOW30" 0 "R" 0
+     frame data/chars/billy/climb1.png
+
+anim follow26 # Climb
+	loop	1
+	delay   2
+	offset	90 174
+	bbox	70 60 30 80
+	@cmd	dasher 0 0 0
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+      @cmd keyint2 "ANI_FOLLOW29" 0 "L" 0
+	@cmd	keyint2 "ANI_FOLLOW30" 0 "R" 0
+	frame   data/chars/billy/climb2.png
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+      @cmd	keyint2 "ANI_FOLLOW29" 0 "L" 0
+	@cmd	keyint2 "ANI_FOLLOW30" 0 "R" 0
+	frame   data/chars/billy/climb2.png
+
+anim follow27 # Climb
+	loop	1
+	delay   2
+	offset	90 174
+	bbox	70 60 30 80
+	@cmd	dasher 0 0 0
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+      @cmd	keyint2 "ANI_FOLLOW29" 0 "L" 0
+	@cmd	keyint2 "ANI_FOLLOW30" 0 "R" 0
+	frame   data/chars/billy/climb3.png
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+      @cmd	keyint2 "ANI_FOLLOW29" 0 "L" 0
+	@cmd	keyint2 "ANI_FOLLOW30" 0 "R" 0
+	frame   data/chars/billy/climb3.png
+
+anim follow28 # Climb
+	loop	1
+	delay   2
+	offset	90 174
+	bbox	70 60 30 80
+	@cmd	dasher 0 0 0
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+	frame   data/chars/billy/climb4.png
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+	frame   data/chars/billy/climb4.png
+
+anim follow35 # Climb
+	loop	1
+	delay   2
+	offset	90 174
+	bbox	70 60 30 80
+	@cmd	dasher 0 0 0
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+      @cmd	keyint2 "ANI_FOLLOW29" 0 "L" 0
+	@cmd	keyint2 "ANI_FOLLOW30" 0 "R" 0
+	frame   data/chars/billy/climb4.png
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+      @cmd	keyint2 "ANI_FOLLOW29" 0 "L" 0
+	@cmd	keyint2 "ANI_FOLLOW30" 0 "R" 0
+	frame   data/chars/billy/climb4.png
+
+anim follow31 # Climb
+	loop	1
+	delay   2
+	offset	90 174
+	bbox	70 60 30 80
+	@cmd	dasher 0 0 0
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+      @cmd	keyint2 "ANI_FOLLOW29" 0 "L" 0
+	@cmd	keyint2 "ANI_FOLLOW30" 0 "R" 0
+	frame   data/chars/billy/climb6.png
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+      @cmd	keyint2 "ANI_FOLLOW29" 0 "L" 0
+	@cmd	keyint2 "ANI_FOLLOW30" 0 "R" 0
+	frame   data/chars/billy/climb6.png
+
+anim follow21 # Start of Climb Down
+@script
+    void self = getlocalvar("self");
+
+    if(frame==2){
+      performattack(self, openborconstant("ANI_FOLLOW28"));
+    }
+@end_script
+	delay   1
+	offset	90 174
+	frame   data/chars/billy/climb5.png
+	delay   20
+	frame   data/chars/billy/climb5.png
+	frame   data/chars/billy/climb4.png
+
+anim follow22 # Climb Up
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+      changelevelproperty("scrollspeed", 1);
+    }
+@end_script
+	loop	1
+	delay   5
+	offset	90 174
+	bbox	70 60 30 80
+     @cmd  camera2
+	@cmd	dasher 0 3 0
+	@cmd	climbEnd "U" "ANI_FOLLOW24"
+	frame   data/chars/billy/climb1.png
+      @cmd	dasher 0 0 0
+	@cmd	climbEnd "U" "ANI_FOLLOW24"
+	@cmd	keyint2 "ANI_FOLLOW34" 0 "U" 1
+	frame   data/chars/billy/climb1.png
+	@cmd	dasher 0 3 0
+	@cmd	climbEnd "U" "ANI_FOLLOW24"
+	frame   data/chars/billy/climb2.png
+      @cmd	dasher 0 0 0
+	@cmd	climbEnd "U" "ANI_FOLLOW24"
+	@cmd	keyint2 "ANI_FOLLOW26" 0 "U" 1
+	frame   data/chars/billy/climb2.png
+      @cmd	dasher 0 3 0
+	@cmd	climbEnd "U" "ANI_FOLLOW24"
+	frame   data/chars/billy/climb3.png
+      @cmd	dasher 0 0 0
+	@cmd	climbEnd "U" "ANI_FOLLOW24"
+	@cmd	keyint2 "ANI_FOLLOW27" 0 "U" 1
+	frame   data/chars/billy/climb3.png
+      @cmd	dasher 0 3 0
+	@cmd	climbEnd "U" "ANI_FOLLOW24"
+	frame   data/chars/billy/climb4.png
+      @cmd	dasher 0 0 0
+	@cmd	climbEnd "U" "ANI_FOLLOW24"
+	@cmd	keyint2 "ANI_FOLLOW35" 0 "U" 1
+	frame   data/chars/billy/climb4.png
+
+anim follow23 # Climb Down
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changelevelproperty("scrollspeed", 1);
+    }
+@end_script
+	loop	1
+	delay   6
+	offset	90 174
+	bbox	70 60 30 80
+      @cmd  spikeh -100 100 100 -1 10 "ANI_IDLE"
+	@cmd	dasher 0 -2.5 0
+     @cmd  camera2
+	@cmd	climbEnd "D" "ANI_FOLLOW24"
+	frame   data/chars/billy/climb4.png
+      @cmd  spikeh -100 100 100 -1 10 "ANI_IDLE"
+      @cmd	dasher 0 0 0
+	@cmd	climbEnd "D" "ANI_FOLLOW24"
+      @cmd	keyint2 "ANI_FOLLOW35" 0 "D" 1
+	frame   data/chars/billy/climb4.png
+      @cmd  spikeh -100 100 100 -1 10 "ANI_IDLE"
+	@cmd	dasher 0 -2.5 0
+	@cmd	climbEnd "D" "ANI_FOLLOW24"
+	frame   data/chars/billy/climb3.png
+      @cmd  spikeh -100 100 100 -1 10 "ANI_IDLE"
+      @cmd	dasher 0 0 0
+	@cmd	climbEnd "D" "ANI_FOLLOW24"
+      @cmd	keyint2 "ANI_FOLLOW27" 0 "D" 1
+	frame   data/chars/billy/climb3.png
+      @cmd  spikeh -100 100 100 -1 10 "ANI_IDLE"
+      @cmd	dasher 0 -2.5 0
+	@cmd	climbEnd "D" "ANI_FOLLOW24"
+	frame   data/chars/billy/climb2.png
+      @cmd  spikeh -100 100 100 -1 10 "ANI_IDLE"
+      @cmd	dasher 0 0 0
+	@cmd	climbEnd "D" "ANI_FOLLOW24"
+      @cmd	keyint2 "ANI_FOLLOW26" 0 "D" 1
+	frame   data/chars/billy/climb2.png
+      @cmd  spikeh -100 100 100 -1 10 "ANI_IDLE"
+      @cmd	dasher 0 -2.5 0
+	@cmd	climbEnd "D" "ANI_FOLLOW24"
+	frame   data/chars/billy/climb1.png
+      @cmd  spikeh -100 100 100 -1 10 "ANI_IDLE"
+      @cmd	dasher 0 0 0
+	@cmd	climbEnd "D" "ANI_FOLLOW24"
+      @cmd	keyint2 "ANI_FOLLOW34" 0 "D" 1
+	frame   data/chars/billy/climb1.png
+
+anim follow29 # Climb left
+	loop	1
+	delay   10
+	offset	90 174
+	bbox	70 60 30 80
+      @cmd	climber3 5 0 "ANI_FOLLOW33"
+	@cmd	dasherClimbLR -1.5  0
+      @cmd	keyint2 "ANI_FOLLOW31" 0 "L" 1
+	frame   data/chars/billy/climb7.png
+	@cmd	climber3 5 0 "ANI_FOLLOW33"
+	@cmd	keyint2 "ANI_FOLLOW31" 0 "L" 1
+	frame   data/chars/billy/climb8.png
+      @cmd	climber3 5 0 "ANI_FOLLOW33"
+	@cmd	dasherClimbLR 0 0 0
+      @cmd	keyint2 "ANI_FOLLOW31" 0 "L" 1
+	frame   data/chars/billy/climb6.png
+
+anim follow30 # Climb right
+	loop	1
+	delay   10
+	offset	90 174
+	bbox	70 60 30 80
+      @cmd	climber3 5 0 "ANI_FOLLOW32"
+	@cmd	dasherClimbLR 1.5  0
+      @cmd	keyint2 "ANI_FOLLOW31" 0 "R" 1
+	frame   data/chars/billy/climb7.png
+	@cmd	climber3 5 0 "ANI_FOLLOW32"
+	@cmd	keyint2 "ANI_FOLLOW31" 0 "R" 1
+	frame   data/chars/billy/climb8.png
+      @cmd	climber3 5 0 "ANI_FOLLOW32"
+	@cmd	dasherClimbLR 0 0 0
+      @cmd	keyint2 "ANI_FOLLOW31" 0 "R" 1
+	frame   data/chars/billy/climb6.png
+
+anim follow24 # End of Climb Up
+@script
+    if(frame==1){
+      void self = getlocalvar("self");
+//      int iPIndex = getentityproperty(self,"playerindex");
+//      int LType = getglobalvar(iPIndex+"ClimbT");
+      int LType = getentityvar(self, 6);
+      float x = getentityproperty(self, "x");
+      float y = getentityproperty(self, "a");
+      float z = getentityproperty(self, "z");
+      int Dir = getentityproperty(self, "direction");
+      int sx = 5;
+
+      changeentityproperty(self, "Subject_to_Platform", 1);
+      changeentityproperty(self, "antigravity", 0);
+
+      if(Dir == 0){
+        sx = -5;
+      }
+
+      if(LType == 2){
+        changeentityproperty(self, "position", x, z, y+54);
+      } else {
+        changeentityproperty(self, "position", x+sx, z-4, y+54);
+      }
+      setidle(self, openborconstant("ANI_FOLLOW51"));
+    }
+@end_script
+      loop	0
+	offset	90 174
+	delay   15
+	frame   data/chars/billy/climb5.png
+      offset	77 170
+      delay	25
+      frame	 data/chars/billy/idle.png
+
+anim get
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+
+    if(P1){
+      changeentityproperty(P1, "colourmap", 0);
+    }
+    if(P2){
+      changeentityproperty(P2, "colourmap", 1);
+    }
+@end_script
+	loop	0
+	delay	17
+	offset	77 170
+	frame	data/chars/billy/rise2.png
+
+
+anim attack1
+	loop	0
+	delay	8
+	offset	77 170
+        bbox.position.x 60
+        bbox.position.y 55
+        bbox.size.x     40
+        bbox.size.y     100
+
+        @cmd ani0020 ANI_DRAGON_SHOULDER_THROW_START 	ANI_PAIN_STUN_FRONT
+        @cmd ani0020 openborconstant("ANI_FOLLOW3") 	ANI_PAIN_STUN_FRONT
+        @cmd	finisher "ANI_PAIN" "ANI_ATTACK2" 0 180 50 0 0
+        @cmd  riseattack3 120 40 "ANI_FOLLOW40"
+	frame	data/chars/billy/a1.png
+        delay   14
+
+        # Attack box.
+        attack.position.x                 90
+        attack.position.y                 68
+        attack.size.x                     60
+        attack.size.y                     34
+        attack.damage.force               4
+        attack.reaction.fall.velocity.y   3.5
+        attack.reaction.fall.velocity.x   1.5
+        attack.reaction.pause.time        10
+
+        attack.damage.recursive.force     4
+        attack.damage.recursive.index     1
+        attack.damage.recursive.mode      4
+        attack.damage.recursive.rate      10
+        attack.damage.recursive.time      50000
+    frame	data/chars/billy/a2.png
+      delay   8
+      attack  0 0 0 0 0
+	frame	data/chars/billy/a3.png
+
+anim follow40
+      loop	0
+	delay	8
+	offset	77 170
+      bbox	60 55 40 100
+      @cmd ani0020 ANI_DRAGON_SHOULDER_THROW_START 	ANI_PAIN_STUN_BACK
+      @cmd ani0020 openborconstant("ANI_FOLLOW45") 	ANI_PAIN_STUN_BACK
+	frame	data/chars/billy/a1.png
+      delay   14
+      attack14  90 68 60 34 4 0
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/billy/a2.png
+      delay   8
+      attack14  0 0 0 0 0
+	frame	data/chars/billy/a3.png
+
+anim attack2
+	loop	0
+	delay	8
+	offset	77 170
+      bbox	60 55 40 100
+      @cmd ani0020 ANI_DRAGON_SHOULDER_THROW_START 	ANI_PAIN_STUN_FRONT
+      @cmd	finisher "ANI_PAIN2" "ANI_ATTACK3" 0 180 50 0 0
+      @cmd  riseattack3 120 40 "ANI_FOLLOW41"
+	frame	data/chars/billy/a4.png
+      delay   18
+      attack2  90 68 60 34 4 0
+      dropv 3.5 1.5
+	frame	data/chars/billy/a5.png
+      attack2  0 0 0 0 0
+      delay   8
+	frame	data/chars/billy/a6.png
+
+anim follow41
+      loop	0
+	delay	8
+	offset	77 170
+      bbox	60 55 40 100
+      @cmd ani0020 ANI_DRAGON_SHOULDER_THROW_START 	ANI_PAIN_STUN_BACK
+	frame	data/chars/billy/a4.png
+      delay   18
+      attack15  90 68 60 34 4 0
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/billy/a5.png
+      attack15  0 0 0 0 0
+      delay   8
+	frame	data/chars/billy/a6.png
+
+anim attack3
+	loop	0
+	delay	6
+	offset	77 170
+	bbox	60 55 40 100
+      hitfx  data/sounds/beatt2.wav
+      @cmd ani0020 ANI_DRAGON_SHOULDER_THROW_START 	ANI_PAIN_STUN_FRONT
+      @cmd  riseattack3 120 40 "ANI_FOLLOW42"
+	frame	data/chars/billy/aaa0.png
+      delay   7
+      attack  90 68 60 34 6 1
+      dropv 3.8 1.5
+	frame	data/chars/billy/aaa2.png
+      attack  0 0 0 0 0
+      delay   9
+	frame	data/chars/billy/aaa3.png
+	frame	data/chars/billy/aaa3.png
+
+anim follow42
+      loop	0
+	delay	6
+	offset	77 170
+	bbox	60 55 40 100
+      hitfx  data/sounds/beatt2.wav
+      @cmd ani0020 ANI_DRAGON_SHOULDER_THROW_START 	ANI_PAIN_STUN_BACK
+	frame	data/chars/billy/aaa0.png
+      delay   7
+      attack14  90 68 60 34 6 1
+      forcedirection 99
+      dropv 3.8 1.5
+	frame	data/chars/billy/aaa2.png
+      attack14  0 0 0 0 0
+      delay   9
+	frame	data/chars/billy/aaa3.png
+	frame	data/chars/billy/aaa3.png
+
+#Headbutt
+anim RUNATTACK
+    jumpframe 0 0 1 0
+      loop	0
+	delay	13
+	offset	77 170
+      bbox	60 55 40 100
+      hitfx  data/sounds/beatt2.wav
+	frame	data/chars/billy/fa1.png
+      delay	12
+      attack  90 68 60 34 12 1
+      dropv 3.5 1.5
+	frame	data/chars/billy/fa2.png
+      attack  0 0 0 0 0
+	frame	data/chars/billy/fa2.png
+      delay	6
+      frame	data/chars/billy/idle.png
+      delay	1
+      frame	data/chars/billy/idle.png
+
+anim attackboth
+	loop	0
+	delay	13
+	offset	83 170
+	bbox	40 55 40 100
+      counterattack 1
+      hitfx  data/sounds/beatt2.wav
+      sound data/chars/billy/dragon.wav
+	frame	data/chars/billy/elb1.png
+      bbox	0 0 0 0
+      delay   10
+      attack4  -4 55 60 60 16 1
+      dropv 3.5 1.5
+	frame	data/chars/billy/elb2.png
+      frame	data/chars/billy/elb2.png
+      attack4  0 0 0 0 0
+	frame	data/chars/billy/elb2.png
+      delay   6
+      offset	77 170
+	bbox	60 55 40 100
+      frame	data/chars/billy/idle.png
+      delay	1
+      frame	data/chars/billy/idle.png
+
+
+anim freespecial
+	loop	0
+	delay	13
+      offset	77 170
+      bbox	60 55 40 100
+      @cmd ani0020 openborconstant("ANI_FOLLOW4") ANI_PAIN_STUN_FRONT
+      @cmd ani0020 openborconstant("ANI_FOLLOW1") ANI_PAIN_STUN_FRONT
+      @cmd	kickObject "ANI_FOLLOW36" 0 50 30
+      @cmd	finisher "ANI_PAIN2" "ANI_FOLLOW1" 0 180 50 0 0
+      @cmd  riseattack3 120 40 "ANI_FOLLOW43"
+      frame	data/chars/billy/aa1.png
+      delay	9
+      attack2  90 68 60 34 6 0
+      dropv 3.5 1.5
+      @cmd  knife 75 20 70 90 "ANI_FOLLOW2"
+	frame	data/chars/billy/aa2.png
+      attack2 0 0 0 0 0
+      @cmd  knife 75 20 70 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/aa2.png
+      frame	data/chars/billy/idle.png
+      delay	1
+      frame	data/chars/billy/idle.png
+
+anim	follow43
+	loop	0
+	delay	13
+      offset	77 170
+      bbox	60 55 40 100
+      @cmd ani0020 openborconstant("ANI_FOLLOW44") ANI_PAIN_STUN_BACK
+      @cmd	kickObject "ANI_FOLLOW36" 0 50 30
+      @cmd	finisher "ANI_PAIN15" "ANI_FOLLOW44" 0 180 50 0 0
+      frame	data/chars/billy/aa1.png
+      delay	9
+      attack15  90 68 60 34 6 0
+      dropv 3.5 1.5
+      forcedirection 1
+      @cmd  knife 75 20 70 90 "ANI_FOLLOW2"
+	frame	data/chars/billy/aa2.png
+      attack15 0 0 0 0 0
+      @cmd  knife 75 20 70 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/aa2.png
+      frame	data/chars/billy/idle.png
+      delay	1
+      frame	data/chars/billy/idle.png
+
+anim	follow36 # Kick objects
+      loop	0
+	delay	4
+	offset	77 170
+      @cmd    antiwall3 55 -20 0
+	frame	data/chars/billy/bkick1.png
+      @cmd    antiwall3 83 -20 0
+      frame	data/chars/billy/bkick1.png
+      @cmd    antiwall3 83 -11 0
+      frame	data/chars/billy/bkick1.png
+	delay	25
+	@cmd	shootObject 50 1 0 1.5 0 0
+	frame	data/chars/billy/bkick2.png
+      bbox	60 55 40 100
+	delay	2
+      attack  0 0 0 0 0 0
+      frame	data/chars/billy/idle.png
+
+anim follow1
+      loop	0
+	delay	9
+      offset	77 170
+	#bbox	60 55 40 100
+	bbox	0
+      range -45 180
+      rangez -50 50
+      hitfx  data/sounds/beatt2.wav
+      flipframe 4
+      frame	data/chars/billy/aaaa1.png
+      frame	data/chars/billy/aaaa2.png
+      attack  90 68 60 34 6 1
+      dropv 3.5 2
+      @cmd  knife 75 20 70 90 "ANI_FOLLOW2"
+	frame	data/chars/billy/aaaa3.png
+      delay	10
+      attack 0 0 0 0 0
+      frame	data/chars/billy/aaaa4.png
+      delay	18
+      offset	122 170
+      bbox	105 55 40 100
+      frame	data/chars/billy/aaaa55.png
+      offset	77 170
+      bbox	60 55 40 100
+      delay	10
+      frame	data/chars/billy/wu1.png
+      delay	1
+      frame	data/chars/billy/idle.png
+
+anim follow44
+      loop	0
+	delay	9
+      offset	77 170
+	bbox	60 55 40 100
+      range -45 180
+      rangez -50 50
+      hitfx  data/sounds/beatt2.wav
+      flipframe 4
+      frame	data/chars/billy/aaaa1.png
+      frame	data/chars/billy/aaaa2.png
+      attack16  90 68 60 34 6 1
+      forcedirection 99
+      dropv 3.5 2
+      @cmd  knife 75 20 70 90 "ANI_FOLLOW2"
+	frame	data/chars/billy/aaaa3.png
+      delay	10
+      attack16 0 0 0 0 0
+      frame	data/chars/billy/aaaa4.png
+      delay	18
+      offset	122 170
+      bbox	105 55 40 100
+      frame	data/chars/billy/aaaa55.png
+      offset	77 170
+      bbox	60 55 40 100
+      delay	10
+      frame	data/chars/billy/wu1.png
+      delay	1
+      frame	data/chars/billy/idle.png
+
+anim follow4
+      loop	0
+	delay	1
+      offset	77 170
+      range 1 50
+      rangez -50 50
+      frame	data/chars/billy/idle.png
+      @cmd    grabcheckG "ANI_FOLLOW6" "ANI_FOLLOW5" "ANI_FOLLOW5"
+      frame	data/chars/billy/idle.png
+
+anim follow5
+      loop	0
+	delay	8
+      offset	77 170
+	bbox	60 55 40 100
+      hitfx  data/sounds/beatt2.wav
+      flipframe 4
+      @cmd  riseattack3 120 40 "ANI_FOLLOW44"
+      frame	data/chars/billy/aaaa1.png
+      frame	data/chars/billy/aaaa2.png
+      attack  90 68 60 34 6 1
+      dropv 3.5 2
+      @cmd  knife 75 20 70 90 "ANI_FOLLOW2"
+	frame	data/chars/billy/aaaa3.png
+      delay	10
+      attack 0 0 0 0 0
+      frame	data/chars/billy/aaaa4.png
+      delay	18
+      offset	122 170
+      bbox	105 55 40 100
+      frame	data/chars/billy/aaaa55.png
+      offset	77 170
+      bbox	60 55 40 100
+      delay	10
+      frame	data/chars/billy/wu1.png
+      delay	1
+      frame	data/chars/billy/idle.png
+
+anim follow6
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changelevelproperty("scrollspeed", 0);
+    }
+@end_script
+      loop	0
+	delay	12
+      offset	77 170
+      move -50
+      @cmd    slamstart2
+      @cmd    antiwall3 95 -30 -1
+      @cmd    position 0 91 1 0 0
+      frame	data/chars/billy/grab1.png
+      move 0
+      @cmd    position 0 91 1 0 0
+      frame	data/chars/billy/grab2.png
+      @cmd    anichange "ANI_FOLLOW7"
+      frame	data/chars/billy/grab3.png
+      frame	data/chars/billy/grab3.png
+
+anim follow7
+      loop	0
+	delay	9
+      offset	77 170
+      cancel 1 4 0 A2 freespecial3
+      cancel 1 4 0 A freespecial7
+      cancel 1 4 0 B freespecial18
+      @cmd forceanim openborconstant("ANI_FOLLOW2")
+      @cmd bind 1 91 0 1 0
+      frame	data/chars/billy/grab3.png
+      delay	3000
+      @cmd forceanim openborconstant("ANI_FOLLOW2")
+      @cmd bind 1 91 0 1 0
+      frame	data/chars/billy/grab3.png
+      frame	data/chars/billy/grab3.png
+      frame	data/chars/billy/grab3.png
+      frame	data/chars/billy/grab3.png
+
+anim freespecial3
+	loop	0
+      delay	9
+      offset	77 170
+      @cmd    slamstart2
+      @cmd    position 2 91 1 0 0
+      frame	data/chars/billy/ga1.png
+      sound data/sounds/beat1.wav
+      delay	11
+      @cmd    position 3 91 1 0 0
+      frame	data/chars/billy/ga2.png
+      @cmd hurt10 4
+      @cmd    anichange "ANI_FOLLOW8"
+      frame	data/chars/billy/grab3.png
+      frame	data/chars/billy/grab3.png
+
+anim follow8
+      loop	0
+	delay	9
+      offset	77 170
+      cancel 1 4 0 A2 freespecial4
+      cancel 1 4 0 A freespecial7
+      cancel 1 4 0 B freespecial18
+      @cmd forceanim openborconstant("ANI_FOLLOW2")
+      @cmd bind 1 91 0 1 0
+      frame	data/chars/billy/grab3.png
+      delay	3000
+      @cmd forceanim openborconstant("ANI_FOLLOW2")
+      @cmd bind 1 91 0 1 0
+      frame	data/chars/billy/grab3.png
+      frame	data/chars/billy/grab3.png
+      frame	data/chars/billy/grab3.png
+      frame	data/chars/billy/grab3.png
+
+anim freespecial4
+	loop	0
+      delay	9
+      offset	77 170
+      @cmd    slamstart2
+      @cmd    position 2 91 1 0 0
+      frame	data/chars/billy/ga1.png
+      sound data/sounds/beat1.wav
+      delay	11
+      @cmd    position 3 91 1 0 0
+      frame	data/chars/billy/ga2.png
+      @cmd hurt10 4
+      @cmd    anichange "ANI_FOLLOW9"
+      frame	data/chars/billy/grab3.png
+      frame	data/chars/billy/grab3.png
+
+anim follow9
+      loop	0
+	delay	9
+      offset	77 170
+      cancel 1 4 0 A2 freespecial5
+      cancel 1 4 0 A freespecial7
+      cancel 1 4 0 B freespecial18
+      @cmd forceanim openborconstant("ANI_FOLLOW2")
+      @cmd bind 1 91 0 1 0
+      frame	data/chars/billy/grab3.png
+      delay	3000
+      @cmd forceanim openborconstant("ANI_FOLLOW2")
+      @cmd bind 1 91 0 1 0
+      frame	data/chars/billy/grab3.png
+      frame	data/chars/billy/grab3.png
+      frame	data/chars/billy/grab3.png
+      frame	data/chars/billy/grab3.png
+
+anim freespecial5
+	loop	0
+      delay	9
+      offset	77 170
+      @cmd    slamstart2
+      @cmd    position 2 91 1 0 0
+      frame	data/chars/billy/ga1.png
+      sound data/sounds/beat1.wav
+      delay	11
+      @cmd    position 3 91 1 0 0
+      frame	data/chars/billy/ga2.png
+      @cmd hurt10 4
+      @cmd    anichange "ANI_FOLLOW10"
+      frame	data/chars/billy/grab3.png
+      frame	data/chars/billy/grab3.png
+
+anim follow10
+      loop	0
+	delay	9
+      offset	77 170
+      cancel 1 4 0 A2 freespecial6
+      cancel 1 4 0 A freespecial7
+      cancel 1 4 0 B freespecial18
+      @cmd forceanim openborconstant("ANI_FOLLOW2")
+      @cmd bind 1 91 0 1 0
+      frame	data/chars/billy/grab3.png
+      delay	3000
+      @cmd forceanim openborconstant("ANI_FOLLOW2")
+      @cmd bind 1 91 0 1 0
+      frame	data/chars/billy/grab3.png
+      frame	data/chars/billy/grab3.png
+      frame	data/chars/billy/grab3.png
+      frame	data/chars/billy/grab3.png
+
+anim freespecial6 # Grab finisher (Middle kick)
+
+        delay	12
+        offset	73 170
+        @cmd    slamstart2
+        #    position 2 91 1 0 0
+        @cmd    position 0 81 1 -1 0
+    frame	data/chars/billy/bkick1.png
+
+        sound data/sounds/beatt2.wav
+        delay	15
+        offset	73 170
+        @cmd    depost 0
+        @cmd    finish 10 1 -1.2 3 0 0
+    frame	data/chars/billy/grab_middle_kick_0.png
+
+        delay   12
+        offset	124 170
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/bk7.png
+
+        delay	1
+        offset	77 170
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+	frame	data/chars/billy/idle.png
+
+
+anim freespecial18
+      loop	0
+      delay	2
+      offset	77 170
+      @cmd bind 0 0 0 0 0
+      @cmd    depost2 0 2 0 -400
+      frame	data/chars/billy/idle.png
+
+anim freespecial7
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changelevelproperty("scrollspeed", 0);
+    }
+@end_script
+      loop	0
+	delay	8
+      offset	77 170
+      attackone 0
+      flipframe 1
+      @cmd    slamstart2
+      @cmd    position 1 91 1 -1 0
+      frame	data/chars/billy/grab3.png
+      delay	15
+      move 34
+      @cmd    position 4 0 -1 -1 1
+      frame	data/chars/billy/th1.png
+      move 0
+      delay	3
+      @cmd    antiwall3 83 -15 0
+      @cmd    position 5 0 -1 -1 1
+      frame	data/chars/billy/th2.png
+      @cmd    antiwall3 83 -15 0
+      @cmd    position 5 0 -1 -1 1
+      frame	data/chars/billy/th2.png
+      @cmd    antiwall3 83 -10 0
+      @cmd    position 5 0 -1 -1 1
+      frame	data/chars/billy/th2.png
+      @cmd    antiwall3 83 -10 0
+      @cmd    position 6 80 65 0 1
+      frame	data/chars/billy/th3.png
+      @cmd    antiwall3 83 -7 0
+      @cmd    position 6 80 65 0 1
+      frame	data/chars/billy/th3.png
+      @cmd    antiwall3 83 -5 0
+      @cmd    position 6 80 65 0 1
+      frame	data/chars/billy/th3.png
+      @cmd    depost 0
+      @cmd    throw 20 1 2 4 0 0
+      delay	8
+      frame	data/chars/billy/th3.png
+      frame	data/chars/billy/th3.png
+      frame	data/chars/billy/th3.png
+      frame	data/chars/billy/th3.png
+
+# ANI_DRAGON_SHOULDER_THROW_START
+#
+# Caskey, Damon V.
+# 2016-09-14
+#
+# Check for suplex. Then check for shoulder throw.
+# Kind of hacky, but as before, I'm working within
+# the bounds of another moudle without changing it all.
+anim follow11
+      loop	0
+	delay	1
+      offset	77 170
+      range 1 50
+      rangez -50 50
+      frame	data/chars/billy/idle.png
+	@script
+	int suplex;
+
+	suplex = grabcheck_back(ANI_DRAGON_SUPLEX_EXECUTE, ANI_DRAGON_UPPERCUT);
+
+	if(!suplex)
+	{
+		grabcheckG("ANI_FOLLOW12", "ANI_FOLLOW3", "ANI_FOLLOW3");
+	}
+	@end_script
+        frame	data/chars/billy/idle.png
+
+# ANI_DRAGON_SHOULDER_THROW_EXECUTE
+anim follow12
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changelevelproperty("scrollspeed", 0);
+    }
+@end_script
+      loop	0
+	delay	8
+      offset	77 170
+      attackone 0
+      flipframe 1
+      move -45
+      @cmd    slamstart2
+      @cmd    position 0 91 1 -1 0
+      frame	data/chars/billy/grab1.png
+      move 0
+      delay	15
+      move 34
+      @cmd    position 4 0 -1 -1 1
+      frame	data/chars/billy/th1.png
+      move 0
+      delay	3
+      @cmd    antiwall3 83 -15 0
+      @cmd    position 5 0 -1 -1 1
+      frame	data/chars/billy/th2.png
+      @cmd    antiwall3 83 -15 0
+      @cmd    position 5 0 -1 -1 1
+      frame	data/chars/billy/th2.png
+      @cmd    antiwall3 83 -10 0
+      @cmd    position 5 0 -1 -1 1
+      frame	data/chars/billy/th2.png
+      @cmd    antiwall3 83 -10 0
+      @cmd    position 6 80 65 0 1
+      frame	data/chars/billy/th3.png
+      @cmd    antiwall3 83 -7 0
+      @cmd    position 6 80 65 0 1
+      frame	data/chars/billy/th3.png
+      @cmd    antiwall3 83 -5 0
+      @cmd    position 6 80 65 0 1
+      frame	data/chars/billy/th3.png
+      @cmd    depost 0
+      @cmd    throw 20 1 2 4 0 0
+      delay	8
+      frame	data/chars/billy/th3.png
+      frame	data/chars/billy/th3.png
+      frame	data/chars/billy/th3.png
+      frame	data/chars/billy/th3.png
+
+anim follow2
+	loop	0
+	delay	8
+	offset	104 170
+	bbox	87 55 40 100
+      flipframe 5
+      range -180 45
+      rangez -50 50
+      hitfx  data/sounds/beatt2.wav
+	frame	data/chars/billy/bk3.png
+      frame	data/chars/billy/bk4.png
+      attack  25 52 90 67 6 1
+      dropv 3.5 1.5
+	frame	data/chars/billy/bk5.png
+      attack  0 0 0 0 0
+	frame	data/chars/billy/bk6.png
+	frame	data/chars/billy/bk7.png
+      delay	1
+      frame	data/chars/billy/bk0.png
+
+anim follow3
+	loop	0
+	delay	6
+	offset	77 170
+	bbox	60 55 40 100
+      range -45 180
+      rangez -50 50
+      hitfx  data/sounds/beatt2.wav
+      @cmd  riseattack3 120 40 "ANI_FOLLOW45"
+	frame	data/chars/billy/aaa0.png
+      delay   7
+      attack  90 68 60 34 6 1
+      dropv 3.8 1.5
+	frame	data/chars/billy/aaa2.png
+      attack  0 0 0 0 0
+      delay   9
+	frame	data/chars/billy/aaa3.png
+	frame	data/chars/billy/aaa3.png
+
+anim follow45
+	loop	0
+	delay	6
+	offset	77 170
+	bbox	60 55 40 100
+      range -45 180
+      rangez -50 50
+      hitfx  data/sounds/beatt2.wav
+	frame	data/chars/billy/aaa0.png
+      delay   7
+      attack15  90 68 60 34 6 1
+      forcedirection 99
+      dropv 3.8 1.5
+	frame	data/chars/billy/aaa2.png
+      attack  0 0 0 0 0
+      delay   9
+	frame	data/chars/billy/aaa3.png
+	frame	data/chars/billy/aaa3.png
+
+
+anim JUMPDELAY
+      delay	12
+      offset	77 170
+	bbox	60 55 40 100
+	frame	data/chars/billy/j1.png
+
+anim RUNJUMP #Somersault
+
+	landframe 5
+
+	offset	77 170
+    bbox	60 90 55 50
+	delay   12
+    sound   data/chars/billy/dragon2.wav
+        frame	data/chars/billy/somersault_0.png
+    sound data/sounds/bat.wav
+        frame	data/chars/billy/somersault_1.png
+        frame	data/chars/billy/somersault_2.png
+        frame	data/chars/billy/somersault_3.png
+	delay   -1000
+        frame	data/chars/billy/jk4.png
+	delay   15
+        frame	data/chars/billy/rise2.png
+
+anim JUMPLAND
+    @script
+        void self = getlocalvar("self");
+
+        if(frame==0){
+          changelevelproperty("scrollspeed", 1);
+        }
+    @end_script
+
+    offset	77 170
+    bbox	60 90 55 50
+	delay   12
+    sound   data/sounds/step.wav
+    @cmd  camera
+    @cmd  degravity -1
+        frame	data/chars/billy/j0.png
+
+#Somersault Kick
+anim FOLLOW102
+
+	landframe 2
+	offset	77 170
+      bbox	60 90 55 50
+	delay   25
+	hitfx  data/sounds/beatt2.wav
+	attack 90 115 95 30 18 1
+     frame	data/chars/billy/flying_kick_0.png
+	delay -1000
+	attack 0
+      frame	data/chars/billy/jk4.png
+	delay 15
+      frame	data/chars/billy/rise2.png
+
+anim JUMP
+	offset	77 170
+      bbox	60 90 55 50
+	delay   -1000
+
+      @cmd    degravity -1
+	frame	data/chars/billy/j22.png
+
+anim FORWARDJUMP
+      offset	77 170
+      bbox	60 90 55 50
+	delay   -1000
+      @cmd    degravity -1
+	frame	data/chars/billy/j22.png
+
+anim walkoff # only vertical fall
+	loop	0
+	delay	11
+	offset	77 170
+	bbox	60 55 40 100
+      landframe 4
+      @cmd  nomoveidle2 "ANI_FOLLOW25"
+      @cmd  stopz
+      @cmd  stopz2
+      @cmd    degravity 0.27
+	frame	data/chars/billy/j1.png
+      delay	10
+      @cmd  leaper 1 0 0
+      frame	data/chars/billy/j22.png
+      @cmd    degravity -0.50
+      frame	data/chars/billy/j22.png
+      delay	100
+      frame	data/chars/billy/j22.png
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/billy/rise2.png
+
+anim follow25 # walkoff clone horizontal fall
+	loop	0
+	delay	11
+	offset	77 170
+	bbox	60 55 40 100
+      landframe 4
+      @cmd  stopz
+      @cmd  stopz2
+      @cmd    degravity 0.27
+	frame	data/chars/billy/j1.png
+      delay	10
+      frame	data/chars/billy/j22.png
+      @cmd    degravity 0
+      frame	data/chars/billy/j22.png
+      delay	100
+      @cmd    degravity -0.50
+      frame	data/chars/billy/j22.png
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/billy/rise2.png
+
+anim follow32 # walkoff clone for L/R climb
+	loop	0
+	delay	11
+	offset	77 170
+	bbox	60 55 40 100
+      landframe 4
+      @cmd  stopz
+      @cmd  stopz2
+      @cmd    degravity 0.27
+      @cmd  leaper 1.5 0 0
+	frame	data/chars/billy/j1.png
+      delay	10
+      frame	data/chars/billy/j22.png
+      @cmd    degravity -0.50
+      frame	data/chars/billy/j22.png
+      delay	100
+      frame	data/chars/billy/j22.png
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/billy/rise2.png
+
+anim follow33 # walkoff clone for L/R climb
+	loop	0
+	delay	11
+	offset	77 170
+	bbox	60 55 40 100
+      landframe 4
+      flipframe 0
+      @cmd  stopz
+      @cmd  stopz2
+      @cmd    degravity 0.27
+      @cmd  leaper -1.5 0 0
+	frame	data/chars/billy/j1.png
+      delay	10
+      frame	data/chars/billy/j22.png
+      @cmd    degravity -0.50
+      frame	data/chars/billy/j22.png
+      delay	100
+      frame	data/chars/billy/j22.png
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/billy/rise2.png
+
+anim freespecial8
+	loop	0
+	offset	77 170
+      bbox	60 90 55 50
+      hitfx  data/sounds/beatt2.wav
+	delay	7
+      @cmd    antiwall4 20  "ANI_FOLLOW113"
+	frame	data/chars/billy/j22.png
+      bbox	0 0 0 0
+      delay	8
+      attack  90 112 60 40 10 1
+      dropv 3.5 1.5
+	frame	data/chars/billy/ja1.png
+      bbox	60 90 55 50
+      frame	data/chars/billy/ja1.png
+      frame	data/chars/billy/ja1.png
+      attack  0 0 0 0 0 0
+      delay	7
+      frame	data/chars/billy/j22.png
+
+anim freespecial11
+      loop	0
+	delay	8
+	offset	77 170
+	bbox	60 55 40 100
+      @cmd ani0020 openborconstant("ANI_FOLLOW13") openborconstant("ANI_FOLLOW1")
+     @cmd	finisher "ANI_PAIN" "ANI_ATTACK2" 0 180 50 0 0
+     @cmd	finisher "ANI_PAIN2" "ANI_ATTACK3" 0 180 50 0 0
+     	frame	data/chars/billy/a1.png
+      delay   14
+      attack  90 68 60 34 4
+      dropv 3.5 1.5
+	frame	data/chars/billy/a2.png
+      delay   8
+      attack  0 0 0 0 0
+	frame	data/chars/billy/a3.png
+
+anim follow13
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changelevelproperty("scrollspeed", 0);
+    }
+@end_script
+      loop	0
+      range -40 40
+      rangez -21 13
+	delay	2
+      offset	85 170
+      otg 2
+      followcond 2
+      followanim 14
+      attackone 1
+      hitfx   data/sounds/goo.wav
+      @cmd    conditionalflip2
+      frame	data/chars/billy/gr00.png
+      attack3  45 140 60 39 0 0 1 1 10 21
+      forcedirection 99
+      noreflect 1
+      nokill 1
+      delay	9
+      frame	data/chars/billy/gr00.png
+      delay	11
+      attack3  0 0 0 0 0 0
+      frame	data/chars/billy/gr0.png
+      frame	data/chars/billy/gr0.png
+      frame	data/chars/billy/j0.png
+
+anim follow14
+      loop	0
+      delay	8
+      offset	85 170
+      @cmd    slamstart4 0 0 0
+      @cmd    position 8 0 1 0 0
+      frame	data/chars/billy/gr00.png
+      delay	16
+      @cmd    position 8 0 1 0 0
+      frame	data/chars/billy/gr0.png
+      @cmd    anichange "ANI_FOLLOW15"
+      frame	data/chars/billy/gr3.png
+
+anim follow15
+      loop	0
+	delay	10
+      offset	85 170
+      cancel 0 4 0 A freespecial12
+      cancel 0 4 0 B freespecial16
+      @cmd forceanim openborconstant("ANI_FOLLOW3")
+      @cmd bind 8 0 0 1 0
+      frame	data/chars/billy/gr0.png
+      delay	3000
+      @cmd forceanim openborconstant("ANI_FOLLOW3")
+      @cmd bind 8 0 0 1 0
+      frame	data/chars/billy/gr0.png
+      frame	data/chars/billy/gr0.png
+      frame	data/chars/billy/gr0.png
+      frame	data/chars/billy/gr0.png
+
+anim freespecial12
+      loop	0
+      delay	9
+      offset	85 170
+      @cmd    slamstart3
+      @cmd    position 8 0 1 0 0
+      frame	data/chars/billy/gr1.png
+      sound data/sounds/beat1.wav
+      delay	18
+      @cmd    position 9 0 1 0 0
+      frame	data/chars/billy/gr2.png
+      delay	11
+      frame	data/chars/billy/gr3.png
+      @cmd    hurt9 4
+      @cmd    anichange "ANI_FOLLOW16"
+      frame	data/chars/billy/gr2.png
+      frame	data/chars/billy/gr2.png
+
+anim follow16
+      loop	0
+	delay	10
+      offset	85 170
+      cancel 0 4 0 A freespecial13
+      cancel 0 4 0 B freespecial16
+      @cmd forceanim openborconstant("ANI_FOLLOW4")
+      @cmd bind 9 0 0 1 0
+      frame	data/chars/billy/gr0.png
+      delay	3000
+      @cmd forceanim openborconstant("ANI_FOLLOW4")
+      @cmd bind 9 0 0 1 0
+      frame	data/chars/billy/gr0.png
+      frame	data/chars/billy/gr0.png
+      frame	data/chars/billy/gr0.png
+      frame	data/chars/billy/gr0.png
+
+anim freespecial13
+      loop	0
+      delay	9
+      offset	85 170
+      @cmd    slamstart3
+      @cmd    position 9 0 1 0 0
+      frame	data/chars/billy/gr4.png
+      sound data/sounds/beat1.wav
+      delay	18
+      @cmd    position 10 0 1 0 0
+      frame	data/chars/billy/gr5.png
+      delay	11
+      frame	data/chars/billy/gr6.png
+      @cmd    hurt9 4
+      @cmd    anichange "ANI_FOLLOW17"
+      frame	data/chars/billy/gr6.png
+      frame	data/chars/billy/gr6.png
+
+anim follow17
+      loop	0
+	delay	10
+      offset	85 170
+      cancel 0 4 0 A freespecial14
+      cancel 0 4 0 B freespecial16
+      @cmd forceanim openborconstant("ANI_FOLLOW5")
+      @cmd bind 10 0 0 1 0
+      frame	data/chars/billy/gr0.png
+      delay	3000
+      @cmd forceanim openborconstant("ANI_FOLLOW5")
+      @cmd bind 10 0 0 1 0
+      frame	data/chars/billy/gr0.png
+      frame	data/chars/billy/gr0.png
+      frame	data/chars/billy/gr0.png
+      frame	data/chars/billy/gr0.png
+
+anim freespecial14
+      loop	0
+      delay	9
+      offset	85 170
+      @cmd    slamstart3
+      @cmd    position 10 0 1 0 0
+      frame	data/chars/billy/gr1.png
+      sound data/sounds/beat1.wav
+      delay	18
+      @cmd    position 9 0 1 0 0
+      frame	data/chars/billy/gr2.png
+      delay	11
+      frame	data/chars/billy/gr3.png
+      @cmd    hurt9 4
+      @cmd    anichange "ANI_FOLLOW18"
+      frame	data/chars/billy/gr3.png
+      frame	data/chars/billy/gr3.png
+
+anim follow18
+      loop	0
+	delay	10
+      offset	85 170
+      cancel 0 4 0 A freespecial15
+      cancel 0 4 0 B freespecial16
+      @cmd forceanim openborconstant("ANI_FOLLOW4")
+      @cmd bind 9 0 0 1 0
+      frame	data/chars/billy/gr0.png
+      delay	3000
+      @cmd forceanim openborconstant("ANI_FOLLOW4")
+      @cmd bind 9 0 0 1 0
+      frame	data/chars/billy/gr0.png
+      frame	data/chars/billy/gr0.png
+      frame	data/chars/billy/gr0.png
+      frame	data/chars/billy/gr0.png
+
+anim freespecial15
+      loop	0
+      delay	9
+      offset	85 170
+      @cmd    slamstart3
+      @cmd    position 9 0 1 0 0
+      frame	data/chars/billy/gr4.png
+      sound data/sounds/beatt2.wav
+      delay	18
+      @cmd    position 10 0 1 0 0
+      frame	data/chars/billy/gr5.png
+      delay	11
+      frame	data/chars/billy/gr6.png
+      delay	12
+      @cmd    hurt9 4
+      frame	data/chars/billy/gr0.png
+      delay	9
+      @cmd    depost 0
+      frame	data/chars/billy/j0.png
+
+anim freespecial16
+      loop	0
+      delay	12
+      offset	85 170
+      @cmd bind 0 0 0 0 0
+      frame	data/chars/billy/gr0.png
+      offset	77 170
+      delay	9
+      frame	data/chars/billy/j0.png
+
+
+
+anim  follow19
+      loop	0
+	delay	4
+      offset	77 170
+      jumpframe 2 0 2
+      landframe 7
+      hitfx  data/sounds/beatt2.wav
+      attack  85 75 65 40 16 1
+      dropv 3.5 2
+      @cmd    degravity -0.27
+      @cmd  knife 75 20 0 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/jk3.png
+      @cmd  knife 75 20 0 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/jk3.png
+      @cmd  knife 75 20 0 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/jk3.png
+      @cmd  knife 75 20 0 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/jk3.png
+      attack  0 0 0 0 0 0
+      frame	data/chars/billy/jk4.png
+      delay	20
+      frame	data/chars/billy/jk4.png
+      delay	200
+      frame	data/chars/billy/jk4.png
+      delay	30
+      @cmd    degravity -1
+      frame	data/chars/billy/rise2.png
+      delay	6
+      frame	data/chars/billy/j0.png
+
+anim pain
+	loop	0
+	delay 40
+	offset	77 170
+      bbox	60 55 40 100
+      @cmd bind 0 0 0 0 0
+      @cmd    depost2 0 2 0 -400
+     	frame	data/chars/billy/pain1.png
+
+anim pain2
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 40 100
+      @cmd bind 0 0 0 0 0
+      @cmd    depost2 0 2 0 -400
+     	frame	data/chars/billy/pain2.png
+     delay   65
+     frame	data/chars/billy/pain3.png
+
+anim pain14 # Backpain
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 40 100
+      @cmd bind 0 0 0 0 0
+      @cmd    depost2 0 2 0 -400
+	frame	data/chars/billy/pain3.png
+      delay   65
+	frame	data/chars/billy/pain3.png
+
+anim pain16
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 40 100
+      @cmd bind 0 0 0 0 0
+      @cmd    depost2 0 2 0 -400
+	frame	data/chars/billy/pain2.png
+      delay   65
+	frame	data/chars/billy/pain3.png
+
+anim pain23 # pain williams alter attack
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 40 100
+      @cmd bind 0 0 0 0 0
+      @cmd    depost2 0 2 0 -400
+	frame	data/chars/billy/pain3.png
+      delay   65
+	frame	data/chars/billy/pain3.png
+
+anim pain13
+	loop	0
+	delay 13
+	offset	77 170
+      @cmd bind 0 0 0 0 0
+	frame	data/chars/billy/escape1.png
+      delay 15
+      frame	data/chars/billy/escape2.png
+
+anim pain17
+	loop	0
+	delay 2
+	offset	77 170
+      @cmd    slamstart
+      @cmd    position 19 0 1 0 1
+	frame	data/chars/billy/grabed9.png
+      delay 8
+      @cmd    position 19 0 1 0 1
+      frame	data/chars/billy/grabed9.png
+      @cmd    anichange "ANI_FOLLOW46"
+      frame	data/chars/billy/grabed2.png
+
+anim pain18
+	loop	0
+	delay 2
+	offset	77 170
+      @cmd    slamstart
+      @cmd    position 18 0 1 0 1
+	frame	data/chars/billy/grabed8.png
+      delay 8
+      @cmd    position 18 0 1 0 1
+      frame	data/chars/billy/grabed8.png
+      @cmd    anichange "ANI_FOLLOW46"
+      frame	data/chars/billy/grabed2.png
+
+anim fall
+	loop	0
+	offset	77 170
+	delay   8
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd bind 0 0 0 0 0
+      @cmd    depost2 0 2 0 -400
+	frame	data/chars/billy/fall01.png
+      frame	data/chars/billy/fall01.png
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/billy/fall01.png
+      frame	data/chars/billy/fall01.png
+      @cmd    antiwall4 -20  "ANI_FOLLOW37"
+      frame	data/chars/billy/fall01.png
+      delay   20
+      @cmd    antiwall4 -20  "ANI_FOLLOW37"
+	frame	data/chars/billy/fall02.png
+      delay   500
+      frame	data/chars/billy/fall02.png
+      delay   8
+      sound	data/sounds/falll.wav
+      frame	data/chars/billy/fall02.png
+	frame	data/chars/billy/rise11.png
+
+anim fall5
+	loop	0
+	offset	77 170
+	delay   8
+	landframe 6
+      @cmd    degravity -0.15
+      frame	data/chars/billy/fall05.png
+      frame	data/chars/billy/fall05.png
+      delay   10
+      @cmd    antiwall4 20 "ANI_FOLLOW38"
+      frame	data/chars/billy/fall05.png
+      frame	data/chars/billy/fall05.png
+      delay   20
+      @cmd    antiwall4 20 "ANI_FOLLOW38"
+	frame	data/chars/billy/fall05.png
+      delay   500
+      @cmd    degravity -1
+      @cmd    antiwall4 20 "ANI_FOLLOW38"
+      frame	data/chars/billy/fall02.png
+      delay   8
+      sound	data/sounds/falll.wav
+      frame	data/chars/billy/fall02.png
+      frame	data/chars/billy/rise11.png
+
+anim fall7
+      loop	0
+      delay   1000
+      offset	77 170
+      @cmd    degravity -0.15
+      frame	data/chars/billy/grabed1.png
+      frame	data/chars/billy/grabed2.png
+      frame	data/chars/billy/grabed3.png
+      frame	data/chars/billy/grabed4.png
+      frame	data/chars/billy/grabed5.png
+      frame	data/chars/billy/grabed6.png
+      frame	data/chars/billy/grabed7.png
+      frame	data/chars/billy/grabed8.png
+      frame	data/chars/billy/grabed9.png
+      frame	data/chars/billy/thb1.png
+      frame	data/chars/billy/thb2.png
+      frame	data/chars/billy/thb3.png
+      frame	data/chars/billy/fall05.png
+      frame	data/chars/billy/thbb0.png
+      frame	data/chars/billy/thbb1.png
+      frame	data/chars/billy/thbb2.png
+      frame	data/chars/billy/thbb3.png
+      frame	data/chars/billy/thbb4.png
+
+
+anim fall10
+      loop	0
+	delay	11
+	offset	77 170
+      bouncefactor 0
+      landframe 4
+      @cmd  stopz
+      @cmd    degravity 0.27
+      @cmd  leaper 1.5 0 0
+	frame	data/chars/billy/j1.png
+      delay	10
+      frame	data/chars/billy/j22.png
+      @cmd    degravity -0.50
+      frame	data/chars/billy/j22.png
+      delay	100
+      frame	data/chars/billy/j22.png
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/billy/rise2.png
+
+anim fall14 # Backfall 1
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -1.5
+      landframe 7
+      movez 1
+      @cmd    degravity -0.15
+      @cmd bind 0 0 0 0 0
+      @cmd    depost2 0 2 0 -400
+	frame	data/chars/billy/fall033.png
+      movez 0
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/billy/fall033.png
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/billy/fall033.png
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/billy/fall033.png
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/billy/fall033.png
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/billy/fall033.png
+      delay   500
+      frame	data/chars/billy/fall06.png
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/billy/fall06.png
+	frame	data/chars/billy/rise11.png
+
+anim fall15 # Backfall 2
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -2
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd bind 0 0 0 0 0
+      @cmd    depost2 0 2 0 -400
+	frame	data/chars/billy/fall033.png
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/billy/fall033.png
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/billy/fall033.png
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/billy/fall033.png
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/billy/fall033.png
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/billy/fall033.png
+      delay   500
+      frame	data/chars/billy/fall06.png
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/billy/fall06.png
+	frame	data/chars/billy/rise11.png
+
+anim fall17
+      loop	0
+      delay   2
+      offset	77 170
+      @script
+    void self = getlocalvar("self");
+
+    changeentityproperty(self, "velocity", 0, 0, 0);
+@end_script
+      @cmd bind 0 0 0 0 0
+      @cmd    depost2 0 2 0 -400
+      frame	data/chars/billy/rise2.png
+
+anim fall18
+      loop	0
+      delay   2
+      offset	77 170
+      @script
+    void self = getlocalvar("self");
+
+    changeentityproperty(self, "velocity", 0, 0, 0);
+@end_script
+      @cmd bind 0 0 0 0 0
+      @cmd    depost2 0 2 0 -400
+      frame	data/chars/billy/rise2.png
+
+anim fall19
+      loop	0
+      delay   2
+      offset	77 170
+      @script
+    void self = getlocalvar("self");
+
+    changeentityproperty(self, "velocity", 0, 0, 0);
+@end_script
+      @cmd bind 0 0 0 0 0
+      @cmd    depost2 0 2 0 -400
+      frame	data/chars/billy/rise2.png
+
+anim fall20
+      loop	0
+	offset	122 170
+	delay   8
+      jumpframe 0 0 1.5
+      landframe 7
+      @cmd    degravity 0.27
+	frame	data/chars/billy/fall03.png
+      frame	data/chars/billy/fall03.png
+      delay   10
+      frame	data/chars/billy/fall03.png
+      frame	data/chars/billy/fall03.png
+      frame	data/chars/billy/fall03.png
+      delay   20
+      frame	data/chars/billy/fall03.png
+      delay   500
+      frame	data/chars/billy/fall066.png
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/billy/fall066.png
+	frame	data/chars/billy/rise0.png
+      delay   2
+      frame	data/chars/billy/rise0.png
+
+anim fall21
+      loop	0
+	offset	122 170
+	delay   8
+      jumpframe 0 0 0
+      landframe 7
+      @cmd    degravity 0.27
+	frame	data/chars/billy/fall03.png
+      frame	data/chars/billy/fall03.png
+      delay   10
+      frame	data/chars/billy/fall03.png
+      frame	data/chars/billy/fall03.png
+      frame	data/chars/billy/fall03.png
+      delay   20
+      frame	data/chars/billy/fall03.png
+      delay   500
+      frame	data/chars/billy/fall066.png
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/billy/fall066.png
+	frame	data/chars/billy/rise0.png
+      delay   2
+      frame	data/chars/billy/rise0.png
+
+anim fall23 # fall williams alter attack
+	loop	0
+	offset	77 170
+	delay   8
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd bind 0 0 0 0 0
+      @cmd    depost2 0 2 0 -400
+	frame	data/chars/billy/fall01.png
+      frame	data/chars/billy/fall01.png
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/billy/fall01.png
+      frame	data/chars/billy/fall01.png
+      @cmd    antiwall4 -20  "ANI_FOLLOW37"
+      frame	data/chars/billy/fall01.png
+      delay   20
+      @cmd    antiwall4 -20  "ANI_FOLLOW37"
+	frame	data/chars/billy/fall02.png
+      delay   500
+      frame	data/chars/billy/fall02.png
+      delay   8
+      sound	data/sounds/falll.wav
+      frame	data/chars/billy/fall02.png
+	frame	data/chars/billy/rise11.png
+
+anim fall24 # wtrap fall
+	loop	0
+	offset	77 170
+      bbox	40 80 35 70
+	delay   8
+	landframe 6
+      @cmd    degravity -0.15
+      @cmd bind 0 0 0 0 0
+      @cmd    depost2 0 2 0 -400
+      frame	data/chars/billy/fall05.png
+      frame	data/chars/billy/fall05.png
+      delay   10
+      @cmd    antiwall4 20 "ANI_FOLLOW38"
+      frame	data/chars/billy/fall05.png
+      frame	data/chars/billy/fall05.png
+      delay   20
+      @cmd    antiwall4 20 "ANI_FOLLOW38"
+	frame	data/chars/billy/fall05.png
+      delay   500
+      @cmd    degravity -1
+      @cmd    antiwall4 20 "ANI_FOLLOW38"
+      frame	data/chars/billy/fall02.png
+      delay   8
+      sound	data/sounds/falll.wav
+      frame	data/chars/billy/fall02.png
+      frame	data/chars/billy/rise11.png
+
+anim shock # wspike fall
+	loop	0
+	offset	77 170
+      bbox	40 80 35 70
+	delay   8
+	spawnframe 0 17 1 60 0
+	custentity blood2
+	landframe 6
+      sound  data/sounds/knife2.wav
+      @cmd    degravity -0.15
+      @cmd bind 0 0 0 0 0
+      @cmd    depost2 0 2 0 -400
+      frame	data/chars/billy/fall05.png
+      frame	data/chars/billy/fall05.png
+      delay   10
+      @cmd    antiwall4 20 "ANI_FOLLOW38"
+      frame	data/chars/billy/fall05.png
+      frame	data/chars/billy/fall05.png
+      delay   20
+      @cmd    antiwall4 20 "ANI_FOLLOW38"
+	frame	data/chars/billy/fall05.png
+      delay   500
+      @cmd    degravity -1
+      @cmd    antiwall4 20 "ANI_FOLLOW38"
+      frame	data/chars/billy/fall02.png
+      delay   8
+      sound	data/sounds/falll.wav
+      frame	data/chars/billy/fall02.png
+      frame	data/chars/billy/rise11.png
+
+anim follow37
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 2.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd    hurt4 5
+	frame	data/chars/billy/fall033.png
+      frame	data/chars/billy/fall033.png
+      delay   10
+      frame	data/chars/billy/fall033.png
+      frame	data/chars/billy/fall033.png
+      frame	data/chars/billy/fall033.png
+      delay   20
+      frame	data/chars/billy/fall033.png
+      delay   500
+      frame	data/chars/billy/fall06.png
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/billy/fall06.png
+	frame	data/chars/billy/rise11.png
+      delay   2
+      frame	data/chars/billy/rise11.png
+
+anim follow38
+      loop	0
+	offset	77 170
+	delay   8
+      jumpframe 0 1.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd    hurt4 5
+	frame	data/chars/billy/fall033.png
+      frame	data/chars/billy/fall033.png
+      delay   10
+      frame	data/chars/billy/fall033.png
+      frame	data/chars/billy/fall033.png
+      frame	data/chars/billy/fall033.png
+      delay   20
+      frame	data/chars/billy/fall033.png
+      delay   500
+      frame	data/chars/billy/fall06.png
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/billy/fall06.png
+	frame	data/chars/billy/rise11.png
+      delay   2
+      frame	data/chars/billy/rise11.png
+
+anim pain7
+      loop	0
+      delay	15
+      offset	77 170
+      @cmd    slamstart2
+      @cmd    position 11 0 1 0 1
+      frame	data/chars/billy/grabed1.png
+      @cmd    position 12 0 1 0 1
+      frame	data/chars/billy/grabed2.png
+      @cmd    anichange "ANI_FOLLOW46"
+      frame	data/chars/billy/grabed6.png
+
+anim pain19
+      loop	0
+      delay	1
+      offset	77 170
+      @cmd    slamstart2
+      @cmd    position 12 0 1 0 1
+      frame	data/chars/billy/grabed2.png
+      @cmd    anichange "ANI_FOLLOW46"
+      frame	data/chars/billy/grabed6.png
+
+anim follow46
+      loop	0
+	delay	100
+      offset	77 170
+      bbox	60 55 40 100
+      cancel 0 1 0 J freespecial19
+      cancel 0 1 0 A2 freespecial22
+      @cmd forceanim2 openborconstant("ANI_FOLLOW12")
+      @cmd bind2 1 0 0 1 1
+      frame	data/chars/billy/grabed2.png
+      delay	3000
+      @cmd hurt6 10
+      @cmd forceanim2 openborconstant("ANI_FOLLOW12")
+      @cmd bind2 1 0 0 1 1
+      frame	data/chars/billy/grabed2.png
+      frame	data/chars/billy/grabed2.png
+      frame	data/chars/billy/grabed2.png
+      frame	data/chars/billy/grabed2.png
+
+anim follow47
+      loop	0
+	delay	100
+      offset	77 170
+      bbox	60 55 40 100
+      cancel 0 1 0 J freespecial19
+      cancel 0 1 0 A2 freespecial22
+      @cmd forceanim2 openborconstant("ANI_FOLLOW12")
+      @cmd bind2 1 0 0 1 1
+      frame	data/chars/billy/grabed2.png
+      delay	3000
+      @cmd hurt6 10
+      @cmd forceanim2 openborconstant("ANI_FOLLOW12")
+      @cmd bind2 1 0 0 1 1
+      frame	data/chars/billy/grabed2.png
+      frame	data/chars/billy/grabed2.png
+      frame	data/chars/billy/grabed2.png
+      frame	data/chars/billy/grabed2.png
+
+anim freespecial19
+      loop	0
+      delay	15
+      offset	77 170
+      @cmd    slamstart2
+      @cmd    position 17 0 1 0 1
+      frame	data/chars/billy/grabed7.png
+      delay	10
+      @cmd    position 16 0 1 0 1
+      frame	data/chars/billy/grabed6.png
+      @cmd    position 15 0 1 0 1
+      frame	data/chars/billy/grabed5.png
+      @cmd    depost 0
+      @cmd    hurt3 1
+      delay	2
+      frame	data/chars/billy/grabed5.png
+      frame	data/chars/billy/grabed5.png
+
+anim freespecial22
+      loop	0
+      delay	17
+      offset	77 170
+      cancel 2 3 0 A2 freespecial23
+      @cmd    slamstart2
+      @cmd    position 13 0 1 0 1
+      frame	data/chars/billy/grabed3.png
+      delay	8
+      attack17  95 110 55 40 5 0
+      dropv 3.5 1.5
+      @cmd    position 14 0 1 0 0
+      frame	data/chars/billy/grabed4.png
+      attack17  0 0 0 0 0 0
+      frame	data/chars/billy/grabed4.png
+      delay	25
+      @cmd    position 12 0 1 0 1
+      frame	data/chars/billy/grabed2.png
+      @cmd    anichange "ANI_FOLLOW47"
+      frame	data/chars/billy/grabed2.png
+
+anim freespecial23
+      loop	0
+      delay	17
+      offset	77 170
+      @cmd    slamstart2
+      @cmd    position 12 0 1 0 1
+      frame	data/chars/billy/grabed2.png
+      @cmd    position 13 0 1 0 1
+      frame	data/chars/billy/grabed3.png
+      delay	18
+      attack17  95 110 55 40 5 1
+      dropv 3.5 1.5
+      @cmd    position 14 0 1 0 1
+      frame	data/chars/billy/grabed4.png
+      attack17  0 0 0 0 0 0
+      delay	2
+      @cmd    position 12 0 1 0 1
+      frame	data/chars/billy/grabed2.png
+      @cmd    anichange "ANI_FOLLOW47"
+      frame	data/chars/billy/grabed2.png
+
+anim rise
+	loop	0
+	offset	77 170
+	delay	10
+	frame	data/chars/billy/rise11.png
+	delay   25
+      @cmd    degravity -1
+	frame	data/chars/billy/rise22.png
+
+anim rise14
+	loop	0
+	offset	77 170
+	delay	10
+      flipframe 1
+	frame	data/chars/billy/rise11.png
+      offset	122 170
+	delay   25
+      @cmd    degravity -1
+	frame	data/chars/billy/rise222.png
+
+anim rise15
+	loop	0
+	offset	77 170
+	delay	10
+      flipframe 1
+	frame	data/chars/billy/rise11.png
+      offset	122 170
+	delay   25
+      @cmd    degravity -1
+	frame	data/chars/billy/rise222.png
+
+anim rise17
+	loop	0
+	offset	77 170
+	delay	10
+      flipframe 1
+	frame	data/chars/billy/rise11.png
+      offset	122 170
+	delay   25
+      @cmd    degravity -1
+	frame	data/chars/billy/rise222.png
+
+anim rise18
+	loop	0
+	offset	77 170
+	delay	10
+      flipframe 1
+	frame	data/chars/billy/rise11.png
+      offset	122 170
+	delay   25
+      @cmd    degravity -1
+	frame	data/chars/billy/rise222.png
+
+anim rise10
+	loop	0
+      offset	77 170
+	delay   2
+      @cmd    degravity -1
+	frame	data/chars/billy/rise2.png
+
+anim rise20
+	loop	0
+	offset	122 170
+	delay	10
+	frame	data/chars/billy/rise0.png
+	delay   25
+      @cmd    degravity -1
+	frame	data/chars/billy/rise222.png
+
+anim rise21
+	loop	0
+	offset	122 170
+	delay	10
+	frame	data/chars/billy/rise0.png
+	delay   25
+      @cmd    degravity -1
+	frame	data/chars/billy/rise222.png
+
+anim death
+	loop	0
+	offset	77 170
+	delay	30
+	frame	data/chars/billy/rise11.png
+	delay   12
+	frame	data/chars/billy/rise22.png
+      delay   14
+      frame	data/chars/billy/death1.png
+      sound data/chars/billy/die.wav
+      delay   16
+      frame	data/chars/billy/death2.png
+      frame	data/chars/billy/death3.png
+      delay	30
+      frame	data/chars/billy/death4.png
+
+anim death11
+	loop	0
+	offset	77 170
+	delay	10
+	frame	data/chars/misc/empty.png
+
+anim death14
+	loop	0
+	offset	77 170
+      delay	30
+      flipframe 1
+      frame	data/chars/billy/rise11.png
+	delay	16
+      frame	data/chars/billy/rise2.png
+      sound data/chars/billy/die.wav
+      frame	data/chars/billy/death2.png
+      frame	data/chars/billy/death3.png
+      delay	30
+      frame	data/chars/billy/death4.png
+
+anim death15
+	loop	0
+	offset	77 170
+      delay	30
+      flipframe 1
+      frame	data/chars/billy/rise11.png
+	delay	16
+      frame	data/chars/billy/rise2.png
+      sound data/chars/billy/die.wav
+      frame	data/chars/billy/death2.png
+      frame	data/chars/billy/death3.png
+      delay	30
+      frame	data/chars/billy/death4.png
+
+anim death17
+	loop	0
+	offset	77 170
+	delay	30
+      frame	data/chars/billy/rise2.png
+      offset	112 170
+      sound data/chars/billy/die.wav
+      delay	16
+      frame	data/chars/billy/death2.png
+      frame	data/chars/billy/death3.png
+      delay	30
+      frame	data/chars/billy/death4.png
+
+anim death18
+	loop	0
+	offset	77 170
+	delay	30
+      frame	data/chars/billy/rise2.png
+      offset	112 170
+      sound data/chars/billy/die.wav
+      delay	16
+      frame	data/chars/billy/death2.png
+      frame	data/chars/billy/death3.png
+      delay	30
+      frame	data/chars/billy/death4.png
+
+anim death19
+	loop	0
+	offset	77 170
+	delay	30
+      frame	data/chars/billy/rise2.png
+      offset	112 170
+      sound data/chars/billy/die.wav
+      delay	16
+      frame	data/chars/billy/death2.png
+      frame	data/chars/billy/death3.png
+      delay	30
+      frame	data/chars/billy/death4.png
+
+anim freespecial21
+      loop	0
+      delay	9
+	offset	77 170
+      jumpframe 1 5 0
+      landframe 7
+      dropframe 2
+      flipframe 7
+      hitfx  data/sounds/beatt2.wav
+      counterattack 1
+      @cmd    degravity -1
+      frame	data/chars/billy/j1.png
+      sound data/chars/billy/dragon.wav
+	frame	data/chars/billy/j22.png
+      offset	77 160
+      frame	data/chars/billy/special1.png
+     	frame	data/chars/billy/special1.png
+      attack4  10 85 50 55 16 1
+      dropv 3.5 1.5
+      frame	data/chars/billy/special2.png
+      frame	data/chars/billy/special2.png
+      attack4  0 0 0 0 0 0
+      delay	200
+      frame	data/chars/billy/special2.png
+      offset	77 170
+      delay	6
+      frame	data/chars/billy/j00.png
+      delay	1
+      frame	data/chars/billy/idle.png
+
+anim freespecial24
+      loop	0
+      delay	9
+      offset	77 170
+      @cmd    depost 0
+      @cmd    finish 5 1 -1.2 3 0 0
+      frame	data/chars/billy/grab3.png
+      frame	data/chars/billy/grab3.png
+
+anim FOLLOW113
+      @script
+    void vSelf = getlocalvar("self");
+
+    if(frame==0){
+      int  iTime = openborvariant("elapsed_time");
+
+      changeentityproperty(vSelf, "velocity", 0, 0 , 0); // This is to stop entity from moving forward
+      changeentityproperty(vSelf, "tosstime", iTime + 90);
+    }
+@end_script
+            flipframe 2
+            delay	12
+            offset	77 140
+            hitfx  data/sounds/beatt2.wav
+            @cmd    degravity -0.20
+        frame	data/chars/billy/jk4.png
+            offset	97 150
+            sound data/chars/billy/dragon2.wav
+        frame	data/chars/billy/bk1.png
+            offset	    77 140
+            delay	    -1000
+            jumpframe   this -1.5 4
+            attack      60 70 85 80 16 1
+            dropv       3.5 2
+            @cmd        knife 75 20 0 90 "ANI_FOLLOW2"
+        frame	data/chars/billy/dive_kick_0.png
+            landframe   this
+            attack      0 0 0 0 0 0
+            delay	    25
+            offset	    77 170
+            @cmd        degravity -1
+        frame	data/chars/billy/rise2.png
+            delay	6
+        frame	data/chars/billy/j0.png
+
+anim  follow39 # spikeh effect
+	loop	0
+	offset	122 170
+	delay   8
+      jumpframe 1 0 1
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd  stop
+	frame	data/chars/billy/fall03.png
+      frame	data/chars/billy/fall03.png
+      delay   10
+      frame	data/chars/billy/fall03.png
+      @cmd  stop
+      frame	data/chars/misc/empty.png
+      frame	data/chars/misc/empty.png
+      delay   20
+      frame	data/chars/misc/empty.png
+      delay   500
+      frame	data/chars/misc/empty.png
+      delay   8
+	frame	data/chars/misc/empty.png
+      offset	77 170
+	frame	data/chars/misc/empty.png
+
+anim  follow49 # water effect
+	loop	0
+	offset	77 170
+	delay   4
+      spawnframe 0 0 55 0 0
+	custentity water1
+      landframe 6
+      frame	data/chars/misc/empty.png
+      frame	data/chars/misc/empty.png
+      frame	data/chars/misc/empty.png
+      frame	data/chars/misc/empty.png
+      frame	data/chars/misc/empty.png
+      delay   500
+      frame	data/chars/misc/empty.png
+      delay   200
+	frame	data/chars/misc/empty.png
+
+anim  follow50 # spikeh2 effect for st2 belt
+	loop	0
+	offset	122 170
+	delay   8
+      flipframe 8
+      jumpframe 0 2.5 1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/billy/fall03.png
+      frame	data/chars/billy/fall03.png
+      delay   10
+      frame	data/chars/billy/fall03.png
+      frame	data/chars/misc/empty.png
+      frame	data/chars/billy/fall03.png
+      frame	data/chars/misc/empty.png
+      delay   20
+      frame	data/chars/misc/empty.png
+      delay   500
+      frame	data/chars/misc/empty.png
+      delay   8
+	frame	data/chars/misc/empty.png
+      offset	77 170
+	frame	data/chars/misc/empty.png
+
+
+anim  fall27 # killer effect
+	loop	0
+	offset	122 150
+	delay   2
+      landframe 7
+      @cmd    degravity -0.27
+	frame	data/chars/billy/fall03.png
+      frame	data/chars/billy/fall03.png
+      delay   10
+      frame	data/chars/billy/fall03.png
+      frame	data/chars/billy/fall03.png
+      @cmd    degravity -10
+      frame	data/chars/billy/fall03.png
+      delay   20
+      @cmd    move 0 -10 0
+      frame	data/chars/misc/empty.png
+      delay   500
+      frame	data/chars/misc/empty.png
+      delay   8
+      @cmd    degravity -1
+	frame	data/chars/misc/empty.png
+      offset	77 170
+	frame	data/chars/misc/empty.png
+
+anim death27
+	loop	0
+	offset	77 170
+	delay	1
+	frame	data/chars/misc/empty.png
+
+anim follow51 # idle clone for end climb up use because of camera2
+     loop 0
+     delay 5
+     offset 77 170
+     bbox 60 55 40 100
+     @cmd  degravity -1
+     @cmd  camera2
+     frame data/chars/billy/idle.png
+     frame data/chars/billy/idle.png
+
+anim burn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changedrawmethod(self,"enabled",1);
+      changedrawmethod(self, "tintmode", 4);
+      changedrawmethod(self, "tintcolor", rgbcolor(230,100,0));
+    }
+    if(frame==1){
+      changedrawmethod(self, "tintmode", 0);
+      changedrawmethod(self, "fillcolor", rgbcolor(255,104,0));
+    }
+    if(frame==2){
+      changedrawmethod(self, "fillcolor", 0);
+      changedrawmethod(self, "tintmode", 4);
+      changedrawmethod(self, "tintcolor", rgbcolor(230,100,0));
+    }
+    if(frame==3){
+      changedrawmethod(self, "tintmode", 0);
+      changedrawmethod(self, "fillcolor", rgbcolor(255,104,0));
+    }
+    if(frame==4){
+      changedrawmethod(self, "fillcolor", 0);
+      changedrawmethod(self, "tintmode", 4);
+      changedrawmethod(self, "tintcolor", rgbcolor(230,100,0));
+    }
+    if(frame==5){
+      changedrawmethod(self, "tintmode", 0);
+      changedrawmethod(self, "fillcolor", rgbcolor(255,104,0));
+    }
+    if(frame==6){
+      changedrawmethod(self, "fillcolor", 0);
+      changedrawmethod(self, "tintmode", 4);
+      changedrawmethod(self, "tintcolor", rgbcolor(230,100,0));
+    }
+    if(frame==7){
+      changedrawmethod(self, "tintmode", 0);
+      changedrawmethod(self, "fillcolor", rgbcolor(255,104,0));
+    }
+    if(frame==8){
+      changedrawmethod(self, "fillcolor", 0);
+      changedrawmethod(self, "tintmode", 4);
+      changedrawmethod(self, "tintcolor", rgbcolor(230,100,0));
+    }
+    if(frame==9){
+      changedrawmethod(self, "tintmode", 0);
+      changedrawmethod(self, "fillcolor", rgbcolor(255,104,0));
+    }
+    if(frame==10){
+      changedrawmethod(self, "fillcolor", 0);
+      changedrawmethod(self, "tintmode", 4);
+      changedrawmethod(self, "tintcolor", rgbcolor(230,100,0));
+    }
+    if(frame==11){
+      changedrawmethod(self, "tintmode", 0);
+      changedrawmethod(self, "fillcolor", rgbcolor(255,104,0));
+    }
+    if(frame==12){
+      changedrawmethod(self, "fillcolor", 0);
+      changedrawmethod(self, "tintmode", 4);
+      changedrawmethod(self, "tintcolor", rgbcolor(230,100,0));
+    }
+    if(frame==13){
+      changedrawmethod(self, "tintmode", 0);
+      changedrawmethod(self, "fillcolor", rgbcolor(255,104,0));
+    }
+    if(frame==14){
+      changedrawmethod(self, "fillcolor", 0);
+      changedrawmethod(self, "tintmode", 4);
+      changedrawmethod(self, "tintcolor", rgbcolor(230,100,0));
+    }
+    if(frame==15){
+      changedrawmethod(self, "tintmode", 0);
+      changedrawmethod(self, "tintcolor", 0);
+      changedrawmethod(self, "fillcolor", 0);
+      changedrawmethod(self,"enabled",0);
+    }
+@end_script
+	loop	0
+	offset	77 170
+	delay   8
+	landframe 13
+	@cmd    degravity -0.15
+	@cmd bind 0 0 0 0 0
+	@cmd    depost2 0 2 0 -400
+	frame	data/chars/billy/fall01.png
+	@cmd    spawnbind "eflame" -16 47 1
+	frame	data/chars/billy/fall01.png
+	frame	data/chars/billy/fall01.png
+	frame	data/chars/billy/fall01.png
+	frame	data/chars/billy/fall01.png
+	frame	data/chars/billy/fall01.png
+	@cmd    spawnbind "eeflame" -31 12 1
+	frame	data/chars/billy/fall02.png
+	frame	data/chars/billy/fall02.png
+	frame	data/chars/billy/fall02.png
+	frame	data/chars/billy/fall02.png
+	frame	data/chars/billy/fall02.png
+	frame	data/chars/billy/fall02.png
+	delay   -999
+	frame	data/chars/billy/fall02.png
+	delay   8
+	sound	data/sounds/falll.wav
+	frame	data/chars/billy/fall02.png
+	frame	data/chars/billy/rise11.png
+	frame	data/chars/billy/rise11.png
+
+anim follow52 # end st8
+     loop 0
+     delay 13
+     offset 77 170
+     spawnframe 1 0 0 0 0
+     custentity bilend
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+     @cmd stwall 1 0 0
+     frame	data/chars/billy/w4.png
+     frame	data/chars/billy/empty.png
+     bbox 60 55 40 100
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+
+anim follow53 # end st8
+     loop 0
+     delay 13
+     offset 77 170
+     spawnframe 1 0 0 0 0
+     custentity bilend2
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+     @cmd stwall 1 0 0
+     frame	data/chars/billy/w4.png
+     frame	data/chars/billy/empty.png
+     bbox 60 55 40 100
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+
+anim follow54 # end st?
+     loop 0
+     delay 13
+     offset 77 170
+     spawnframe 1 0 0 0 0
+     custentity bilend3
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+     @cmd stwall 1 0 0
+     frame	data/chars/billy/w4.png
+     frame	data/chars/billy/empty.png
+     bbox 60 55 40 100
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+
+anim follow55 # end st?
+     loop 0
+     delay 13
+     offset 77 170
+     spawnframe 1 0 0 0 0
+     custentity bilend4
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+     @cmd stwall 1 0 0
+     frame	data/chars/billy/w4.png
+     frame	data/chars/billy/empty.png
+     bbox 60 55 40 100
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+
+# ANI_DRAGON_SUPLEX_EXECUTE
+anim FOLLOW104
+
+        delay 12
+     offset 77 170
+	@cmd    slamstart3
+      	@cmd    position 0 30 1 -1 1
+     frame	data/chars/billy/ga1.png
+	delay 18
+	@cmd    position 0 30 1 -1 1
+     frame	data/chars/billy/suplex_0.png
+	sound data/chars/billy/dragon.wav
+	@cmd    position 7 -20 50 -1 1
+     frame	data/chars/billy/suplex_1.png
+	delay 40
+	sound data/sounds/beatt2.wav
+	@cmd    antiwall3 -80 80 -5
+	@cmd    position 6 -40 -15 -1 1
+     frame	data/chars/billy/suplex_2.png
+     delay 1
+	@cmd    position 6 -40 1 0 1
+     frame	data/chars/billy/suplex_2.png
+	delay 20
+	@cmd    depost 0
+        @cmd    finish 32 1 -2.5 2 0 1
+     frame	data/chars/billy/suplex_2.png
+	delay	12
+     frame	data/chars/billy/suplex_3.png
+     frame	data/chars/billy/rise2.png
+     frame	data/chars/billy/j0.png
+
+# ANI_DRAGON_SA_EXECUTE
+anim FOLLOW103
+	range -10 50
+	rangez -50 50
+
+	jumpframe 2 3 0.5 0
+	landframe 3
+        delay 12
+     offset 87 185
+	@cmd    slamstart3
+      	@cmd    position 0 30 1 -1 -1
+     frame	data/chars/billy/somersault_throw_0.png
+	delay 18
+	@cmd    position 0 30 1 -1 -1
+     frame	data/chars/billy/somersault_throw_1.png
+
+	@cmd    position 7 -20 60 -1 -1
+	delay -1000
+	offset 77 175
+     frame	data/chars/billy/somersault_throw_2.png
+
+	delay 12
+	move  15
+	@cmd    antiwall3 80 -80 -5
+	@cmd    position 6 -30 100 -1 -1
+	sound data/chars/billy/dragon.wav
+     frame	data/chars/billy/somersault_throw_3.png
+     delay 1
+	move 0
+	@cmd    position 6 40 65 0 -1
+     frame	data/chars/billy/somersault_throw_4.png
+	delay 50
+	@cmd    depost 0
+        @cmd    throw 32 1 -3.5 2 0 0
+     frame	data/chars/billy/somersault_throw_4.png
+     delay   2
+      offset	77 170
+      frame	data/chars/billy/idle.png
+
+#ANI_DRAGON_HURRICANE_KICK
+anim FOLLOW105
+
+	landframe 10
+
+      delay	7
+	offset	77 170
+      hitfx  data/sounds/beatt2.wav
+      counterattack 1
+	frame	data/chars/billy/j22.png
+      offset	77 135
+      delay	8
+      sound data/chars/billy/special.wav
+     	frame	data/chars/billy/special1.png
+      attack  10 85 60 55 24 1
+      dropv 3 3
+      forcedirection 1
+      frame	data/chars/billy/special2.png
+      attack  0 0 0 0 0 0
+      frame	data/chars/billy/special3.png
+      attack  80 85 63 55 24 1
+      dropv 3 3
+      forcedirection -1
+      frame	data/chars/billy/special4.png
+      attack  0 0 0 0 0 0
+      frame	data/chars/billy/special1.png
+      attack  10 85 60 55 24 1
+      dropv 3 3
+      forcedirection 1
+      frame	data/chars/billy/special2.png
+      attack  0 0 0 0 0 0
+      frame	data/chars/billy/special3.png
+      attack  80 85 63 55 24 1
+      dropv 3 3
+      forcedirection -1
+      frame	data/chars/billy/special4.png
+      	delay	-1000
+	attack  0 0 0 0 0 0
+      offset	77 170
+      frame	data/chars/billy/j22.png
+	delay 20
+	frame 	data/chars/billy/rise2.png
+
+# ANI_DRAGON_HURRICANE_KICK_DOUBLE_1
+# Double team hurricane kick for "main" player. This will be used
+# by the player who initiates a double hurricane kick.
+anim FOLLOW106
+
+	range 	-60 60
+	rangea 	-60 60
+	rangez	-60 60
+
+    	landframe 14
+
+	#0
+	delay	3
+	offset	87 170
+      	hitfx  data/sounds/beatt2.wav
+      	counterattack 1
+	movez	1
+	sound 	data/chars/billy/dragon2.wav
+	frame	data/chars/billy/j00.png
+
+	# Extra frame here to offset a second shout.
+	#1
+	delay	4
+	sound 	data/chars/billy/dragon2.wav
+	frame	data/chars/billy/j00.png
+
+	#2
+	offset	87 135
+      	delay	8
+      	movez	0
+	sound 	data/chars/billy/special.wav
+	frame	data/chars/billy/special1.png
+
+	#3
+	offset	97 135
+	attack  0 85 70 55 42 1
+      	dropv 	3 4
+      	forcedirection 1
+	frame	data/chars/billy/special2.png
+
+	#4
+	offset	87 135
+	attack  0 0 0 0 0 0
+	movez	-1
+	frame	data/chars/billy/special3.png
+
+	#5
+	offset	67 135
+	attack  0 0 0 0 0 0
+	movez	0
+	frame	data/chars/billy/special3.png
+
+	#6
+	offset 	57 135
+	attack  70 85 73 55 42 1
+      	dropv 	3 4
+      	forcedirection -1
+	frame	data/chars/billy/special4.png
+
+	#7
+	offset 	67 135
+      	attack  0 0 0 0 0 0
+	movez	1
+	frame	data/chars/billy/special1.png
+
+	#8
+	offset 	87 135
+      	attack  0 0 0 0 0 0
+	movez	0
+	frame	data/chars/billy/special1.png
+
+	#9
+	offset 	97 135
+      	attack  0 85 70 55 42 1
+      	dropv 	3 4
+      	forcedirection 1
+	frame	data/chars/billy/special2.png
+
+	#10
+	offset 	97 135
+	attack  0 0 0 0 0 0
+	movez	-1
+	frame	data/chars/billy/special3.png
+
+	#11
+	offset 	67 135
+	attack  0 0 0 0 0 0
+	movez	0
+	frame	data/chars/billy/special3.png
+
+	#12
+	offset  57 135
+	attack  70 85 73 55 42 1
+      	dropv 	3 4
+      	forcedirection -1
+	frame	data/chars/billy/special4.png
+
+	#13
+	delay	-1000
+	offset	77 170
+	attack  0 0 0 0 0 0
+      	move 	15
+	frame	data/chars/billy/j22.png
+
+	#14
+	delay 	20
+	move 	0
+	frame 	data/chars/billy/rise2.png
+
+
+# ANI_DRAGON_HURRICANE_KICK_DOUBLE_2
+# Double team hurricane kick for other player. This will be used
+# when other player initiates a double hurricane kick.
+anim FOLLOW107
+
+	flipframe 12
+      	landframe 13
+
+	delay	7
+	offset	67 135
+	sound 	data/chars/billy/dragon2.wav
+      	hitfx  	data/sounds/beatt2.wav
+      	counterattack 1
+	movez	-1
+	frame	data/chars/billy/jk2.png
+
+	offset	67 135
+      	delay	8
+	movez 	0
+      	sound 	data/chars/billy/special.wav
+	frame	data/chars/billy/special3.png
+
+	offset	57 135
+	attack  0 85 70 55 42 1
+      	dropv 3 4
+      	forcedirection 1
+	frame	data/chars/billy/special4.png
+
+	offset	67 135
+	attack  0 0 0 0 0 0
+	movez	1
+	frame	data/chars/billy/special1.png
+
+	offset	87 135
+	attack  0 0 0 0 0 0
+	movez	0
+	frame	data/chars/billy/special1.png
+
+	offset 	97 135
+	attack  70 85 73 55 42 1
+      	dropv 	3 4
+      	forcedirection -1
+	frame	data/chars/billy/special2.png
+
+	offset 	87 135
+      	attack  0 0 0 0 0 0
+	movez	-1
+	frame	data/chars/billy/special3.png
+
+	offset 	67 135
+      	attack  0 0 0 0 0 0
+	movez	0
+	frame	data/chars/billy/special3.png
+
+	offset 	57 135
+      	attack  0 85 70 55 42 1
+      	dropv 	3 4
+      	forcedirection 1
+	frame	data/chars/billy/special4.png
+
+	offset 	67 135
+	attack  0 0 0 0 0 0
+	movez	1
+	frame	data/chars/billy/special1.png
+
+	offset 	87 135
+	attack  0 0 0 0 0 0
+	movez	0
+	frame	data/chars/billy/special1.png
+
+	offset  97 135
+	attack  70 85 73 55 42 1
+      	dropv 	3 4
+      	forcedirection -1
+	frame	data/chars/billy/special2.png
+
+	delay	-1000
+	offset	77 170
+	attack  0 0 0 0 0 0
+      	move 	-15
+	frame	data/chars/billy/j22.png
+
+	delay 	20
+	move 	0
+	frame 	data/chars/billy/rise2.png
+
+
+anim FOLLOW101 #jumping spin kick
+      loop	0
+      delay	8
+      followcond 1
+      followanim 19
+      jumpframe 2 3 2.5
+      landframe 17
+      offset	77 170
+      hitfx  data/sounds/beatt2.wav
+      @cmd    degravity -0.20
+      frame	data/chars/billy/j0.png
+      sound data/chars/billy/dragon2.wav
+      delay	2.5
+      frame	data/chars/billy/jk1.png
+      frame	data/chars/billy/jk1.png
+      frame	data/chars/billy/jk1.png
+      frame	data/chars/billy/jk1.png
+      frame	data/chars/billy/jk2.png
+      frame	data/chars/billy/jk2.png
+      frame	data/chars/billy/jk2.png
+      frame	data/chars/billy/jk2.png
+      attack  85 75 65 40 16 1
+      dropv 3.5 2
+      @cmd  knife 75 20 0 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/jk3.png
+      @cmd  knife 75 20 0 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/jk3.png
+      @cmd  knife 75 20 0 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/jk3.png
+      @cmd  knife 75 20 0 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/jk3.png
+      @cmd  knife 75 20 0 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/jk3.png
+      attack  0 0 0 0 0 0
+      delay	15
+      frame	data/chars/billy/jk4.png
+      @cmd    degravity -0.50
+      frame	data/chars/billy/jk4.png
+      delay	200
+      frame	data/chars/billy/jk4.png
+      delay	25
+      @cmd    degravity -1
+      frame	data/chars/billy/rise2.png
+      delay	6
+      frame	data/chars/billy/j0.png
+
+anim BLOCK
+     loop 1
+     delay 5
+     offset 77 170
+     bbox 60 55 40 100
+     @cmd  clearL
+     @cmd  degravity -1
+     @cmd  nograb 1
+     @cmd  camera
+     frame data/chars/billy/block_0.png
+
+ anim BLOCKPAIN
+    jumpframe 0 0 -0.5 0
+     delay 15
+     offset 77 170
+     bbox 60 55 40 100
+     @cmd  clearL
+     @cmd  degravity -1
+     @cmd  nograb 1
+     @cmd  camera
+     frame data/chars/billy/block_0.png
+
+anim FOLLOW100 #Back Kick
+	loop	0
+	delay	13
+      offset	104 170
+      bbox	87 55 40 100
+      @cmd ani0020 openborconstant("ANI_FOLLOW2") ANI_PAIN_STUN_FRONT
+      @cmd	finisher "ANI_PAIN2" "ANI_FOLLOW2" -180 45 50 0 0
+      frame	data/chars/billy/bk1.png
+      delay	9
+      attack2  25 95 90 40 6 0
+      dropv 3.5 1.5
+	frame	data/chars/billy/bk2.png
+      attack2 0 0 0 0 0
+      frame	data/chars/billy/bk2.png
+      delay	7
+      frame	data/chars/billy/bk1.png
+      frame	data/chars/billy/bk0.png
+      delay	1
+      frame	data/chars/billy/bk0.png
+
+anim FOLLOW109 #TKD Kick
+        fastattack  1
+        delay	12
+        offset	104 170
+        bbox	87 55 40 100
+        @cmd ani0020 ANI_DRAGON_TKD_FINISH ANI_PAIN_STUN_FRONT
+
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/bk1.png
+        offset	77 170
+        attack14 50 100 120 65 4 0
+        dropv 3.5 1.5
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/TKD_0.png
+
+        offset	104 170
+        attack2 0 0 0 0 0
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/bk1.png
+
+        offset	77 170
+        attack2  90 68 60 34 6 0
+        dropv 3.5 1.5
+        #Deflect knife
+        @cmd  knife 75 20 70 90 "ANI_FOLLOW2"
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/TKD_2.png
+
+        offset	104 170
+        attack2 0 0 0 0 0
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/bk1.png
+
+        delay   1
+        offset	77 170
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/idle.png
+
+anim FOLLOW108 #TKD finisher
+        fastattack  1
+        delay	12
+        offset	104 170
+        bbox	87 55 40 100
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/bk1.png
+        delay   9
+        offset	77 170
+        attack14 50 100 120 65 2 0
+        dropv 3.5 1.5
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/TKD_0.png
+
+        offset	104 170
+        attack2 0 0 0 0 0
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/bk1.png
+
+        attack2  25 95 100 40 2 0
+        dropv 3.5 1.5
+    frame	data/chars/billy/bk2.png
+
+        attack2 0 0 0 0 0
+    frame	data/chars/billy/bk1.png
+
+        offset	77 170
+        attack 50 55 120 65 2 0
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/TKD_1.png
+
+        offset	104 170
+        attack2 0 0 0 0 0
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/bk1.png
+
+        attack14  25 95 100 40 2 0
+        dropv 3.5 1.5
+    frame	data/chars/billy/bk2.png
+
+        attack2 0 0 0 0 0
+    frame	data/chars/billy/bk1.png
+        delay   1
+        @cmd changeentityproperty getlocalvar("self") "animation" ANI_DRAGON_TKD_FINISH_2
+    frame	data/chars/billy/bk1.png
+
+anim FOLLOW110 #TKD Finisher Part 2
+
+        hitfx  data/sounds/beatt2.wav
+        delay   8
+        offset	104 170
+        bbox	87 55 40 100
+        move    -10
+	frame	data/chars/billy/bk3.png
+        move    0
+    frame	data/chars/billy/bk4.png
+        attack  25 52 90 67 6 1
+        dropv 3.5 1.5
+	frame	data/chars/billy/bk5.png
+        attack  0 0 0 0 0
+	frame	data/chars/billy/bk6.png
+	frame	data/chars/billy/bk7.png
+        delay	1
+        attack2 0 0 0 0 0
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/bk0.png
+
+anim FOLLOW111 #JUMPING SIDE KICK
+	loop	0
+	offset	77 170
+      bbox	60 90 55 50
+      hitfx  data/sounds/beatt2.wav
+	delay	7
+      @cmd    antiwall4 20  "ANI_FOLLOW113"
+	frame	data/chars/billy/j22.png
+      bbox	0 0 0 0
+      delay	8
+      attack  90 112 60 40 10 1
+      dropv 3.5 1.5
+	frame	data/chars/billy/ja1.png
+      bbox	60 90 55 50
+      frame	data/chars/billy/ja1.png
+      frame	data/chars/billy/ja1.png
+      attack  0 0 0 0 0 0
+      delay	7
+      frame	data/chars/billy/j22.png
+
+anim FOLLOW112 #Roundhouse Kick
+
+        hitfx  data/sounds/beatt2.wav
+        delay   12
+        offset	77 166
+        bbox	87 55 40 100
+	frame	data/chars/billy/bkick1.png
+
+        delay   10
+        offset	77 170
+    frame	data/chars/billy/roundhouse_0.png
+
+        attack  77 54 100 70 10 1
+        dropv 3.5 1.5
+	frame	data/chars/billy/roundhouse_1.png
+
+        attack  0
+    frame	data/chars/billy/roundhouse_2.png
+
+	frame	data/chars/billy/roundhouse_3.png
+        delay   12
+    frame	data/chars/billy/roundhouse_4.png

@@ -1,0 +1,6 @@
+silence 1
+music           data/music/intro.ogg 1
+animation	data/scenes/tianim.gif 0 0 1 0
+
+
+

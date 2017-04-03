@@ -1,0 +1,26 @@
+name	movezblo2
+type    obstacle
+cantgrab 1
+health		10
+shadow  0
+grabdistance 600
+offscreenkill 7000
+subject_to_gravity 0
+subject_to_hole 0
+subject_to_wall 0
+nolife  1
+noatflash 1
+
+anim idle
+	loop	1
+	delay	5
+	offset	1 1
+      platform  -1000 -1000 6000 6000 1 5000
+      frame  data/chars/misc/empty.gif
+
+anim fall
+	loop	1
+	delay	5
+	offset	1 1
+      frame  data/chars/misc/empty.gif
+

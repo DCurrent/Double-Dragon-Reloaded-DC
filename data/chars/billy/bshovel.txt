@@ -1,0 +1,1675 @@
+name	        bshovel
+health	        100
+speed	        25
+type	        none
+shadow	        1
+grabdistance    40
+jumpheight      6.5
+height          120
+jumpspeed       20
+antigravity     -100
+nodieblink      1
+falldie         2
+noquake         1 1
+bounce          1
+risetime        0 -50
+icon	        data/chars/billy/icon2.png
+atchain         1
+com	A2	        freespecial
+com	A3	        freespecial2
+projectilehit   none
+hostile         enemy
+candamage       enemy
+modelflag       1
+running         30 6.5 1.3 1 0
+
+animationscript 	data/chars/billy/animation_script.c
+ondoattackscript data/scripts/ondoattack.c
+
+palette data/chars/billy/idle.png
+alternatepal data/chars/billy/map1.png
+alternatepal data/chars/billy/map2.png
+
+anim spawn
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+
+    if(P1){
+      changeentityproperty(P1, "colourmap", 0);
+    }
+    if(P2){
+      changeentityproperty(P2, "colourmap", 1);
+    }
+@end_script
+	loop	0
+	delay	30
+	offset	77 170
+	frame	data/chars/billy/shovel/rise2.png
+
+anim respawn
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+
+    if(P1){
+      changeentityproperty(P1, "colourmap", 0);
+    }
+    if(P2){
+      changeentityproperty(P2, "colourmap", 1);
+    }
+@end_script
+	loop	0
+	delay	30
+	offset	77 170
+	frame	data/chars/billy/shovel/rise2.png
+
+anim idle
+	loop	0
+	delay	5
+	offset	77 170
+	bbox	60 55 40 100
+      @cmd    clearL
+      @cmd    degravity -1
+     @cmd  camera
+	frame	data/chars/billy/shovel/w4.png
+      @cmd	keyclimb "U" "ANI_FOLLOW20"
+	@cmd	keyclimb "D" "ANI_FOLLOW21"
+      frame	data/chars/billy/shovel/w4.png
+
+anim walk
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+    }
+    if(frame==2){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+      changelevelproperty("scrollspeed", 1);
+    }
+    if(frame==3){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+    }
+@end_script
+	loop	1
+	delay	13
+	offset	77 170
+	bbox	60 55 40 100
+      @cmd	climberD 20 20 "ANI_FOLLOW21"
+	frame	data/chars/billy/shovel/w1.png
+      @cmd	climberD 20 20 "ANI_FOLLOW21"
+	frame	data/chars/billy/shovel/w2.png
+      @cmd	climberD 20 20 "ANI_FOLLOW21"
+	frame	data/chars/billy/shovel/w3.png
+      @cmd	climberD 20 20 "ANI_FOLLOW21"
+	frame	data/chars/billy/shovel/w4.png
+
+anim up
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Platform", 0);
+    }
+    if(frame==2){
+      changelevelproperty("scrollspeed", 1);
+    }
+@end_script
+	loop	1
+	delay	13
+	offset	77 170
+	bbox	60 55 40 115
+      @cmd	climber 20 10 "ANI_FOLLOW20"
+	frame	data/chars/billy/shovel/wu1.png
+      @cmd	climber 20 10 "ANI_FOLLOW20"
+	frame	data/chars/billy/shovel/wu2.png
+      @cmd	climber 20 10 "ANI_FOLLOW20"
+	frame	data/chars/billy/shovel/wu3.png
+      @cmd	climber 20 10 "ANI_FOLLOW20"
+	frame	data/chars/billy/shovel/wu4.png
+
+anim RUN
+
+    @script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+    }
+    if(frame==2){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+      changelevelproperty("scrollspeed", 1);
+    }
+    if(frame==3){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+    }
+@end_script
+     loop 1
+     delay 9
+     offset 77 170
+     bbox 60 55 40 100
+        frame	data/chars/billy/shovel/run_0.png
+     sound  data/sounds/step1.wav
+        frame	data/chars/billy/shovel/run_1.png
+        frame	data/chars/billy/shovel/run_2.png
+    sound  data/sounds/step1.wav
+        frame	data/chars/billy/shovel/run_3.png
+
+anim follow20 # Climb
+	loop	1
+	delay   2
+	offset	90 174
+	bbox	70 60 30 80
+	@cmd	dasher 0 0 0
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+	frame   data/chars/billy/shovel/climb1.png
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+	frame   data/chars/billy/shovel/climb1.png
+
+anim follow34 # Climb
+	loop	1
+	delay   2
+	offset	90 174
+	bbox	70 60 30 80
+	@cmd	dasher 0 0 0
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+      @cmd	keyint2 "ANI_FOLLOW29" 0 "L" 0
+	@cmd	keyint2 "ANI_FOLLOW30" 0 "R" 0
+	frame   data/chars/billy/shovel/climb1.png
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+      @cmd	keyint2 "ANI_FOLLOW29" 0 "L" 0
+	@cmd	keyint2 "ANI_FOLLOW30" 0 "R" 0
+	frame   data/chars/billy/shovel/climb1.png
+
+anim follow26 # Climb
+	loop	1
+	delay   2
+	offset	90 174
+	bbox	70 60 30 80
+	@cmd	dasher 0 0 0
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+      @cmd	keyint2 "ANI_FOLLOW29" 0 "L" 0
+	@cmd	keyint2 "ANI_FOLLOW30" 0 "R" 0
+	frame   data/chars/billy/shovel/climb2.png
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+      @cmd	keyint2 "ANI_FOLLOW29" 0 "L" 0
+	@cmd	keyint2 "ANI_FOLLOW30" 0 "R" 0
+	frame   data/chars/billy/shovel/climb2.png
+
+anim follow27 # Climb
+	loop	1
+	delay   2
+	offset	90 174
+	bbox	70 60 30 80
+	@cmd	dasher 0 0 0
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+      @cmd	keyint2 "ANI_FOLLOW29" 0 "L" 0
+	@cmd	keyint2 "ANI_FOLLOW30" 0 "R" 0
+	frame   data/chars/billy/shovel/climb3.png
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+      @cmd	keyint2 "ANI_FOLLOW29" 0 "L" 0
+	@cmd	keyint2 "ANI_FOLLOW30" 0 "R" 0
+	frame   data/chars/billy/shovel/climb3.png
+
+anim follow28 # Climb
+	loop	1
+	delay   2
+	offset	90 174
+	bbox	70 60 30 80
+	@cmd	dasher 0 0 0
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+	frame   data/chars/billy/shovel/climb4.png
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+	frame   data/chars/billy/shovel/climb4.png
+
+anim follow35 # Climb
+	loop	1
+	delay   2
+	offset	90 174
+	bbox	70 60 30 80
+	@cmd	dasher 0 0 0
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+      @cmd	keyint2 "ANI_FOLLOW29" 0 "L" 0
+	@cmd	keyint2 "ANI_FOLLOW30" 0 "R" 0
+	frame   data/chars/billy/shovel/climb4.png
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+      @cmd	keyint2 "ANI_FOLLOW29" 0 "L" 0
+	@cmd	keyint2 "ANI_FOLLOW30" 0 "R" 0
+	frame   data/chars/billy/shovel/climb4.png
+
+anim follow31 # Climb
+	loop	1
+	delay   2
+	offset	90 174
+	bbox	70 60 30 80
+	@cmd	dasher 0 0 0
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+      @cmd	keyint2 "ANI_FOLLOW29" 0 "L" 0
+	@cmd	keyint2 "ANI_FOLLOW30" 0 "R" 0
+	frame   data/chars/billy/shovel/climb6.png
+	@cmd	keyint2 "ANI_FOLLOW22" 0 "U" 0
+	@cmd	keyint2 "ANI_FOLLOW23" 0 "D" 0
+      @cmd	keyint2 "ANI_FOLLOW29" 0 "L" 0
+	@cmd	keyint2 "ANI_FOLLOW30" 0 "R" 0
+	frame   data/chars/billy/shovel/climb6.png
+
+anim follow21 # Start of Climb Down
+@script
+    void self = getlocalvar("self");
+
+    if(frame==2){
+      performattack(self, openborconstant("ANI_FOLLOW28"));
+    }
+@end_script
+	delay   1
+	offset	90 174
+	frame   data/chars/billy/shovel/climb5.png
+	delay   20
+	frame   data/chars/billy/shovel/climb5.png
+	frame   data/chars/billy/shovel/climb4.png
+
+anim follow22 # Climb Up
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Platform", 1);
+      changelevelproperty("scrollspeed", 1);
+    }
+@end_script
+	loop	1
+	delay   5
+	offset	90 174
+	bbox	70 60 30 80
+     @cmd  camera2
+	@cmd	dasher 0 3 0
+	@cmd	climbEnd "U" "ANI_FOLLOW24"
+	frame   data/chars/billy/shovel/climb1.png
+      @cmd	dasher 0 0 0
+	@cmd	climbEnd "U" "ANI_FOLLOW24"
+	@cmd	keyint2 "ANI_FOLLOW34" 0 "U" 1
+	frame   data/chars/billy/shovel/climb1.png
+	@cmd	dasher 0 3 0
+	@cmd	climbEnd "U" "ANI_FOLLOW24"
+	frame   data/chars/billy/shovel/climb2.png
+      @cmd	dasher 0 0 0
+	@cmd	climbEnd "U" "ANI_FOLLOW24"
+	@cmd	keyint2 "ANI_FOLLOW26" 0 "U" 1
+	frame   data/chars/billy/shovel/climb2.png
+      @cmd	dasher 0 3 0
+	@cmd	climbEnd "U" "ANI_FOLLOW24"
+	frame   data/chars/billy/shovel/climb3.png
+      @cmd	dasher 0 0 0
+	@cmd	climbEnd "U" "ANI_FOLLOW24"
+	@cmd	keyint2 "ANI_FOLLOW27" 0 "U" 1
+	frame   data/chars/billy/shovel/climb3.png
+      @cmd	dasher 0 3 0
+	@cmd	climbEnd "U" "ANI_FOLLOW24"
+	frame   data/chars/billy/shovel/climb4.png
+      @cmd	dasher 0 0 0
+	@cmd	climbEnd "U" "ANI_FOLLOW24"
+	@cmd	keyint2 "ANI_FOLLOW35" 0 "U" 1
+	frame   data/chars/billy/shovel/climb4.png
+
+anim follow23 # Climb Down
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changelevelproperty("scrollspeed", 1);
+    }
+@end_script
+	loop	1
+	delay   6
+	offset	90 174
+	bbox	70 60 30 80
+      @cmd  spikeh -100 100 100 -1 10 "ANI_IDLE"
+	@cmd	dasher 0 -2.5 0
+     @cmd  camera2
+	@cmd	climbEnd "D" "ANI_FOLLOW24"
+	frame   data/chars/billy/shovel/climb4.png
+      @cmd  spikeh -100 100 100 -1 10 "ANI_IDLE"
+      @cmd	dasher 0 0 0
+	@cmd	climbEnd "D" "ANI_FOLLOW24"
+      @cmd	keyint2 "ANI_FOLLOW35" 0 "D" 1
+	frame   data/chars/billy/shovel/climb4.png
+      @cmd  spikeh -100 100 100 -1 10 "ANI_IDLE"
+	@cmd	dasher 0 -2.5 0
+	@cmd	climbEnd "D" "ANI_FOLLOW24"
+	frame   data/chars/billy/shovel/climb3.png
+      @cmd  spikeh -100 100 100 -1 10 "ANI_IDLE"
+      @cmd	dasher 0 0 0
+	@cmd	climbEnd "D" "ANI_FOLLOW24"
+      @cmd	keyint2 "ANI_FOLLOW27" 0 "D" 1
+	frame   data/chars/billy/shovel/climb3.png
+      @cmd  spikeh -100 100 100 -1 10 "ANI_IDLE"
+      @cmd	dasher 0 -2.5 0
+	@cmd	climbEnd "D" "ANI_FOLLOW24"
+	frame   data/chars/billy/shovel/climb2.png
+      @cmd  spikeh -100 100 100 -1 10 "ANI_IDLE"
+      @cmd	dasher 0 0 0
+	@cmd	climbEnd "D" "ANI_FOLLOW24"
+      @cmd	keyint2 "ANI_FOLLOW26" 0 "D" 1
+	frame   data/chars/billy/shovel/climb2.png
+      @cmd  spikeh -100 100 100 -1 10 "ANI_IDLE"
+      @cmd	dasher 0 -2.5 0
+	@cmd	climbEnd "D" "ANI_FOLLOW24"
+	frame   data/chars/billy/shovel/climb1.png
+      @cmd  spikeh -100 100 100 -1 10 "ANI_IDLE"
+      @cmd	dasher 0 0 0
+	@cmd	climbEnd "D" "ANI_FOLLOW24"
+      @cmd	keyint2 "ANI_FOLLOW34" 0 "D" 1
+	frame   data/chars/billy/shovel/climb1.png
+
+anim follow29 # Climb left
+	loop	1
+	delay   10
+	offset	90 174
+	bbox	70 60 30 80
+	@cmd	dasher -1.5  0
+	@cmd	climber3 5 0 "ANI_FOLLOW33"
+      @cmd	keyint2 "ANI_FOLLOW31" 0 "L" 1
+	frame   data/chars/billy/shovel/climb7.png
+	@cmd	climber3 5 0 "ANI_FOLLOW33"
+	@cmd	keyint2 "ANI_FOLLOW31" 0 "L" 1
+	frame   data/chars/billy/shovel/climb8.png
+	@cmd	dasher 0 0 0
+	@cmd	climber3 5 0 "ANI_FOLLOW33"
+      @cmd	keyint2 "ANI_FOLLOW31" 0 "L" 1
+	frame   data/chars/billy/shovel/climb6.png
+
+anim follow30 # Climb right
+	loop	1
+	delay   10
+	offset	90 174
+	bbox	70 60 30 80
+	@cmd	dasher 1.5  0
+	@cmd	climber3 5 0 "ANI_FOLLOW32"
+      @cmd	keyint2 "ANI_FOLLOW31" 0 "R" 1
+	frame   data/chars/billy/shovel/climb7.png
+	@cmd	climber3 5 0 "ANI_FOLLOW32"
+	@cmd	keyint2 "ANI_FOLLOW31" 0 "R" 1
+	frame   data/chars/billy/shovel/climb8.png
+	@cmd	dasher 0 0 0
+	@cmd	climber3 5 0 "ANI_FOLLOW32"
+      @cmd	keyint2 "ANI_FOLLOW31" 0 "R" 1
+	frame   data/chars/billy/shovel/climb6.png
+
+anim follow24 # End of Climb Up
+@script
+    if(frame==1){
+      void self = getlocalvar("self");
+//      int iPIndex = getentityproperty(self,"playerindex");
+//      int LType = getglobalvar(iPIndex+"ClimbT");
+      int LType = getentityvar(self, 6);
+      float x = getentityproperty(self, "x");
+      float y = getentityproperty(self, "a");
+      float z = getentityproperty(self, "z");
+      int Dir = getentityproperty(self, "direction");
+      int sx = 5;
+
+      changeentityproperty(self, "Subject_to_Platform", 1);
+      changeentityproperty(self, "antigravity", 0);
+
+      if(Dir == 0){
+        sx = -5;
+      }
+
+      if(LType == 2){
+        changeentityproperty(self, "position", x, z, y+54);
+      } else {
+        changeentityproperty(self, "position", x+sx, z-4, y+54);
+      }
+      setidle(self, openborconstant("ANI_FOLLOW51"));
+    }
+@end_script
+      loop	0
+	offset	90 174
+	delay   15
+	frame   data/chars/billy/shovel/climb5.png
+      offset	77 170
+      delay	25
+      frame	 data/chars/billy/shovel/w4.png
+
+anim attack1
+	loop	0
+	delay	8
+	offset	92 184
+	bbox	75 69 40 100
+      hitfx  data/sounds/beatt2.wav
+      @cmd  riseattack3 120 40 "ANI_FOLLOW5"
+	frame	data/chars/billy/shovel/bat1.png
+      sound data/sounds/bat.wav
+      frame	data/chars/billy/shovel/bat2.png
+      attack  105 105 90 34 16 1
+      dropv 3.5 2
+	frame	data/chars/billy/shovel/bat3.png
+      attack  0 0 0 0 0
+      delay   18
+	frame	data/chars/billy/shovel/bat4.png
+      delay   2
+      offset	77 170
+	bbox	60 55 40 100
+      frame	data/chars/billy/shovel/w4.png
+
+anim  follow5
+      loop	0
+	delay	8
+	offset	92 184
+	bbox	75 69 40 100
+      hitfx  data/sounds/beatt2.wav
+	frame	data/chars/billy/shovel/bat1.png
+      sound data/sounds/bat.wav
+      frame	data/chars/billy/shovel/bat2.png
+      attack16  105 105 90 34 16 1
+      forcedirection 99
+      dropv 3.5 2
+	frame	data/chars/billy/shovel/bat3.png
+      attack16  0 0 0 0 0
+      delay   18
+	frame	data/chars/billy/shovel/bat4.png
+      delay   2
+      offset	77 170
+	bbox	60 55 40 100
+      frame	data/chars/billy/shovel/w4.png
+
+#Headbutt
+anim RUNATTACK
+    jumpframe 0 0 1 0
+	delay	13
+	offset	77 170
+	bbox	60 55 40 100
+      hitfx  data/sounds/beatt2.wav
+	frame	data/chars/billy/shovel/fa1.png
+      delay	12
+      attack  90 68 60 34 12 1
+      dropv 3.5 1.5
+	frame	data/chars/billy/shovel/fa2.png
+      attack  0 0 0 0 0
+	frame	data/chars/billy/shovel/fa2.png
+      delay	6
+      frame	data/chars/billy/shovel/w4.png
+      delay	1
+      frame	data/chars/billy/shovel/w4.png
+
+anim attackboth
+	loop	0
+	delay	7
+      flipframe 0
+	offset	92 184
+	bbox	75 69 40 100
+      hitfx  data/sounds/beatt2.wav
+	frame	data/chars/billy/shovel/bat1.png
+      sound data/sounds/bat.wav
+      frame	data/chars/billy/shovel/bat2.png
+      attack  105 105 90 34 16 1
+      dropv 3.5 2
+	frame	data/chars/billy/shovel/bat3.png
+      attack  0 0 0 0 0
+      delay   18
+	frame	data/chars/billy/shovel/bat4.png
+      delay   2
+      offset	77 170
+	bbox	60 55 40 100
+      frame	data/chars/billy/shovel/w4.png
+
+
+anim freespecial
+	loop	0
+	delay	13
+      offset	77 170
+	bbox	60 55 40 100
+      @cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN2")
+      @cmd	kickObject "ANI_FOLLOW4" 0 50 30
+      @cmd	finisher "ANI_PAIN2" "ANI_FOLLOW1" 0 180 50 0 0
+      @cmd  riseattack3 120 40 "ANI_FOLLOW6"
+      frame	data/chars/billy/shovel/aa1.png
+      delay	9
+      attack2  90 68 60 34 6 0
+      dropv 3.5 1.5
+      @cmd  knife 75 20 70 90 "ANI_FOLLOW2"
+	frame	data/chars/billy/shovel/aa2.png
+      attack2 0 0 0 0 0
+      @cmd  knife 75 20 70 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/shovel/aa2.png
+      frame	data/chars/billy/shovel/w4.png
+      delay	1
+      frame	data/chars/billy/shovel/w4.png
+
+anim  follow6
+	loop	0
+	delay	13
+      offset	77 170
+	bbox	60 55 40 100
+      @cmd ani0020 openborconstant("ANI_FOLLOW7") openborconstant("ANI_PAIN15")
+      @cmd	kickObject "ANI_FOLLOW4" 0 50 30
+      @cmd	finisher "ANI_PAIN15" "ANI_FOLLOW7" 0 180 50 0 0
+      frame	data/chars/billy/shovel/aa1.png
+      delay	9
+      attack15  90 68 60 34 6 0
+      dropv 3.5 1.5
+      forcedirection 1
+      @cmd  knife 75 20 70 90 "ANI_FOLLOW2"
+	frame	data/chars/billy/shovel/aa2.png
+      attack15 0 0 0 0 0
+      @cmd  knife 75 20 70 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/shovel/aa2.png
+      frame	data/chars/billy/shovel/w4.png
+      delay	1
+      frame	data/chars/billy/shovel/w4.png
+
+anim  follow4
+      loop	0
+      delay	4
+	offset	77 170
+      @cmd    antiwall3 55 -20 0
+	frame	data/chars/billy/shovel/bkick1.png
+      @cmd    antiwall3 83 -20 0
+      frame	data/chars/billy/shovel/bkick1.png
+      @cmd    antiwall3 83 -11 0
+      frame	data/chars/billy/shovel/bkick1.png
+	delay	25
+	@cmd	shootObject 50 1 0 1.5 0 0
+	frame	data/chars/billy/shovel/bkick2.png
+      bbox	60 55 40 100
+	delay	2
+      attack  0 0 0 0 0 0
+      frame	data/chars/billy/shovel/w4.png
+
+anim follow1
+      loop	0
+	delay	9
+      offset	77 170
+	bbox	60 55 40 100
+      range -45 180
+      rangez -50 50
+      flipframe 4
+      hitfx  data/sounds/beatt2.wav
+      frame	data/chars/billy/shovel/aaaa1.png
+      frame	data/chars/billy/shovel/aaaa2.png
+      attack  90 68 60 34 6 1
+      dropv 3.5 2
+      @cmd  knife 75 20 70 90 "ANI_FOLLOW2"
+	frame	data/chars/billy/shovel/aaaa3.png
+      delay	10
+      attack 0 0 0 0 0
+      frame	data/chars/billy/shovel/aaaa4.png
+      delay	18
+      offset	122 170
+      bbox	105 55 40 100
+      frame	data/chars/billy/shovel/aaaa55.png
+      offset	77 170
+      bbox	60 55 40 100
+      delay	10
+      frame	data/chars/billy/shovel/wu1.png
+      delay	1
+      frame	data/chars/billy/shovel/w4.png
+
+anim follow7
+      loop	0
+	delay	9
+      offset	77 170
+	bbox	60 55 40 100
+      range -45 180
+      rangez -50 50
+      flipframe 4
+      hitfx  data/sounds/beatt2.wav
+      frame	data/chars/billy/shovel/aaaa1.png
+      frame	data/chars/billy/shovel/aaaa2.png
+      attack16  90 68 60 34 6 1
+      forcedirection 99
+      dropv 3.5 2
+      @cmd  knife 75 20 70 90 "ANI_FOLLOW2"
+	frame	data/chars/billy/shovel/aaaa3.png
+      delay	10
+      attack16 0 0 0 0 0
+      frame	data/chars/billy/shovel/aaaa4.png
+      delay	18
+      offset	122 170
+      bbox	105 55 40 100
+      frame	data/chars/billy/shovel/aaaa55.png
+      offset	77 170
+      bbox	60 55 40 100
+      delay	10
+      frame	data/chars/billy/shovel/wu1.png
+      delay	1
+      frame	data/chars/billy/shovel/w4.png
+
+anim freespecial2
+	loop	0
+	delay	13
+      offset	104 170
+	bbox	87 55 40 100
+      @cmd ani0020 openborconstant("ANI_FOLLOW2") openborconstant("ANI_PAIN2")
+      @cmd	finisher "ANI_PAIN2" "ANI_FOLLOW2" -180 45 50 0 0
+      frame	data/chars/billy/shovel/bk1.png
+      delay	9
+      attack2  25 95 90 40 6 0
+      dropv 3.5 1.5
+	frame	data/chars/billy/shovel/bk2.png
+      attack2 0 0 0 0 0
+      frame	data/chars/billy/shovel/bk2.png
+      delay	7
+      frame	data/chars/billy/shovel/bk1.png
+      frame	data/chars/billy/shovel/bk0.png
+      delay	1
+      frame	data/chars/billy/shovel/bk0.png
+
+anim follow2
+	loop	0
+	delay	8
+	offset	104 170
+	bbox	87 55 40 100
+      flipframe 5
+      range -180 45
+      rangez -50 50
+      hitfx  data/sounds/beatt2.wav
+	frame	data/chars/billy/shovel/bk3.png
+      frame	data/chars/billy/shovel/bk4.png
+      attack  25 52 90 67 6 1
+      dropv 3.5 1.5
+	frame	data/chars/billy/shovel/bk5.png
+      attack  0 0 0 0 0
+	frame	data/chars/billy/shovel/bk6.png
+	frame	data/chars/billy/shovel/bk7.png
+      delay	1
+      frame	data/chars/billy/shovel/bk0.png
+
+anim walkoff
+	loop	0
+	delay	11
+	offset	77 170
+	bbox	60 55 40 100
+      landframe 4
+      @cmd  nomoveidle2 "ANI_FOLLOW25"
+      @cmd  stopz
+      @cmd  stopz2
+      @cmd    degravity 0.27
+	frame	data/chars/billy/shovel/j1.png
+      delay	10
+      @cmd  leaper 1 0 0
+      frame	data/chars/billy/shovel/j22.png
+      @cmd    degravity -0.50
+      frame	data/chars/billy/shovel/j22.png
+      delay	100
+      frame	data/chars/billy/shovel/j22.png
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/billy/shovel/rise2.png
+
+anim follow25
+	loop	0
+	delay	11
+	offset	77 170
+	bbox	60 55 40 100
+      landframe 4
+      @cmd  stopz
+      @cmd  stopz2
+      @cmd    degravity 0.27
+	frame	data/chars/billy/shovel/j1.png
+      delay	10
+      frame	data/chars/billy/shovel/j22.png
+      @cmd    degravity 0
+      frame	data/chars/billy/shovel/j22.png
+      delay	100
+      @cmd    degravity -0.50
+      frame	data/chars/billy/shovel/j22.png
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/billy/shovel/rise2.png
+
+anim follow32 # walkoff clone for L/R climb
+	loop	0
+	delay	11
+	offset	77 170
+	bbox	60 55 40 100
+      landframe 4
+      @cmd  stopz
+      @cmd  stopz2
+      @cmd    degravity 0.27
+      @cmd  leaper 1.5 0 0
+	frame	data/chars/billy/shovel/j1.png
+      delay	10
+      frame	data/chars/billy/shovel/j22.png
+      @cmd    degravity -0.50
+      frame	data/chars/billy/shovel/j22.png
+      delay	100
+      frame	data/chars/billy/shovel/j22.png
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/billy/shovel/rise2.png
+
+anim follow33 # walkoff clone for L/R climb
+	loop	0
+	delay	11
+	offset	77 170
+	bbox	60 55 40 100
+      landframe 4
+      flipframe 0
+      @cmd  stopz
+      @cmd  stopz2
+      @cmd    degravity 0.27
+      @cmd  leaper -1.5 0 0
+	frame	data/chars/billy/shovel/j1.png
+      delay	10
+      frame	data/chars/billy/shovel/j22.png
+      @cmd    degravity -0.50
+      frame	data/chars/billy/shovel/j22.png
+      delay	100
+      frame	data/chars/billy/shovel/j22.png
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/billy/shovel/rise2.png
+
+anim JUMPDELAY
+      loop	0
+	delay	12
+      offset	77 170
+	bbox	60 55 40 100
+      frame	data/chars/billy/shovel/j1.png
+
+anim RUNJUMP #Somersault
+
+	jumpframe 1 6.5 3 0
+	landframe 6
+	offset	77 170
+      bbox	60 90 55 50
+	delay   4
+	sound data/chars/billy/dragon2.wav
+     frame	data/chars/billy/shovel/j1.png
+	delay 12
+	sound data/sounds/bat.wav
+      frame	data/chars/billy/shovel/somersault_0.png
+      frame	data/chars/billy/shovel/somersault_1.png
+      frame	data/chars/billy/shovel/somersault_2.png
+      frame	data/chars/billy/shovel/somersault_3.png
+	delay -1000
+      frame	data/chars/billy/shovel/jk4.png
+	delay 15
+      frame	data/chars/billy/shovel/rise2.png
+
+#Somersault Kick
+anim FOLLOW102
+
+	landframe 2
+	offset	77 170
+      bbox	60 90 55 50
+	delay   25
+	hitfx  data/sounds/beatt2.wav
+	attack 90 115 95 30 18 1
+     frame	data/chars/billy/shovel/flying_kick_0.png
+	delay -1000
+	attack 0
+      frame	data/chars/billy/shovel/jk4.png
+	delay 15
+      frame	data/chars/billy/shovel/rise2.png
+
+anim JUMPLAND
+    @script
+        void self = getlocalvar("self");
+
+        if(frame==0){
+          changelevelproperty("scrollspeed", 1);
+        }
+    @end_script
+
+    offset	77 170
+    bbox	60 90 55 50
+	delay   12
+    sound   data/sounds/step.wav
+    @cmd  camera
+    @cmd  degravity -1
+        frame	data/chars/billy/shovel/j0.png
+
+anim JUMP
+	offset	77 170
+      bbox	60 90 55 50
+	delay   -1000
+
+      @cmd    degravity -1
+	frame	data/chars/billy/shovel/j22.png
+
+anim FORWARDJUMP
+      offset	77 170
+      bbox	60 90 55 50
+	delay   -1000
+
+      @cmd    degravity -1
+	frame	data/chars/billy/shovel/j22.png
+
+anim freespecial3
+	loop	0
+	offset	77 170
+      bbox	60 90 55 50
+	delay	7
+      hitfx  data/sounds/beatt2.wav
+      @cmd    antiwall4 20  "ANI_FOLLOW113"
+	frame	data/chars/billy/shovel/j22.png
+      bbox	0 0 0 0
+      delay	8
+      attack  90 112 60 40 10 1
+      dropv 3.5 1.5
+	frame	data/chars/billy/shovel/ja1.png
+      bbox	60 90 55 50
+      frame	data/chars/billy/shovel/ja1.png
+      frame	data/chars/billy/shovel/ja1.png
+      attack  0 0 0 0 0 0
+      delay	7
+      frame	data/chars/billy/shovel/j22.png
+
+anim freespecial5
+      @script
+    void vSelf = getlocalvar("self");
+
+    if(frame==0){
+      int  iTime = openborvariant("elapsed_time");
+
+      changeentityproperty(vSelf, "velocity", 0, 0 , 0); // This is to stop entity from moving forward
+      changeentityproperty(vSelf, "tosstime", iTime + 160);
+    }
+@end_script
+	loop	0
+      delay	7
+	offset	77 170
+      counterattack 1
+      hitfx  data/sounds/beatt2.wav
+	frame	data/chars/billy/shovel/j22.png
+      offset	77 135
+      delay	8
+      sound data/chars/billy/special.wav
+	frame	data/chars/billy/shovel/special1.png
+      attack  10 85 60 55 16 1
+      dropv 3 3
+      forcedirection 1
+      frame	data/chars/billy/shovel/special2.png
+      attack  0 0 0 0 0 0
+      frame	data/chars/billy/shovel/special3.png
+      attack  80 85 63 55 16 1
+      dropv 3 3
+      forcedirection -1
+      frame	data/chars/billy/shovel/special4.png
+      attack  0 0 0 0 0 0
+      frame	data/chars/billy/shovel/special1.png
+      attack  10 85 60 55 16 1
+      dropv 3 3
+      forcedirection 1
+      frame	data/chars/billy/shovel/special2.png
+      attack  0 0 0 0 0 0
+      frame	data/chars/billy/shovel/special3.png
+      attack  80 85 63 55 16 1
+      dropv 3 3
+      forcedirection -1
+      frame	data/chars/billy/shovel/special4.png
+      attack  0 0 0 0 0 0
+      offset	77 170
+      frame	data/chars/billy/shovel/j22.png
+
+anim  follow19
+      loop	0
+	delay	4
+      offset	77 170
+      jumpframe 2 0 2
+      landframe 7
+      hitfx  data/sounds/beatt2.wav
+      attack  85 75 65 40 16 1
+      dropv 3.5 2
+      @cmd    degravity -0.27
+      @cmd  knife 75 20 0 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/shovel/jk3.png
+      @cmd  knife 75 20 0 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/shovel/jk3.png
+      @cmd  knife 75 20 0 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/shovel/jk3.png
+      @cmd  knife 75 20 0 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/shovel/jk3.png
+      attack  0 0 0 0 0 0
+      frame	data/chars/billy/shovel/jk4.png
+      delay	20
+      frame	data/chars/billy/shovel/jk4.png
+      delay	200
+      frame	data/chars/billy/shovel/jk4.png
+      delay	30
+      @cmd    degravity -1
+      frame	data/chars/billy/shovel/rise2.png
+      delay	6
+      frame	data/chars/billy/shovel/j0.png
+
+anim pain
+	loop	0
+	delay 40
+	offset	77 170
+	bbox	60 55 40 100
+	frame	data/chars/billy/shovel/pain1.png
+
+anim freespecial21
+      loop	0
+      delay	9
+	offset	77 170
+      jumpframe 1 5 0
+      landframe 7
+      dropframe 2
+      flipframe 7
+      counterattack 1
+      hitfx  data/sounds/beatt2.wav
+      @cmd    degravity -1
+      frame	data/chars/billy/shovel/j1.png
+      sound data/chars/billy/dragon.wav
+	frame	data/chars/billy/shovel/j22.png
+      offset	77 160
+      frame	data/chars/billy/shovel/special1.png
+	frame	data/chars/billy/shovel/special1.png
+      attack4  10 85 50 55 16 1
+      dropv 3.5 1.5
+      frame	data/chars/billy/shovel/special2.png
+      frame	data/chars/billy/shovel/special2.png
+      attack4  0 0 0 0 0 0
+      delay	200
+      frame	data/chars/billy/shovel/special2.png
+      offset	77 170
+      delay	6
+      frame	data/chars/billy/shovel/j00.png
+      delay	1
+      frame	data/chars/billy/shovel/w4.png
+
+anim FOLLOW113
+      @script
+    void vSelf = getlocalvar("self");
+
+    if(frame==0){
+      int  iTime = openborvariant("elapsed_time");
+
+      changeentityproperty(vSelf, "velocity", 0, 0 , 0); // This is to stop entity from moving forward
+      changeentityproperty(vSelf, "tosstime", iTime + 90);
+    }
+@end_script
+            flipframe 2
+            delay	12
+            offset	77 140
+            hitfx  data/sounds/beatt2.wav
+            @cmd    degravity -0.20
+        frame	data/chars/billy/shovel/jk4.png
+            offset	97 150
+            sound data/chars/billy/dragon2.wav
+        frame	data/chars/billy/shovel/bk1.png
+            offset	    77 140
+            delay	    -1000
+            jumpframe   this -1.5 4
+            attack      60 70 85 80 16 1
+            dropv       3.5 2
+            @cmd        knife 75 20 0 90 "ANI_FOLLOW2"
+        frame	data/chars/billy/shovel/dive_kick_0.png
+            landframe   this
+            attack      0 0 0 0 0 0
+            delay	    25
+            offset	    77 170
+            @cmd        degravity -1
+        frame	data/chars/billy/shovel/rise2.png
+            delay	6
+        frame	data/chars/billy/shovel/j0.png
+
+anim  follow39 # spikeh effect
+	loop	0
+	offset	122 170
+	delay   8
+      jumpframe 1 0 1
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd  stop
+	frame	data/chars/billy/fall03.png
+      frame	data/chars/billy/fall03.png
+      delay   10
+      frame	data/chars/billy/fall03.png
+      @cmd  stop
+      frame	data/chars/misc/empty.png
+      frame	data/chars/misc/empty.png
+      delay   20
+      frame	data/chars/misc/empty.png
+      delay   500
+      frame	data/chars/misc/empty.png
+      delay   8
+	frame	data/chars/misc/empty.png
+      offset	77 170
+	frame	data/chars/misc/empty.png
+
+anim  follow49 # water effect
+	loop	0
+	offset	77 170
+	delay   4
+      spawnframe 0 0 55 0 0
+	custentity water1
+      landframe 6
+      frame	data/chars/misc/empty.png
+      frame	data/chars/misc/empty.png
+      frame	data/chars/misc/empty.png
+      frame	data/chars/misc/empty.png
+      frame	data/chars/misc/empty.png
+      delay   500
+      frame	data/chars/misc/empty.png
+      delay   200
+	frame	data/chars/misc/empty.png
+
+anim  follow50 # spikeh2 effect for st2 belt
+	loop	0
+	offset	122 170
+	delay   8
+      flipframe 8
+      jumpframe 0 2.5 1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/billy/fall03.png
+      frame	data/chars/billy/fall03.png
+      delay   10
+      frame	data/chars/billy/fall03.png
+      frame	data/chars/misc/empty.png
+      frame	data/chars/billy/fall03.png
+      frame	data/chars/misc/empty.png
+      delay   20
+      frame	data/chars/misc/empty.png
+      delay   500
+      frame	data/chars/misc/empty.png
+      delay   8
+	frame	data/chars/misc/empty.png
+      offset	77 170
+	frame	data/chars/misc/empty.png
+
+anim follow51 # idle clone for end climb up use because of camera2
+     loop 0
+     delay 5
+     offset 77 170
+     bbox 60 55 40 100
+     @cmd  degravity -1
+     @cmd  camera2
+     frame data/chars/billy/idle.png
+     frame data/chars/billy/idle.png
+
+anim follow52 # end st8
+     loop 0
+     delay 13
+     offset 77 170
+     spawnframe 1 0 0 0 0
+     custentity bilend
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+     @cmd stwall 1 0 0
+	@cmd  spawn01  "shovelclear" 25 20 1
+     frame	data/chars/billy/w4.png
+     frame	data/chars/billy/empty.png
+     bbox 60 55 40 100
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+
+anim follow53 # end st8
+     loop 0
+     delay 13
+     offset 77 170
+     spawnframe 1 0 0 0 0
+     custentity bilend2
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+     @cmd stwall 1 0 0
+	@cmd  spawn01  "shovelclear" 25 20 1
+     frame	data/chars/billy/w4.png
+     frame	data/chars/billy/empty.png
+     bbox 60 55 40 100
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+
+anim follow54
+     loop 0
+     delay 13
+     offset 77 170
+     spawnframe 1 0 0 0 0
+     custentity bilend3
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+     @cmd stwall 1 0 0
+	@cmd  spawn01  "shovelclear" 25 20 1
+     frame	data/chars/billy/w4.png
+     frame	data/chars/billy/empty.png
+     bbox 60 55 40 100
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+
+anim follow55
+     loop 0
+     delay 13
+     offset 77 170
+     spawnframe 1 0 0 0 0
+     custentity bilend4
+     @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+     @cmd stwall 1 0 0
+	@cmd  spawn01  "shovelclear" 25 20 1
+     frame	data/chars/billy/w4.png
+     frame	data/chars/billy/empty.png
+     bbox 60 55 40 100
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+     delay 3000
+     frame	data/chars/billy/empty.png
+
+#ANI_DRAGON_HURRICANE_KICK
+anim FOLLOW105
+
+	landframe 10
+
+      delay	7
+	offset	77 170
+      hitfx  data/sounds/beatt2.wav
+      counterattack 1
+	frame	data/chars/billy/shovel/j22.png
+      offset	77 135
+      delay	8
+      sound data/chars/billy/special.wav
+     	frame	data/chars/billy/shovel/special1.png
+      attack  10 85 60 55 24 1
+      dropv 3 3
+      forcedirection 1
+      frame	data/chars/billy/shovel/special2.png
+      attack  0 0 0 0 0 0
+      frame	data/chars/billy/shovel/special3.png
+      attack  80 85 63 55 24 1
+      dropv 3 3
+      forcedirection -1
+      frame	data/chars/billy/shovel/special4.png
+      attack  0 0 0 0 0 0
+      frame	data/chars/billy/shovel/special1.png
+      attack  10 85 60 55 24 1
+      dropv 3 3
+      forcedirection 1
+      frame	data/chars/billy/shovel/special2.png
+      attack  0 0 0 0 0 0
+      frame	data/chars/billy/shovel/special3.png
+      attack  80 85 63 55 24 1
+      dropv 3 3
+      forcedirection -1
+      frame	data/chars/billy/shovel/special4.png
+      	delay	-1000
+	attack  0 0 0 0 0 0
+      offset	77 170
+      frame	data/chars/billy/shovel/j22.png
+	delay 20
+	frame 	data/chars/billy/shovel/rise2.png
+
+# ANI_DRAGON_HURRICANE_KICK_DOUBLE_1
+# Double team hurricane kick for "main" player. This will be used
+# by the player who initiates a double hurricane kick.
+anim FOLLOW106
+
+	range 	-60 60
+	rangea 	-60 60
+	rangez	-60 60
+
+    	landframe 14
+
+	#0
+	delay	3
+	offset	87 170
+      	hitfx  data/sounds/beatt2.wav
+      	counterattack 1
+	movez	1
+	sound 	data/chars/billy/dragon2.wav
+	frame	data/chars/billy/shovel/j00.png
+
+	# Extra frame here to offset a second shout.
+	#1
+	delay	4
+	sound 	data/chars/billy/dragon2.wav
+	frame	data/chars/billy/shovel/j00.png
+
+	#2
+	offset	87 135
+      	delay	8
+      	movez	0
+	sound 	data/chars/billy/special.wav
+	frame	data/chars/billy/shovel/special1.png
+
+	#3
+	offset	97 135
+	attack  0 85 70 55 42 1
+      	dropv 	3 4
+      	forcedirection 1
+	frame	data/chars/billy/shovel/special2.png
+
+	#4
+	offset	87 135
+	attack  0 0 0 0 0 0
+	movez	-1
+	frame	data/chars/billy/shovel/special3.png
+
+	#5
+	offset	67 135
+	attack  0 0 0 0 0 0
+	movez	0
+	frame	data/chars/billy/shovel/special3.png
+
+	#6
+	offset 	57 135
+	attack  70 85 73 55 42 1
+      	dropv 	3 4
+      	forcedirection -1
+	frame	data/chars/billy/shovel/special4.png
+
+	#7
+	offset 	67 135
+      	attack  0 0 0 0 0 0
+	movez	1
+	frame	data/chars/billy/shovel/special1.png
+
+	#8
+	offset 	87 135
+      	attack  0 0 0 0 0 0
+	movez	0
+	frame	data/chars/billy/shovel/special1.png
+
+	#9
+	offset 	97 135
+      	attack  0 85 70 55 42 1
+      	dropv 	3 4
+      	forcedirection 1
+	frame	data/chars/billy/shovel/special2.png
+
+	#10
+	offset 	97 135
+	attack  0 0 0 0 0 0
+	movez	-1
+	frame	data/chars/billy/shovel/special3.png
+
+	#11
+	offset 	67 135
+	attack  0 0 0 0 0 0
+	movez	0
+	frame	data/chars/billy/shovel/special3.png
+
+	#12
+	offset  57 135
+	attack  70 85 73 55 42 1
+      	dropv 	3 4
+      	forcedirection -1
+	frame	data/chars/billy/shovel/special4.png
+
+	#13
+	delay	-1000
+	offset	77 170
+	attack  0 0 0 0 0 0
+      	move 	15
+	frame	data/chars/billy/shovel/j22.png
+
+	#14
+	delay 	20
+	move 	0
+	frame 	data/chars/billy/shovel/rise2.png
+
+
+# ANI_DRAGON_HURRICANE_KICK_DOUBLE_2
+# Double team hurricane kick for other player. This will be used
+# when other player initiates a double hurricane kick.
+anim FOLLOW107
+
+	flipframe 12
+      	landframe 13
+
+	delay	7
+	offset	67 135
+	sound 	data/chars/billy/dragon2.wav
+      	hitfx  	data/sounds/beatt2.wav
+      	counterattack 1
+	movez	-1
+	frame	data/chars/billy/shovel/jk2.png
+
+	offset	67 135
+      	delay	8
+	movez 	0
+      	sound 	data/chars/billy/special.wav
+	frame	data/chars/billy/shovel/special3.png
+
+	offset	57 135
+	attack  0 85 70 55 42 1
+      	dropv 3 4
+      	forcedirection 1
+	frame	data/chars/billy/shovel/special4.png
+
+	offset	67 135
+	attack  0 0 0 0 0 0
+	movez	1
+	frame	data/chars/billy/shovel/special1.png
+
+	offset	87 135
+	attack  0 0 0 0 0 0
+	movez	0
+	frame	data/chars/billy/shovel/special1.png
+
+	offset 	97 135
+	attack  70 85 73 55 42 1
+      	dropv 	3 4
+      	forcedirection -1
+	frame	data/chars/billy/shovel/special2.png
+
+	offset 	87 135
+      	attack  0 0 0 0 0 0
+	movez	-1
+	frame	data/chars/billy/shovel/special3.png
+
+	offset 	67 135
+      	attack  0 0 0 0 0 0
+	movez	0
+	frame	data/chars/billy/shovel/special3.png
+
+	offset 	57 135
+      	attack  0 85 70 55 42 1
+      	dropv 	3 4
+      	forcedirection 1
+	frame	data/chars/billy/shovel/special4.png
+
+	offset 	67 135
+	attack  0 0 0 0 0 0
+	movez	1
+	frame	data/chars/billy/shovel/special1.png
+
+	offset 	87 135
+	attack  0 0 0 0 0 0
+	movez	0
+	frame	data/chars/billy/shovel/special1.png
+
+	offset  97 135
+	attack  70 85 73 55 42 1
+      	dropv 	3 4
+      	forcedirection -1
+	frame	data/chars/billy/shovel/special2.png
+
+	delay	-1000
+	offset	77 170
+	attack  0 0 0 0 0 0
+      	move 	-15
+	frame	data/chars/billy/shovel/j22.png
+
+	delay 	20
+	move 	0
+	frame 	data/chars/billy/shovel/rise2.png
+
+#jumping spin kick
+anim FOLLOW101
+      loop	0
+      delay	8
+      followcond 1
+      followanim 19
+      jumpframe 2 3 2.5
+      landframe 17
+      offset	77 170
+      hitfx  data/sounds/beatt2.wav
+      @cmd    degravity -0.20
+      frame	data/chars/billy/shovel/j0.png
+      sound data/chars/billy/dragon2.wav
+      delay	2.5
+      frame	data/chars/billy/shovel/jk1.png
+      frame	data/chars/billy/shovel/jk1.png
+      frame	data/chars/billy/shovel/jk1.png
+      frame	data/chars/billy/shovel/jk1.png
+      frame	data/chars/billy/shovel/jk2.png
+      frame	data/chars/billy/shovel/jk2.png
+      frame	data/chars/billy/shovel/jk2.png
+      frame	data/chars/billy/shovel/jk2.png
+      attack  85 75 65 40 16 1
+      dropv 3.5 2
+      @cmd  knife 75 20 0 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/shovel/jk3.png
+      @cmd  knife 75 20 0 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/shovel/jk3.png
+      @cmd  knife 75 20 0 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/shovel/jk3.png
+      @cmd  knife 75 20 0 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/shovel/jk3.png
+      @cmd  knife 75 20 0 90 "ANI_FOLLOW2"
+      frame	data/chars/billy/shovel/jk3.png
+      attack  0 0 0 0 0 0
+      delay	15
+      frame	data/chars/billy/shovel/jk4.png
+      @cmd    degravity -0.50
+      frame	data/chars/billy/shovel/jk4.png
+      delay	200
+      frame	data/chars/billy/shovel/jk4.png
+      delay	25
+      @cmd    degravity -1
+      frame	data/chars/billy/shovel/rise2.png
+      delay	6
+      frame	data/chars/billy/shovel/j0.png
+
+# Drop weapon, then assume defense.
+anim BLOCK
+    weaponframe 0 0 1
+     delay 1
+     offset 77 170
+     bbox 60 55 40 100
+     @cmd  clearL
+     @cmd  degravity -1
+     @cmd  nograb 1
+     @cmd  camera
+     frame data/chars/billy/block_0.png
+
+anim FOLLOW100 #Back Kick
+	loop	0
+	delay	13
+      offset	104 170
+      bbox	87 55 40 100
+      @cmd ani0020 openborconstant("ANI_FOLLOW2") ANI_PAIN_STUN_FRONT
+      @cmd	finisher "ANI_PAIN2" "ANI_FOLLOW2" -180 45 50 0 0
+      frame	data/chars/billy/shovel/bk1.png
+      delay	9
+      attack2  25 95 90 40 6 0
+      dropv 3.5 1.5
+	frame	data/chars/billy/shovel/bk2.png
+      attack2 0 0 0 0 0
+      frame	data/chars/billy/shovel/bk2.png
+      delay	7
+      frame	data/chars/billy/shovel/bk1.png
+      frame	data/chars/billy/shovel/bk0.png
+      delay	1
+      frame	data/chars/billy/shovel/bk0.png
+
+anim FOLLOW109 #TKD Kick
+        fastattack  1
+        delay	12
+        offset	104 170
+        bbox	87 55 40 100
+        @cmd ani0020 ANI_DRAGON_TKD_FINISH ANI_PAIN_STUN_FRONT
+
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/shovel/bk1.png
+        offset	77 170
+        attack14 50 100 120 65 4 0
+        dropv 3.5 1.5
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/shovel/TKD_0.png
+
+        offset	104 170
+        attack2 0 0 0 0 0
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/shovel/bk1.png
+
+        offset	77 170
+        attack2  90 68 60 34 6 0
+        dropv 3.5 1.5
+        #Deflect knife
+        @cmd  knife 75 20 70 90 "ANI_FOLLOW2"
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/shovel/TKD_2.png
+
+        offset	104 170
+        attack2 0 0 0 0 0
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/shovel/bk1.png
+
+        delay   1
+        offset	77 170
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/shovel/idle.png
+
+anim FOLLOW108 #TKD finisher
+        fastattack  1
+        delay	12
+        offset	104 170
+        bbox	87 55 40 100
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/shovel/bk1.png
+        delay   9
+        offset	77 170
+        attack14 50 100 120 65 2 0
+        dropv 3.5 1.5
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/shovel/TKD_0.png
+
+        offset	104 170
+        attack2 0 0 0 0 0
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/shovel/bk1.png
+
+        attack2  25 95 100 40 2 0
+        dropv 3.5 1.5
+    frame	data/chars/billy/shovel/bk2.png
+
+        attack2 0 0 0 0 0
+    frame	data/chars/billy/shovel/bk1.png
+
+        offset	77 170
+        attack 50 55 120 65 2 0
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/shovel/TKD_1.png
+
+        offset	104 170
+        attack2 0 0 0 0 0
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame	data/chars/billy/shovel/bk1.png
+
+        attack14  25 95 100 40 2 0
+        dropv 3.5 1.5
+    frame	data/chars/billy/shovel/bk2.png
+
+        attack2 0 0 0 0 0
+    frame	data/chars/billy/shovel/bk1.png
+        delay   1
+        @cmd changeentityproperty getlocalvar("self") "animation" ANI_DRAGON_TKD_FINISH_2
+    frame	data/chars/billy/shovel/bk1.png
+
+anim FOLLOW110 #TKD Finisher Part 2
+
+        hitfx  data/sounds/beatt2.wav
+        delay   8
+        offset	104 170
+        bbox	87 55 40 100
+        move    -10
+	frame	data/chars/billy/shovel/bk3.png
+        move    0
+    frame	data/chars/billy/shovel/bk4.png
+        attack  25 52 90 67 6 1
+        dropv 3.5 1.5
+	frame	data/chars/billy/shovel/bk5.png
+        attack  0 0 0 0 0
+	frame	data/chars/billy/shovel/bk6.png
+	frame	data/chars/billy/shovel/bk7.png
+      delay	1
+    frame	data/chars/billy/shovel/bk0.png
+        delay   1
+        offset	77 170
+        attack2 0 0 0 0 0
+        # Change direction (saving sprites)
+        @cmd    dc_direction_flip NULL()
+    frame   data/chars/billy/shovel/idle.png
+
+    anim FOLLOW111 #JUMPING SIDE KICK
+	loop	0
+	offset	77 170
+      bbox	60 90 55 50
+      hitfx  data/sounds/beatt2.wav
+	delay	7
+      @cmd    antiwall4 20  "ANI_FOLLOW113"
+	frame	data/chars/billy/shovel/j22.png
+      bbox	0 0 0 0
+      delay	8
+      attack  90 112 60 40 10 1
+      dropv 3.5 1.5
+	frame	data/chars/billy/shovel/ja1.png
+      bbox	60 90 55 50
+      frame	data/chars/billy/shovel/ja1.png
+      frame	data/chars/billy/shovel/ja1.png
+      attack  0 0 0 0 0 0
+      delay	7
+      frame	data/chars/billy/shovel/j22.png
+
+anim FOLLOW112 #Roundhouse Kick
+
+        hitfx  data/sounds/beatt2.wav
+        delay   12
+        offset	77 166
+        bbox	87 55 40 100
+	frame	data/chars/billy/shovel/bkick1.png
+
+        delay   10
+        offset	77 170
+    frame	data/chars/billy/shovel/roundhouse_0.png
+
+        attack  77 54 100 70 10 1
+        dropv 3.5 1.5
+	frame	data/chars/billy/shovel/roundhouse_1.png
+
+        attack  0
+    frame	data/chars/billy/shovel/roundhouse_2.png
+
+	frame	data/chars/billy/shovel/roundhouse_3.png
+        delay   12
+    frame	data/chars/billy/shovel/roundhouse_4.png
+

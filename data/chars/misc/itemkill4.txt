@@ -1,0 +1,24 @@
+name	itemkill4
+type    none
+nolife 1
+shadow  0
+offscreenkill 3000
+subject_to_gravity 0
+subject_to_hole 0
+subject_to_wall 0
+Subject_to_minz 0
+Subject_to_maxz 0
+
+animationscript data/scripts/itemkill.c
+
+anim idle
+	loop	1
+	delay	5
+	offset	1 1
+      @cmd  kill 1411 600 110
+      frame  data/chars/misc/empty.gif
+      @cmd  kill 1411 600 110
+      frame  data/chars/misc/empty.gif
+      @cmd killentity getlocalvar("self")
+      frame  data/chars/misc/empty.gif
+

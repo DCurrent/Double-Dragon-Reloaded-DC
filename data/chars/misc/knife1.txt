@@ -1,0 +1,177 @@
+name	 knife1
+type	 npc
+shadow	0
+health   1
+nolife   1
+nomove 1 1
+falldie 2
+nodieblink 1
+candamage	enemy
+subject_to_gravity 0
+no_adjust_base	0
+subject_to_hole 1
+subject_to_wall 1
+offscreenkill	1500
+load knife
+
+animationscript 	data/scripts/ani0020.h
+
+anim idle
+	loop      1
+      delay	5
+	offset 20 25
+      hitflash  blood
+      hitfx  data/sounds/knife2.wav
+	followanim 1
+	followcond 1
+      attack 0 10 20 20 20 1 1
+      dropv 3.5 1.5
+      forcedirection -1
+      @cmd    antiwall4 10 "ANI_FOLLOW2"
+      @cmd  knife 20 20 0 20 "ANI_FOLLOW2"
+	frame  data/chars/misc/knife1.gif
+      @cmd    antiwall4 10 "ANI_FOLLOW2"
+      @cmd  knife 20 20 0 20 "ANI_FOLLOW2"
+      frame  data/chars/misc/knife2.gif
+      @cmd    antiwall4 10 "ANI_FOLLOW2"
+      @cmd  knife 20 20 0 20 "ANI_FOLLOW2"
+      frame  data/chars/misc/knife3.gif
+      @cmd    antiwall4 10 "ANI_FOLLOW2"
+      @cmd  knife 20 20 0 20 "ANI_FOLLOW2"
+      frame  data/chars/misc/knife4.gif
+      @cmd    antiwall4 10 "ANI_FOLLOW2"
+      @cmd  knife 20 20 0 20 "ANI_FOLLOW2"
+      frame  data/chars/misc/knife5.gif
+      @cmd    antiwall4 10 "ANI_FOLLOW2"
+      @cmd  knife 20 20 0 20 "ANI_FOLLOW2"
+      frame  data/chars/misc/knife6.gif
+      @cmd    antiwall4 10 "ANI_FOLLOW2"
+      @cmd  knife 20 20 0 20 "ANI_FOLLOW2"
+      frame  data/chars/misc/knife7.gif
+      @cmd    antiwall4 10 "ANI_FOLLOW2"
+      @cmd  knife 20 20 0 20 "ANI_FOLLOW2"
+      frame  data/chars/misc/knife8.gif
+
+anim follow1
+@script
+    void self = getlocalvar("self");
+
+    if(frame==1){
+      killentity(self);
+    }
+@end_script
+        delay     6
+	offset 20 25
+	frame	 data/chars/misc/empty.gif
+	frame	 data/chars/misc/empty.gif
+
+anim follow2
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "subject_to_gravity", 1);
+    }
+@end_script
+	loop      0
+      delay     10
+	offset 20 25
+	landframe 9
+	jumpframe 0 3.5 -1 0
+      sound  data/sounds/knife3.wav
+      @cmd    degravity -0.30
+      @cmd  knife 20 20 0 100 "ANI_FOLLOW2"
+	frame  data/chars/misc/knife8.gif
+      frame  data/chars/misc/knife7.gif
+      frame  data/chars/misc/knife6.gif
+      frame  data/chars/misc/knife5.gif
+	frame  data/chars/misc/knife4.gif
+      frame  data/chars/misc/knife3.gif
+      frame  data/chars/misc/knife2.gif
+      frame  data/chars/misc/knife2.gif
+      frame  data/chars/misc/knife1.gif
+      @cmd	shooter2 "knife" 0 0 0 0 0 0
+	frame	 data/chars/misc/empty.gif
+      @cmd killentity getlocalvar("self")
+	frame	 data/chars/misc/empty.gif
+
+
+
+anim fall
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "subject_to_gravity", 1);
+    }
+@end_script
+	loop      0
+      delay     10
+	offset 20 25
+	landframe 9
+	jumpframe 0 3 -1 0
+	sound  data/sounds/knife3.wav
+      @cmd    degravity -0.30
+	frame  data/chars/misc/knife8.gif
+      frame  data/chars/misc/knife7.gif
+      frame  data/chars/misc/knife6.gif
+      frame  data/chars/misc/knife5.gif
+	frame  data/chars/misc/knife4.gif
+      frame  data/chars/misc/knife3.gif
+      frame  data/chars/misc/knife2.gif
+      frame  data/chars/misc/knife2.gif
+      frame  data/chars/misc/knife1.gif
+      @cmd	shooter2 "knife" 0 0 0 0 0 0
+	frame	 data/chars/misc/empty.gif
+      @cmd killentity getlocalvar("self")
+	frame	 data/chars/misc/empty.gif
+
+anim death
+      loop      0
+      delay     2
+	offset 20 25
+      frame	 data/chars/misc/empty.gif
+      @cmd killentity getlocalvar("self")
+	frame	 data/chars/misc/empty.gif
+
+anim  follow49 # water effect
+	loop	0
+	offset	77 170
+	delay   4
+      spawnframe 0 0 55 0 0
+	custentity water1
+      landframe 6
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      delay   500
+      frame	data/chars/misc/empty.gif
+      delay   200
+	frame	data/chars/misc/empty.gif
+
+anim  follow50 # spikeh2 effect
+      loop   0
+      delay   8
+	offset 20 25
+	jumpframe 0 0.1 1
+	frame  data/chars/misc/knife1.gif
+
+anim follow10 # killer effect
+      loop   0
+      delay   12
+      offset 20 25
+      landframe 4
+      frame  data/chars/misc/knife2.gif
+      frame  data/chars/misc/knife2.gif
+	frame  data/chars/misc/knife2.gif
+      delay   100
+      @cmd killentity getlocalvar("self")
+      frame  data/chars/misc/empty.gif
+      delay   8
+      frame  data/chars/misc/empty.gif
+
+
+
+

@@ -1,0 +1,11 @@
+name	blood
+type	none
+shadow	0
+
+anim idle
+	loop	0
+	delay	20
+	offset	65 58
+	frame	data/chars/misc/blood.gif
+	
+

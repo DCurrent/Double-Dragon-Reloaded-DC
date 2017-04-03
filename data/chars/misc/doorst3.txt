@@ -1,0 +1,58 @@
+name		doorst3
+type		none
+facing		1
+antigravity	100
+subject_to_gravity 0
+subject_to_wall 0
+subject_to_hole 0
+Subject_to_MinZ 0
+Subject_to_MaxZ 0
+offscreenkill	7000
+
+
+anim spawn
+	loop	0
+	delay	50
+	offset	54 191
+	frame  data/chars/misc/doorst300.gif
+	delay	80
+	frame  data/chars/misc/doorst30.gif
+	frame  data/chars/misc/doorst31.gif
+	delay	16
+	sound data/sounds/door.wav
+	frame  data/chars/misc/doorst31.gif
+	frame  data/chars/misc/doorst32.gif
+	frame  data/chars/misc/doorst33.gif
+	frame  data/chars/misc/doorst34.gif
+	delay	42
+	frame  data/chars/misc/doorst35.gif
+	delay	64.5
+	frame  data/chars/misc/doorst35.gif
+	frame  data/chars/misc/doorst35.gif
+	frame  data/chars/misc/doorst35.gif
+	frame  data/chars/misc/doorst35.gif
+	sound data/sounds/door.wav
+	delay	16
+	frame  data/chars/misc/doorst34.gif
+	frame  data/chars/misc/doorst33.gif
+	frame  data/chars/misc/doorst32.gif
+	frame  data/chars/misc/doorst31.gif
+	delay	100
+	frame  data/chars/misc/doorst31.gif
+	delay	150
+	frame  data/chars/misc/doorst30.gif
+	frame  data/chars/misc/doorst300.gif
+
+anim idle
+	loop	1
+	delay	2
+	offset	54 191
+	frame  data/chars/misc/doorst300.gif
+	frame  data/chars/misc/doorst300.gif
+
+
+
+
+
+
+

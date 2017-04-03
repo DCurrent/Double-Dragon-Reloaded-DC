@@ -1,0 +1,22 @@
+name	killer
+type    trap
+nolife 1
+shadow  0
+offscreenkill 6000
+subject_to_gravity 0
+subject_to_hole 0
+subject_to_wall 0
+hostile enemy player
+
+animationscript data/scripts/kill.c
+
+anim idle
+	loop	1
+	delay	5
+	offset	1 1
+      @cmd  kill 2000 600 20
+      frame  data/chars/misc/empty.gif
+      @cmd  kill 2000 600 20
+      frame  data/chars/misc/empty.gif
+
+

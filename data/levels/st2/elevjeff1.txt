@@ -1,0 +1,42 @@
+name	elevjeff1
+type    none
+shadow  0
+facing 1
+offscreenkill 2000
+subject_to_gravity 0
+subject_to_hole 0
+subject_to_wall 0
+nolife  1
+
+
+anim spawn
+	loop	0
+	delay	600
+	offset	100 123
+	frame  data/levels/st2/elevjeff1.gif
+	delay	13
+	@cmd changeentityproperty getlocalvar("self") "velocity" 0 0 1
+	frame  data/levels/st2/elevjeff1.gif
+	frame  data/levels/st2/elevjeff1.gif
+	frame  data/levels/st2/elevjeff1.gif
+	frame  data/levels/st2/elevjeff1.gif
+	frame  data/levels/st2/elevjeff1.gif
+	frame  data/levels/st2/elevjeff1.gif
+	frame  data/levels/st2/elevjeff1.gif
+	frame  data/levels/st2/elevjeff1.gif
+	frame  data/levels/st2/elevjeff1.gif
+	frame  data/levels/st2/elevjeff1.gif
+	frame  data/levels/st2/elevjeff1.gif
+	frame  data/levels/st2/elevjeff1.gif
+
+anim idle
+	loop	0
+	delay	200
+	offset	100 123
+	@cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+	frame  data/levels/st2/elevjeff2.gif
+	delay	13
+	@cmd changeentityproperty getlocalvar("self") "velocity" 0 0 -1
+	frame  data/levels/st2/elevjeff2.gif
+
+

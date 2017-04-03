@@ -1,0 +1,31 @@
+name       delay3
+health       10
+type       enemy
+nomove     1
+antigravity	100
+subject_to_gravity 0
+subject_to_wall 0
+subject_to_hole 0
+offscreenkill	7000
+
+animationscript data/scripts/doorall.c
+
+
+anim idle
+	loop	1
+	delay	7
+	offset 1 1
+	@cmd  dooropen3 -20 20 10 -15 2 "ANI_FOLLOW1"
+	frame  data/chars/misc/empty.gif
+	@cmd  dooropen3 -20 20 10 -15 2 "ANI_FOLLOW1"
+	frame  data/chars/misc/empty.gif
+
+anim follow1
+	loop	0
+	delay	6
+	offset 1 1
+	@cmd killentity getlocalvar("self")
+	frame	 data/chars/misc/empty.gif
+
+
+

@@ -1,0 +1,44 @@
+name		wall4
+type		none
+facing		1
+subject_to_gravity 0
+subject_to_wall 0
+subject_to_hole 0
+offscreenkill	3000
+
+
+anim spawn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==9){
+      changeentityproperty(self, "setlayer", 1);
+    }
+@end_script
+      loop	0
+	delay	13
+	offset	116 213
+      sound  data/sounds/rock2.wav
+      frame  data/chars/misc/wwall1.gif
+	frame  data/chars/misc/wwall2.gif
+	frame  data/chars/misc/wwall3.gif
+	frame  data/chars/misc/wwall4.gif
+      frame  data/chars/misc/wwall5.gif
+	frame  data/chars/misc/wwall6.gif
+	frame  data/chars/misc/wwall7.gif
+      frame  data/chars/misc/wwall8.gif
+      frame  data/chars/misc/wwall8.gif
+	frame  data/chars/misc/wwall9.gif
+	frame  data/chars/misc/wwall10.gif
+
+anim idle
+	loop	0
+	delay	2
+	offset	116 213
+	frame  data/chars/misc/wwall10.gif
+	frame  data/chars/misc/wwall10.gif
+
+
+
+
+

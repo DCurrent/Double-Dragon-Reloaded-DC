@@ -1,0 +1,37 @@
+name		door1
+type		none
+facing		1
+subject_to_wall	0
+offscreenkill	3000
+hostile player
+
+animationscript data/scripts/door1.c
+
+anim spawn
+      loop	0
+	delay	2
+	offset	94 190
+	frame  data/chars/misc/door1.gif
+
+anim idle
+	loop	1
+	delay	2
+	offset	94 190
+      @cmd    riseattack2 70 200 "ANI_FOLLOW1"
+	frame  data/chars/misc/door1.gif
+	frame  data/chars/misc/door1.gif
+
+anim follow1
+      loop	0
+	delay	16
+	offset	94 190
+      frame  data/chars/misc/door1.gif
+	frame  data/chars/misc/door2.gif
+	frame  data/chars/misc/door3.gif
+	delay	300
+	frame  data/chars/misc/door4.gif
+	delay	16
+	frame  data/chars/misc/door3.gif
+	frame  data/chars/misc/door2.gif
+	frame  data/chars/misc/door1.gif
+

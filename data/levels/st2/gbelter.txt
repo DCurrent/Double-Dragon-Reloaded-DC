@@ -1,0 +1,42 @@
+name      gbelter
+type      none
+antigravity 100
+facing 1
+offscreenkill   3000
+
+
+anim idle
+@script
+    void vSelf    = getlocalvar("self");             //Caller.
+    void vEntity;                                     //Target entity placeholder.
+    int iEntity;                                     //Entity enumeration holder.
+    int iType;                                       //Entity type.
+    int iMax      = openborvariant("ent_max");       //Entity count.
+    int Ex;
+    int Ey;
+    int Ez;
+
+     //Enumerate and loop through entity collection.
+    for(iEntity=0; iEntity<iMax; iEntity++){   
+        vEntity = getentity(iEntity);                 //Get target entity from current loop.
+        iType   = getentityproperty(vEntity, "type"); //Get target type.
+
+        //Enemy & player type?
+        if(iType == openborconstant("TYPE_ENEMY") || iType == openborconstant("TYPE_PLAYER") || iType == openborconstant("TYPE_ITEM")){
+          Ex = getentityproperty(vEntity, "x");
+          Ey = getentityproperty(vEntity, "a");
+          Ez = getentityproperty(vEntity, "z");
+
+          if(Ex >= 2003 && Ex <= 2268 && Ez >= 787 && Ez <= 819 && Ey == 388){
+            changeentityproperty(vEntity, "position", Ex+2);
+          }
+        }
+    }
+@end_script
+   loop   1
+   delay   3
+   offset   22 33
+   frame	data/levels/st2/belt4.gif
+   frame	data/levels/st2/belt4.gif
+
+

@@ -1,0 +1,132 @@
+name	bolowood
+health	100
+speed	17
+type	none
+subtype       chase
+shadow	1
+nolife        1
+grabdistance 40
+jumpheight 6.5
+jumpspeed 20
+antigravity -100
+falldie 2
+nodieblink      1
+noquake 1 1
+bounce 1
+risetime 0 -50
+aggression      20
+projectilehit   player
+hostile player platform
+candamage player 
+diesound data/sounds/die1.wav
+modelflag 1
+
+load	wood3
+load	Empty2
+
+animationscript 	data/scripts/ani0020.h
+
+palette   data/chars/bolo/w4.gif
+alternatepal data/chars/bolo/map1.gif
+alternatepal data/chars/bolo/map2.gif
+alternatepal data/chars/bolo/map3.gif
+alternatepal data/chars/bolo/map4.gif
+
+
+anim spawn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	25
+	offset	77 219
+	frame	data/chars/bolo/wood/get1.gif
+	delay	12
+	frame	data/chars/bolo/wood/get2.gif
+	frame	data/chars/bolo/wood/get3.gif
+
+anim respawn
+	loop	0
+	delay	25
+	offset	77 219
+	frame	data/chars/bolo/wood/get1.gif
+	delay	12
+	frame	data/chars/bolo/wood/get2.gif
+	frame	data/chars/bolo/wood/get3.gif
+
+anim get
+      loop	0
+	delay	25
+	offset	77 219
+	frame	data/chars/bolo/wood/get1.gif
+	delay	12
+	frame	data/chars/bolo/wood/get2.gif
+	frame	data/chars/bolo/wood/get3.gif
+
+anim idle
+	loop	0
+	delay	5
+	offset	77 219
+	bbox	60 104 44 100
+	frame	data/chars/bolo/wood/w4.gif
+
+anim walk
+	loop	1
+	delay	14
+	offset	77 219
+	bbox	60 104 44 100
+	frame	data/chars/bolo/wood/w1.gif
+	frame	data/chars/bolo/wood/w2.gif
+	frame	data/chars/bolo/wood/w3.gif
+	frame	data/chars/bolo/wood/w4.gif
+
+anim up
+	loop	1
+	delay	14
+	offset	77 219
+	bbox	60 104 44 100
+	frame	data/chars/bolo/wood/wu1.gif
+	frame	data/chars/bolo/wood/wu2.gif
+	frame	data/chars/bolo/wood/wu3.gif
+	frame	data/chars/bolo/wood/wu4.gif
+
+anim walkoff
+      loop	0
+	offset	77 219
+	delay   8
+      @cmd  hurt7 0
+      frame	data/chars/bolo/wood/w4.gif
+
+anim attack1
+      range   0 300
+      rangea   0 100
+	loop	0
+	delay	2
+	offset	77 219
+      throwframe 0 60
+      custknife Empty2
+	sound data/sounds/bolo.wav
+      @cmd    antiwall3 35 -31 0
+	frame	data/chars/bolo/wood/w4.gif
+      delay   20
+      @cmd	shooter2 "wood3" 30 120 1 1.5 1 0
+	frame	data/chars/bolo/wood/wua.gif
+      delay   2
+      offset	77 170
+      frame	data/chars/bolo/w4.gif
+
+
+

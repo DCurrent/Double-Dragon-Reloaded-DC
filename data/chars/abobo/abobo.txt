@@ -1,0 +1,1109 @@
+name	abobo
+health	100
+speed	18
+type	enemy
+subtype       chase
+shadow	1
+nolife        1
+grabdistance 40
+jumpheight 6.5
+jumpspeed 20
+antigravity -100
+falldie 2
+nodieblink      1
+noquake 1 1
+riseattacktype 3
+bounce 1
+risetime 0 -50
+aggression      20
+projectilehit   player
+hostile player platform
+candamage player
+diesound data/sounds/die1.wav
+
+animationscript 	data/scripts/ani0020.h
+
+palette   data/chars/abobo/w4.gif
+alternatepal data/chars/abobo/map1.gif
+alternatepal data/chars/abobo/map2.gif
+alternatepal data/chars/abobo/map3.gif
+alternatepal data/chars/abobo/map4.gif
+alternatepal data/chars/abobo/map5.gif
+alternatepal data/chars/abobo/map6.gif
+alternatepal data/chars/abobo/map7.gif
+alternatepal data/chars/abobo/map8.gif
+
+anim spawn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	5
+	offset	77 170
+	frame	data/chars/abobo/w4.gif
+	frame	data/chars/abobo/w4.gif
+
+anim follow43
+	@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==3){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	117
+	offset	77 170
+      jumpframe	1 0 0 1
+      frame	data/chars/abobo/w3.gif
+      delay	13
+      frame	data/chars/abobo/w1.gif
+      frame	data/chars/abobo/w2.gif
+      frame	data/chars/abobo/w3.gif
+
+anim follow44
+	@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==3){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	117
+	offset	77 170
+      jumpframe	1 0 0 1
+      frame	data/chars/abobo/w3.gif
+      delay	13
+      frame	data/chars/abobo/w1.gif
+      frame	data/chars/abobo/w2.gif
+      frame	data/chars/abobo/w3.gif
+
+anim follow46
+      loop	1
+	delay	17
+	offset	77 170
+	@cmd  attack3 -200 200 -20 20 700 "ANI_SPAWN"
+	frame	data/chars/abobo/w4.gif
+
+anim follow47
+	@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==1){
+      playmusic("DATA/music/boss1.ogg", 1, 13073);
+    }
+    if(frame==5){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	68
+	offset	77 170
+      jumpframe	1 0 0 1
+      frame	data/chars/abobo/empty.gif
+      delay	13
+      drawmethod alpha 6 drawmethod channel 0.75
+      frame	data/chars/abobo/w3.gif
+      drawmethod alpha 6 drawmethod channel 0.50
+      frame	data/chars/abobo/w4.gif
+      nodrawmethod
+      frame	data/chars/abobo/w1.gif
+      frame	data/chars/abobo/w2.gif
+      frame	data/chars/abobo/w3.gif
+
+anim follow48
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+      playmusic("DATA/music/boss1.ogg", 1, 13073);
+    }
+@end_script
+	loop	0
+	delay	5
+	offset	77 170
+	frame	data/chars/abobo/w4.gif
+	frame	data/chars/abobo/w4.gif
+
+anim respawn
+	loop	0
+	delay	17
+	offset	77 170
+	frame	data/chars/abobo/rise2.gif
+
+anim idle
+	loop	1
+	delay	10
+	offset	77 170
+	bbox	60 55 44 100
+      @cmd    clearL
+	frame	data/chars/abobo/w4.gif
+      frame	data/chars/abobo/w4.gif
+      frame	data/chars/abobo/w4.gif
+      frame	data/chars/abobo/w4.gif
+
+anim walk
+	loop	1
+	delay	13
+	offset	77 170
+	bbox	60 55 44 100
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+	frame	data/chars/abobo/w1.gif
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+	frame	data/chars/abobo/w2.gif
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+	frame	data/chars/abobo/w3.gif
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+	frame	data/chars/abobo/w4.gif
+
+anim follow6
+	loop	0
+	delay	9
+      offset	77 170
+	bbox	60 55 44 100
+      landframe 4
+	jumpframe 0 6.5 2 0
+      @cmd    degravity -1
+      frame	data/chars/abobo/j1.gif
+      delay	35
+      bbox	60 83 55 70
+      frame	data/chars/abobo/j2.gif
+      frame	data/chars/abobo/j2.gif
+      frame	data/chars/abobo/j2.gif
+      delay	15
+      bbox 0 0 0 0
+      frame	data/chars/abobo/rise2.gif
+
+anim get
+	loop	0
+	delay	17
+	offset	77 170
+	frame	data/chars/abobo/rise2.gif
+
+anim up
+	loop	1
+	delay	13
+	offset	77 170
+	bbox	60 55 44 100
+	frame	data/chars/abobo/wu1.gif
+	frame	data/chars/abobo/wu2.gif
+	frame	data/chars/abobo/wu3.gif
+	frame	data/chars/abobo/wu4.gif
+
+anim walkoff
+	loop	0
+	delay	11
+	offset	77 170
+	bbox	60 55 44 100
+      landframe 4
+      @cmd  stopz
+      @cmd  stopz2
+      @cmd    degravity 0.27
+	frame	data/chars/abobo/j1.gif
+      delay	10
+      @cmd  dash 1 0
+      frame	data/chars/abobo/j2.gif
+      @cmd    degravity -0.50
+      frame	data/chars/abobo/j2.gif
+      delay	100
+      frame	data/chars/abobo/j2.gif
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/abobo/rise2.gif
+
+anim JUMPDELAY
+      loop	0
+	delay	9
+      offset	77 170
+	bbox	60 55 44 100
+      frame	data/chars/abobo/j1.gif
+
+anim JUMPLAND
+      loop	0
+	delay	2
+      offset	77 170
+	bbox	60 55 44 100
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/abobo/w4.gif
+
+anim jump
+	loop	0
+      range 0 180
+      rangea -1000 1000
+	offset	77 170
+      bbox	60 83 55 70
+	delay   4
+      @cmd    degravity -1
+	frame	data/chars/abobo/j2.gif
+      frame	data/chars/abobo/j2.gif
+      frame	data/chars/abobo/j2.gif
+      frame	data/chars/abobo/j2.gif
+      frame	data/chars/abobo/j2.gif
+	frame	data/chars/abobo/j2.gif
+	frame	data/chars/abobo/j2.gif
+      frame	data/chars/abobo/j2.gif
+      frame	data/chars/abobo/j2.gif
+	frame	data/chars/abobo/j2.gif
+      frame	data/chars/abobo/j2.gif
+	frame	data/chars/abobo/j2.gif
+      frame	data/chars/abobo/j2.gif
+      frame	data/chars/abobo/j2.gif
+	frame	data/chars/abobo/j2.gif
+      frame	data/chars/abobo/j2.gif
+	frame	data/chars/abobo/j2.gif
+      frame	data/chars/abobo/j2.gif
+      frame	data/chars/abobo/j2.gif
+	frame	data/chars/abobo/j2.gif
+      frame	data/chars/abobo/j2.gif
+	frame	data/chars/abobo/j2.gif
+      frame	data/chars/abobo/j2.gif
+      frame	data/chars/abobo/j2.gif
+	frame	data/chars/abobo/j2.gif
+
+anim attack1
+      range   1 44
+      rangea   0 1
+      delay	2
+	offset	77 170
+      followcond 2
+      followanim 25
+      hitfx   data/sounds/goo.wav
+      attackone 1
+      attack  78 110 43 30 0 0 1 1 10
+      forcedirection 99
+      noreflect 1
+      nokill
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW16"
+      frame	data/chars/abobo/w4.gif
+      attack  0 0 0 0 0
+      bbox	60 55 44 100
+      frame	data/chars/abobo/w4.gif
+
+anim follow25
+      loop	0
+	delay	8
+      offset	77 170
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW16"
+      @cmd    slamstart2
+      @cmd    position 9 56 1 -1 0
+      frame	data/chars/abobo/th1.gif
+      delay	7
+      sound  data/sounds/abobo.wav
+      @cmd    position 9 56 1 -1 0
+      frame	data/chars/abobo/th1.gif
+      delay	11
+      @cmd    position 10 56 1 -1 0
+      frame	data/chars/abobo/th2.gif
+      delay	6
+      @cmd    position 11 56 1 -1 0
+      frame	data/chars/abobo/th3.gif
+      delay	2.5
+      @cmd    antiwall3 -65 15 0
+      @cmd    position 11 56 1 -1 0
+      frame	data/chars/abobo/th3.gif
+      @cmd    antiwall3 -65 15 0
+      @cmd    position 11 56 1 -1 0
+      frame	data/chars/abobo/th3.gif
+      @cmd    antiwall3 -65 10 0
+      @cmd    position 12 -63 86 -1 0
+      frame	data/chars/abobo/th4.gif
+      @cmd    antiwall3 -65 10 0
+      @cmd    position 12 -63 86 -1 0
+      frame	data/chars/abobo/th4.gif
+      @cmd    antiwall3 -65 10 0
+      @cmd    position 12 -63 86 -1 0
+      frame	data/chars/abobo/th4.gif
+      @cmd    antiwall3 -65 5 0
+      @cmd    position 12 -63 86 0 0
+      frame	data/chars/abobo/th4.gif
+      @cmd    depost 0
+      @cmd    throw 20 1 2 4 0 0
+      delay	32
+      frame	data/chars/abobo/th4.gif
+
+anim attack2
+	range   45 80
+	rangea   0 90
+	loop	0
+	offset	77 170
+	delay	12
+	hitfx  data/sounds/beatt2.wav
+	@cmd    riseattack3 120 45 "ANI_FOLLOW26"
+	frame	data/chars/abobo/aaa1.gif
+	delay   9
+	frame	data/chars/abobo/aaa2.gif
+	bbox	60 55 44 100
+	delay	15
+	attack  90 60 70 40 12 1
+	dropv 3.5 1.5
+	frame	data/chars/abobo/aaa3.gif
+	delay	15
+	attack  0 0 0 0 0 0
+	frame	data/chars/abobo/aaa3.gif
+
+anim follow26
+	offset	77 170
+	delay	12
+	hitfx  data/sounds/beatt2.wav
+	frame	data/chars/abobo/aaa1.gif
+	delay   9
+	frame	data/chars/abobo/aaa2.gif
+	bbox	60 55 44 100
+	delay	15
+	attack14  90 60 70 40 12 1
+	dropv 3.5 1.5
+	forcedirection 99
+	frame	data/chars/abobo/aaa3.gif
+	delay	10
+	attack14  0 0 0 0 0 0
+	frame	data/chars/abobo/aaa3.gif
+
+anim attack3
+@script
+    void self = getlocalvar("self");
+
+    if( frame == 0){
+      int r = rand()%20;
+
+      if( r > 0){
+        changeentityproperty(self, "animation", openborconstant("ANI_FOLLOW23"));
+      }
+    }
+@end_script
+	range   45 115
+      rangea   0 90
+	loop	0
+	delay	9
+	offset	77 170
+      bbox	60 55 44 100
+      followcond 2
+      followanim 14
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW16"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW19"
+	frame	data/chars/abobo/w4.gif
+	frame	data/chars/abobo/a1.gif
+      attack  90 68 95 34 4 0
+      dropv 3.5 1.5
+	frame	data/chars/abobo/a2.gif
+      attack  0 0 0 0 0
+	frame	data/chars/abobo/a3.gif
+
+anim follow14
+      loop	0
+	delay	9
+	offset	77 170
+      bbox	60 55 44 100
+      followcond 2
+      followanim 15
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW17"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW20"
+      frame	data/chars/abobo/a2.gif
+	frame	data/chars/abobo/a3.gif
+      attack2  90 68 95 34 4 0
+      dropv 3.5 1.5
+	frame	data/chars/abobo/a4.gif
+	attack2  0 0 0 0 0
+	frame	data/chars/abobo/a5.gif
+
+anim follow15
+@script
+    void self = getlocalvar("self");
+
+    if( frame == 2){
+      int r = rand()%20;
+
+      if( r > 0){
+        changeentityproperty(self, "animation", openborconstant("ANI_FOLLOW23"));
+      }
+    }
+@end_script
+      loop	0
+	delay	9
+	offset	77 170
+      bbox	60 55 44 100
+      hitfx  data/sounds/beatt2.wav
+      @cmd    kickreact 0 120 0 45 "ANI_FOLLOW18"
+      @cmd    riseattack3 120 45 "ANI_FOLLOW21"
+      frame	data/chars/abobo/a4.gif
+	frame	data/chars/abobo/a5.gif
+      frame	data/chars/abobo/a1.gif
+      delay	14
+      attack  90 68 95 34 4 1
+      dropv 3.5 1.5
+	frame	data/chars/abobo/a2.gif
+      delay	10
+	attack  0 0 0 0 0
+	frame	data/chars/abobo/a3.gif
+
+anim follow16
+      loop	0
+      delay	9
+	offset	77 170
+      bbox	60 55 44 100
+      followcond 2
+      followanim 17
+      @cmd    riseattack3 120 45 "ANI_FOLLOW22"
+	frame	data/chars/abobo/w4.gif
+	frame	data/chars/abobo/a1.gif
+      attack17  90 68 95 34 4 0
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/abobo/a2.gif
+      attack17  0 0 0 0 0
+	frame	data/chars/abobo/a3.gif
+
+anim follow17
+      loop	0
+	delay	9
+	offset	77 170
+      bbox	60 55 44 100
+      followcond 2
+      followanim 18
+      @cmd    riseattack3 120 45 "ANI_FOLLOW22"
+      frame	data/chars/abobo/a2.gif
+	frame	data/chars/abobo/a3.gif
+      attack18  90 68 95 34 4 0
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/abobo/a4.gif
+	attack18  0 0 0 0 0
+	frame	data/chars/abobo/a5.gif
+
+anim follow18
+      loop	0
+	delay	9
+	offset	77 170
+      bbox	60 55 44 100
+      hitfx  data/sounds/beatt2.wav
+      @cmd    riseattack3 120 45 "ANI_FOLLOW22"
+      frame	data/chars/abobo/a4.gif
+	frame	data/chars/abobo/a5.gif
+      frame	data/chars/abobo/a1.gif
+      delay	14
+      attack14  90 68 95 34 4 1
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/abobo/a2.gif
+      delay	10
+	attack14  0 0 0 0 0
+	frame	data/chars/abobo/a3.gif
+
+anim follow19
+      loop	0
+      delay	9
+	offset	77 170
+      bbox	60 55 44 100
+      followcond 2
+      followanim 20
+	frame	data/chars/abobo/w4.gif
+	frame	data/chars/abobo/a1.gif
+      attack14  90 68 95 34 4 0
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/abobo/a2.gif
+      attack14  0 0 0 0 0
+	frame	data/chars/abobo/a3.gif
+
+anim follow20
+      loop	0
+	delay	9
+	offset	77 170
+      bbox	60 55 44 100
+      followcond 2
+      followanim 21
+      frame	data/chars/abobo/a2.gif
+	frame	data/chars/abobo/a3.gif
+      attack14  90 68 95 34 4 0
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/abobo/a4.gif
+	attack14  0 0 0 0 0
+	frame	data/chars/abobo/a5.gif
+
+anim follow21
+      loop	0
+	delay	9
+	offset	77 170
+      bbox	60 55 44 100
+      hitfx  data/sounds/beatt2.wav
+      frame	data/chars/abobo/a4.gif
+	frame	data/chars/abobo/a5.gif
+      frame	data/chars/abobo/a1.gif
+      delay	14
+      attack14  90 68 95 34 4 1
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/abobo/a2.gif
+      delay	10
+	attack14  0 0 0 0 0
+	frame	data/chars/abobo/a3.gif
+
+anim follow22
+@script
+    void self = getlocalvar("self");
+    int x = getentityproperty(self, "x");
+    int y = getentityproperty(self, "a");
+    int z = getentityproperty(self, "z");
+    int b = getentityproperty(self, "base");
+
+    if(y >= 1+b){
+      changeentityproperty(self, "animation", openborconstant("ANI_WALKOFF"));
+    }
+@end_script
+      loop	0
+	delay	13
+	offset	77 170
+      bbox	60 55 44 100
+      @cmd  dasher 2
+      frame	data/chars/abobo/w1.gif
+      frame	data/chars/abobo/w2.gif
+      frame	data/chars/abobo/w3.gif
+      frame	data/chars/abobo/w4.gif
+
+anim follow23
+      loop	0
+	delay	8
+	offset	77 170
+      bbox	60 55 44 100
+      hitfx  data/sounds/beatt2.wav
+      @cmd    riseattack3 120 45 "ANI_FOLLOW24"
+      frame	data/chars/abobo/aa1.gif
+	frame	data/chars/abobo/aa2.gif
+      delay   10
+      frame	data/chars/abobo/aa3.gif
+      delay   15
+      attack  90 85 95 34 4 1
+      dropv 3.5 1.5
+	frame	data/chars/abobo/aa4.gif
+	attack14  0 0 0 0 0
+	frame	data/chars/abobo/aa4.gif
+      delay   4
+      frame	data/chars/abobo/aa2.gif
+
+anim follow24
+      loop	0
+	delay	8
+	offset	77 170
+      bbox	60 55 44 100
+      hitfx  data/sounds/beatt2.wav
+      frame	data/chars/abobo/aa1.gif
+      delay	9
+	frame	data/chars/abobo/aa2.gif
+      delay   10
+      frame	data/chars/abobo/aa3.gif
+      delay   15
+      attack14  90 85 95 34 4 1
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/abobo/aa4.gif
+	attack14  0 0 0 0 0
+	frame	data/chars/abobo/aa4.gif
+      delay   4
+      frame	data/chars/abobo/aa2.gif
+
+anim pain
+	loop	0
+	delay 40
+	offset	77 170
+	bbox	60 55 44 100
+	frame	data/chars/abobo/pain1.gif
+
+anim pain2
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 44 100
+	frame	data/chars/abobo/pain2.gif
+      delay   65
+	frame	data/chars/abobo/pain3.gif
+
+anim pain29
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 44 100
+	frame	data/chars/abobo/pain2.gif
+      delay   65
+	frame	data/chars/abobo/pain3.gif
+
+anim pain3
+	loop	0
+	delay	5
+	offset	77 170
+	bbox	44 140 61 37
+	frame	data/chars/abobo/fall06.gif
+      delay   65
+	frame	data/chars/abobo/pain3.gif
+
+anim pain14 # Backpain 1
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 44 100
+	frame	data/chars/abobo/pain3.gif
+      delay   65
+	frame	data/chars/abobo/pain3.gif
+
+anim pain15 # Backpain 2
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 44 100
+	frame	data/chars/abobo/pain3.gif
+      delay   65
+	frame	data/chars/abobo/pain3.gif
+
+anim pain30 # Backpain 2
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 44 100
+	frame	data/chars/abobo/pain3.gif
+      delay   65
+	frame	data/chars/abobo/pain3.gif
+
+anim pain17 # grabbed attack pain
+	loop	0
+	delay	35
+	offset	77 170
+	bbox	60 55 44 100
+	frame	data/chars/abobo/pain3.gif
+      delay   65
+	frame	data/chars/abobo/pain3.gif
+
+anim fall
+	loop	0
+	offset	77 170
+	delay   8
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd bind 0 0 0 0 0
+      @cmd    depost 0
+	frame	data/chars/abobo/fall01.gif
+      frame	data/chars/abobo/fall01.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abobo/fall01.gif
+      frame	data/chars/abobo/fall01.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abobo/fall01.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abobo/fall02.gif
+      delay   500
+      frame	data/chars/abobo/fall02.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/abobo/fall02.gif
+      offset	82 170
+	frame	data/chars/abobo/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/abobo/rise0.gif
+
+anim fall3
+	loop	0
+      delay	9
+      offset	77 170
+      bbox	44 140 61 37
+      @script
+    void self = getlocalvar("self");
+
+    changeentityproperty(self, "velocity", 0, 0, 0);
+@end_script
+     	frame	data/chars/abobo/fall06.gif
+      offset	82 170
+      @cmd    degravity 0
+      frame	data/chars/abobo/rise0.gif
+
+anim follow1
+      loop	0
+      delay   80
+	offset	82 170
+      bbox	85 140 25 37
+      frame	data/chars/abobo/rise0.gif
+
+anim follow3
+      loop	1
+      delay   10
+	offset	82 169
+      frame	data/chars/abobo/rise0.gif
+
+anim follow4
+      loop	1
+      delay   10
+	offset	82 169
+      frame	data/chars/abobo/pain7.gif
+
+anim follow5
+      loop	1
+      delay   10
+	offset	82 169
+      frame	data/chars/abobo/pain8.gif
+
+anim fall4
+	loop	0
+	offset	122 170
+	delay   8
+      flipframe 8
+      jumpframe 0 3.5 1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/abobo/fall033.gif
+      frame	data/chars/abobo/fall033.gif
+      delay   10
+      frame	data/chars/abobo/fall033.gif
+      frame	data/chars/abobo/fall033.gif
+      frame	data/chars/abobo/fall033.gif
+      delay   20
+      frame	data/chars/abobo/fall033.gif
+      delay   500
+      frame	data/chars/abobo/fall066.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/abobo/fall066.gif
+      offset	82 170
+	frame	data/chars/abobo/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/abobo/rise0.gif
+
+anim fall14 # Backfall 1
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/abobo/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abobo/fall03.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abobo/fall03.gif
+      frame	data/chars/abobo/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abobo/fall03.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abobo/fall03.gif
+      delay   500
+      frame	data/chars/abobo/fall06.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/abobo/fall06.gif
+      offset	82 170
+	frame	data/chars/abobo/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/abobo/rise0.gif
+
+anim fall15 # Backfall 2
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/abobo/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abobo/fall03.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abobo/fall03.gif
+      frame	data/chars/abobo/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abobo/fall03.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abobo/fall03.gif
+      delay   500
+      frame	data/chars/abobo/fall06.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/abobo/fall06.gif
+      offset	82 170
+	frame	data/chars/abobo/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/abobo/rise0.gif
+
+anim fall16 # Backfall 3
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -2
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/abobo/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abobo/fall03.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abobo/fall03.gif
+      frame	data/chars/abobo/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abobo/fall03.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abobo/fall03.gif
+      delay   500
+      frame	data/chars/abobo/fall06.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/abobo/fall06.gif
+      offset	82 170
+	frame	data/chars/abobo/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/abobo/rise0.gif
+
+anim follow37
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 2.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd    hurt4 5
+	frame	data/chars/abobo/fall03.gif
+      frame	data/chars/abobo/fall03.gif
+      delay   10
+      frame	data/chars/abobo/fall03.gif
+      frame	data/chars/abobo/fall03.gif
+      frame	data/chars/abobo/fall03.gif
+      delay   20
+      frame	data/chars/abobo/fall03.gif
+      delay   500
+      frame	data/chars/abobo/fall06.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/abobo/fall06.gif
+      offset	82 170
+	frame	data/chars/abobo/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/abobo/rise0.gif
+
+anim follow38
+      loop	0
+	offset	77 170
+	delay   8
+      jumpframe 0 1.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd    hurt4 5
+	frame	data/chars/abobo/fall03.gif
+      frame	data/chars/abobo/fall03.gif
+      delay   10
+      frame	data/chars/abobo/fall03.gif
+      frame	data/chars/abobo/fall03.gif
+      frame	data/chars/abobo/fall03.gif
+      delay   20
+      frame	data/chars/abobo/fall03.gif
+      delay   500
+      frame	data/chars/abobo/fall06.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/abobo/fall06.gif
+      offset	82 170
+	frame	data/chars/abobo/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/abobo/rise0.gif
+
+anim fall8
+      loop	0
+      delay   1000
+      offset	82 169
+      @cmd    conditionalflip3
+      @cmd    degravity -0.15
+      frame	data/chars/abobo/pain3.gif
+      frame	data/chars/abobo/pain7.gif
+      frame	data/chars/abobo/pain7.gif
+      frame	data/chars/abobo/pain7.gif
+      frame	data/chars/abobo/pain7.gif
+      frame	data/chars/abobo/pain7.gif
+      frame	data/chars/abobo/D_VERTICAL_DOWN.png
+      frame	data/chars/abobo/fall06.gif
+      frame	data/chars/abobo/rise0.gif
+      frame	data/chars/abobo/pain7.gif
+      frame	data/chars/abobo/pain8.gif
+
+anim fall11
+	loop	0
+	offset	122 170
+	delay   8
+      flipframe 8
+      jumpframe 0 3.5 1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/abobo/fall033.gif
+      frame	data/chars/abobo/fall033.gif
+      delay   10
+      frame	data/chars/abobo/fall033.gif
+      frame	data/chars/abobo/fall033.gif
+      frame	data/chars/misc/empty.gif
+      delay   20
+      frame	data/chars/misc/empty.gif
+      @cmd killentity getlocalvar("self")
+      delay   500
+      frame	data/chars/misc/empty.gif
+      delay   8
+	frame	data/chars/misc/empty.gif
+      offset	77 170
+	frame	data/chars/misc/empty.gif
+
+anim fall30 # Backfall 2
+      loop	0
+	offset	77 170
+	delay   8
+      flipframe 0
+      jumpframe 0 3.5 -1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/abobo/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abobo/fall03.gif
+      delay   10
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abobo/fall03.gif
+      frame	data/chars/abobo/fall03.gif
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abobo/fall03.gif
+      delay   20
+      @cmd    antiwall4 -20 "ANI_FOLLOW37"
+      frame	data/chars/abobo/fall03.gif
+      delay   500
+      frame	data/chars/abobo/fall06.gif
+      delay   8
+      sound	data/sounds/falll.wav
+	frame	data/chars/abobo/fall06.gif
+      offset	82 170
+	frame	data/chars/abobo/rise0.gif
+      delay   2
+      @cmd    anichange "ANI_FOLLOW1"
+      frame	data/chars/abobo/rise0.gif
+
+anim rise
+	loop	0
+	offset	82 170
+	delay	10
+      @cmd    degravity -1
+	frame	data/chars/abobo/rise0.gif
+      offset	77 170
+	delay   15
+	@cmd    attack3 45 150 15 50 40 "ANI_FOLLOW27"
+	frame	data/chars/abobo/rise1.gif
+	delay   10
+	@cmd    attack3 45 150 15 50 40 "ANI_FOLLOW27"
+	@cmd    attack3 45 100 -20 49 40 "ANI_ATTACK2"
+	@cmd    riseattack 44 40 "ANI_ATTACK1"
+	frame	data/chars/abobo/rise1.gif
+
+anim follow27
+	loop	0
+	offset	77 170
+	delay	10
+	frame	data/chars/abobo/rise2.gif
+	frame	data/chars/abobo/rise2.gif
+	frame	data/chars/abobo/rise2.gif
+	frame	data/chars/abobo/rise2.gif
+	frame	data/chars/abobo/rise2.gif
+	frame	data/chars/abobo/rise2.gif
+	frame	data/chars/abobo/rise2.gif
+	@cmd    riseattack 44 40 "ANI_ATTACK1"
+	frame	data/chars/abobo/rise2.gif
+	@cmd    riseattack 44 40 "ANI_ATTACK1"
+	frame	data/chars/abobo/rise2.gif
+
+anim death
+	loop	0
+	offset	82 170
+	delay	20
+	frame	data/chars/abobo/rise0.gif
+
+anim  follow39 # spikeh effect
+	loop	0
+	offset	122 170
+	delay   8
+      jumpframe 1 0 1
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd  stop
+	frame	data/chars/abobo/fall033.gif
+      frame	data/chars/abobo/fall033.gif
+      delay   10
+      frame	data/chars/abobo/fall033.gif
+      @cmd  stop
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      delay   20
+      frame	data/chars/misc/empty.gif
+      delay   500
+      frame	data/chars/misc/empty.gif
+      delay   8
+	frame	data/chars/misc/empty.gif
+      offset	77 170
+	frame	data/chars/misc/empty.gif
+
+
+
+

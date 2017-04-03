@@ -1,0 +1,1099 @@
+name	boliamsb
+health	80
+speed	18
+type	none
+shadow	1
+nolife        1
+grabdistance 40
+jumpheight 6.5
+jumpspeed 20
+running 30 6.5 1 1 0
+antigravity -100
+falldie 2
+nodieblink      1
+noquake 1 1
+bounce 1
+risetime 0 -50
+aggression      20
+projectilehit   player
+hostile player platform
+candamage player 
+diesound data/sounds/williamsb3.wav
+modelflag 1
+
+load	bomb
+load	Empty2
+
+script data/scripts/Custom_chase.c
+animationscript 	data/scripts/ani0020.h
+
+palette   data/chars/williams2/w4.gif
+alternatepal data/chars/williams2/map1.gif
+alternatepal data/chars/williams2/map2.gif
+alternatepal data/chars/williams2/map3.gif
+alternatepal data/chars/williams2/map4.gif
+alternatepal data/chars/williams2/map5.gif
+alternatepal data/chars/williams2/map6.gif
+alternatepal data/chars/williams2/map7.gif
+alternatepal data/chars/williams2/map8.gif
+alternatepal data/chars/williams2/map9.gif
+alternatepal data/chars/williams2/map10.gif
+
+anim spawn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	5
+	offset	77 170
+	frame	data/chars/williams2/w4.gif
+	frame	data/chars/williams2/w4.gif
+
+anim follow43
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==3){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+      loop	0
+	delay	110
+	offset	77 170
+      jumpframe	1 0 0 1
+	frame	data/chars/williams2/w4.gif
+      delay	13
+      frame	data/chars/williams2/w1.gif
+      frame	data/chars/williams2/w2.gif
+      frame	data/chars/williams2/w3.gif
+
+anim follow44
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==3){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+      loop	0
+	delay	110
+	offset	77 170
+      jumpframe	1 0 0 1
+	frame	data/chars/williams2/w4.gif
+      delay	13
+      frame	data/chars/williams2/w1.gif
+      frame	data/chars/williams2/w2.gif
+      frame	data/chars/williams2/w3.gif
+
+anim follow45
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==3){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+      loop	0
+	delay	510
+	offset	77 170
+      jumpframe	1 0 0 1
+	frame	data/chars/williams2/w4.gif
+      delay	13
+      frame	data/chars/williams2/w1.gif
+      frame	data/chars/williams2/w2.gif
+      frame	data/chars/williams2/w3.gif
+
+anim follow41
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "subject_to_gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+      loop	1
+	delay	17
+	offset	77 170
+      @cmd  attack1 0 100 700 "ANI_FOLLOW42"
+	frame	data/chars/williams2/spawn1.gif
+
+anim follow55
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "subject_to_gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+      loop	1
+	delay	17
+	offset	77 170
+      @cmd  attack1 0 100 100 "ANI_FOLLOW42"
+	frame	data/chars/williams2/spawn1.gif
+
+anim follow56 # exclusive only to him for st3a
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+    int Play = openborvariant("count_players");
+    int x = getentityproperty(self,"x");
+    int z = getentityproperty(self,"z");
+
+    if(frame==0){
+      changeentityproperty(self, "subject_to_gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+
+    if(Play==1 && (P1 || P2)){
+      int Px;
+      int Pz;
+
+      if(P1){
+        Px = getentityproperty(P1,"x");
+        Pz = getentityproperty(P1,"z");
+      } else if(P2){
+        Px = getentityproperty(P2,"x");
+        Pz = getentityproperty(P2,"z");
+      }
+
+      if(Pz <= z+110){
+        if(Px <= x+300){
+          changeentityproperty(self, "animation", openborconstant("ANI_FOLLOW42"));
+        }
+      }
+    } else if(Play==2 && P1 && P2){
+      int P1x = getentityproperty(P1,"x");
+      int P1z = getentityproperty(P1,"z");
+      int P2x = getentityproperty(P2,"x");
+      int P2z = getentityproperty(P2,"z");
+
+      if(P1z <= z+110 && P2z <= z+110){
+        if(P1x <= x+300 && P2x <= x+300){
+          changeentityproperty(self, "animation", openborconstant("ANI_FOLLOW42"));
+        }
+      }
+    }
+@end_script
+      loop	1
+	delay	17
+	offset	77 170
+	frame	data/chars/williams2/w4.gif
+
+anim follow42
+      @script
+    void self = getlocalvar("self");
+
+    if(frame==1){
+      changeentityproperty(self, "subject_to_gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+      loop	0
+	delay	16
+	offset	77 170
+      landframe 4 
+      @cmd    degravity 0.27
+	frame	data/chars/williams2/j1.gif
+      delay	10
+      @cmd  dash 1 0
+      frame	data/chars/williams2/j2.gif
+	bbox	60 55 40 100
+      @cmd    degravity -0.50
+      frame	data/chars/williams2/j2.gif
+      delay	100
+      frame	data/chars/williams2/j2.gif
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/williams2/rise2.gif
+
+anim follow46
+      loop	1
+	delay	17
+	offset	77 170
+	@cmd  attack3 -200 200 -20 20 700 "ANI_SPAWN"
+	frame	data/chars/williams2/w4.gif
+
+anim respawn
+	loop	0
+	delay	30
+	offset	77 170
+	frame	data/chars/williams2/rise2.gif
+
+anim get
+	loop	0
+	delay	17
+	offset	77 170
+	frame	data/chars/williams2/bomb/rise2.gif
+
+anim idle
+	loop	1
+	delay	10
+	offset	77 170
+	bbox	60 55 40 100
+      @cmd    clearL
+	frame	data/chars/williams2/w4.gif
+      frame	data/chars/williams2/w4.gif
+      frame	data/chars/williams2/w4.gif
+      frame	data/chars/williams2/w4.gif
+
+anim walk
+	loop	1
+	delay	13
+	offset	77 170
+	bbox	60 55 40 100
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+      @cmd	climberD2 20 20 "ANI_FOLLOW7"
+	frame	data/chars/williams2/w1.gif
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+      @cmd	climberD2 20 20 "ANI_FOLLOW7"
+	frame	data/chars/williams2/w2.gif
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+      @cmd	climberD2 20 20 "ANI_FOLLOW7"
+	frame	data/chars/williams2/w3.gif
+      @cmd	walljump 15 110 "ANI_FOLLOW6"
+      @cmd	climberD2 20 20 "ANI_FOLLOW7"
+	frame	data/chars/williams2/w4.gif
+
+anim run
+	loop	1
+	delay	9
+	offset	77 170
+	bbox	60 55 40 100
+	frame	data/chars/williams2/r1.gif
+	frame	data/chars/williams2/r2.gif
+	sound data/sounds/step1.wav
+	frame	data/chars/williams2/r3.gif
+	frame	data/chars/williams2/r4.gif
+	frame	data/chars/williams2/r5.gif
+	sound data/sounds/step1.wav
+	frame	data/chars/williams2/r6.gif
+
+anim follow6
+	loop	0
+	delay	9
+      offset	77 170
+	bbox	60 55 40 100
+      landframe 4
+	jumpframe 0 6.5 2 0
+      @cmd    degravity -1
+      frame	data/chars/williams2/j1.gif
+      delay	35
+      bbox	60 83 55 70
+      frame	data/chars/williams2/j2.gif
+      frame	data/chars/williams2/j2.gif
+      frame	data/chars/williams2/j2.gif
+      delay	15
+      bbox 0 0 0 0
+      frame	data/chars/williams2/rise2.gif
+
+anim up
+@script
+    void self = getlocalvar("self");
+
+    setlocalvar("Pain" + self, 0);
+    setentityvar(self, 5, NULL());
+@end_script
+	loop	1
+	delay	13
+	offset	77 170
+	bbox	60 55 40 100
+      @cmd	climber2 20 20 "ANI_FOLLOW9"
+	frame	data/chars/williams2/wu1.gif
+      @cmd	climber2 20 20 "ANI_FOLLOW9"
+	frame	data/chars/williams2/wu2.gif
+      @cmd	climber2 20 20 "ANI_FOLLOW9"
+	frame	data/chars/williams2/wu3.gif
+      @cmd	climber2 20 20  "ANI_FOLLOW9"
+	frame	data/chars/williams2/wu4.gif
+
+anim	follow7
+@script
+    void self = getlocalvar("self");
+
+    if(frame==2){
+      performattack(self, openborconstant("ANI_FOLLOW8"));
+    }
+@end_script
+      loop	0
+	delay	1
+	offset	90 174
+	frame	data/chars/williams2/climb5.gif
+	delay   20
+	frame	data/chars/williams2/climb5.gif
+	frame	data/chars/williams2/climb4.gif
+
+anim	follow8 # Climb Down
+	loop	1
+	delay	6
+	offset	90 174
+	bbox	70 60 30 114
+	@cmd	dasher 0 -2.5 0
+	@cmd	climbEnd2 "D" "ANI_FOLLOW10"
+	frame	data/chars/williams2/climb4.gif
+      @cmd	dasher 0 0 0
+	@cmd	climbEnd2 "D" "ANI_FOLLOW10"
+	frame	data/chars/williams2/climb4.gif
+      @cmd	dasher 0 -2.5 0
+	@cmd	climbEnd2 "D" "ANI_FOLLOW10"
+	frame	data/chars/williams2/climb3.gif
+      @cmd	dasher 0 0 0
+      @cmd	climbEnd2 "D" "ANI_FOLLOW10"
+	frame	data/chars/williams2/climb3.gif
+      @cmd	dasher 0 -2.5 0
+	@cmd	climbEnd2 "D" "ANI_FOLLOW10"
+	frame	data/chars/williams2/climb4.gif
+      @cmd	dasher 0 0 0
+      @cmd	climbEnd2 "D" "ANI_FOLLOW10"
+	frame	data/chars/williams2/climb4.gif
+      @cmd	dasher 0 -2.5 0
+	@cmd	climbEnd2 "D" "ANI_FOLLOW10"
+	frame	data/chars/williams2/climb1.gif
+      @cmd	dasher 0 0 0
+      @cmd	climbEnd2 "D" "ANI_FOLLOW10"
+	frame	data/chars/williams2/climb1.gif
+
+anim	follow9 # Climb Up	
+	loop	1
+	delay	5
+	offset	90 174
+	bbox	70 60 30 114
+	@cmd	dasher 0 3 0
+	@cmd	climbEnd2 "U" "ANI_FOLLOW10"
+	frame	data/chars/williams2/climb1.gif
+      @cmd	dasher 0 0 0
+	@cmd	climbEnd2 "U" "ANI_FOLLOW10"
+	frame	data/chars/williams2/climb1.gif
+      @cmd	dasher 0 3 0
+	@cmd	climbEnd2 "U" "ANI_FOLLOW10"
+	frame	data/chars/williams2/climb2.gif
+      @cmd	dasher 0 0 0
+      @cmd	climbEnd2 "U" "ANI_FOLLOW10"
+	frame	data/chars/williams2/climb2.gif
+      @cmd	dasher 0 3 0
+	@cmd	climbEnd2 "U" "ANI_FOLLOW10"
+	frame	data/chars/williams2/climb3.gif
+      @cmd	dasher 0 0 0
+      @cmd	climbEnd2 "U" "ANI_FOLLOW10"
+	frame	data/chars/williams2/climb3.gif
+      @cmd	dasher 0 3 0
+	@cmd	climbEnd2 "U" "ANI_FOLLOW10"
+	frame	data/chars/williams2/climb4.gif
+      @cmd	dasher 0 0 0
+      @cmd	climbEnd2 "U" "ANI_FOLLOW10"
+	frame	data/chars/williams2/climb4.gif
+	
+anim	follow10
+@script
+    void self = getlocalvar("self");
+
+    if(frame==2){
+      float x = getentityproperty(self, "x");
+      float y = getentityproperty(self, "a");
+      float z = getentityproperty(self, "z");
+      int Dir = getentityproperty(self, "direction");
+      int LType = getentityvar(self, 2);
+      int sx = 5;
+
+      changeentityproperty(self, "Subject_to_Platform", 1);
+      changeentityproperty(self, "antigravity", 0);
+
+      if(Dir == 0){
+        sx = -5;
+      }
+
+      if(LType == 2){
+        changeentityproperty(self, "position", x, z, y+54);
+      } else {
+        changeentityproperty(self, "position", x+sx, z-4, y+54);
+      }
+      setidle(self, openborconstant("ANI_IDLE"));
+    }
+@end_script
+      loop	0
+	delay	1
+	offset	90 174
+	frame	data/chars/williams2/climb5.gif
+	delay   20
+	frame	data/chars/williams2/climb5.gif
+	frame	data/chars/williams2/w1.gif
+
+anim walkoff
+	loop	0
+	delay	11
+	offset	77 170
+	bbox	60 55 40 100
+      landframe 4 
+      @cmd  stopz
+      @cmd  stopz2
+      @cmd    degravity 0.27
+	frame	data/chars/williams2/j1.gif
+      delay	10
+      @cmd  dash 1 0
+      frame	data/chars/williams2/j2.gif
+      @cmd    degravity -0.50
+      frame	data/chars/williams2/j2.gif
+      delay	100
+      frame	data/chars/williams2/j2.gif
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/williams2/rise2.gif
+
+anim JUMPDELAY
+      loop	0
+	delay	9
+      offset	77 170
+	bbox	60 55 40 100
+      frame	data/chars/williams2/j1.gif
+
+anim JUMPLAND
+      loop	0
+	delay	2
+      offset	77 170
+	bbox	60 55 40 100
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+      frame	data/chars/williams2/w4.gif
+
+anim jump
+	loop	0
+      range 0 180
+      rangea -1000 1000
+	offset	77 170
+      bbox	60 83 55 70
+	delay   4
+      @cmd    degravity -1
+	frame	data/chars/williams2/j2.gif
+      frame	data/chars/williams2/j2.gif
+      frame	data/chars/williams2/j2.gif
+      frame	data/chars/williams2/j2.gif
+      frame	data/chars/williams2/j2.gif
+	frame	data/chars/williams2/j2.gif
+	frame	data/chars/williams2/j2.gif
+      frame	data/chars/williams2/j2.gif
+      frame	data/chars/williams2/j2.gif
+	frame	data/chars/williams2/j2.gif
+      frame	data/chars/williams2/j2.gif
+	frame	data/chars/williams2/j2.gif
+      frame	data/chars/williams2/j2.gif
+      frame	data/chars/williams2/j2.gif
+	frame	data/chars/williams2/j2.gif
+      frame	data/chars/williams2/j2.gif
+	frame	data/chars/williams2/j2.gif
+      frame	data/chars/williams2/j2.gif
+      frame	data/chars/williams2/j2.gif
+	frame	data/chars/williams2/j2.gif
+      frame	data/chars/williams2/j2.gif
+	frame	data/chars/williams2/j2.gif
+      frame	data/chars/williams2/j2.gif
+      frame	data/chars/williams2/j2.gif
+	frame	data/chars/williams2/j2.gif
+
+anim attack1
+@script
+    void self = getlocalvar("self");
+
+    if( frame == 0){
+      int r = rand()%40;
+
+      if( r > 0){
+        changeentityproperty(self, "animation", openborconstant("ANI_FOLLOW26"));
+      }
+    }
+@end_script
+	range   10 85
+      rangea   0 49
+	loop	0
+	delay	10
+	offset	77 170
+      bbox	60 55 40 100
+      followcond 2
+      followanim 14
+      @cmd    kickreact 0 90 0 45 "ANI_FOLLOW28"
+      @cmd    riseattack3 90 45 "ANI_FOLLOW19"
+	frame	data/chars/williams2/w4.gif
+	frame	data/chars/williams2/a1.gif
+      attack  90 68 65 34 4 0
+      dropv 3.5 1.5
+	delay   20
+	frame	data/chars/williams2/a2.gif
+      attack  0 0 0 0 0
+      delay   10
+	frame	data/chars/williams2/a3.gif
+
+anim follow14
+      loop	0
+	delay	14
+	offset	77 170
+      bbox	60 55 40 100
+      followcond 2
+      followanim 15
+      @cmd    kickreact 0 90 0 45 "ANI_FOLLOW28"
+      @cmd    riseattack3 90 45 "ANI_FOLLOW20"
+      frame	data/chars/williams2/a2.gif
+      delay   10
+	frame	data/chars/williams2/a3.gif
+      attack2  90 68 65 34 4 0
+      dropv 3.5 1.5
+	frame	data/chars/williams2/a4.gif
+	attack2  0 0 0 0 0
+	delay   10
+	frame	data/chars/williams2/a5.gif
+
+anim follow15
+      loop	0
+	delay	14
+	offset	77 170
+      bbox	60 55 40 100
+      hitfx  data/sounds/beatt2.wav
+      @cmd    kickreact 0 90 0 45 "ANI_FOLLOW29"
+      @cmd    riseattack3 90 45 "ANI_FOLLOW21"
+      frame	data/chars/williams2/a4.gif
+      delay   10
+	frame	data/chars/williams2/a5.gif
+      frame	data/chars/williams2/a1.gif
+      attack  90 68 65 34 4 1
+      dropv 3.5 1.5
+	frame	data/chars/williams2/a2.gif
+	attack  0 0 0 0 0
+	delay   10
+	frame	data/chars/williams2/a3.gif
+
+anim follow19
+      loop	0
+      delay	10
+	offset	77 170
+      bbox	60 55 40 100
+      followcond 2
+      followanim 20
+	frame	data/chars/williams2/w4.gif
+	frame	data/chars/williams2/a1.gif
+      attack14  90 68 65 34 4 0
+      dropv 3.5 1.5
+      forcedirection 99
+	delay   20
+	frame	data/chars/williams2/a2.gif
+      attack14  0 0 0 0 0
+      delay   10
+	frame	data/chars/williams2/a3.gif
+
+anim follow20
+      loop	0
+	delay	14
+	offset	77 170
+      bbox	60 55 40 100
+      followcond 2
+      followanim 21
+      frame	data/chars/williams2/a2.gif
+      delay   10
+	frame	data/chars/williams2/a3.gif
+      attack14  90 68 65 34 4 0
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/williams2/a4.gif
+	attack14  0 0 0 0 0
+	delay   10
+	frame	data/chars/williams2/a5.gif
+
+anim follow21
+      loop	0
+	delay	14
+	offset	77 170
+      bbox	60 55 40 100
+      hitfx  data/sounds/beatt2.wav
+      frame	data/chars/williams2/a4.gif
+      delay   10
+	frame	data/chars/williams2/a5.gif
+      frame	data/chars/williams2/a1.gif
+      attack14  90 68 65 34 4 1
+      dropv 3.5 1.5
+      forcedirection 99
+	frame	data/chars/williams2/a2.gif
+	attack14  0 0 0 0 0
+	delay   10
+	frame	data/chars/williams2/a3.gif
+
+anim follow22
+@script
+    void self = getlocalvar("self");
+    int x = getentityproperty(self, "x");
+    int y = getentityproperty(self, "a");
+    int z = getentityproperty(self, "z");
+    int b = getentityproperty(self, "base");
+
+    if(y >= 1+b){
+      changeentityproperty(self, "animation", openborconstant("ANI_WALKOFF"));
+    }
+@end_script
+      loop	0
+	delay	13
+	offset	77 170
+      bbox	60 55 40 100
+      @cmd  dasher 2
+      frame	data/chars/williams2/w1.gif
+      frame	data/chars/williams2/w2.gif
+      frame	data/chars/williams2/w3.gif
+      frame	data/chars/williams2/w4.gif
+
+anim attack2
+	range   70 120
+      rangea  50 100
+      loop	0
+	delay	9
+      offset	77 170
+	bbox	60 55 40 100
+      hitfx  data/sounds/beatt2.wav
+      landframe 5
+	jumpframe 1 6.5 2 0
+      @cmd    riseattack3 120 40 "ANI_FOLLOW25"
+      @cmd    degravity -1
+      frame	data/chars/williams2/rise2.gif
+      frame	data/chars/williams2/j1.gif
+      bbox	60 90 55 50
+      frame	data/chars/williams2/j2.gif
+      delay	35
+      attack  90 112 60 40 10 1
+      dropv 3.5 1.5
+      frame	data/chars/williams2/ja1.gif
+      frame	data/chars/williams2/ja1.gif
+      attack  0 0 0 0 0
+      delay	15
+      bbox 0 0 0 0
+      frame	data/chars/williams2/rise2.gif
+
+anim follow25
+      loop	0
+	delay	9
+      offset	77 170
+	bbox	60 55 40 100
+      hitfx  data/sounds/beatt2.wav
+      landframe 5
+	jumpframe 1 6.5 2 0
+      @cmd    degravity -1
+      frame	data/chars/williams2/rise2.gif
+      frame	data/chars/williams2/j1.gif
+      bbox	60 90 55 50
+      frame	data/chars/williams2/j2.gif
+      delay	35
+      attack14  90 112 60 40 10 1
+      forcedirection 99
+      dropv 3.5 1.5
+      frame	data/chars/williams2/ja1.gif
+      frame	data/chars/williams2/ja1.gif
+      attack14  0 0 0 0 0
+      delay	15
+      bbox 0 0 0 0
+      frame	data/chars/williams2/rise2.gif   
+
+anim follow26
+	loop	0
+	delay	10
+	offset	77 170
+      bbox	60 55 40 100
+      followcond 2
+      followanim 27
+      @cmd    kickreact 0 90 0 45 "ANI_FOLLOW28"
+      @cmd    riseattack3 90 45 "ANI_FOLLOW30"
+	frame	data/chars/williams2/aa1.gif
+      delay	8
+	frame	data/chars/williams2/aa2.gif
+      attack23  90 100 65 34 4 0
+      dropv 3.5 1.5
+      forcedirection 99
+	delay   15
+	frame	data/chars/williams2/aa3.gif
+      attack  0 0 0 0 0
+      delay   10
+	frame	data/chars/williams2/aa3.gif
+
+anim follow27
+@script
+    void self = getlocalvar("self");
+
+    if( frame == 2){
+      int r = rand()%30;
+
+      if( r > 0){
+        changeentityproperty(self, "animation", openborconstant("ANI_FOLLOW32"));
+      }
+    }
+@end_script
+      loop	0
+	delay	15
+	offset	77 170
+      bbox	60 55 40 100
+      hitfx  data/sounds/beatt2.wav
+      @cmd    kickreact 0 90 0 45 "ANI_FOLLOW29"
+      @cmd    riseattack3 90 45 "ANI_FOLLOW31"
+      frame	data/chars/williams2/aa3.gif
+      delay   10
+	frame	data/chars/williams2/aa3.gif
+      frame	data/chars/williams2/aa1.gif
+      delay	8
+      frame	data/chars/williams2/aa2.gif
+      attack23  90 100 65 34 4 1
+      dropv 3.5 1.5
+      delay   15
+	frame	data/chars/williams2/aa3.gif
+	attack  0 0 0 0 0
+	frame	data/chars/williams2/aa3.gif
+
+anim follow28
+      loop	0
+      delay	10
+	offset	77 170
+      bbox	60 55 40 100
+      followcond 2
+      followanim 29
+      @cmd    riseattack3 90 45 "ANI_FOLLOW22"
+	frame	data/chars/williams2/aa1.gif
+      delay	8
+	frame	data/chars/williams2/aa2.gif
+      attack17  90 100 65 34 4 0
+      dropv 3.5 1.5
+      forcedirection 99
+	delay   15
+	frame	data/chars/williams2/aa3.gif
+      attack  0 0 0 0 0
+      delay   10
+	frame	data/chars/williams2/aa3.gif
+
+anim follow29
+      loop	0
+	delay	15
+	offset	77 170
+      bbox	60 55 40 100
+      hitfx  data/sounds/beatt2.wav
+      @cmd    riseattack3 90 45 "ANI_FOLLOW22"
+      frame	data/chars/williams2/aa3.gif
+      delay   10
+	frame	data/chars/williams2/aa3.gif
+      frame	data/chars/williams2/aa1.gif
+      delay	8
+      frame	data/chars/williams2/aa2.gif
+      attack14  90 100 65 34 4 1
+      dropv 3.5 1.5
+      forcedirection 99
+      delay   15
+	frame	data/chars/williams2/aa3.gif
+	attack  0 0 0 0 0
+	frame	data/chars/williams2/aa3.gif
+
+anim follow30
+      loop	0
+      delay	10
+	offset	77 170
+      bbox	60 55 40 100
+      followcond 2
+      followanim 31
+	frame	data/chars/williams2/aa1.gif
+	frame	data/chars/williams2/aa2.gif
+      attack14  90 100 65 34 4 0
+      dropv 3.5 1.5
+      forcedirection 99
+	delay   20
+	frame	data/chars/williams2/aa3.gif
+      attack  0 0 0 0 0
+      delay   10
+	frame	data/chars/williams2/aa3.gif
+
+anim follow31
+      loop	0
+	delay	14
+	offset	77 170
+      bbox	60 55 40 100
+      hitfx  data/sounds/beatt2.wav
+      frame	data/chars/williams2/aa3.gif
+      delay   10
+	frame	data/chars/williams2/aa3.gif
+      frame	data/chars/williams2/aa1.gif
+      frame	data/chars/williams2/aa2.gif
+      attack14  90 100 65 34 4 1
+      dropv 3.5 1.5
+      forcedirection 99
+      delay   20
+	frame	data/chars/williams2/aa3.gif
+	attack  0 0 0 0 0
+	delay   15
+	frame	data/chars/williams2/aa3.gif
+
+anim follow32
+      loop	0
+	delay	10
+	offset	77 170
+      bbox	60 55 40 100
+      followcond 2
+      followanim 15
+      @cmd    kickreact 0 90 0 45 "ANI_FOLLOW29"
+      @cmd    riseattack3 90 45 "ANI_FOLLOW20"
+	frame	data/chars/williams2/a3.gif
+      attack2  90 68 65 34 4 0
+      dropv 3.5 1.5
+	frame	data/chars/williams2/a4.gif
+	attack2  0 0 0 0 0
+	delay   10
+	frame	data/chars/williams2/a5.gif
+
+anim attack3
+@script
+    void self = getlocalvar("self");
+
+    if( frame == 0){
+      int r = rand()%40;
+
+      if( r > 0){
+        changeentityproperty(self, "animation", openborconstant("ANI_FOLLOW33"));
+      }
+    }
+@end_script
+      range   190 400
+      rangea   0 110
+      loop	0
+	delay	13
+	offset	77 170
+	bbox	60 55 40 100
+      throwframe 0 0
+      custknife Empty2
+      frame	data/chars/williams2/bomb/kna1.gif
+      delay	8
+	frame	data/chars/williams2/bomb/kna2.gif
+      delay	4
+      @cmd    antiwall3 35 -16 0
+      frame	data/chars/williams2/bomb/kna3.gif
+      @cmd    antiwall3 35 -15 0
+      frame	data/chars/williams2/bomb/kna3.gif
+      delay	8
+      bbox	0 0 0 0
+      @cmd	shooter2 "bomb" 20 80 0 3.5 3 0
+	frame	data/chars/williams2/bomb/kna4.gif
+      delay   18
+	frame	data/chars/williams2/bomb/kna5.gif
+      delay   2
+      frame	data/chars/williams2/w4.gif
+
+anim follow33
+      loop	0
+	delay	9
+	offset	77 170
+	bbox	60 55 40 100
+      throwframe 0 0
+      custknife Empty2
+	jumpframe 0 5.5 0 0
+	dropframe 2
+	landframe 6 
+      @cmd    degravity -0.27
+	frame	data/chars/williams2/j1.gif
+      delay	8
+	frame	data/chars/williams2/bomb/jkn1.gif
+	frame	data/chars/williams2/bomb/jkn1.gif
+      delay	8
+      bbox	0 0 0 0
+      @cmd	shooter2 "bomb" 20 80 0 3.5 3 0
+	frame	data/chars/williams2/bomb/jkn2.gif
+      delay   50
+	frame	data/chars/williams2/bomb/jkn3.gif
+      delay	15
+      sound	data/sounds/step.wav
+      @cmd    degravity -1
+	frame	data/chars/williams2/rise2.gif
+
+anim attack4
+@script
+    void self = getlocalvar("self");
+    int x = getentityproperty(self, "x");
+    int y = getentityproperty(self, "a");
+    int z = getentityproperty(self, "z");
+    int b = getentityproperty(self, "base");
+    int dir = getentityproperty(self, "direction");
+    int Vx = getentityproperty(self, "xdir");
+
+    if(y > 1+b && dir == 0 ){
+      changeentityproperty(self, "direction", 1);
+      changeentityproperty(self, "velocity", -Vx, 0, 1);
+    }else if (y > 1+b && dir == 1 ){
+      changeentityproperty(self, "direction", 0);
+      changeentityproperty(self, "velocity", -Vx, 0, 1);
+    }
+@end_script
+	range   146 200
+	rangea  0 100
+	rangez  50 60
+	loop	0
+	delay	9
+	offset	77 170
+	bbox	60 55 40 100
+	jumpframe 1 0 2.5 0
+	frame	data/chars/williams2/rot1.gif
+	frame	data/chars/williams2/rot2.gif
+	sound data/sounds/williamsb2.wav
+	frame	data/chars/williams2/rot3.gif
+	frame	data/chars/williams2/rot4.gif
+	frame	data/chars/williams2/rot5.gif
+	frame	data/chars/williams2/rot6.gif
+	frame	data/chars/williams2/rot1.gif
+	frame	data/chars/williams2/rot2.gif
+	sound data/sounds/williamsb2.wav
+	frame	data/chars/williams2/rot3.gif
+	frame	data/chars/williams2/rot4.gif
+	frame	data/chars/williams2/rot5.gif
+	frame	data/chars/williams2/rot6.gif
+
+anim attack5
+@script
+    void self = getlocalvar("self");
+    int x = getentityproperty(self, "x");
+    int y = getentityproperty(self, "a");
+    int z = getentityproperty(self, "z");
+    int b = getentityproperty(self, "base");
+    int dir = getentityproperty(self, "direction");
+    int Vx = getentityproperty(self, "xdir");
+
+    if(y > 1+b && dir == 0 ){
+      changeentityproperty(self, "direction", 1);
+      changeentityproperty(self, "velocity", -Vx, 0, 1);
+    }else if (y > 1+b && dir == 1 ){
+      changeentityproperty(self, "direction", 0);
+      changeentityproperty(self, "velocity", -Vx, 0, 1);
+    }
+@end_script
+	range   146 200
+	rangea  0 100
+	rangez  -60 -50
+	loop	0
+	delay	9
+	offset	77 170
+	bbox	60 55 40 100
+	jumpframe 1 0 2.5 0
+	frame	data/chars/williams2/rot1.gif
+	frame	data/chars/williams2/rot2.gif
+	sound data/sounds/williamsb2.wav
+	frame	data/chars/williams2/rot3.gif
+	frame	data/chars/williams2/rot4.gif
+	frame	data/chars/williams2/rot5.gif
+	frame	data/chars/williams2/rot6.gif
+	frame	data/chars/williams2/rot1.gif
+	frame	data/chars/williams2/rot2.gif
+	sound data/sounds/williamsb2.wav
+	frame	data/chars/williams2/rot3.gif
+	frame	data/chars/williams2/rot4.gif
+	frame	data/chars/williams2/rot5.gif
+	frame	data/chars/williams2/rot6.gif
+
+anim  follow49 # water effect
+	loop	0
+	offset	77 170
+	delay   4
+      spawnframe 0 0 55 0 0
+	custentity water1
+      landframe 6
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      delay   500
+      frame	data/chars/misc/empty.gif
+      delay   200
+	frame	data/chars/misc/empty.gif
+
+anim  follow39 # spikeh effect
+	loop	0
+	offset	122 170
+	delay   8
+      jumpframe 1 0 1
+      landframe 7
+      @cmd    degravity -0.15
+      @cmd  stop
+	frame	data/chars/williams2/fall033.gif
+      frame	data/chars/williams2/fall033.gif
+      delay   10
+      frame	data/chars/williams2/fall033.gif
+      @cmd  stop
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      delay   20
+      frame	data/chars/misc/empty.gif
+      delay   500
+      frame	data/chars/misc/empty.gif
+      delay   8
+	frame	data/chars/misc/empty.gif
+      offset	77 170
+	frame	data/chars/misc/empty.gif
+
+anim  follow50 # spikeh2 effect
+	loop	0
+	offset	122 170
+	delay   8
+      flipframe 8
+      jumpframe 0 2.5 1.5
+      landframe 7
+      @cmd    degravity -0.15
+	frame	data/chars/williams2/fall033.gif
+      frame	data/chars/williams2/fall033.gif
+      delay   10
+      frame	data/chars/williams2/fall033.gif
+      frame	data/chars/williams2/fall033.gif
+      frame	data/chars/misc/empty.gif
+      delay   20
+      frame	data/chars/misc/empty.gif
+      @cmd killentity getlocalvar("self")
+      delay   500
+      frame	data/chars/misc/empty.gif
+      delay   8
+	frame	data/chars/misc/empty.gif
+      offset	77 170
+	frame	data/chars/misc/empty.gif
+
+

@@ -1,0 +1,500 @@
+music		Data/music/nextstage.ogg
+background	data/levels/st3/sky.png	0.5  0.5 0 0 0 0 -1 -1
+bgspeed 	1 0 
+panel		data/levels/st3/path.png
+order           a
+direction both
+
+bglayer 	data/levels/st3/clouds_0.png     0.5  0.5  0  100    0    0  -1 1 1 0 0 0 0 0 1.6
+bglayer 	data/levels/st3/clouds_1.png     0.5  0.5  0  124    0    0  -1 1 1 0 0 0 0 0 1.2
+bglayer 	data/levels/st3/clouds_2.png     0.5  0.5  0  148    0    0  -1 1 1 0 0 0 0 0 0.8
+bglayer 	data/levels/st3/clouds_3.png     0.5  0.5  0  172    0    0  -1 1 1 0 0 0 0 0 0.4
+
+bglayer 	data/levels/st3/mount.png     0.2  0.2  -400  10  0 0 -1 1 1
+bglayer 	data/levels/st3/field.png     0.1  0.1  -400  9   0 0 -1 1 1
+bglayer 	data/levels/st3/brush.png     0.05  0.05  -400  9   0 0 110 1 1
+
+wall  490 322 -82 0 2322 2402 64 5000
+wall  1920 348 0 0 114 114 29 59
+wall  2160 348 0 0 114 114 29 59
+wall  2675 400 0 0 125 125 1 5000
+wall  2765 350 0 0 2705 2705 62 5000
+wall  3495 424 -120 -120 0 0 25 40
+wall  3980 384 0 0 570 570 62 5000
+wall  4160 412 0 0 114 114 29 59
+wall  5550 320 -200 -200 0 0 60 5000
+wall  5630 290 -200 -200 0 0 60 5000
+wall  5736 535 120 0 2000 2120 130 5000
+hole  2383 482 0 0 117 117 34 0
+hole  2575 480 100 0 870 880 80 0
+hole  3129 404 0 0 95 95 58 0
+hole  3863 482 0 0 117 117 34 0
+hole  4790 600 0 0 2000 2000 66 0
+
+cameraoffset 0 -100
+
+spawn1 130 20 300
+spawn2 130 20 300
+
+scrollz 0 0
+at  0
+
+#-------------------------------------
+spawn	movezblo2
+@script
+void main()
+{
+    int P1 = getplayerproperty(0, "entity");
+    int P2 = getplayerproperty(1, "entity");
+
+    if(P1){
+      changeentityproperty(P1, "subject_to_wall", 0);
+      changeentityproperty(P1, "Subject_to_MinZ", 0);
+      changeentityproperty(P1, "Subject_to_Gravity", 0);
+      changeentityproperty(P1, "position", 132, 208);
+      changeentityproperty(P1, "animation", openborconstant("ANI_FREESPECIAL29"));
+      changeentityproperty(P1, "colourmap", 0);
+    }
+    if(P2){
+      changeentityproperty(P2, "subject_to_wall", 0);
+      changeentityproperty(P2, "Subject_to_MinZ", 0);
+      changeentityproperty(P1, "Subject_to_Gravity", 0);
+      changeentityproperty(P2, "position", 173, 208);
+      changeentityproperty(P2, "animation", openborconstant("ANI_FREESPECIAL29"));
+      changeentityproperty(P2, "colourmap", 1);
+    }
+}
+@end_script
+flip	1
+coords	0 480
+at	0
+
+spawn	dooback
+coords  157 221
+at      0
+
+spawn	doorst3
+coords  157 221
+at      0
+
+spawn	brid1
+flip	1
+coords	2675 400
+at	0
+
+spawn	brid2
+flip	1
+coords	3476 400
+at	0
+
+spawn	water
+flip	1
+coords	3035 401
+at	0
+
+spawn	spikeh1
+flip	1
+coords	2443 470
+at	0
+
+spawn	spikeh1
+flip	1
+coords	3922 470
+at	0
+
+#spawn	rock
+#flip	1
+#coords	600 450
+#at	0
+
+#spawn	rock
+#flip	1
+#coords	500 450
+#at	0
+
+spawn	doorst1
+coords  1075 320
+at      0
+
+#-------------------------------------
+
+scrollx 0 450
+at  0
+
+spawn	scrmover5
+flip 1
+coords  1 488
+at      0
+
+#-------------------------------------
+#1-------------------------------------
+
+music	data/music/st3.ogg 35229
+at      1
+
+spawn	williams
+weapon bat
+map 3
+coords  700 350
+at      1
+
+spawn	roper
+map 7
+coords  820 430
+at      1
+
+spawn	roper
+health 60
+map 5
+flip 1
+coords  -70 340
+at      141
+
+spawn	barel
+flip	1
+coords	690 430
+at	200
+
+scrollx 104 450
+at  280
+
+spawn	roper
+health 60
+map 7
+coords  920 330
+at      280
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 104 5806
+at   0
+
+spawn	brrow
+flip 1
+coords  540 490 270
+at   0
+
+wait
+at 450
+
+Group	1 1
+at	450
+
+spawn timer
+coords  100 400
+at      450
+
+
+#-------------------------------------
+#2-------------------------------------
+
+scrollx 600 1865
+at   600
+
+Group	9 9
+at	800
+
+spawn	linda
+spawnscript data/scripts/noscpos.c
+health 60
+weapon whip
+flip 1
+coords	1075 312
+at	800
+
+spawn	roper
+health 60
+map 5
+coords  720 390
+at      920
+
+scrollx 800 1865
+at   920
+
+scrollx 1100 1865
+at   1300
+
+spawn	williams
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW41"));
+} @end_script
+map 3
+coords  729 349 181
+at      1300
+
+scrollx 1500 1865
+at   1500
+
+spawn	williams
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW41"));
+} @end_script
+weapon knife
+map 3
+coords  769 349 149
+at      1500
+
+spawn	williams
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW56"));
+} @end_script
+weapon knife
+map 3
+coords  960 478
+at      1500
+
+scrollx 1700 1865
+at   1700
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 1700 5806
+at   0
+
+spawn	brrow
+flip 1
+coords  540 490 270
+at   0
+
+wait
+at 1865
+
+Group	1 1
+at	1865
+
+spawn timer
+coords  100 340
+at      1865
+
+
+#-------------------------------------
+#3-------------------------------------
+
+scrollx 1865 5806
+at   1865
+
+Group	10 10
+at	2010
+
+spawn	bolo
+map 0
+coords  720 360
+at      2010
+
+scrollx 2505 5806
+at   2505
+
+scrollx 2700 5806
+at   2700
+
+spawn	bolo
+map 2
+coords  720 360
+at      2890
+
+scrollx 2800 5806
+at   2890
+
+spawn	roper
+weapon knife
+map 5
+coords  710 375
+at      3160
+
+scrollx 3060 5806
+at   3160
+
+spawn	williams
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW57"));
+} @end_script
+weapon knife
+map 3
+coords  709 351 119
+at      3240
+
+spawn	williams
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW56"));
+} @end_script
+weapon knife
+map 3
+coords  700 478
+at      3240
+
+scrollx 3240 3338
+at   3240
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 3240 5806
+at   0
+
+spawn	brrow
+flip 1
+coords  540 490 270
+at   0
+
+wait
+at 3338
+
+Group	1 1
+at	3338
+
+spawn timer
+coords  100 340
+at      3338
+
+
+#-------------------------------------
+#4-------------------------------------
+
+scrollx 3338 4360
+at   3338
+
+Group	6 6
+at	4000
+
+scrollx 3850 4360
+at   4000
+
+spawn	williams
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW41"));
+} @end_script
+health 60
+weapon dynam
+map 3
+coords  686 351 41
+at      4000
+
+spawn	linda
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW46"));
+} @end_script
+coords  786 380
+at      4000
+
+scrollx 4130 4360
+at   4360
+
+spawn	roper
+health 60
+map 5
+flip 1
+coords  -70 450
+at      4360
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 4130 5806
+at   0
+
+spawn	brrow
+flip 1
+coords  540 490 270
+at   0
+
+wait
+at 4360
+
+Group	1 1
+at	4360
+
+spawn timer
+coords  100 410
+at      4360
+
+
+#-------------------------------------
+#5-------------------------------------
+
+scrollx 4360 5806
+at   4360
+
+Group	12 12
+at	4000
+
+spawn	williams
+health 60
+map 3
+coords  700 405
+at      4700
+
+spawn	rock
+flip 1
+coords  680 405
+at      4800
+
+spawn	roper
+health 60
+map 5
+flip 1
+coords  -60 405
+at      4800
+
+scrollx 4700 5806
+at   4800
+
+scrollx 4800 5806
+at   4900
+
+spawn	rock
+flip 1
+coords  680 345
+at      4947
+
+scrollx 5060 5806
+at  5080
+
+spawn	blkiller
+flip	1
+coords	-5081 480
+at	5080
+
+scrollz 178 480
+at  5080
+
+spawn	bolo
+coords  690 280
+at      5080
+
+spawn	bolo
+coords  690 420
+at      5080
+
+Group	1 1
+at	4000
+
+spawn	time
+spawnscript data/scripts/noscpos.c
+health 50
+coords  5550 390
+at  4000
+
+spawn	clear
+spawnscript data/scripts/noscpos.c
+health 50
+coords  5740 310
+at  4000
+
+spawn	clearexclst1
+spawnscript data/scripts/noscpos.c
+health 50
+coords  5740 310
+at  4000
+
+spawn	clear5
+spawnscript data/scripts/noscpos.c
+coords  5600 400
+at   4000
+
+

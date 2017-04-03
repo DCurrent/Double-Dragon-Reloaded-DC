@@ -1,0 +1,41 @@
+name		wall1
+type		none
+facing		1
+subject_to_wall	0
+offscreenkill	3000
+
+
+anim spawn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==9){
+      changeentityproperty(self, "setlayer", 1);
+    }
+@end_script
+      loop	0
+	delay	13
+	offset	128 226
+      sound  data/sounds/rock2.wav
+      frame  data/chars/misc/wall1.gif
+	frame  data/chars/misc/wall2.gif
+	frame  data/chars/misc/wall3.gif
+	frame  data/chars/misc/wall4.gif
+      frame  data/chars/misc/wall5.gif
+	frame  data/chars/misc/wall5.gif
+	frame  data/chars/misc/wall6.gif
+      frame  data/chars/misc/wall6.gif
+	frame  data/chars/misc/wall7.gif
+	frame  data/chars/misc/wall8.gif
+
+anim idle
+	loop	0
+	delay	2
+	offset	128 226
+	frame  data/chars/misc/wall8.gif
+	frame  data/chars/misc/wall8.gif
+
+
+
+
+

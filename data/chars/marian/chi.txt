@@ -1,0 +1,35 @@
+name	chi
+health	1
+type	none
+shadow	1
+nolife        1
+facing 1
+lifespan  	8
+
+palette   data/chars/chin/idle.gif
+alternatepal data/chars/chin/map1.gif
+alternatepal data/chars/chin/map2.gif
+
+anim spawn
+	loop	0
+	delay	406
+	offset	122 170
+	frame	data/chars/chin/w0.gif
+	offset	77 170
+	delay	2
+	frame	data/chars/chin/w3.gif
+
+anim idle
+	loop	1
+	delay	28
+	offset	77 170
+	@cmd changeentityproperty getlocalvar("self") "velocity" 0.4 0 0
+	frame	data/chars/chin/w4.gif
+	@cmd changeentityproperty getlocalvar("self") "velocity" 0.4 0 0
+	frame	data/chars/chin/w1.gif
+	@cmd changeentityproperty getlocalvar("self") "velocity" 0.4 0 0
+	frame	data/chars/chin/w2.gif
+	@cmd changeentityproperty getlocalvar("self") "velocity" 0.4 0 0
+	frame	data/chars/chin/w3.gif
+
+

@@ -1,0 +1,50 @@
+name       delay8
+health       10
+type       enemy
+nomove     1 1
+antigravity	100
+subject_to_gravity 0
+subject_to_wall 0
+subject_to_hole 0
+offscreenkill	7000
+
+anim idle
+@script
+    void self = getlocalvar("self");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");
+    int Play = openborvariant("count_players");
+    int x = getentityproperty(self,"x");
+
+    if(Play==1 && (P1 || P2)){
+      int Px;
+
+      if(P1){
+        Px = getentityproperty(P1,"x");
+      } else if(P2){
+        Px = getentityproperty(P2,"x");
+      }
+
+      if(Px <= x+518){
+        killentity(self); //Suicide!
+      }
+    } else if(Play==2 && P1 && P2){
+      int P1x = getentityproperty(P1,"x");
+      int P2x = getentityproperty(P2,"x");
+
+      if(P1x <= x+518 && P2x <= x+518){
+        killentity(self); //Suicide!
+      } else if(P1x <= x+518 && P2x <= x+838){
+        killentity(self); //Suicide!
+      } else if(P1x <= x+838 && P2x <= x+518){
+        killentity(self); //Suicide!
+      }
+    }
+@end_script
+	loop	1
+	delay	7
+	offset 1 1
+	frame  data/chars/misc/empty.gif
+	frame  data/chars/misc/empty.gif
+
+

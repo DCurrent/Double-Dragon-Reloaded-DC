@@ -1,0 +1,69 @@
+name		doorst2
+type		none
+facing		1
+hostile enemy
+antigravity	100
+subject_to_gravity 0
+subject_to_wall 0
+subject_to_hole 0
+offscreenkill	7000
+
+animationscript data/scripts/doorall.c
+
+anim spawn
+      loop	0
+	delay	2
+	offset	57 187
+	@cmd  dooropen2 -40 40 -10 0 0 20 "ANI_FOLLOW1" "ANI_FOLLOW45"
+	frame  data/chars/misc/doorst200.gif
+
+anim idle
+	loop	1
+	delay	5
+	offset	57 187
+	@cmd  dooropen2 -40 40 -10 0 0 20 "ANI_FOLLOW1" "ANI_FOLLOW45"
+	frame  data/chars/misc/doorst200.gif
+	@cmd  dooropen2 -40 40 -10 0 0 20 "ANI_FOLLOW1" "ANI_FOLLOW45"
+	frame  data/chars/misc/doorst200.gif
+
+anim follow1
+	loop	0
+	delay	150
+	offset	57 187
+	@cmd  dooropen -40 40 -10 0 0 20 "ANI_FOLLOW45"
+	frame  data/chars/misc/doorst200.gif
+	@cmd  dooropen -40 40 -10 0 0 20 "ANI_FOLLOW45"
+	frame  data/chars/misc/doorst20.gif
+	delay	100
+	frame  data/chars/misc/doorst21.gif
+	delay	16
+	sound data/sounds/door.wav
+	frame  data/chars/misc/doorst21.gif
+	frame  data/chars/misc/doorst22.gif
+	frame  data/chars/misc/doorst23.gif
+	frame  data/chars/misc/doorst24.gif
+	delay	42
+	frame  data/chars/misc/doorst25.gif
+	delay	64.5
+	frame  data/chars/misc/doorst25.gif
+	frame  data/chars/misc/doorst25.gif
+	frame  data/chars/misc/doorst25.gif
+	frame  data/chars/misc/doorst25.gif
+	sound data/sounds/door.wav
+	delay	16
+	frame  data/chars/misc/doorst24.gif
+	frame  data/chars/misc/doorst23.gif
+	frame  data/chars/misc/doorst22.gif
+	frame  data/chars/misc/doorst21.gif
+	delay	100
+	frame  data/chars/misc/doorst21.gif
+	delay	150
+	frame  data/chars/misc/doorst20.gif
+	frame  data/chars/misc/doorst200.gif
+      @cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_IDLE")
+	frame  data/chars/misc/doorst200.gif
+
+
+
+
+

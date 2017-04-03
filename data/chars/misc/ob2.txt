@@ -1,0 +1,30 @@
+name    ob2
+type	trap
+shadow  0
+noatflash 1
+nolife        1
+grabdistance 55
+offscreenkill 3000
+subject_to_gravity 0
+subject_to_wall 0
+subject_to_hole 0
+hostile player enemy
+candamage enemy player
+
+anim idle
+	loop	1
+        delay	5
+	  offset	50 95
+        hitflash  eflash
+        hitfx   data/sounds/goo.wav
+        attack11  50 -130 150 130 1000 1 1 0 0
+        otg 1
+        dropv 3.5 0.1
+        forcedirection 2
+        frame   data/chars/misc/ob.gif
+        frame   data/chars/misc/ob.gif
+
+
+
+
+

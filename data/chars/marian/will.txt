@@ -1,0 +1,50 @@
+name	will
+health	1
+type	none
+shadow	1
+nolife        1
+facing 1
+lifespan  	8
+
+anim spawn
+	loop	0
+	delay	28
+	offset	146 169
+	@cmd changeentityproperty getlocalvar("self") "velocity" -0.4 0 0
+	frame	data/chars/marian/will00.gif
+	sound  data/sounds/step11.wav
+	@cmd changeentityproperty getlocalvar("self") "velocity" -0.4 0 0
+	frame	data/chars/marian/will0.gif
+	@cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+	delay	28
+	frame	data/chars/marian/will1.gif
+	frame	data/chars/marian/will2.gif
+	frame	data/chars/marian/will3.gif
+	sound  data/sounds/beat1.wav
+	frame	data/chars/marian/will4.gif
+	sound  data/sounds/marian.wav
+	frame	data/chars/marian/will5.gif
+	frame	data/chars/marian/will6.gif
+	delay	35
+	frame	data/chars/marian/will7.gif
+	delay	28
+	frame	data/chars/marian/will8.gif
+
+anim idle
+	loop	1
+	delay	28
+	offset	146 169
+	@cmd changeentityproperty getlocalvar("self") "velocity" 0.4 0 0
+	frame	data/chars/marian/will8.gif
+	sound  data/sounds/step11.wav
+	@cmd changeentityproperty getlocalvar("self") "velocity" 0.4 0 0
+	frame	data/chars/marian/will9.gif
+	@cmd changeentityproperty getlocalvar("self") "velocity" 0.4 0 0
+	frame	data/chars/marian/will10.gif
+	sound  data/sounds/step11.wav
+	@cmd changeentityproperty getlocalvar("self") "velocity" 0.4 0 0
+	frame	data/chars/marian/will11.gif
+
+
+
+

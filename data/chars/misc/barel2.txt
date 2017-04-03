@@ -1,0 +1,103 @@
+name	 barel2
+type	 none
+shadow	0
+nolife   1
+bounce 1
+no_adjust_base 0
+subject_to_hole 1
+subject_to_wall 1
+subject_to_gravity 0
+candamage	enemy
+
+load barel
+
+script  data/scripts/bounce2.c
+animationscript data/scripts/itemsp.c
+
+anim spawn
+      @script
+    void self = getlocalvar("self");
+    int x = getentityproperty(self, "x");
+    int y = getentityproperty(self, "a");
+    int z = getentityproperty(self, "z");
+    int b = getentityproperty(self, "base");
+
+    if(y >= 2+b){
+      changeentityproperty(self, "subject_to_gravity", 1);
+    }
+@end_script
+	loop   0
+      delay   9
+      offset 75 100
+      hitflash  eflash
+      hitfx  data/sounds/beatt3.wav
+      spawnframe 14 0 0 0 0
+	custentity barel
+      bouncefactor 1.2
+      sound  data/sounds/barrel.wav
+      frame  data/chars/misc/barel11.gif
+      attack 50 70 50 42 12 1 1
+      dropv 3.5 1.5
+      forcedirection -1
+      frame  data/chars/misc/barel12.gif
+	frame  data/chars/misc/barel13.gif
+      sound  data/sounds/barrel.wav
+      @cmd  leaper 1.3 0 0
+      frame  data/chars/misc/barel11.gif
+      frame  data/chars/misc/barel12.gif
+	frame  data/chars/misc/barel13.gif
+      delay   11
+      @cmd  leaper 1 0 0
+      frame  data/chars/misc/barel11.gif
+      frame  data/chars/misc/barel12.gif
+      @cmd  leaper 0.7 0 0
+	frame  data/chars/misc/barel13.gif
+      attack 0 0 0 0 0 0
+      delay   13
+      frame  data/chars/misc/barel11.gif
+      @cmd  leaper 0.5 0 0
+      frame  data/chars/misc/barel12.gif
+	frame  data/chars/misc/barel13.gif
+      @cmd  leaper 0.3 0 0
+      frame  data/chars/misc/barel11.gif
+      frame  data/chars/misc/barel12.gif
+	frame	 data/chars/misc/empty.gif
+      @cmd killentity getlocalvar("self")
+	frame	 data/chars/misc/empty.gif
+
+anim  follow49 # water effect
+	loop	0
+	offset	77 170
+	delay   4
+      spawnframe 0 0 55 0 0
+	custentity water1
+      landframe 6
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      frame	data/chars/misc/empty.gif
+      delay   500
+      frame	data/chars/misc/empty.gif
+      delay   200
+	frame	data/chars/misc/empty.gif
+
+anim follow10 # killer effect
+      loop   0
+      delay   12
+      offset 75 100
+      landframe 4
+      frame  data/chars/misc/barel5.gif
+      frame  data/chars/misc/barel5.gif
+	frame  data/chars/misc/barel5.gif
+      delay   100
+      @cmd killentity getlocalvar("self")
+      frame  data/chars/misc/empty.gif
+      delay   8
+      frame  data/chars/misc/empty.gif
+
+
+
+
+
+

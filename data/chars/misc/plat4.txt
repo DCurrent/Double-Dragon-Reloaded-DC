@@ -1,0 +1,19 @@
+name	plat4
+type    none
+shadow  0
+grabdistance 4000
+offscreenkill 6000
+subject_to_gravity 0
+subject_to_hole 0
+subject_to_wall 0
+nolife  1
+
+anim idle
+	loop	0
+	delay	5
+	offset	1 1
+      platform   0 0 -4000 -4000 0 0 115 354
+      frame  data/chars/misc/empty.gif
+
+
+

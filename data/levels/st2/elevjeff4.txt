@@ -1,0 +1,66 @@
+name	elevjeff4
+type    none
+shadow  0
+setlayer 1
+offscreenkill 2000
+subject_to_gravity 0
+subject_to_hole 0
+subject_to_wall 0
+nolife  1
+hostile npc
+
+script data/scripts/elevjeffnpc.c
+animationscript data/scripts/elevjeff4.c
+
+anim spawn
+	loop	0
+	delay	13
+	offset	100 123
+	@cmd changeentityproperty getlocalvar("self") "velocity" 0 0 1
+	frame  data/levels/st2/elevjeff2.gif
+	frame  data/levels/st2/elevjeff2.gif
+	frame  data/levels/st2/elevjeff2.gif
+	frame  data/levels/st2/elevjeff2.gif
+	frame  data/levels/st2/elevjeff2.gif
+	frame  data/levels/st2/elevjeff2.gif
+	frame  data/levels/st2/elevjeff2.gif
+	frame  data/levels/st2/elevjeff2.gif
+	frame  data/levels/st2/elevjeff2.gif
+	frame  data/levels/st2/elevjeff2.gif
+	frame  data/levels/st2/elevjeff2.gif
+	frame  data/levels/st2/elevjeff2.gif
+
+anim idle
+	loop	1
+	delay	5
+	offset	100 123
+	@cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+	@cmd elev -50 35 50 "ANI_FOLLOW12"
+	frame  data/levels/st2/elevjeff2.gif
+	@cmd elev -50 35 50 "ANI_FOLLOW12"
+	frame  data/levels/st2/elevjeff2.gif
+
+anim follow1
+	loop	0
+	delay	13
+	offset	100 123
+	sound data/sounds/elevjeff3.wav
+	@cmd changeentityproperty getlocalvar("self") "velocity" 0 0 -1
+	@cmd elev2 -300 300 300 "ANI_FOLLOW3"
+	frame  data/levels/st2/elevjeff2.gif
+	@cmd elev2 -300 300 300 "ANI_FOLLOW3"
+	frame  data/levels/st2/elevjeff2.gif
+	@cmd elev2 -300 300 300 "ANI_FOLLOW3"
+	frame  data/levels/st2/elevjeff2.gif
+	@cmd elev2 -300 300 300 "ANI_FOLLOW3"
+	frame  data/levels/st2/elevjeff2.gif
+	@cmd elev2 -300 300 300 "ANI_FOLLOW3"
+	frame  data/levels/st2/elevjeff2.gif
+	frame  data/levels/st2/elevjeff2.gif
+	frame  data/levels/st2/elevjeff2.gif
+	frame  data/levels/st2/elevjeff2.gif
+	frame  data/levels/st2/elevjeff2.gif
+	frame  data/levels/st2/elevjeff2.gif
+	frame  data/levels/st2/elevjeff2.gif
+	frame  data/levels/st2/elevjeff2.gif
+

@@ -1,0 +1,20 @@
+name	entrance
+type    none
+shadow  0
+antigravity 100
+facing 1
+subject_to_gravity 0
+subject_to_wall 0
+subject_to_hole 0
+offscreenkill  640
+
+
+anim idle
+	loop	1
+	delay	272
+	offset	1 157
+	frame	data/levels/st5a/entrance.gif
+	@cmd killentity getlocalvar("self")
+	frame	data/levels/st5a/entrance.gif
+
+

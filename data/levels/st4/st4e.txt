@@ -1,0 +1,1237 @@
+music		Data/music/nextstage.ogg
+background	data/levels/st4/sky.png
+panel		data/levels/st4/path.png
+
+
+bglayer 	data/levels/st4/trees_1.png     0.3  0.3  0  440  0 0 -1 1 1
+bglayer 	data/levels/st4/trees_0.png     0.2  0.2  0  505  0 0 -1 1 1
+
+order           a
+direction both
+
+wall  230 863 -4000 -4000 0 0 515 5000
+wall  10 1249 -1000 -1000 214 0 188 517
+wall  0 1177 0 0 1250 1136 91 315
+wall  946 1087 -4000 -4000 0 0 1 523
+wall  940 1087 0 0 7000 7000 156 643
+wall  2460 1087 -170 0 2560 2390 156 5000
+wall  740 1034 0 0 715 675 120 5000
+wall  4616 1034 0 0 833 665 144 5000
+wall  945 992 0 0 675 660 57 709
+wall  2615 1140 0 0 620 620 55 348
+wall  2615 1140 0 0 605 605 10 5000
+wall  3100 1140 0 0 877 877 55 155
+wall  3000 1193 0 0 525 525 55 17
+wall  4600 1140 0 0 200 200 55 211
+wall  4675 1140 0 0 615 615 55 314
+wall  2773 1323 -160 0 354 194 184 17
+wall  4322 1270 -160 0 364 196 184 211
+
+hole  -2 1334 0 0 7000 7000 500 0
+
+cameraoffset 0 -100
+
+spawn1 80 180
+spawn2 80 180
+
+scrollz 436 436
+at  0
+
+#-------------------------------------
+
+spawn	invade
+@script
+void main()
+{
+    int P1 = getplayerproperty(0, "entity");
+    int P2 = getplayerproperty(1, "entity");
+
+    if(P1){
+      changeentityproperty(P1, "subject_to_Screen", 0);
+      changeentityproperty(P1, "position", -30, 1119, 517);
+      changeentityproperty(P1, "animation", openborconstant("ANI_FREESPECIAL30"));
+      changeentityproperty(P1, "colourmap", 0);
+    }
+    if(P2){
+      changeentityproperty(P2, "subject_to_Screen", 0);
+      changeentityproperty(P2, "position", -60, 1134, 517);
+      changeentityproperty(P2, "animation", openborconstant("ANI_FREESPECIAL30"));
+      changeentityproperty(P2, "colourmap", 1);
+    }
+}
+@end_script
+flip	1
+coords	1 870
+at	0
+
+spawn	prop
+flip	1
+coords	2620 1141 354
+at	0
+
+spawn	ClimbSpot3
+health 328
+flip	1
+coords	1055 1087 315
+at	0
+
+spawn	ClimbSpot3
+health 328
+flip	1
+coords	1065 1087 315
+at	0
+
+spawn	ClimbSpot
+health 328
+flip	1
+coords	1075 1087 315
+at	0
+
+spawn	ClimbSpot
+health 328
+flip	1
+coords	1115 1087 315
+at	0
+
+spawn	ClimbSpot
+health 328
+flip	1
+coords	1155 1087 315
+at	0
+
+spawn	ClimbSpot3
+health 328
+flip	1
+coords	1165 1087 315
+at	0
+
+spawn	ClimbSpot3
+health 328
+flip	1
+coords	1175 1087 315
+at	0
+
+
+#-------------------------------------
+
+#-------------------------------------
+spawn	plat3
+coords	2461 1087 643
+at	0
+
+spawn	plat3
+coords	1970 1087 393
+at	0
+
+spawn	ClimbSpot3
+health 295
+flip	1
+coords	2305 1087 348
+at	0
+
+spawn	ClimbSpot3
+health 295
+flip	1
+coords	2315 1087 348
+at	0
+
+spawn	ClimbSpot
+health 295
+flip	1
+coords	2325 1087 348
+at	0
+
+spawn	ClimbSpot
+health 295
+flip	1
+coords	2365 1087 348
+at	0
+
+spawn	ClimbSpot
+health 295
+flip	1
+coords	2405 1087 348
+at	0
+
+spawn	ClimbSpot
+health 295
+flip	1
+coords	2445 1087 348
+at	0
+
+spawn	ClimbSpot3
+health 100
+flip	1
+coords	2680 1087 348
+at	0
+
+spawn	ClimbSpot3
+health 100
+flip	1
+coords	2690 1087 348
+at	0
+
+spawn	ClimbSpot
+health 295
+flip	1
+coords	2700 1087 348
+at	0
+
+spawn	ClimbSpot
+health 295
+flip	1
+coords	2740 1087 348
+at	0
+
+spawn	ClimbSpot
+health 295
+flip	1
+coords	2780 1087 348
+at	0
+
+spawn	ClimbSpot3
+health 295
+flip	1
+coords	2790 1087 348
+at	0
+
+spawn	ClimbSpot3
+health 295
+flip	1
+coords	2800 1087 348
+at	0
+
+#-------------------------------------
+#-------------------------------------
+
+spawn	ClimbSpot3
+health 138
+flip	1
+coords	3340 1140 17
+at	0
+
+spawn	ClimbSpot3
+health 138
+flip	1
+coords	3350 1140 17
+at	0
+
+spawn	ClimbSpot
+health 138
+flip	1
+coords	3360 1140 17
+at	0
+
+spawn	ClimbSpot
+health 138
+flip	1
+coords	3400 1140 17
+at	0
+
+spawn	ClimbSpot
+health 138
+flip	1
+coords	3440 1140 17
+at	0
+
+spawn	ClimbSpot3
+health 138
+flip	1
+coords	3450 1140 17
+at	0
+
+spawn	ClimbSpot3
+health 138
+flip	1
+coords	3460 1140 17
+at	0
+
+#-------------------------------------
+#-------------------------------------
+spawn	ClimbSpot3
+health 329
+flip	1
+coords	4935 1087 314
+at	0
+
+spawn	ClimbSpot3
+health 329
+flip	1
+coords	4945 1087 314
+at	0
+
+spawn	ClimbSpot
+health 329
+flip	1
+coords	4955 1087 314
+at	0
+
+spawn	ClimbSpot
+health 329
+flip	1
+coords	4995 1087 314
+at	0
+
+spawn	ClimbSpot
+health 329
+flip	1
+coords	5035 1087 314
+at	0
+
+spawn	ClimbSpot3
+health 329
+flip	1
+coords	5045 1087 314
+at	0
+
+spawn	ClimbSpot3
+health 329
+flip	1
+coords	5055 1087 314
+at	0
+
+#-------------------------------------
+#-------------------------------------
+
+spawn	plat3
+coords	3730 1087 483
+at	0
+
+spawn	plat5
+coords	3885 1087 248
+at	0
+
+spawn	ClimbSpot3
+health 328
+flip	1
+coords	3765 1087 155
+at	0
+
+spawn	ClimbSpot3
+health 328
+flip	1
+coords	3775 1087 155
+at	0
+
+spawn	ClimbSpot
+health 328
+flip	1
+coords	3785 1087 155
+at	0
+
+spawn	ClimbSpot
+health 328
+flip	1
+coords	3825 1087 155
+at	0
+
+spawn	ClimbSpot
+health 328
+flip	1
+coords	3865 1087 155
+at	0
+
+spawn	ClimbSpot3
+health 128
+flip	1
+coords	3875 1087 155
+at	0
+
+spawn	ClimbSpot3
+health 128
+flip	1
+coords	3885 1087 155
+at	0
+
+spawn	ClimbSpot3
+health 74
+flip	1
+coords	4270 1087 211
+at	0
+
+spawn	ClimbSpot3
+health 74
+flip	1
+coords	4280 1087 211
+at	0
+
+spawn	ClimbSpot
+health 328
+flip	1
+coords	4290 1087 211
+at	0
+
+spawn	ClimbSpot
+health 328
+flip	1
+coords	4330 1087 211
+at	0
+
+spawn	spikeh
+flip	1
+coords	4330 1087 211
+at	0
+
+
+spawn	ClimbSpot
+health 328
+flip	1
+coords	4370 1087 211
+at	0
+
+spawn	ClimbSpot3
+health 328
+flip	1
+coords	4380 1087 211
+at	0
+
+spawn	ClimbSpot3
+health 328
+flip	1
+coords	4390 1087 211
+at	0
+
+
+#-------------------------------------
+
+spawn	doorst4a
+coords  1755 895 643
+at      0
+
+spawn	doorst4b
+coords  5696 895 643
+at      0
+
+#1-------------------------------------
+scrollx 0 710
+at  0
+
+spawn	jeff2
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW57"));
+} @end_script
+health 150
+flip 1
+map 1
+coords  215 1120 316
+at      0
+
+spawn	jeff
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW58"));
+} @end_script
+health 150
+map 1
+coords  700 1110 316
+at      230
+
+spawn	moveyblo
+flip	1
+coords	0 1088 640
+at	400
+
+spawn	roper
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW55"));
+} @end_script
+health 80
+weapon dynam
+map 5
+coords  640 1089 643
+at      540
+
+scrollx 400 710
+at  540
+
+scrollx 580 710
+at  700
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 580 6100
+at   0
+
+scrollz 50 436
+at  0
+
+spawn	blkiller
+flip	1
+coords	-313 1089 640
+at	0
+
+spawn	brrow2
+flip 1
+coords  540 915 80
+at   0
+
+spawn	rock
+spawnscript data/scripts/noscpos.c
+coords  992 1061 643
+at      0
+
+spawn	rock
+spawnscript data/scripts/noscpos.c
+coords  1504 1025 643
+at      0
+
+wait
+at 710
+
+Group	2 2
+at	710
+
+spawn delay6
+flip 1
+coords  265 1060 643
+at      710
+
+spawn delay6
+flip 1
+coords  264 1060 643
+at      710
+
+spawn	lakiller
+flip	1
+coords	10 1089 316
+at	710
+
+#-------------------------------------
+#2-------------------------------------
+
+spawn	killer
+flip 1
+coords	-1000 1090 550
+at	711
+
+scrollx 672 6100
+at   711
+
+scrollz 50 436
+at  711
+
+Group	8 8
+at	835
+
+spawn	jeff
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW46"));
+} @end_script
+health 120
+map 1
+coords  671 980 709
+at      835
+
+spawn	williams
+health 80
+map 3
+coords  670 1060 643
+at      986
+
+scrollx 1100 1437
+at   1200
+
+scrollz 50 50
+at  1200
+
+scrollx 1200 1437
+at   1300
+
+scrollx 1350 1437
+at   1350
+
+spawn	roper
+health 60
+map 7
+coords  700 1000 643
+at      1350
+
+Group	3 3
+at	1350
+
+spawn	abobo
+spawnscript data/scripts/noscpos.c
+health 176
+map 1
+coords  1755 887 643
+at      1350
+
+spawn	williams
+health 60
+map 3
+coords  700 1000 643
+at      1350
+
+spawn	jeff5
+spawnscript data/scripts/noscpos.c
+health 100
+map 1
+coords  1755 887 643
+at      1350
+
+spawn	roper
+health 50
+map 5
+coords  700 1050 643
+at      1350
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 1350 6100
+at   0
+
+spawn	kikiller
+flip	1
+coords	-1400 1089 640
+at	0
+
+spawn	brrow1
+flip 1
+coords  540 540 80
+at   0
+
+Group	2 2
+at	0
+
+musicfade 1
+at      0
+
+music	data/music/st3.ogg 35229
+at      0
+
+wait
+at 1437
+
+Group	1 1
+at	1437
+
+spawn timer
+coords  100 1100 354
+at      1437
+
+#-------------------------------------
+#3-------------------------------------
+
+scrollx 1437 6100
+at   1550
+
+scrollx 1550 6100
+at   1650
+
+scrollz 50 390
+at  1750
+
+scrollx 1660 6100
+at   1760
+
+scrollx 1760 6100
+at   1860
+
+scrollx 1860 6100
+at   1960
+
+scrollx 1960 6100
+at   2060
+
+scrollx 2060 3074 #2940
+at   2160
+
+Group	4 4
+at	2200
+
+spawn	roper
+health 80
+weapon bomb
+map 5
+coords  740 1120 348
+at      2290
+
+spawn	killer
+flip 1
+coords	0 1173 37
+at	2290
+
+spawn	itemkill3
+spawnscript data/scripts/noscpos.c
+flip	1
+coords	970 1090 642
+at	2390
+
+spawn	williams
+health 80
+weapon knife
+map 3
+coords  690 1120 348
+at      2390
+
+scrollx 2390 3074
+at   2390
+
+scrollz 565 740
+at  2916
+
+spawn	kikiller
+flip 1
+coords	-1000 1173 37
+at	2916
+
+scrollx 3050 3050
+at   2916
+
+spawn	williams
+health 80
+weapon knife
+map 3
+coords  690 1120 155
+at      2916
+
+wait
+at 3050
+
+Group	3 3
+at	3050
+
+spawn	itemkill3
+spawnscript data/scripts/noscpos.c
+flip	1
+coords	2880 1120 347
+at	3050
+
+spawn	williams
+health 60
+flip 1
+map 3
+coords  -70 1173 17
+at  3000
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 3051 3051
+at   0
+
+Group	1 1
+at	3051
+
+spawn	timer
+coords  100 1170 261
+at      3051
+
+Group	1 1
+at	0
+
+scrollx 2450 3050
+at   0
+
+scrollz 740 1376
+at  0
+
+spawn	brrow1
+coords  540 1248 80
+at   0
+
+#-------------------------------------
+#4-------------------------------------
+
+Group	4 4
+at	3000
+
+spawn	williams
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW59"));
+} @end_script
+weapon dynam
+flip 1
+map 3
+coords  -192 1142 56
+at      3000
+
+spawn	williams
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW61"));
+} @end_script
+weapon dynam
+flip 1
+map 3
+coords  -330 1142 56
+at      3000
+
+spawn	bolo
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW55"));
+} @end_script
+flip 1
+coords  -280 1219 17
+at      3000
+
+spawn	wood
+coords  -181 1190 17
+at      3000
+
+spawn	wood
+coords  -388 1167 17
+at      3000
+
+spawn	delay8
+flip	1
+coords  -602 1170 17
+at      3000
+
+scrollx 2450 2650 #2580
+at   2450
+
+spawn	delay8
+flip	1
+coords  -251 1170 17
+at      2580
+
+scrollx 2450 2580
+at   2450
+
+spawn	itemkill3
+spawnscript data/scripts/noscpos.c
+flip	1
+coords	3400 1120 154
+at	2580
+
+Group	3 3
+at	2450
+
+spawn	bolo
+coords  800 1173 17
+at      2450
+
+spawn	roper
+map 5
+coords  750 1163 17
+at      2450
+
+spawn	jeff2
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW58"));
+} @end_script
+map 1
+coords  700 1163 17
+at      2450
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 2450 6100
+at   0
+
+spawn	brrow1
+flip 1
+coords  540 1300 80
+at   0
+
+wait
+at 2580
+
+Group	1 1
+at	2580
+
+spawn timer
+flip 1
+coords  265 1160 17
+at      2580
+
+#-------------------------------------
+#5-------------------------------------
+
+scrollz 565 740
+at  2916
+
+Group	8 8
+at	2917
+
+scrollx 2917 3498
+at   2917
+
+spawn	jeff
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW46"));
+} @end_script
+map 1
+coords  933 1120 155
+at      2917
+
+spawn	roper
+weapon dynam
+flip 1
+map 5
+coords  -60 1120 155
+at      3330
+
+scrollx 3230 3498
+at   3330
+
+scrollz 475 662
+at  3340
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 3230 4150
+at   0
+
+spawn	brrow1
+flip 1
+coords  540 1120 80
+at   0
+
+wait
+at 3498
+
+Group	1 1
+at	3498
+
+spawn timer
+flip 1
+coords  265 1120 155
+at      3498
+
+#-------------------------------------
+#6-------------------------------------
+
+scrollx 3500 4150
+at   3499
+
+Group	7 7
+at	3500
+
+spawn	jeff2
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW58"));
+} @end_script
+map 1
+coords  850 1130 211
+at      3500
+
+spawn	bolo
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW46"));
+} @end_script
+map 2
+coords  982 1131 211
+at      3500
+
+spawn	abobo
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW46"));
+} @end_script
+map 7
+coords  1031 1173 211
+at      3500
+
+spawn	bolo
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW46"));
+} @end_script
+map 2
+coords  967 1198 211
+at      3500
+
+spawn	wood
+coords  1133 1107 211
+at      3500
+
+spawn	rock
+coords  857 1246 211
+at      3500
+
+scrollx 3760 4150
+at   3760
+
+Group	4 4
+at	4150
+
+scrollx 3820 4150
+at   3501
+
+spawn	williamsb
+weapon dynam
+map 3
+coords  850 1120 314
+at      3501
+
+spawn	williamsb
+weapon dynam
+map 3
+coords  750 1100 314
+at      3501
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 3820 6100
+at   0
+
+spawn	brrow1
+flip 1
+coords  540 1120 80
+at   0
+
+wait
+at 4150
+
+Group	1 1
+at	4150
+
+spawn timer
+flip 1
+coords  265 1120 314
+at      4150
+
+#-------------------------------------
+#7-------------------------------------
+
+scrollx 4151 4760
+at   4151
+
+Group	2 2
+at	4250
+
+spawn	moveyblo
+flip	1
+coords	500 1088 620
+at	4250
+
+spawn	burnov
+@script void main() {
+   performattack(getlocalvar("self"), openborconstant("ANI_FOLLOW46"));
+} @end_script
+coords  885 1120 314
+at      4250
+
+scrollx 4615 4760
+at   4615
+
+scrollz 475 475
+at  4615
+
+spawn	burnov2
+flip 1
+coords  -80 1120 211
+at      4615
+
+#-------------------------------------
+Group	1 1
+at	0
+
+scrollx 4615 6100
+at   0
+
+scrollz 50 662
+at  0
+
+spawn	blkiller
+flip	1
+coords	-313 1089 620
+at	0
+
+spawn	brrow2
+flip 1
+coords  540 915 80
+at   0
+
+wait
+at 4615
+
+Group	2 2
+at	4615
+
+spawn delay6
+spawnscript data/scripts/noscpos.c
+flip 1
+coords  4900 1060 643
+at      4615
+
+spawn delay6
+spawnscript data/scripts/noscpos.c
+flip 1
+coords  4899 1060 643
+at      4615
+
+spawn	lakiller
+flip	1
+coords	10 1089 211
+at	4615
+
+spawn	itemkill3
+spawnscript data/scripts/noscpos.c
+flip	1
+coords	4720 1120 314
+at	4615
+
+spawn	itemkill3
+spawnscript data/scripts/noscpos.c
+flip	1
+coords	4450 1120 211
+at	4615
+
+#-------------------------------------
+#8-------------------------------------
+
+spawn	killer
+flip 1
+coords	-500 1090 550
+at	4616
+
+scrollz 50 436
+at  4761
+
+Group	7 7
+at	4762
+
+spawn	mibobo
+health 80
+map 1
+coords  830 1060 643
+at      4762
+
+scrollz 50 313
+at  5070
+
+scrollz 14 313
+at  5100
+
+scrollz 14 14
+at  5263
+
+scrollx 5263 6100
+at  5263
+
+spawn	mibobo
+health 160
+map 1
+coords  830 1000 643
+at      5263
+
+spawn	mibobo
+health 80
+map 1
+coords  780 1050 643
+at      5263
+
+spawn	delay9
+coords  380 1050 643
+at      5263
+
+Group	2 3
+at	5263
+
+spawn	jeff2
+spawnscript data/scripts/noscpos.c
+health 162
+map 6
+flip 1
+coords  5681 887 643
+at      5263
+
+spawn	jeff2
+spawnscript data/scripts/noscpos.c
+health 100
+map 6
+flip 1
+coords  5711 887 643
+at      5263
+
+spawn	time
+spawnscript data/scripts/noscpos.c
+coords  5694 975 643
+at  5263
+
+spawn	delay2
+health 10
+coords  800 1060 643
+at      5263
+
+Group	3 3
+at	5263
+
+spawn	delay2
+health 10
+coords  800 1060 643
+at      5263
+
+Group	2 3
+at	5263
+
+spawn	chin
+spawnscript data/scripts/noscpos.c
+health 300
+map 1
+flip 1
+coords  5696 887 643
+at      5263
+
+spawn	delay2
+health 60
+coords  800 1060 643
+at      5263
+
+spawn	jeff2
+spawnscript data/scripts/noscpos.c
+health 80
+map 6
+flip 1
+coords  5682 887 643
+at      5263
+
+spawn	jeff2
+spawnscript data/scripts/noscpos.c
+health 80
+map 6
+flip 1
+coords  5713 887 643
+at      5263
+
+spawn	jeff2
+spawnscript data/scripts/noscpos.c
+health 80
+map 6
+flip 1
+coords  5680 887 643
+at      5263
+
+spawn	jeff2
+spawnscript data/scripts/noscpos.c
+health 80
+map 6
+flip 1
+coords  5712 887 643
+at      5263
+
+Group	1 1
+at	5263
+
+spawn	time
+spawnscript data/scripts/noscpos.c
+coords  5696 975 643
+at  5263
+
+spawn	doorchange
+spawnscript data/scripts/noscpos.c
+coords  5696 955 643
+at  5263
+
+spawn	clear
+spawnscript data/scripts/noscpos.c
+health 50
+coords  5696 955 643
+at  5263
+
+spawn	clear6
+spawnscript data/scripts/noscpos.c
+coords  5696 955 643
+at   5263
+
+

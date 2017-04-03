@@ -1,0 +1,23 @@
+
+animation	data/scenes/introdu1.gif 0 0 1 0
+animation	data/scenes/introdu2.gif 0 0 1 0
+animation	data/scenes/basicm1.gif 0 0 1 0
+animation	data/scenes/basicm2.gif 0 0 1 0
+animation	data/scenes/basicm3.gif 0 0 1 0
+animation	data/scenes/basicm4.gif 0 0 1 0
+animation	data/scenes/basicm5.gif 0 0 1 0
+animation	data/scenes/Grab1.gif 0 0 1 0
+animation	data/scenes/Grab2.gif 0 0 1 0
+animation	data/scenes/Grab3.gif 0 0 1 0
+animation	data/scenes/Grab4.gif 0 0 1 0
+animation	data/scenes/Grab5.gif 0 0 1 0
+animation	data/scenes/Grab6.gif 0 0 1 0
+animation	data/scenes/Grab7.gif 0 0 1 0
+animation	data/scenes/special1.gif 0 0 1 0
+animation	data/scenes/special2.gif 0 0 1 0
+animation	data/scenes/special3.gif 0 0 1 0
+animation	data/scenes/special4.gif 0 0 1 0
+
+
+
+

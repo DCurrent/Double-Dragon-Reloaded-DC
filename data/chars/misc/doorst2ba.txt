@@ -1,0 +1,58 @@
+name		doorst2ba
+type		none
+facing		1
+antigravity	100
+subject_to_gravity 0
+subject_to_wall 0
+subject_to_hole 0
+Subject_to_MinZ 0
+Subject_to_MaxZ 0
+offscreenkill	7000
+
+animationscript data/scripts/doorall.c
+
+anim spawn
+      loop	0
+	delay	2
+	offset	54 189
+	@cmd  dooropen2 -40 40 -10 0 0 20 "ANI_FOLLOW1" "ANI_FOLLOW43"
+	frame  data/chars/misc/doorst2ba1.gif
+
+anim idle
+	loop	1
+	delay	5
+	offset	54 189
+	@cmd  dooropen2 -40 40 -10 0 0 20 "ANI_FOLLOW1" "ANI_FOLLOW43"
+	frame  data/chars/misc/doorst2ba1.gif
+	@cmd  dooropen2 -40 40 -10 0 0 20 "ANI_FOLLOW1" "ANI_FOLLOW43"
+	frame  data/chars/misc/doorst2ba1.gif
+
+anim follow1
+	loop	0
+	delay	16
+	offset	54 189
+	sound data/sounds/door.wav
+	@cmd  dooropen -40 40 -10 0 0 20 "ANI_FOLLOW43"
+	frame  data/chars/misc/doorst2ba1.gif
+	@cmd  dooropen -40 40 -10 0 0 20 "ANI_FOLLOW43"
+	frame  data/chars/misc/doorst2ba2.gif
+	frame  data/chars/misc/doorst2ba3.gif
+	frame  data/chars/misc/doorst2ba4.gif
+	delay	42
+	frame  data/chars/misc/doorst2ba5.gif
+	delay	64.5
+	frame  data/chars/misc/doorst2ba5.gif
+	frame  data/chars/misc/doorst2ba5.gif
+	frame  data/chars/misc/doorst2ba5.gif
+	frame  data/chars/misc/doorst2ba5.gif
+	sound data/sounds/door.wav
+	delay	16
+	frame  data/chars/misc/doorst2ba4.gif
+	frame  data/chars/misc/doorst2ba3.gif
+	frame  data/chars/misc/doorst2ba2.gif
+      @cmd changeentityproperty getlocalvar("self") "animation" openborconstant("ANI_IDLE")
+	frame  data/chars/misc/doorst2ba1.gif
+
+
+
+

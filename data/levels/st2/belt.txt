@@ -1,0 +1,16 @@
+name	belt
+type    none
+shadow  0
+antigravity 100
+facing 1
+offscreenkill  3000
+
+
+anim idle
+	loop	1
+	delay	20
+	offset	1 1
+	frame	data/levels/st2/belt1.gif
+      frame	data/levels/st2/belt2.gif
+      frame	data/levels/st2/belt3.gif
+
